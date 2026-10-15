@@ -11,9 +11,9 @@ Last updated: 2026-10-15. Phase: domain research. Approval: **received 2026-10-1
 | 02 Scheduling and rooms | Complete: desk research | 2026-10-15 | 17 competitors; 85 feature cells; 14 pains; 65 sources. Exact connector and institution workflow validation remain. | Domain checkpoint in git log. |
 | 03 Events and clubs | Complete: desk research | 2026-10-15 | 10 competitors; 115 feature cells; 12 pains; 66 sources. Suite quotes and live module validation remain. | Domain checkpoint in git log. |
 | 04 Cross-cutting | Complete: desk research | 2026-10-15 | 8 ecosystem products; 16 requirements; 53 sources. Institution-specific applicability and contracts remain to validate. | Domain checkpoint in git log. |
-| 05 Missing landscape | Not started | 2026-10-15 | Rank adjacencies and system-of-record boundaries. | — |
-| Promoted domains | Not selected | 2026-10-15 | Require evidence-based promotion decision. | — |
-| Synthesis and report | Not started | 2026-10-15 | Await all domain evidence and validation. | — |
+| 05 Missing landscape | Complete: broad desk scan | 2026-10-15 | 31 ranked categories; 24 products; 6 portfolio deep dives; 30 sources. Remote verticals have explicitly thinner evidence. | Domain checkpoint in git log. |
+| 06 Student success / advising | Complete: desk research | 2026-10-15 | 14 products; 5 deep dives; 75 feature cells; 14 pains; 43 sources. Build transparent handoffs later; authority remains explicit. | Domain checkpoint follows. |
+| Synthesis and report | Final validation | 2026-10-15 | Await all domain evidence and validation. | — |
 
 ## Completed local orientation
 

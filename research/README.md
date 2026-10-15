@@ -20,8 +20,8 @@ Research scope: US higher education; full LMS core plus campus operations. Prepa
 | Scheduling and rooms | [02_scheduling_rooms](02_scheduling_rooms/notes.md) | Complete: desk research |
 | Events and clubs | [03_events_clubs](03_events_clubs/notes.md) | Complete: desk research |
 | Integration, compliance, buying and AI | [04_cross_cutting](04_cross_cutting/notes.md) | Complete: desk research |
-| Missing campus landscape | `05_landscape_missing/` | Not started |
-| Additional promoted domains | `06_<domain>/` onward | To be decided from evidence |
+| Missing campus landscape | [05_landscape_missing](05_landscape_missing/notes.md) | Complete: 31-category scan |
+| Student success and advising | [06_student_success_advising](06_student_success_advising/notes.md) | Complete: promoted full domain |
 | Merged data and synthesis | `data/`, `synthesis.md` | Not started |
 | Offline HTML report | `report/index.html` | Not started |
 

@@ -1,0 +1,302 @@
+[
+  {
+    "source_id": "LAND-01",
+    "title": "EDUCAUSE interoperability guide",
+    "url": "https://www.educause.edu/content/2026/the-integrated-institution-a-guide-to-interoperability-for-student-success",
+    "finding": "Fragmented data and governance; phased integration; learning/advising handoffs.",
+    "source_type": "sector guidance",
+    "publication_date": "2026-09-18",
+    "access_date": "2026-10-15",
+    "limitations": "Expert guidance, not a representative prevalence survey or proof that one vendor replacement is best."
+  },
+  {
+    "source_id": "LAND-02",
+    "title": "Pathify campus experience platform",
+    "url": "https://pathify.com/",
+    "finding": "Portal, tasks, communications, communities and middleware; vendor-listed Pacific and MCCC cases.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-03",
+    "title": "Ready Education",
+    "url": "https://www.readyeducation.com/",
+    "finding": "CampusGroups and campus mobile/community platform family.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-04",
+    "title": "Illumia solutions",
+    "url": "https://illumiatech.com/",
+    "finding": "Campus ID, credentials, access, dining, POS, payments and ERP integration.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-05",
+    "title": "Becoming Illumia",
+    "url": "https://illumiatech.com/about/becoming-illumia",
+    "finding": "Transact + CBORD rebrand launched March 2026; Roper parent; legacy contracts continue.",
+    "source_type": "corporate transition FAQ",
+    "publication_date": "2026 transition",
+    "access_date": "2026-10-15",
+    "limitations": "Page distinguishes launch/filing March 3 from legal effective date April 30; do not treat rebrand as a new acquisition."
+  },
+  {
+    "source_id": "LAND-06",
+    "title": "StarRez housing",
+    "url": "https://www.starrez.com/",
+    "finding": "Housing, roommates, billing, meal plans, residence life, maintenance, conference lodging.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-07",
+    "title": "Handshake employers",
+    "url": "https://joinhandshake.com/employers/",
+    "finding": "Employer/student recruiting network; a career marketplace rather than LMS functionality.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-08",
+    "title": "Symplicity higher education",
+    "url": "https://www.symplicity.com/higher-ed",
+    "finding": "Career, experiential learning and broader student-service platform portfolio.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-09",
+    "title": "Symplicity homepage",
+    "url": "https://www.symplicity.com/",
+    "finding": "Penn State career-system testimonial and Hartnell accessibility-service story.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-10",
+    "title": "Qualtrics higher education",
+    "url": "https://www.qualtrics.com/education/higher-ed/",
+    "finding": "Student feedback, course evaluations and experience management.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-11",
+    "title": "TeamDynamix higher education",
+    "url": "https://www.teamdynamix.com/industries/higher-education/",
+    "finding": "ITSM, ESM, projects, assets and integration; Elon ticket-routing testimonial.",
+    "source_type": "vendor product page with customer testimony",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Vendor-selected testimony supports a local workflow need; numeric efficiency and market claims not adopted."
+  },
+  {
+    "source_id": "LAND-12",
+    "title": "Blackbaud",
+    "url": "https://www.blackbaud.com/",
+    "finding": "Fundraising/advancement and nonprofit financial/relationship software.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-13",
+    "title": "Digication",
+    "url": "https://www.digication.com/",
+    "finding": "ePortfolios and authentic learning evidence.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-14",
+    "title": "Respondus LockDown Browser",
+    "url": "https://web.respondus.com/he/lockdownbrowser/",
+    "finding": "Secure assessment browser with LMS integrations; distinct from Monitor webcam service.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-15",
+    "title": "Respondus accessibility",
+    "url": "https://web.respondus.com/accessibility-lockdown/",
+    "finding": "Assistive-technology support and accommodation documentation.",
+    "source_type": "vendor documentation",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Read with actual device/assistive-technology tests; not a guarantee for every examination setup."
+  },
+  {
+    "source_id": "LAND-16",
+    "title": "OCLC WorldShare Management Services",
+    "url": "https://www.oclc.org/en/worldshare-management-services.html",
+    "finding": "Library services, acquisitions/circulation and WorldCat-connected operations.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-17",
+    "title": "Clarivate Yale library selection",
+    "url": "https://clarivate.com/news/yale-university-selects-clarivate-to-provide-their-next-library-services-and-discovery-platforms/",
+    "finding": "Alma/Primo library services and discovery; Clarivate product ownership.",
+    "source_type": "vendor customer announcement",
+    "publication_date": "2023",
+    "access_date": "2026-10-15",
+    "limitations": "Historic selection, not a claim of current implementation completion."
+  },
+  {
+    "source_id": "LAND-18",
+    "title": "T2 Systems",
+    "url": "https://www.t2systems.com/",
+    "finding": "Parking permits, enforcement and parking operations.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-19",
+    "title": "Workday education",
+    "url": "https://www.workday.com/en-us/solutions/industries/education.html",
+    "finding": "Student administration plus finance, human resources and planning platform.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-20",
+    "title": "Salesforce education",
+    "url": "https://www.salesforce.com/education/",
+    "finding": "Education CRM and student lifecycle relationships; integrations and AI positioning.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-21",
+    "title": "Watermark",
+    "url": "https://www.watermarkinsights.com/",
+    "finding": "Evaluation, assessment, curriculum, accreditation, faculty activity and student success suites.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-22",
+    "title": "Technolutions Slate",
+    "url": "https://technolutions.com/",
+    "finding": "Admissions, student success and advancement CRM; named institutional stories.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-23",
+    "title": "Titanium Schedule",
+    "url": "https://www.titaniumschedule.com/Main/",
+    "finding": "Counseling/health EMR; restricted records, accommodation tracking and institution-hosted operations.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-24",
+    "title": "Maxient",
+    "url": "https://www.maxient.com/",
+    "finding": "Student conduct and sensitive case management.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-25",
+    "title": "Kuali",
+    "url": "https://www.kuali.co/",
+    "finding": "Higher-ed administrative workflows, research and institutional operations portfolio.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-26",
+    "title": "NC State ClassEval FAQ",
+    "url": "https://provost.ncsu.edu/ofe/teaching-learning/evaluation-of-teaching-at-nc-state/classeval-faq/",
+    "finding": "Low response and bias cautions; anonymity and evaluation procedures.",
+    "source_type": "institutional guidance",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Local operating guidance with historical studies; no national rate or causal effect adopted."
+  },
+  {
+    "source_id": "LAND-27",
+    "title": "Faculty proctoring discussion",
+    "url": "https://www.reddit.com/r/Professors/comments/1hxpsy9/honorlock_and_respondus_what_say_thee/",
+    "finding": "Reported privacy/room-video concerns and mixed proctoring experiences.",
+    "source_type": "user reports",
+    "publication_date": "2025-01 (month only; exact day not verified)",
+    "access_date": "2026-10-15",
+    "limitations": "Self-selected thread, unverified identities and mixed settings; not prevalence or current defect evidence."
+  },
+  {
+    "source_id": "LAND-28",
+    "title": "Ellucian student success",
+    "url": "https://www.ellucian.com/en-ae/products/student/student-success",
+    "finding": "Degree audit/planning/advising scope; regional page, no US adoption inference.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-29",
+    "title": "EAB Navigate360",
+    "url": "https://eab.com/solutions/navigate360/",
+    "finding": "Student success CRM, appointments, coordinated support and student app.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  },
+  {
+    "source_id": "LAND-30",
+    "title": "Populi features",
+    "url": "https://www.populi.co/features/",
+    "finding": "Existing integrated college SIS/LMS/admissions/aid/finance/advancement counterexample.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+  }
+]
