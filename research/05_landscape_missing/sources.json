@@ -7,7 +7,8 @@
     "source_type": "sector guidance",
     "publication_date": "2026-09-18",
     "access_date": "2026-10-15",
-    "limitations": "Expert guidance, not a representative prevalence survey or proof that one vendor replacement is best."
+    "limitations": "Expert guidance, not a representative prevalence survey or proof that one vendor replacement is best.",
+    "publisher": "EDUCAUSE"
   },
   {
     "source_id": "LAND-02",
@@ -17,7 +18,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Pathify campus experience platform"
   },
   {
     "source_id": "LAND-03",
@@ -27,7 +29,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Ready Education"
   },
   {
     "source_id": "LAND-04",
@@ -37,7 +40,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Illumia"
   },
   {
     "source_id": "LAND-05",
@@ -47,7 +51,8 @@
     "source_type": "corporate transition FAQ",
     "publication_date": "2026 transition",
     "access_date": "2026-10-15",
-    "limitations": "Page distinguishes launch/filing March 3 from legal effective date April 30; do not treat rebrand as a new acquisition."
+    "limitations": "Page distinguishes launch/filing March 3 from legal effective date April 30; do not treat rebrand as a new acquisition.",
+    "publisher": "Becoming Illumia"
   },
   {
     "source_id": "LAND-06",
@@ -57,7 +62,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "StarRez housing"
   },
   {
     "source_id": "LAND-07",
@@ -67,7 +73,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Handshake employers"
   },
   {
     "source_id": "LAND-08",
@@ -77,7 +84,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Symplicity higher education"
   },
   {
     "source_id": "LAND-09",
@@ -87,7 +95,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Symplicity homepage"
   },
   {
     "source_id": "LAND-10",
@@ -97,7 +106,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Qualtrics higher education"
   },
   {
     "source_id": "LAND-11",
@@ -107,7 +117,8 @@
     "source_type": "vendor product page with customer testimony",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Vendor-selected testimony supports a local workflow need; numeric efficiency and market claims not adopted."
+    "limitations": "Vendor-selected testimony supports a local workflow need; numeric efficiency and market claims not adopted.",
+    "publisher": "TeamDynamix higher education"
   },
   {
     "source_id": "LAND-12",
@@ -117,7 +128,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Blackbaud"
   },
   {
     "source_id": "LAND-13",
@@ -127,7 +139,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Digication"
   },
   {
     "source_id": "LAND-14",
@@ -137,7 +150,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Respondus LockDown Browser"
   },
   {
     "source_id": "LAND-15",
@@ -147,7 +161,8 @@
     "source_type": "vendor documentation",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Read with actual device/assistive-technology tests; not a guarantee for every examination setup."
+    "limitations": "Read with actual device/assistive-technology tests; not a guarantee for every examination setup.",
+    "publisher": "Respondus accessibility"
   },
   {
     "source_id": "LAND-16",
@@ -157,7 +172,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "OCLC WorldShare Management Services"
   },
   {
     "source_id": "LAND-17",
@@ -167,7 +183,8 @@
     "source_type": "vendor customer announcement",
     "publication_date": "2023",
     "access_date": "2026-10-15",
-    "limitations": "Historic selection, not a claim of current implementation completion."
+    "limitations": "Historic selection, not a claim of current implementation completion.",
+    "publisher": "Clarivate Yale library selection"
   },
   {
     "source_id": "LAND-18",
@@ -177,7 +194,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "T2 Systems"
   },
   {
     "source_id": "LAND-19",
@@ -187,7 +205,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Workday education"
   },
   {
     "source_id": "LAND-20",
@@ -197,7 +216,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Salesforce education"
   },
   {
     "source_id": "LAND-21",
@@ -207,7 +227,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Watermark"
   },
   {
     "source_id": "LAND-22",
@@ -217,7 +238,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Technolutions Slate"
   },
   {
     "source_id": "LAND-23",
@@ -227,7 +249,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Titanium Schedule"
   },
   {
     "source_id": "LAND-24",
@@ -237,7 +260,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Maxient"
   },
   {
     "source_id": "LAND-25",
@@ -247,7 +271,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Kuali"
   },
   {
     "source_id": "LAND-26",
@@ -257,7 +282,8 @@
     "source_type": "institutional guidance",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Local operating guidance with historical studies; no national rate or causal effect adopted."
+    "limitations": "Local operating guidance with historical studies; no national rate or causal effect adopted.",
+    "publisher": "NC State Office for Faculty Excellence"
   },
   {
     "source_id": "LAND-27",
@@ -267,7 +293,8 @@
     "source_type": "user reports",
     "publication_date": "2025-01 (month only; exact day not verified)",
     "access_date": "2026-10-15",
-    "limitations": "Self-selected thread, unverified identities and mixed settings; not prevalence or current defect evidence."
+    "limitations": "Self-selected thread, unverified identities and mixed settings; not prevalence or current defect evidence.",
+    "publisher": "Reddit r/Professors contributors"
   },
   {
     "source_id": "LAND-28",
@@ -277,7 +304,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Ellucian student success"
   },
   {
     "source_id": "LAND-29",
@@ -287,7 +315,8 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "EAB Navigate360"
   },
   {
     "source_id": "LAND-30",
@@ -297,6 +326,29 @@
     "source_type": "vendor product page",
     "publication_date": "Not stated",
     "access_date": "2026-10-15",
-    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded."
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Populi"
+  },
+  {
+    "source_id": "LAND-31",
+    "title": "IMLeagues campus recreation",
+    "url": "https://www.imleagues.com/",
+    "finding": "Intramurals, club sports, fitness, facility/membership and access scope; demonstration values are not customer measurements.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "IMLeagues campus recreation"
+  },
+  {
+    "source_id": "LAND-32",
+    "title": "Terra Dotta global education",
+    "url": "https://www.terradotta.com/",
+    "finding": "International student/scholar services, study abroad, travel registry and risk; no legal compliance assertion.",
+    "source_type": "vendor product page",
+    "publication_date": "Not stated",
+    "access_date": "2026-10-15",
+    "limitations": "Advertised product scope; not independently tested. Ultimate ownership and price are not established unless explicitly recorded.",
+    "publisher": "Terra Dotta global education"
   }
 ]

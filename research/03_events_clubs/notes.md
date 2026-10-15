@@ -21,6 +21,7 @@ Ten products were mapped. Five received full workflow deep dives and the remaini
 - **CampusGroups:** Ready Education acquired CampusGroups in May 2022 and markets it as CampusGroups by Ready Education ([EVENT-007](https://www.readyeducation.com/about/)).
 - **Presence:** Modern Campus acquired Presence on 2021-06-24. The current product is Modern Campus Involve; Presence is retained only as a historical alias ([EVENT-012](https://moderncampus.com/newsroom/modern-campus-acquires-presence.html), [EVENT-013](https://moderncampus.com/products/student-engagement-and-learning-platform)).
 - **Localist:** Concept3D acquired Localist in September 2022 and continues to operate Localist Events ([EVENT-030](https://concept3d.com/blog/concept3d/exciting-announcement-concept3d-acquires-localist/), [EVENT-029](https://www.localist.com/)).
+- **Eventbrite:** Eventbrite completed its merger with Bending Spoons US Inc. on 2026-03-10 and survives as its wholly owned subsidiary; Bending Spoons US Inc. is wholly owned by Bending Spoons S.p.A. ([EVENT-073](https://www.sec.gov/Archives/edgar/data/1475115/000114036126008636/ef20067526_8k.htm)).
 
 ## Deep dives
 

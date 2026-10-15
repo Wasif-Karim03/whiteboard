@@ -1,6 +1,6 @@
 """Serialize reviewed LMS research into the approved shared schemas. No network calls."""
 from pathlib import Path
-import csv,json
+import csv,json,re
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'01_lms'; OUT.mkdir(exist_ok=True)
 DATE='2026-10-15'
@@ -137,7 +137,7 @@ PAINS=[
  ('15','CANVAS','Scanner/multipage submission discoverability prompts support requests','student/instructor community','education level unverified','scan handwritten work','medium','Submission friction','51','2023','Historic issue; existing scanner disproves novelty, not current correctness.')]
 P=[]
 for n,cid,pain,role,segment,workflow,severity,rationale,key,period,lim in PAINS:
- ids,urls=refs(key);P.append(dict(pain_id='LMS-P'+n,domain_id='01_lms',competitor_id='LMS-'+cid,pain_point=pain,affected_role=role,institution_segment=segment,workflow=workflow,severity=severity,severity_rationale=rationale,evidence_type='documented_limit_analyst_implication' if n=='14' else 'institutional_evaluation' if n in ['12','13'] else 'user_report',reported_date=period,source_context=LOOKUP['LMS-'+key]['title'],prevalence_limitations=lim,confidence='high' if n in ['12','13','14'] else 'medium',verification_status='verified_report_not_reproduced' if n!='14' else 'verified_documentation',as_of_date=DATE,source_ids=ids,source_urls=urls))
+ ids,urls=refs(key);P.append(dict(pain_id='LMS-P'+n,domain_id='01_lms',competitor_id='LMS-'+cid,pain_point=pain,affected_role=role,institution_segment=segment,workflow=workflow,severity=severity,severity_rationale=rationale,evidence_type='documented_limit_analyst_implication' if n=='14' else 'institutional_evaluation' if n in ['12','13'] else 'user_report',reported_date=period if re.fullmatch(r'\d{4}-\d{2}-\d{2}',period) else '',source_context=LOOKUP['LMS-'+key]['title']+'; Reported period: '+period,prevalence_limitations=lim,confidence='high' if n in ['12','13','14'] else 'medium',verification_status='verified_report_not_reproduced' if n!='14' else 'verified_documentation',as_of_date=DATE,source_ids=ids,source_urls=urls))
 csvwrite('pain_points',P)
 (OUT/'sources.json').write_text(json.dumps(S,indent=2)+'\n')
 lines=['# LMS evidence sources','',f'Access date: {DATE}. Opened sources are scoped evidence, not endorsements. Every primary URL below was opened. Publication dates remain distinct from access dates.','', '| ID | Source and URL | Publisher and type | Publication or revision | Supports | Limitations |','| --- | --- | --- | --- | --- | --- |']

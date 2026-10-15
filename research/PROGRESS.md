@@ -1,6 +1,6 @@
 # Whiteboard research progress
 
-Last updated: 2026-10-15. Phase: domain research. Approval: **received 2026-10-15**. External research authorized.
+Last updated: 2026-10-15. Phase: complete public desk research and offline report. Approval: **received 2026-10-15**. External research authorized.
 
 ## Domain tracker
 
@@ -11,9 +11,9 @@ Last updated: 2026-10-15. Phase: domain research. Approval: **received 2026-10-1
 | 02 Scheduling and rooms | Complete: desk research | 2026-10-15 | 17 competitors; 85 feature cells; 14 pains; 65 sources. Exact connector and institution workflow validation remain. | Domain checkpoint in git log. |
 | 03 Events and clubs | Complete: desk research | 2026-10-15 | 10 competitors; 115 feature cells; 12 pains; 66 sources. Suite quotes and live module validation remain. | Domain checkpoint in git log. |
 | 04 Cross-cutting | Complete: desk research | 2026-10-15 | 8 ecosystem products; 16 requirements; 53 sources. Institution-specific applicability and contracts remain to validate. | Domain checkpoint in git log. |
-| 05 Missing landscape | Complete: broad desk scan | 2026-10-15 | 31 ranked categories; 24 products; 6 portfolio deep dives; 30 sources. Remote verticals have explicitly thinner evidence. | Domain checkpoint in git log. |
+| 05 Missing landscape | Complete: broad desk scan | 2026-10-15 | 33 ranked categories; 26 products; 6 portfolio deep dives; 32 sources. Remote verticals have explicitly thinner evidence. | Domain checkpoint in git log. |
 | 06 Student success / advising | Complete: desk research | 2026-10-15 | 14 products; 5 deep dives; 75 feature cells; 14 pains; 43 sources. Build transparent handoffs later; authority remains explicit. | Domain checkpoint follows. |
-| Synthesis and report | Final validation | 2026-10-15 | Await all domain evidence and validation. | — |
+| Synthesis and report | Complete; browser visual QA limited | 2026-10-15 | Six domains merged; synthesis and self-contained HTML built; structure/controller checks passed. | Final checkpoint in git log. |
 
 ## Completed local orientation
 
@@ -29,8 +29,12 @@ Baseline: one interactive grading design review with 18 screens, 64 states, 14 w
 - Local Git initialized on `research/market`; commit only research paths and preserve unrelated artifacts.
 - Earlier local browser preview was blocked by browser URL policy. Do not bypass it; final report verification must accurately state any limitations.
 
-## Resumption handoff
+## Final handoff
 
-LMS desk research is complete and schema/evidence-field validation passed (18 competitors, 207 feature rows, 15 pains, 51 opened sources). Source records preserve ownership, price scope and evidence limits. No product login or customer interviews were performed. Low-confidence LMS adoption proxy is explicitly a classified web sample, not a national census.
+All six research domains are complete at the stated desk-research depth. Saved synthesis, merged CSVs, vendor coverage and the offline HTML report. Final corpus: 93 domain/product entries, 549 feature rows, 73 coded pain findings, 33 landscape categories, 311 source-register records (not unique URLs or independent observations).
 
-Scheduling, events and cross-cutting workers own only their respective folders; lead reviews and commits sequentially. Next: finish those reviews, research missing landscape, choose promoted domain(s), merge datasets, write synthesis and build/validate offline HTML report. Do not stop after one domain. Original HTML/workbook/audit remain untouched and untracked.
+Targeted Astra review corrected Eventbrite/Bending Spoons and Civitas/Francisco Partners ownership, downgraded unsupported feature assertions, restored ranking schema, normalized canonical vendor IDs/source delimiters/confidence/date fields, and completed missing landscape boundaries. Original showcase hash remains unchanged.
+
+Verified: exact CSV schemas, IDs/URL traceability, confidence/enums, date and competitor joins, relative Markdown/HTML links, strict offline build, unique HTML IDs/anchors, table captions, JavaScript controller filtering/combined search/reset/empty/sort/theme/storage-failure behavior. Browser visual, viewport, assistive-technology and real-device checks were not run: prior local-file URL policy block was respected without workaround. No live competitor product, real customer interview, legal audit or institutional integration was performed.
+
+Research commits exist on research/market; no push/publication. Next user decision: review synthesis and select a first-school segment and discovery/pilot route. No further implementation is assumed authorized by this research.

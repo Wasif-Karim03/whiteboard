@@ -1,0 +1,59 @@
+{
+  "checked_date": "2026-10-15",
+  "status": "pass",
+  "domains": [
+    {
+      "domain": "01_lms",
+      "competitors": 18,
+      "feature_matrix": 207,
+      "pain_points": 15,
+      "source_records": 51
+    },
+    {
+      "domain": "02_scheduling_rooms",
+      "competitors": 17,
+      "feature_matrix": 85,
+      "pain_points": 14,
+      "source_records": 65
+    },
+    {
+      "domain": "03_events_clubs",
+      "competitors": 10,
+      "feature_matrix": 115,
+      "pain_points": 12,
+      "source_records": 67
+    },
+    {
+      "domain": "04_cross_cutting",
+      "competitors": 8,
+      "feature_matrix": 19,
+      "pain_points": 8,
+      "source_records": 53
+    },
+    {
+      "domain": "05_landscape_missing",
+      "competitors": 26,
+      "feature_matrix": 48,
+      "pain_points": 10,
+      "source_records": 32
+    },
+    {
+      "domain": "06_student_success_advising",
+      "competitors": 14,
+      "feature_matrix": 75,
+      "pain_points": 14,
+      "source_records": 43
+    }
+  ],
+  "totals": {
+    "competitors": 93,
+    "feature_matrix": 549,
+    "pain_points": 73
+  },
+  "errors": [],
+  "limits": [
+    "Checks validate structure and traceability, not independent truth of every external claim.",
+    "No product execution or representative customer interviews.",
+    "Local browser preview previously blocked by URL policy; no bypass attempted."
+  ]
+}

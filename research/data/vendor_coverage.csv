@@ -1,0 +1,75 @@
+vendor_id,domain_count,domain_ids,products
+accruent,1,02_scheduling_rooms,EMS
+ad-astra,1,02_scheduling_rooms,Ad Astra Smart Scheduling
+apereo,1,01_lms,Sakai
+asimut,1,02_scheduling_rooms,ASIMUT
+axim,1,01_lms,Open edX
+blackbaud,1,05_landscape_missing,Blackbaud
+blackboard,1,01_lms,Blackboard LMS / Ultra
+campuswire,1,01_lms,Campuswire
+celcat,1,02_scheduling_rooms,CELCAT Timetabler
+civitas,1,06_student_success_advising,Student Impact Platform
+clarivate,1,05_landscape_missing,Clarivate Alma / Primo
+collegenet,1,02_scheduling_rooms,Series25 / 25Live / Schedule25
+collegesource,1,06_student_success_advising,uAchieve
+concept3d,1,03_events_clubs,Localist Events
+conexed,1,06_student_success_advising,ConexED
+coursedog,1,02_scheduling_rooms,Scheduling Cloud
+courseleaf,1,02_scheduling_rooms,CLSS
+crowdmark,1,01_lms,Crowdmark
+cypher,1,01_lms,CYPHER Learning (NEO legacy)
+d2l,1,01_lms,D2L Brightspace
+digication,1,05_landscape_missing,Digication
+eab,2,05_landscape_missing | 06_student_success_advising,EAB Navigate360 | Navigate360 | Starfish
+element451,1,06_student_success_advising,Element for Student Success
+ellucian,4,02_scheduling_rooms | 04_cross_cutting | 05_landscape_missing | 06_student_success_advising,Anthology Student SIS/ERP | Banner Student | Degree Works and Ellucian Advising | Ellucian Student / Banner / Colleague with Ethos | Ellucian student success
+encoura,2,03_events_clubs | 06_student_success_advising,Encoura Reach | Engage
+eventbrite,1,03_events_clubs,Eventbrite
+feedbackfruits,1,01_lms,FeedbackFruits
+givepulse,1,03_events_clubs,GivePulse
+google,2,01_lms | 04_cross_cutting,Google Classroom / Workspace for Education | Google Workspace managed identity / custom SAML apps
+handshake,1,05_landscape_missing,Handshake
+harmonize,1,01_lms,Harmonize
+illumia,1,05_landscape_missing,Illumia (Transact + CBORD)
+imleagues,1,05_landscape_missing,IMLeagues
+incommon,1,04_cross_cutting,InCommon Federation
+infosilem,1,02_scheduling_rooms,Infosilem Academic / Campus / Exam
+instructure,1,01_lms,Canvas LMS
+jenzabar,1,04_cross_cutting,Jenzabar One API / Unity Platform
+kuali,1,05_landscape_missing,Kuali
+ltg,1,01_lms,Open LMS
+mainstay,1,06_student_success_advising,Engagement Platform
+maxient,1,05_landscape_missing,Maxient
+mazevo,1,02_scheduling_rooms,Mazévo
+microsoft,1,04_cross_cutting,Microsoft Entra ID
+modern-campus,2,02_scheduling_rooms | 03_events_clubs,Involve | Modern Campus Schedule
+modo-labs,1,03_events_clubs,Modo Campus and My Community
+moodle,1,01_lms,Moodle LMS
+nectir,1,01_lms,Nectir AI
+oclc,1,05_landscape_missing,OCLC WorldShare
+oracle,3,02_scheduling_rooms | 04_cross_cutting | 06_student_success_advising,PeopleSoft Academic Advisement | PeopleSoft Campus Solutions
+pathify,2,03_events_clubs | 05_landscape_missing,Communities | Pathify
+populi,2,01_lms | 05_landscape_missing,Populi
+powerschool,1,01_lms,Schoology Learning
+pretix,1,03_events_clubs,pretix
+qualtrics,1,05_landscape_missing,Qualtrics
+ready-education,2,03_events_clubs | 05_landscape_missing,CampusGroups by Ready Education | Ready Education
+respondus,1,05_landscape_missing,Respondus
+salesforce,2,05_landscape_missing | 06_student_success_advising,Education Cloud Student Success | Salesforce Education
+shibboleth,1,04_cross_cutting,Shibboleth Identity Provider and Service Provider
+starrez,1,05_landscape_missing,StarRez
+stellic,1,06_student_success_advising,Progress and Care
+suitable,1,03_events_clubs,The Hub by Suitable
+symplicity,1,05_landscape_missing,Symplicity
+t2,1,05_landscape_missing,T2 Systems
+teamdynamix,1,05_landscape_missing,TeamDynamix
+technologyone,1,02_scheduling_rooms,Syllabus Plus
+technolutions,1,05_landscape_missing,Technolutions Slate
+terradotta,1,05_landscape_missing,Terra Dotta
+timeedit,1,02_scheduling_rooms,TimeEdit
+titanium,1,05_landscape_missing,Titanium Schedule
+tophat,1,01_lms,Top Hat
+turnitin,1,01_lms,Gradescope
+unitime,1,02_scheduling_rooms,UniTime
+watermark,2,05_landscape_missing | 06_student_success_advising,Student Success & Engagement | Watermark
+workday,4,02_scheduling_rooms | 04_cross_cutting | 05_landscape_missing | 06_student_success_advising,Workday | Workday Student | Workday Student Advising
