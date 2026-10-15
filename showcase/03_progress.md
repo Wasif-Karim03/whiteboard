@@ -11,7 +11,7 @@ Approved: 2026-10-15. Branch: `showcase/v2`. Source: `Claude outputs/Pellwin-Sho
 | B4 Spaces | Complete | Canonical timetable, capacity checks, proposal/source approval, series exceptions. |
 | B5 Events and organizations | Complete | Draft/published versions, room/funding review, RSVP, check-in and officer transitions. |
 | B6 Institution and support | Complete | Support ownership/sharing, access, audit export, migration validation, grade reconciliation and AI controls. |
-| B7 P1 coverage | Pending | All 40 screens and six journeys. |
+| B7 P1 coverage | Complete | All 40 workspaces and six guided journeys available; rollover, people, notifications, offline check-in and transitions exposed. |
 | B8 QA and delivery | Pending | Static/controller/browser checks as permitted; copy and handoff. |
 
 ## Constraints
@@ -33,3 +33,5 @@ B4: Added scheduling constraints and room requests with separate approval and so
 B5: Events and organizations share room and approval state. Regression checks cover immutable published events, review dependencies, capacity/waitlists, stable offline check-in identity and derived member counts.
 
 B6: Added four institution/IT workspaces and connected the referral queue. AI and assurance are explicitly planned or unverified; audit export is a real local JSON download containing fictional records.
+
+B7: Enabled all planned P1 workspaces. Final artifact contains 40 real HTML/CSS workspaces, inline styles, inline SVG and inline scripts without runtime network dependencies.
