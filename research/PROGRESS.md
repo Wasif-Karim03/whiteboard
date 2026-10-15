@@ -6,11 +6,11 @@ Last updated: 2026-10-15. Phase: domain research. Approval: **received 2026-10-1
 
 | Domain | Status | Updated | Open questions or next checkpoint | Git checkpoint |
 | --- | --- | --- | --- | --- |
-| 00 Baseline and plan | Complete; approved | 2026-10-15 | Plan approved; research begins. | Initial research checkpoint pending. |
-| 01 LMS | Not started | 2026-10-15 | Verify starting leads, higher-ed fit and market coverage; deepest domain. | — |
-| 02 Scheduling and rooms | Not started | 2026-10-15 | Separate timetable optimization from operational booking. | — |
-| 03 Events and clubs | Not started | 2026-10-15 | Verify current ownership; map event/space/finance handoffs. | — |
-| 04 Cross-cutting | Not started | 2026-10-15 | Current standards, applicability/deadlines, procurement prices and AI availability. | — |
+| 00 Baseline and plan | Complete; approved | 2026-10-15 | Plan approved; research begins. | `19218a1` (baseline/plan). |
+| 01 LMS | Complete: desk research | 2026-10-15 | 18 competitors; 207 feature cells; 15 pains; 51 sources. Live task benchmarking and interviews remain open. | Domain commit follows this update. |
+| 02 Scheduling and rooms | In review | 2026-10-15 | Separate timetable optimization from operational booking. | — |
+| 03 Events and clubs | In progress | 2026-10-15 | Verify current ownership; map event/space/finance handoffs. | — |
+| 04 Cross-cutting | In progress | 2026-10-15 | Current standards, applicability/deadlines, procurement prices and AI availability. | — |
 | 05 Missing landscape | Not started | 2026-10-15 | Rank adjacencies and system-of-record boundaries. | — |
 | Promoted domains | Not selected | 2026-10-15 | Require evidence-based promotion decision. | — |
 | Synthesis and report | Not started | 2026-10-15 | Await all domain evidence and validation. | — |
@@ -31,6 +31,6 @@ Baseline: one interactive grading design review with 18 screens, 64 states, 14 w
 
 ## Resumption handoff
 
-**Next action:** execute approved research. Lead owns LMS, shared schemas, merged data, landscape and synthesis. Independent workers may own scheduling, events and cross-cutting folders. Do not restart the earlier code audit or assume any market/ownership/pricing/legal finding has already been researched.
+LMS desk research is complete and schema/evidence-field validation passed (18 competitors, 207 feature rows, 15 pains, 51 opened sources). Source records preserve ownership, price scope and evidence limits. No product login or customer interviews were performed. Low-confidence LMS adoption proxy is explicitly a classified web sample, not a national census.
 
-No research subagents were assigned for Step 0. After each approved domain: validate evidence and data, update this tracker and README, record commit hash, summarize the top findings in 5–10 lines, and continue in plan order.
+Scheduling, events and cross-cutting workers own only their respective folders; lead reviews and commits sequentially. Next: finish those reviews, research missing landscape, choose promoted domain(s), merge datasets, write synthesis and build/validate offline HTML report. Do not stop after one domain. Original HTML/workbook/audit remain untouched and untracked.

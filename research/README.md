@@ -2,7 +2,7 @@
 
 Research scope: US higher education; full LMS core plus campus operations. Prepared 15 October 2026.
 
-**Current status: Plan approved 2026-10-15; domain research is beginning.**
+**Current status: LMS research complete; scheduling, events and cross-cutting research in progress.**
 
 ## Start here
 
@@ -16,10 +16,10 @@ Research scope: US higher education; full LMS core plus campus operations. Prepa
 | Domain | Planned folder | Status |
 | --- | --- | --- |
 | Baseline and plan | `00_baseline/` | Complete; approved |
-| LMS core | `01_lms/` | Not started |
-| Scheduling and rooms | `02_scheduling_rooms/` | Not started |
-| Events and clubs | `03_events_clubs/` | Not started |
-| Integration, compliance, buying and AI | `04_cross_cutting/` | Not started |
+| LMS core | [01_lms](01_lms/notes.md) | Complete: desk research |
+| Scheduling and rooms | `02_scheduling_rooms/` | In review |
+| Events and clubs | `03_events_clubs/` | In progress |
+| Integration, compliance, buying and AI | `04_cross_cutting/` | In progress |
 | Missing campus landscape | `05_landscape_missing/` | Not started |
 | Additional promoted domains | `06_<domain>/` onward | To be decided from evidence |
 | Merged data and synthesis | `data/`, `synthesis.md` | Not started |
