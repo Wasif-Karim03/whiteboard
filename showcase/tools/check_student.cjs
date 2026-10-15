@@ -1,22 +1,49 @@
-const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert/strict');
-const root=path.join(__dirname,'../src'),context={window:{}};vm.createContext(context);
-for(const name of ['core.js','student.js'])vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),context);
-const WB=context.window.WB;
-assert.equal(Object.keys(WB.renderers).length,12);
-for(const id of Object.keys(WB.renderers))assert(WB.render(id).length>200,id);
-WB.dispatch('student-new-attempt');assert.equal(WB.state.submission.status,'draft');
-WB.dispatch('student-submit');assert.notEqual(WB.state.submission.status,'received');
-WB.dispatch('student-load-pages');const pages=JSON.stringify(WB.state.submission.pages);
-WB.dispatch('student-interrupt');assert.equal(JSON.stringify(WB.state.submission.pages),pages);
-WB.dispatch('student-submit');assert.equal(WB.state.submission.status,'received');
-assert(WB.render('S08').includes('AH-PHYS110-002'));
-WB.state.assessment.graded.push('aisha');WB.state.assessment.released.push('aisha');
-WB.set('submission.pages.0.tag','wrong');assert.equal(WB.state.submission.status,'draft');assert(!WB.state.assessment.released.includes('aisha'));
-WB.dispatch('student-submit');assert.notEqual(WB.state.submission.status,'received');
-WB.set('submission.pages.0.tag','1a, 1b');WB.dispatch('student-submit');assert.equal(WB.state.submission.status,'received');
-WB.state.course.reply='<img src=x onerror=alert(1)>';WB.dispatch('student-reply');assert(!WB.render('S11').includes('<img src=x'));
-WB.dispatch('student-quiz-submit');assert.equal(WB.state.course.quizSubmitted,false);
-WB.set('course.quizAnswer','−9.81 m/s²');WB.dispatch('student-quiz-submit');assert.equal(WB.state.course.quizSubmitted,true);
-WB.state.people[1].active=false;assert.equal(WB.received(WB.state),40);
-assert.throws(()=>WB.set('__proto__.bad',true));
-console.log('Student checks passed: 12 pure screens, tag validation, interrupted retry, exact receipt, new-attempt release invalidation, quiz and escaped discussion.');
+const fs = require("fs"),
+  vm = require("vm"),
+  path = require("path"),
+  assert = require("assert/strict");
+const root = path.join(__dirname, "../src"),
+  context = { window: {} };
+vm.createContext(context);
+for (const name of ["core.js", "student.js"])
+  vm.runInContext(fs.readFileSync(path.join(root, name), "utf8"), context);
+const WB = context.window.WB;
+assert.equal(Object.keys(WB.renderers).length, 12);
+for (const id of Object.keys(WB.renderers))
+  assert(WB.render(id).length > 200, id);
+WB.dispatch("student-new-attempt");
+assert.equal(WB.state.submission.status, "draft");
+WB.dispatch("student-submit");
+assert.notEqual(WB.state.submission.status, "received");
+WB.dispatch("student-load-pages");
+const pages = JSON.stringify(WB.state.submission.pages);
+WB.dispatch("student-interrupt");
+assert.equal(JSON.stringify(WB.state.submission.pages), pages);
+WB.dispatch("student-submit");
+assert.equal(WB.state.submission.status, "received");
+assert(WB.render("S08").includes("AH-PHYS110-002"));
+WB.state.assessment.graded.push("aisha");
+WB.state.assessment.released.push("aisha");
+WB.set("submission.pages.0.tag", "wrong");
+assert.equal(WB.state.submission.status, "draft");
+assert(!WB.state.assessment.released.includes("aisha"));
+WB.dispatch("student-submit");
+assert.notEqual(WB.state.submission.status, "received");
+WB.set("submission.pages.0.tag", "1a, 1b");
+WB.dispatch("student-submit");
+assert.equal(WB.state.submission.status, "received");
+WB.state.course.reply = "<img src=x onerror=alert(1)>";
+WB.dispatch("student-reply");
+assert(!WB.render("S11").includes("<img src=x"));
+WB.dispatch("student-quiz-submit");
+assert.equal(WB.state.course.quizSubmitted, false);
+WB.set("course.quizAnswers.qb-1", "−9.81 m/s²");
+WB.dispatch("student-quiz-review");
+WB.dispatch("student-quiz-submit");
+assert.equal(WB.state.course.quizSubmitted, true);
+WB.state.people[1].active = false;
+assert.equal(WB.received(WB.state), 40);
+assert.throws(() => WB.set("__proto__.bad", true));
+console.log(
+  "Student checks passed: 12 pure screens, tag validation, interrupted retry, exact receipt, new-attempt release invalidation, quiz and escaped discussion.",
+);

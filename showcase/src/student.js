@@ -1,77 +1,784 @@
-(function(){
-'use strict';
-const WB=window.WB;
-const assignmentStatus=s=>!s.assignment.published?'Not published':s.submission.status==='received'?'Received':'Not submitted';
-const tags=s=>new Set(s.submission.pages.flatMap(p=>p.tag.split(',').map(x=>x.trim())).filter(Boolean));
-const missing=s=>s.assignment.questions.filter(q=>!tags(s).has(q.id)).map(q=>q.id);
-const policy=(s,h)=>h.notice('AI use for this assignment',s.assignment.policy,'info');
-const studentTabs=h=>`<nav class="segmented" aria-label="Student views">${h.go('Today','S01','quiet')}${h.go('Courses','S02','quiet')}${h.go('Calendar','S12','quiet')}${h.go('Updates','S13','quiet')}</nav>`;
-WB.reg('S01','Today','Student',(s,h)=>h.head('Good morning, Aisha.','Thursday, 15 October · a clear view of your day',h.go('Your calendar','S12'))+
- studentTabs(h)+`<div class="columns"><div class="stack"><section class="student-focus"><span class="course-tag">PHYS 110</span><h5>${h.e(s.assignment.title)}</h5><p class="small">Due ${h.e(WB.deadline(s.assignment.due))}</p><div class="actions" style="margin-top:16px">${h.pill(assignmentStatus(s),s.submission.status==='received'?'success':'warning')}${h.go('Open assignment','S05','primary')}</div></section>`+
- h.card('Your next class',h.row('MATH 220 · Linear Algebra','10:30–11:45 am · Keene Center 212',h.pill('Today','info'))+h.row('WRIT 140 · Academic Writing','Next meeting: Monday · Emery Hall 203',h.go('All courses','S02','quiet')))+`</div><div class="stack">`+
- h.card('Campus, in the same day',h.row('Physics Society','Wednesday, 21 Oct · 5:30 pm',h.go('Explore event','S28','quiet'))+h.row('Learning Support Center','Physics study sessions and one-to-one support',h.go('Find support','S34','quiet')))+
- h.card('Course updates',h.row('Projectile motion: a worked example','Dr. Diane Reyes · PHYS 110',h.go('Read announcement','S11','quiet'))+h.row('Quiz 3: forces and motion',s.course.quizSubmitted?'Attempt submitted · feedback held until release':'Practice your setup before Friday',h.go('Open quiz','S10','quiet')))+`</div></div>`+
- `<details style="margin-top:18px"><summary class="small muted">Explore another day state</summary><div class="actions" style="margin-top:12px">${h.btn('Quiet day','student-day-state',{value:'empty'})}${h.btn('Source delayed','student-day-state',{value:'delayed'})}${h.btn('Usual day','student-day-state',{value:'normal'})}</div>${s.course.dayState==='empty'?h.notice('Nothing needs your attention','Your courses and support links are still here.','success'):s.course.dayState==='delayed'?h.notice('Connected schedule is delayed','Last successful refresh: 15 Oct, 8:05 am. Existing class details are shown; check the source before making a change.','warning'):''}</details>`);
-WB.reg('S02','Courses','Student',(s,h)=>h.head('Your courses','Fall 2026 · familiar structure, different subjects')+studentTabs(h)+`<div class="stack">`+
- h.card('PHYS 110 · Introductory Mechanics',h.row('Dr. Diane Reyes','Mon / Wed / Fri · 9:00 am · Hollis Hall 104',h.go('Open course','S03','primary'))+h.row(s.assignment.title,'Due Friday · '+assignmentStatus(s),h.pill('Current','info')))+
- h.card('MATH 220 · Linear Algebra',h.row('Prof. Lena Foster','Tue / Thu · 10:30 am · Keene Center 212',h.btn('View course summary','student-course-summary',{value:'math'})))+
- h.card('WRIT 140 · Academic Writing',h.row('Prof. Jonah Brooks','Mon / Wed · 1:00 pm · Emery Hall 203',h.btn('View course summary','student-course-summary',{value:'writing'})))+`</div>`+(s.course.summary?h.notice(s.course.summary==='math'?'MATH 220 · Linear Algebra':'WRIT 140 · Academic Writing',s.course.summary==='math'?'Next work: read the section on basis and dimension before Tuesday. Your next meeting is in Keene Center 212.':'Next work: revise the opening paragraph of your argument essay. Bring your annotated source to Monday’s workshop.'):''));
-WB.reg('S03','Course home','Student',(s,h)=>s.teaching?.coursePublished===false?h.head('Course not published','Your instructor is preparing this course.'):h.head('Introductory Mechanics','PHYS 110 · Dr. Diane Reyes · Fall 2026',h.go('All courses','S02'))+
- `<div class="actions" style="margin-bottom:22px">${h.go('Modules','S04','primary')}${h.go('Assignment','S05')}${h.go('Quiz','S10')}${h.go('Discussion','S11')}${h.go('Grades & feedback','S09')}</div><div class="columns"><div class="stack">`+
- h.card('This week · Projectile motion',`<p>Connect horizontal and vertical motion. Explain your coordinate choices, solve for time and check the physical meaning of your result.</p><div class="module-item"><span class="course-tag">Module 3</span><h5 style="margin:8px 0">Motion in two dimensions</h5><p class="muted">Worked example · reading · problem set · practice quiz</p><div class="actions" style="margin-top:15px">${h.go('Continue module','S04','primary')}</div></div>`)+
- h.card('Course information',h.row('Syllabus and assessment policy','Learning goals, office hours, dates and grade categories',h.btn('Read syllabus','student-syllabus',{})))+`</div><div class="stack">`+
- h.card('From Dr. Reyes',`<p><strong>Keep your axes visible.</strong></p><p class="muted">In this week’s solutions, write your positive direction before substituting values. A consistent setup helps you check every sign.</p><div class="actions" style="margin-top:14px">${h.go('Read & discuss','S11')}</div>`)+
- h.card('Your next step',h.row(s.assignment.title,'30 points · due 16 Oct',h.pill(assignmentStatus(s),s.submission.status==='received'?'success':'warning'))+h.go('Open assignment','S05','primary'))+`</div></div>`);
-WB.reg('S04','Modules & materials','Student',(s,h)=>s.teaching?.coursePublished===false?h.head('Course not published','Your instructor is preparing this course.'):h.head('Motion in two dimensions','Module 3 · PHYS 110',h.go('Course home','S03'))+
- h.tabs([['reading','Reading'],['syllabus','Syllabus'],['alternative','Text alternative']],'course.material',s.course.material)+
- (s.course.material==='syllabus'?h.card('Course syllabus',`<div class="reading"><h5>PHYS 110 · Introductory Mechanics</h5><p>Instructor: Dr. Diane Reyes. Office hours: Tuesday, 2–3 pm, Hollis Hall 116, or by appointment.</p><p>Assessment: assignments 40%, labs 25%, quizzes 35%. Missing, ungraded and excused work are shown separately. Course totals use released results only.</p><p>Request an accommodation through the designated office. Course staff receive the operational adjustment, not the underlying diagnosis.</p><p>Course materials are organized by week. Announcements carry changes to published dates and expectations.</p></div>`):
- h.card('3.2 · Resolve the motion',`<div class="reading"><p>Horizontal velocity is constant when air resistance is neglected. Vertical acceleration is downward. Treat the two directions separately and connect them through the same time variable.</p><p><strong>Horizontal:</strong> x(t) = v₀ cos(θ) × t</p><p><strong>Vertical:</strong> y(t) = h + v₀ sin(θ) × t − ½gt²</p><p>${s.course.material==='alternative'?'Text description: a projectile leaves a platform and follows a curved path. The horizontal axis points right; the vertical axis points up. Gravity acts downward throughout the motion.':'Before calculating, sketch the path and label your positive axes. At the highest point, vertical velocity is zero; acceleration is still downward.'}</p></div><div class="actions">${h.btn(s.course.read?'Reading marked complete':'Mark reading complete','student-read',{},s.course.read?'secondary':'primary')}${h.go('Try the practice quiz','S10')}</div>`))+
- h.card('In this module',h.row('3.1 · Coordinate systems','Complete',h.pill('Read','success'))+h.row('3.2 · Resolve the motion',s.course.read?'Complete':'Ready to read',h.pill(s.course.read?'Read':'Available',s.course.read?'success':'info'))+h.row('Problem Set 4','Connect each page to a question',h.go('Open assignment','S05','quiet'))));
-WB.reg('S05','Assignment','Student',(s,h)=>(!s.assignment.published||s.teaching?.coursePublished===false)?h.head('Assignment not published','Your instructor is reviewing this coursework.')+h.notice('Not available to students','Return to the course when the instructor publishes the assignment.'):h.head(s.assignment.title,'PHYS 110 · 30 points',h.go('Course home','S03'))+
- h.stats([[WB.deadline(s.assignment.due),'due date'],[WB.deadline(s.assignment.close),'close date'],[assignmentStatus(s),'current attempt']])+`<div class="columns"><div class="stack">`+
- h.card('What to submit',`<p>Solve questions 1a, 1b, 2, 3 and 4. Show your coordinate system, intermediate steps and units. Submit a clear scan or PDF of your own working.</p><p class="muted" style="margin-top:12px">A page may answer more than one question. Review the final pages and tags before you send.</p><div class="actions" style="margin-top:18px">${h.go(s.submission.status==='received'?'Review received work':'Scan sample pages','S06','primary')}${h.btn('Use a sample PDF','student-pdf')}${h.btn('Start a new sample attempt','student-new-attempt',{},'quiet')}</div>`)+policy(s,h)+`</div><div class="stack">`+
- h.card('Questions and points',s.assignment.questions.map(q=>h.row('Question '+q.id,'Show your reasoning',h.pill(q.max+' points'))).join(''))+
- h.card('Submission record',h.row('Attempt '+s.submission.attempt,s.submission.pages.length+' pages · '+assignmentStatus(s),s.submission.status==='received'?h.go('View receipt','S08','quiet'):h.pill('Draft','warning')))+`</div></div>`);
-WB.reg('S06','Scan pages','Student · mobile web',(s,h)=>h.head('A clear page, then the next.','Use sample pages to explore the capture experience. No camera access is requested.',h.go('Review pages','S07'))+
- `<div class="columns"><div>${h.paper(s.submission.pages.at(-1)?.tag||'3')}<p class="small muted" style="margin-top:10px">Keep all four corners visible. Check focus and lighting before adding the page.</p></div><div class="stack">`+
- h.card('Your pages',h.stats([[s.submission.pages.length,'selected pages'],[missing(s).length,'questions still to tag']])+`<div class="actions">${h.btn('Add sample page','student-capture',{},'primary')}${h.btn('Load four sample pages','student-load-pages')}${h.btn('Use sample PDF instead','student-pdf')}</div>`)+
- h.card('A route for every device',`<p>Already have a PDF? Use the file route. On a phone without camera access, continue with existing pages.</p><div class="actions" style="margin-top:15px">${h.btn('Try no-camera state','student-no-camera')}${h.go('Organize & review','S07','primary')}</div>`)+(s.course.noCamera?h.notice('Camera is unavailable','You can still use a PDF or existing pages. This preview uses samples rather than opening your camera.','warning'):'')+`</div></div>`);
-WB.reg('S07','Review submission','Student',(s,h)=>h.head('Your pages, in your order.','Review the exact work and question tags before submitting.',h.go('Add pages','S06'))+
- (s.submission.error?h.notice('Check your submission',s.submission.error,'error'):'')+
- (s.submission.pages.length?`<div class="page-collection">${s.submission.pages.map((p,i)=>`<section class="page-tile"><h5>Page ${i+1}</h5>${h.paper(p.tag||'?',p.rotation)}${h.field('Questions on this page','submission.pages.'+i+'.tag',p.tag)}<div class="actions">${h.btn('Rotate','student-rotate',{id:p.id})}${h.btn('Move earlier','student-move',{id:p.id})}${h.btn('Remove','student-remove',{id:p.id},'quiet')}</div></section>`).join('')}</div>`:h.notice('No pages selected','Return to capture or use the sample PDF to add your work.','warning'))+
- h.stats([[s.submission.pages.length,'pages to send'],[missing(s).length?missing(s).join(', '):'All covered','questions still missing']])+h.notice('Review and consent','Only these selected sample pages and tags belong to this attempt. This local preview sends nothing.')+
- `<div class="actions">${h.btn('Submit sample work','student-submit',{},'primary')}${h.btn('Try interrupted submission','student-interrupt')}${h.btn('Use sample PDF','student-pdf')}</div>`);
-WB.reg('S08','Submission receipt','Student',(s,h)=>h.head(s.submission.status==='received'?'Your work is received.':s.submission.status==='interrupted'?'Your pages are safe here.':'Your submission is not sent yet.','PHYS 110 · '+s.assignment.title)+
- (s.submission.status==='received'?`<div class="columns">${h.card('Submission receipt',h.row('Reference',s.submission.receipt,h.pill('Received','success'))+h.row('Attempt',String(s.submission.attempt))+h.row('Pages received',String(s.submission.pages.length))+h.row('Questions',Array.from(tags(s)).join(', '))+h.row('Received at','15 Oct 2026 · 10:42 am EDT'))}${h.card('What happens next',`<p>Dr. Reyes and the course team review your work. Feedback appears here when it is released.</p><div class="actions" style="margin-top:18px">${h.go('See feedback status','S09','primary')}${h.go('View your work','S07')}</div><p class="small muted" style="margin-top:16px">This is a receipt for the fictional example. No file or email was sent.</p>`)}</div>`:
- h.notice(s.submission.status==='interrupted'?'Connection interrupted':'Review is still needed',s.submission.status==='interrupted'?'The attempt is not received. Your selected pages and tags are still in this example; retry without starting over.':'A draft is not a receipt. Check your pages and submit to see the result.','warning')+`<div class="actions">${h.btn('Retry sample submission','student-submit',{},'primary')}${h.go('Review pages','S07')}</div>`));
-WB.reg('S10','Quiz attempt','Student',(s,h)=>(!s.course.quizPublished||s.teaching?.coursePublished===false)?h.head('Quiz not published','Your instructor is preparing this assessment.'):h.head('Quiz 3 · Forces and motion','Question 1 preview · '+(s.teaching?.quizMinutes||25)+' minutes, with an approved +6-minute allowance',h.go('Course home','S03'))+
- h.notice('Assessment AI policy','Prohibited during this attempt. You may review the course explanation and ask a member of staff for help before starting.')+
- (s.course.quizSubmitted?h.card('Attempt submitted',h.row('Question 1',s.course.quizAnswer||'No answer selected',h.pill('Saved','success'))+h.notice('Feedback is held','Your response is saved in this example. The instructor controls result release.')+h.btn('Try a fresh practice attempt','student-quiz-reset')):
- h.card('Question 1 of 1',`<p>At the highest point of a projectile’s flight, what is its vertical acceleration? Ignore air resistance and take upward as positive.</p>${['0 m/s²','−9.81 m/s²','+9.81 m/s²'].map(x=>`<label class="quiz-option"><input type="radio" name="quiz-s10" value="${h.e(x)}" data-bind="course.quizAnswer"${s.course.quizAnswer===x?' checked':''}><span>${h.e(x)}</span></label>`).join('')}<p class="status-line">${s.course.quizAnswer?'Answer saved in this example.':'Choose an answer. Your work stays available while you navigate.'}</p><div class="actions">${h.btn(s.course.quizFlag?'Remove flag':'Flag for review','student-quiz-flag')}${h.btn('Review and submit attempt','student-quiz-submit',{},'primary')}</div>`)));
-WB.reg('S11','Course conversation','Student / instructor',(s,h)=>h.head('A place for the conversation.','PHYS 110 · announcements and discussion',h.go('Course home','S03'))+
- h.tabs([['discussion','Discussion'],['announcements','Announcements']],'course.conversation',s.course.conversation||'discussion')+
- (s.course.conversation==='announcements'?h.card('Keep your axes visible',`<p class="small muted">Dr. Diane Reyes · published 14 Oct, 3:10 pm</p><p style="margin-top:15px">In this week’s solutions, state your positive direction before substituting values. A consistent setup helps you check every sign.</p>${h.row('Quiz 3 is available','Practice your setup before Friday',h.go('Open quiz','S10'))}`):
- h.card('Why is acceleration still downward at the top?',`<p class="small muted">Carmen Ortiz · Module 3 question</p><p style="margin-top:13px">The upward motion stops for a moment at the top. Does that mean gravity stops too?</p>${h.row('Dr. Diane Reyes','Velocity can be zero while its rate of change is not. The gravitational force still points downward.')}${s.course.replies.map(x=>h.row('Aisha Rahman',x,h.pill('Posted','success'))).join('')}${h.area('Your reply','course.reply',s.course.reply)}${h.btn('Post reply in example','student-reply',{},'primary')}`)));
-WB.reg('S12','Calendar','Student / faculty',(s,h)=>{const c=s.campus;const physicsTime=c?.scheduleApplied?(c.meeting?.time||c.proposal.selectedTime):'09:00';const physicsRoom=c?.scheduleApplied?(c.meeting?.room||c.proposal.selectedRoom):'Hollis Hall 104';const entries=[['Mon / Wed / Fri',physicsTime+' · PHYS 110',physicsRoom,'class'],['Tue / Thu','10:30 · MATH 220','Keene Center 212','class'],['Mon / Wed','13:00 · WRIT 140','Emery Hall 203','class'],[WB.deadline(s.assignment.due),s.assignment.title,assignmentStatus(s)+' · due date','assignment']];if(c?.eventPublished)entries.push(['Wed 21 Oct',c.event.time+' · '+c.event.title,c.roomStatus==='confirmed'?c.event.room+' · room confirmed':'Room confirmation pending','event']);return h.head('Your calendar','Fall 2026 · times shown in America/New_York',h.go('Find a room','S26'))+h.tabs([['list','Agenda'],['week','Week overview']],'course.calendarView',s.course.calendarView||'list')+`<label class="check-row"><input type="checkbox" data-bind="course.hidePhysics"${s.course.hidePhysics?' checked':''}> Hide PHYS 110 meetings</label>`+(s.course.calendarView==='week'?h.table('Weekly academic rhythm',['Day','Time and work','Place / status'],entries.filter(x=>!s.course.hidePhysics||!x[1].includes('PHYS 110')).map(x=>x.slice(0,3).map(h.e))):`<div class="calendar-list">${entries.filter(x=>!s.course.hidePhysics||!x[1].includes('PHYS 110')).map(x=>`<div class="calendar-entry"><time>${h.e(x[0])}</time><div><strong>${h.e(x[1])}</strong><p>${h.e(x[2])}</p></div></div>`).join('')}</div>`)+h.notice('A due date is not a class meeting','Coursework deadlines, academic meetings and campus events keep their own status. Requested rooms are never shown as confirmed.');});
-WB.reg('S13','Updates','Student',(s,h)=>h.head('Updates you can act on.','Course notices and campus changes, with a route back to the work.')+`<div class="columns"><div class="stack">`+
- h.card('Your updates',h.row('Problem Set 4',s.assessment.released.includes('aisha')?'Feedback released':'Feedback awaiting release',h.go('Open feedback','S09','quiet'))+h.row('Physics Society','Room and RSVP status are shown on the event',h.go('View event','S28','quiet'))+h.row('Course announcement','Keep your axes visible',h.go('Read announcement','S11','quiet')))+`</div><div>`+
- h.card('Your preferences',h.select('Course digest','course.prefs',s.course.prefs,['Daily digest','As updates arrive','Weekly summary'])+`<label class="check-row"><input type="checkbox" data-bind="course.quiet"${s.course.quiet?' checked':''}> Quiet hours · 10 pm–7 am</label>`+h.notice('Preferences stay local','These controls illustrate the planned experience. This page sends no push, email or SMS.'))+`</div></div>`);
-WB.actions['student-day-state']=(s,p)=>{s.course.dayState=p.value;};
-WB.actions['student-course-summary']=(s,p)=>{s.course.summary=p.value;};
-WB.actions['student-syllabus']=(s)=>{s.course.material='syllabus';return {go:'S04'};};
-WB.actions['student-read']=(s)=>{s.course.read=!s.course.read;return {message:s.course.read?'Reading marked complete.':'Reading marked incomplete.'};};
-WB.actions['student-new-attempt']=(s)=>{s.submission.attempt++;s.submission.status='draft';s.submission.pages=[];s.submission.error='';s.assessment.graded=s.assessment.graded.filter(x=>x!=='aisha');s.assessment.released=s.assessment.released.filter(x=>x!=='aisha');return {go:'S06',message:'A fresh sample attempt is ready. Earlier feedback is held until this work is reviewed.'};};
-WB.actions['student-load-pages']=(s)=>{WB.beginDraft(s);s.submission.pages=WB.clone(WB.defaults.submission.pages);s.submission.status='draft';s.submission.error='';return {message:'Four sample pages added. Review the question tags before submitting.'};};
-WB.actions['student-capture']=(s)=>{WB.beginDraft(s);const id=Math.max(0,...s.submission.pages.map(x=>x.id))+1;s.submission.pages.push({id,tag:'',rotation:0});s.submission.status='draft';return {message:'Sample page added. Tag its question before submitting.'};};
-WB.actions['student-pdf']=(s)=>{WB.beginDraft(s);s.submission.pages=WB.clone(WB.defaults.submission.pages);s.submission.method='PDF';s.submission.status='draft';s.submission.error='';return {go:'S07',message:'A four-page sample PDF is ready for review. No personal file was opened.'};};
-WB.actions['student-no-camera']=(s)=>{s.course.noCamera=!s.course.noCamera;};
-WB.actions['student-rotate']=(s,p)=>{WB.beginDraft(s);const page=s.submission.pages.find(x=>x.id===Number(p.id));if(page)page.rotation=(page.rotation+90)%360;s.submission.status='draft';};
-WB.actions['student-move']=(s,p)=>{WB.beginDraft(s);const i=s.submission.pages.findIndex(x=>x.id===Number(p.id));if(i>0)[s.submission.pages[i-1],s.submission.pages[i]]=[s.submission.pages[i],s.submission.pages[i-1]];s.submission.status='draft';};
-WB.actions['student-remove']=(s,p)=>{WB.beginDraft(s);s.submission.pages=s.submission.pages.filter(x=>x.id!==Number(p.id));s.submission.status='draft';};
-WB.actions['student-interrupt']=(s)=>{s.submission.status='interrupted';s.submission.interrupted=true;return {go:'S08',message:'Interrupted example: no receipt is issued. Pages and tags are preserved.'};};
-WB.actions['student-submit']=(s)=>{if(!s.assignment.published||s.teaching?.coursePublished===false)return {go:'S05',message:'This assignment is not published. Your draft is preserved.'};const required=missing(s);const allowed=new Set(s.assignment.questions.map(q=>q.id));const invalid=Array.from(tags(s)).some(x=>!allowed.has(x));if(!s.submission.pages.length||required.length||invalid||s.submission.pages.some(x=>!x.tag.trim())){s.submission.error=!s.submission.pages.length?'Add at least one page.':invalid?'Use only the listed question identifiers: 1a, 1b, 2, 3, 4.':'Tag all pages and cover questions '+(required.length?required.join(', '):'shown in the assignment')+'.';return {go:'S07',message:'Review the missing question tags.'};}s.submission.status='received';s.submission.error='';s.submission.interrupted=false;s.submission.receipt='AH-PHYS110-'+String(s.submission.attempt).padStart(3,'0');return {go:'S08',message:'The sample attempt is received. The receipt matches these pages and tags.'};};
-WB.actions['student-quiz-flag']=(s)=>{s.course.quizFlag=!s.course.quizFlag;return {message:s.course.quizFlag?'Question flagged for review.':'Review flag removed.'};};
-WB.actions['student-quiz-submit']=(s)=>{if(!s.course.quizPublished||s.teaching?.coursePublished===false)return {go:'S10',message:'This quiz is not published.'};if(!s.course.quizAnswer)return {message:'Choose an answer before submitting the practice attempt.'};s.course.quizSubmitted=true;return {message:'Practice attempt submitted. Feedback release is controlled separately.'};};
-WB.actions['student-quiz-reset']=(s)=>{s.course.quizSubmitted=false;s.course.quizAnswer='';s.course.quizFlag=false;};
-WB.actions['student-reply']=(s)=>{if(!s.course.reply.trim())return {message:'Write a reply before posting.'};s.course.replies.push(s.course.reply.trim());s.course.reply='';return {message:'Reply posted in the fictional course.'};};
+(function () {
+  "use strict";
+  const W = window.WB,
+    h = W.h,
+    e = W.e;
+  const dates = (s) => W.effectiveDates(s);
+  const status = (s) =>
+    !s.assignment.published
+      ? "Not published"
+      : s.submission.status === "received"
+        ? "Received"
+        : s.submission.status === "interrupted"
+          ? "Retry needed"
+          : "Draft · not submitted";
+  const available = (s) =>
+    s.assignment.published && s.teaching?.coursePublished !== false;
+  const tagged = (s) =>
+    new Set(
+      s.submission.pages
+        .flatMap((p) =>
+          String(p.tag)
+            .split(",")
+            .map((x) => x.trim()),
+        )
+        .filter(Boolean),
+    );
+  const missing = (s) =>
+    s.assignment.questions.filter((q) => !tagged(s).has(q.id)).map((q) => q.id);
+  const tabs = () =>
+    `<nav class="segmented" aria-label="Student views">${h.go("Today", "S01", "quiet")}${h.go("Courses", "S02", "quiet")}${h.go("Calendar", "S12", "quiet")}${h.go("Updates", "S13", "quiet")}</nav>`;
+  const unavailable = (what) =>
+    h.head(
+      what + " not published",
+      "Your instructor is preparing this coursework.",
+    ) + h.go("Return to course", "S03");
+  const heading = (s) =>
+    h.head(
+      "Good morning, Aisha.",
+      "Thursday, 15 October · your sample campus day",
+      h.go("Your calendar", "S12"),
+    ) + tabs();
+  const eventRow = (s) =>
+    s.campus?.eventPublished
+      ? h.row(
+          s.campus.event.title,
+          s.campus.event.date + " · " + s.campus.event.time,
+          h.go("Explore event", "S28", "quiet"),
+        )
+      : h.row(
+          "Campus events",
+          "No published event in this example",
+          h.go("Explore campus life", "S29", "quiet"),
+        );
+  W.reg(
+    "S01",
+    "Today",
+    "Student",
+    (s) =>
+      heading(s) +
+      (s.course.dayState === "empty"
+        ? h.notice(
+            "Nothing needs your attention",
+            "This quiet-day scenario has no upcoming tasks or meetings. Your courses and support services remain available.",
+            "success",
+          ) + h.go("Browse courses", "S02")
+        : `<div class="columns"><div class="stack"><section class="student-focus"><span class="course-tag">PHYS 110</span><h4>${e(s.assignment.title)}</h4><p>Due ${e(W.deadline(dates(s).due))}</p><div class="actions">${h.pill(status(s), s.submission.status === "received" ? "success" : "warning")}${h.go("Open assignment", "S05", "primary")}</div></section>${h.card("Next class", h.row("MATH 220 · Linear Algebra", "10:30–11:45 am · Keene Center 212", h.pill("Thursday", "info")) + h.row("PHYS 110", W.meeting(s).time + "–" + W.meeting(s).endTime + " · " + W.meeting(s).room, h.go("View schedule", "S12")))}</div><div class="stack">${h.card("Campus, connected", eventRow(s) + h.row("Learning Support Center", "Physics study sessions and individual help", h.go("Find support", "S34")))}${h.card("Course updates", h.row(s.course.quizSubmitted ? "Quiz attempt submitted" : s.course.quizPublished ? "Quiz 3 is available" : "Quiz 3 is being prepared", "PHYS 110 · " + (s.course.quizSubmitted ? "Review the result status" : "Check the course assessment policy"), h.go("Open quiz", "S10")) + (s.assessment.released.includes("aisha") ? h.row("Your feedback is released", s.assignment.title, h.go("Read feedback", "S09")) : ""))}</div></div>`) +
+      (s.course.dayState === "delayed"
+        ? h.notice(
+            "Schedule source delayed",
+            "The meeting above is the last known local source snapshot. Last successful refresh: 15 Oct, 8:05 am. Check the source before planning a change.",
+            "warning",
+          )
+        : "") +
+      `<details class="scenario-tools"><summary>Explore another day</summary><div class="actions">${h.btn("Quiet day", "student-day-state", { value: "empty" })}${h.btn("Source delayed", "student-day-state", { value: "delayed" })}${h.btn("Usual day", "student-day-state", { value: "normal" })}</div></details>`,
+  );
+  W.reg(
+    "S02",
+    "Courses",
+    "Student",
+    (s) =>
+      h.head(
+        "Your courses",
+        "Fall 2026 · the same structure across subjects",
+        s.teaching?.studentPreview
+          ? h.go("Return to course builder", "S14")
+          : "",
+      ) +
+      tabs() +
+      h.tabs(
+        [
+          ["current", "Current term"],
+          ["past", "Past term"],
+        ],
+        "course.courseTerm",
+        s.course.courseTerm || "current",
+      ) +
+      (s.course.courseTerm === "past"
+        ? h.card(
+            "Spring 2026 archive",
+            h.row(
+              "MATH 120 · Calculus II",
+              "Read-only course archive · no open work",
+              h.pill("Completed", "success"),
+            ),
+          )
+        : h.card(
+            "PHYS 110 · Introductory Mechanics",
+            h.row(
+              "Dr. Diane Reyes",
+              W.meeting(s).days +
+                " · " +
+                W.meeting(s).time +
+                " · " +
+                W.meeting(s).room,
+              h.go("Open course", "S03", "primary"),
+            ) +
+              h.row(
+                s.assignment.title,
+                "Due " + W.deadline(dates(s).due),
+                h.pill(status(s)),
+              ),
+          ) +
+          h.card(
+            "MATH 220 · Linear Algebra",
+            h.row(
+              "Prof. Lena Foster",
+              "Tue / Thu · 10:30 am · Keene Center 212",
+              h.btn("Read next task", "student-course-summary", {
+                value: "math",
+              }),
+            ),
+          ) +
+          h.card(
+            "WRIT 140 · Academic Writing",
+            h.row(
+              "Prof. Jonah Brooks",
+              "Mon / Wed · 1:00 pm · Emery Hall 203",
+              h.btn("Read next task", "student-course-summary", {
+                value: "writing",
+              }),
+            ),
+          )) +
+      (s.course.summary
+        ? h.notice(
+            "Next course task",
+            s.course.summary === "math"
+              ? "Read the section on basis and dimension before Tuesday."
+              : "Revise the opening paragraph of your argument essay.",
+          )
+        : ""),
+  );
+  W.reg("S03", "Course home", "Student", (s) =>
+    s.teaching?.coursePublished === false
+      ? unavailable("Course")
+      : h.head(
+          "Introductory Mechanics",
+          "PHYS 110 · Dr. Diane Reyes · Fall 2026",
+          h.go("All courses", "S02"),
+        ) +
+        `<nav class="segmented" aria-label="Course navigation">${h.go("Modules", "S04", "primary")}${h.go("Assignment", "S05")}${h.go("Quiz", "S10")}${h.go("Discussion", "S11")}${h.go("Feedback", "S09")}</nav><div class="columns"><div class="stack">${h.card("This week", `<p>Describe motion with a clear coordinate system, solve for time and check the physical meaning of your result.</p>${h.go("Continue the module", "S04", "primary")}`)}${h.card("Course information", h.row("Syllabus and assessment policy", "Goals, office hours and grade categories", h.btn("Read syllabus", "student-syllabus")) + h.row("Class meetings", W.meeting(s).days + " · " + W.meeting(s).time + "–" + W.meeting(s).endTime + " · " + W.meeting(s).room))}</div><div class="stack">${h.card("Your next step", h.row(s.assignment.title, "Due " + W.deadline(dates(s).due), h.pill(status(s))) + h.go("Open assignment", "S05", "primary"))}${h.card("From Dr. Reyes", "<p>Keep your axes visible. State your positive direction before substituting values.</p>" + h.go("Read and discuss", "S11"))}</div></div>`,
+  );
+  function moduleReady(s, m) {
+    if (!m.published) return false;
+    if (m.releaseAt && W.localNow(s) < m.releaseAt) return false;
+    const prior = /module (\d)/i.exec(m.prerequisite || "");
+    return (
+      !prior ||
+      (s.course.completedModules || ["m1", "m2"]).includes("m" + prior[1])
+    );
+  }
+  W.reg("S04", "Modules & materials", "Student", (s) => {
+    if (s.teaching?.coursePublished === false) return unavailable("Course");
+    const modules = s.teaching?.modules || [
+        { id: "m3", title: "Projectile motion", published: true },
+      ],
+      m =
+        modules.find((x) => x.id === (s.course.activeModule || "m3")) ||
+        modules[0];
+    const ready = m && moduleReady(s, m);
+    return (
+      h.head(
+        "Your course materials",
+        "PHYS 110 · published modules and release conditions",
+        h.go("Course home", "S03"),
+      ) +
+      h.tabs(
+        [
+          ["reading", "Materials"],
+          ["syllabus", "Syllabus"],
+          ["alternative", "Text alternative"],
+        ],
+        "course.material",
+        s.course.material,
+      ) +
+      h.card(
+        "Course modules",
+        modules
+          .map((x) =>
+            h.row(
+              x.title,
+              x.prerequisite +
+                " · " +
+                (x.published ? x.release : "Instructor draft"),
+              moduleReady(s, x)
+                ? h.btn("Open module", "student-module", { id: x.id })
+                : h.pill(
+                    x.published ? "Not yet available" : "Unpublished",
+                    "warning",
+                  ),
+            ),
+          )
+          .join(""),
+      ) +
+      (s.course.material === "syllabus"
+        ? h.card(
+            "Course syllabus",
+            "<p>Instructor: Dr. Diane Reyes. Office hours: Tuesday, 2–3 pm, Hollis Hall 116.</p><p>Assessment: assignments 40%, labs 25%, quizzes 35%. Missing, ungraded and excused work are separate. Totals use released work only.</p><p>Request accommodations through the designated office. Course staff see the operational adjustment, not private documentation.</p>",
+          )
+        : !ready
+          ? h.notice(
+              "Material is not available",
+              m?.published
+                ? "Complete the prerequisite and wait for the release date."
+                : "This module is an instructor draft.",
+              "warning",
+            )
+          : h.card(
+              m.title,
+              `<div class="reading"><p>${m.id === "m3" ? "Horizontal velocity is constant without air resistance. Vertical acceleration is downward. Connect the two directions through the same time variable." : m.id === "m1" ? "Resolve vectors into components and state the units of every quantity." : "Use position, velocity and acceleration to describe motion along one axis."}</p><p><strong>Horizontal:</strong> x(t) = v₀ cos(θ) × t</p><p><strong>Vertical:</strong> y(t) = h + v₀ sin(θ) × t − ½gt²</p>${s.course.material === "alternative" ? "<p>Diagram description: a projectile leaves a raised platform. Its path curves downward. The x-axis points right, the y-axis points up, and gravity acts downward at all times.</p>" : ""}</div><div class="actions">${h.btn(s.course.read ? "Mark reading incomplete" : "Mark reading complete", "student-read")}${h.go("Try the quiz", "S10")}</div>`,
+            ))
+    );
+  });
+  W.reg("S05", "Assignment", "Student", (s) =>
+    !available(s)
+      ? unavailable("Assignment")
+      : h.head(
+          s.assignment.title,
+          "PHYS 110 · " +
+            s.assignment.questions.reduce((a, q) => a + q.max, 0) +
+            " points",
+          h.go("Course home", "S03"),
+        ) +
+        h.stats([
+          [W.deadline(dates(s).due), "Your due date"],
+          [W.deadline(dates(s).close), "Your close date"],
+          [status(s), "Current attempt"],
+        ]) +
+        (dates(s).due !== s.assignment.due
+          ? h.notice(
+              "Your approved allowance",
+              "General deadline: " +
+                W.deadline(s.assignment.due) +
+                ". Your operational allowance is applied above.",
+              "info",
+            )
+          : "") +
+        `<div class="columns"><div class="stack">${h.card("What to submit", "<p>Show your coordinate system, intermediate steps and units. Review all pages and question tags before sending your work.</p>" + `<div class="actions">${h.go(s.submission.status === "received" ? "Review received work" : "Scan sample pages", "S06", "primary")}${h.btn("Use a sample PDF", "student-pdf")}${h.btn("Start a new sample attempt", "student-new-attempt", {}, "quiet")}</div>`)}${h.notice("AI use for this assignment", W.academicPolicy(s))}${h.card("Assignment files", (s.assignment.attachments || []).map((a) => `<details><summary>${e(a.name)}</summary><p>${a.pages || 2} sample pages · ${a.accessible ? "Accessible text version available" : "Accessibility review required"}</p><p>${e(a.text || a.description || "Solve each listed question and explain the assumptions.")}</p></details>`).join("") || "<p>No attachment; instructions above are complete.</p>")}</div><div class="stack">${h.card("Questions and rubric", s.assignment.questions.map((q) => h.row("Question " + q.id, "Reasoning, method and units", h.pill(q.max + " points"))).join(""))}${h.card("Submission record", h.row("Attempt " + s.submission.attempt, s.submission.pages.length + " pages · " + status(s), s.submission.status === "received" ? h.go("View receipt", "S08") : h.pill("Draft", "warning")))}</div></div>`,
+  );
+  W.reg(
+    "S06",
+    "Scan pages",
+    "Student · mobile web",
+    (s) =>
+      h.head(
+        "A clear page, then the next.",
+        "Sample capture only. No camera or private file access is requested.",
+        h.go("Review pages", "S07"),
+      ) +
+      `<div class="columns"><div>${h.paper(s.submission.pages.at(-1)?.tag || "3")}</div><div class="stack">${h.card(
+        "Your pages",
+        h.stats([
+          [s.submission.pages.length, "Selected pages"],
+          [missing(s).length, "Questions to tag"],
+        ]) +
+          `<div class="actions">${h.btn("Add sample page", "student-capture", {}, "primary")}${h.btn("Load four sample pages", "student-load-pages")}${h.btn("Use sample PDF", "student-pdf")}</div>`,
+      )}${h.card("A route for every device", "<p>Keep all four corners visible. Check focus and lighting. A PDF or existing page route stays available without a camera.</p>" + h.btn("Try no-camera state", "student-no-camera") + h.go("Organize and review", "S07", "primary"))}${s.course.noCamera ? h.notice("Camera is unavailable", "Continue with the sample PDF or existing sample pages.", "warning") : ""}</div></div>`,
+  );
+  W.reg(
+    "S07",
+    "Review submission",
+    "Student",
+    (s) =>
+      h.head(
+        "Your pages, in your order.",
+        "Editing received work starts a new draft attempt. Earlier receipt history stays separate.",
+        h.go("Add pages", "S06"),
+      ) +
+      (s.submission.error
+        ? h.notice("Check your submission", s.submission.error, "error")
+        : "") +
+      (s.submission.pages.length
+        ? `<div class="page-collection">${s.submission.pages.map((p, i) => `<section class="page-tile"><h4>Page ${i + 1}</h4>${h.paper(p.tag || "?", p.rotation, p.owner || "aisha", p.workVariant)}${h.field("Questions on page " + (i + 1), "submission.pages." + i + ".tag", p.tag)}<div class="actions">${h.btn("Rotate page " + (i + 1), "student-rotate", { id: p.id })}${h.btn("Move page " + (i + 1) + " earlier", "student-move", { id: p.id })}${h.btn("Remove page " + (i + 1), "student-remove", { id: p.id }, "quiet")}</div></section>`).join("")}</div>`
+        : h.notice(
+            "No pages selected",
+            "Add sample pages or use the sample PDF.",
+            "warning",
+          )) +
+      h.stats([
+        [s.submission.pages.length, "Pages to send"],
+        [
+          missing(s).length ? missing(s).join(", ") : "All covered",
+          "Questions missing",
+        ],
+      ]) +
+      h.notice(
+        "Review this exact attempt",
+        "Only the selected sample pages and tags belong to this attempt. This offline preview sends nothing.",
+      ) +
+      `<div class="actions">${h.btn("Submit sample work", "student-submit", {}, "primary")}${h.btn("Try interrupted submission", "student-interrupt")}${h.btn("Use sample PDF", "student-pdf")}</div>`,
+  );
+  W.reg(
+    "S08",
+    "Submission receipt",
+    "Student",
+    (s) =>
+      h.head(
+        s.submission.status === "received"
+          ? "Your work is received."
+          : "Your submission is not received yet.",
+        "PHYS 110 · " + s.assignment.title,
+      ) +
+      (s.submission.status === "received"
+        ? `<div class="columns">${h.card("Submission receipt", h.row("Reference", s.submission.receipt, h.pill("Received", "success")) + h.row("Attempt", String(s.submission.attempt)) + h.row("Pages received", String(s.submission.pages.length)) + h.row("Question tags", [...tagged(s)].join(", ")) + h.row("Received in sample", s.submission.receivedAt || "15 Oct 2026 · 10:42 am ET"))}${h.card("What happens next", '<p>The course team reviews the work. Feedback appears only after release.</p><div class="actions">' + h.go("See feedback status", "S09", "primary") + h.go("Review these pages", "S07") + "</div><p>No real file or email was sent.</p>")}</div>`
+        : h.notice(
+            s.submission.status === "interrupted"
+              ? "Connection interrupted"
+              : "Review is needed",
+            s.submission.error ||
+              "No receipt has been issued. Your pages and tags remain here; review or retry.",
+            "warning",
+          ) +
+          h.btn("Retry sample submission", "student-submit", {}, "primary") +
+          h.go("Review pages", "S07")) +
+      (s.submission.history?.length
+        ? h.card(
+            "Earlier attempt history",
+            s.submission.history
+              .map((x) =>
+                h.row(
+                  "Attempt " + x.attempt,
+                  x.receipt + " · " + x.pages.length + " received pages",
+                ),
+              )
+              .join(""),
+          )
+        : ""),
+  );
+  function quizItems(s) {
+    return (
+      s.teaching?.quizItems || [
+        {
+          id: "qb-1",
+          type: "Multiple choice",
+          prompt: "At the highest point, what is the vertical acceleration?",
+          options: ["0 m/s²", "−9.81 m/s²", "+9.81 m/s²"],
+          points: 2,
+        },
+      ]
+    );
+  }
+  function resultsAvailable(s) {
+    return (
+      s.course.quizResultReleased ||
+      s.teaching?.quizFeedback === "After each attempt" ||
+      (s.teaching?.quizFeedback === "After the due date" &&
+        W.localNow(s) > dates(s).due)
+    );
+  }
+  W.reg("S10", "Quiz attempt", "Student", (s) => {
+    if (!s.course.quizPublished || s.teaching?.coursePublished === false)
+      return unavailable("Quiz");
+    const items = quizItems(s),
+      count = s.course.quizAttemptCount || 0,
+      limit = s.teaching?.quizAttempts || "2",
+      done = s.course.quizSubmitted;
+    return (
+      h.head(
+        s.teaching?.quizTitle || "Motion check: projectile reasoning",
+        "Attempt " +
+          (done ? count : count + 1) +
+          " · " +
+          (s.teaching?.quizMinutes || 25) +
+          " minutes + " +
+          dates(s).extraMinutes +
+          " approved extra minutes",
+        h.go("Course home", "S03"),
+      ) +
+      h.notice(
+        "Assessment AI policy",
+        "Prohibited during this quiz. This local demonstration has no running exam timer or remote autosave.",
+      ) +
+      h.stats([
+        [items.length, "Authored questions"],
+        [limit, "Allowed attempts"],
+        [s.teaching?.quizFeedback || "Instructor release", "Result policy"],
+      ]) +
+      (done
+        ? h.card(
+            "Attempt submitted",
+            items
+              .map((q) =>
+                h.row(
+                  q.prompt,
+                  (s.course.quizAnswers?.[q.id] || "No answer") +
+                    (resultsAvailable(s) && q.answer
+                      ? " · Instructor reference: " + q.answer
+                      : ""),
+                ),
+              )
+              .join("") +
+              h.notice(
+                resultsAvailable(s)
+                  ? "Results are available"
+                  : "Feedback is held",
+                resultsAvailable(s)
+                  ? "Your response record is available for review. Written/numeric responses require instructor review; no automatic final grade is implied."
+                  : "Release follows the policy shown above.",
+                resultsAvailable(s) ? "success" : "info",
+              ) +
+              (limit === "Unlimited" || count < Number(limit)
+                ? h.btn("Start another allowed attempt", "student-quiz-reset")
+                : "<p>You have used all allowed attempts.</p>"),
+          )
+        : h.card(
+            s.course.quizReview
+              ? "Review before submitting"
+              : "Your quiz questions",
+            items
+              .map((q, i) => {
+                const path = "course.quizAnswers." + q.id,
+                  value = s.course.quizAnswers?.[q.id] || "";
+                return `<section class="quiz-question"><h4>${i + 1}. ${e(q.prompt)}</h4><p class="small muted">${e(q.points)} points · ${e(q.type)}</p>${s.course.quizReview ? `<p>${e(value || "No answer yet")}</p>` : q.type === "Multiple choice" ? `<fieldset><legend class="sr-only">${e(q.prompt)}</legend>${(q.options || ["0 m/s²", "−9.81 m/s²", "+9.81 m/s²"]).map((x, j) => `<label class="quiz-option"><input id="S10-${e(q.id)}-${j}" name="quiz-${e(q.id)}" type="radio" data-bind="${e(path)}" value="${e(x)}"${value === x ? " checked" : ""}>${e(x)}</label>`).join("")}</fieldset>` : q.type === "Numeric response" ? h.field("Your numeric response", path, value, "number") : h.area("Your explanation", path, value)}</section>`;
+              })
+              .join("") +
+              `<div class="actions">${h.btn(s.course.quizFlag ? "Remove review flag" : "Flag for review", "student-quiz-flag")}${s.course.quizReview ? h.btn("Return to answers", "student-quiz-edit") + h.btn("Confirm and submit attempt", "student-quiz-submit", {}, "primary") : h.btn("Review answers", "student-quiz-review", {}, "primary")}</div><p class="status-line">Answers stay in this page while you navigate. Reload resets the sample.</p>`,
+          ))
+    );
+  });
+  W.reg(
+    "S11",
+    "Course conversation",
+    "Student / instructor",
+    (s) =>
+      h.head(
+        "Course conversation",
+        "PHYS 110 · a shared place for announcements and discussion",
+        h.go("Course home", "S03"),
+      ) +
+      h.tabs(
+        [
+          ["discussion", "Discussion"],
+          ["announcements", "Announcements"],
+        ],
+        "course.conversation",
+        s.course.conversation || "discussion",
+      ) +
+      (s.course.conversation === "announcements"
+        ? h.card(
+            "Keep your axes visible",
+            "<p>Dr. Diane Reyes · published 14 Oct, 3:10 pm</p><p>State your positive direction before substituting values. Check that every term has consistent units.</p>" +
+              h.go("Open assignment", "S05"),
+          )
+        : h.card(
+            "Why is acceleration nonzero at the top?",
+            "<p>Ben Kowalski: If vertical velocity is zero at the highest point, why does gravity still count?</p><p>Dr. Reyes: Velocity describes motion now; acceleration describes how it changes. Gravity acts throughout the flight.</p>" +
+              (s.course.replies || [])
+                .map((x) => h.row("Aisha Rahman", x))
+                .join("") +
+              h.area("Your reply", "course.reply", s.course.reply) +
+              h.btn("Post reply", "student-reply", {}, "primary"),
+          )),
+  );
+  W.reg("S12", "Calendar", "Student / faculty", (s) => {
+    const m = W.meeting(s),
+      c = s.campus,
+      rows = [
+        ["Mon / Wed / Fri", m.time + "–" + m.endTime + " · PHYS 110", m.room],
+        ["Tue / Thu", "10:30–11:45 · MATH 220", "Keene Center 212"],
+        ["Mon / Wed", "13:00–14:15 · WRIT 140", "Emery Hall 203"],
+        [
+          W.deadline(dates(s).due),
+          s.assignment.title,
+          status(s) + " · coursework deadline",
+        ],
+      ];
+    const personal = W.personalCampusEvent ? W.personalCampusEvent(s) : null;
+    if (personal)
+      rows.push([
+        personal.date,
+        personal.time + " · " + personal.title,
+        personal.room +
+          " · " +
+          (personal.status === "cancelled"
+            ? "This occurrence is cancelled"
+            : personal.roomStatus === "confirmed"
+              ? "Room confirmed"
+              : "Room confirmation pending"),
+      ]);
+    const filtered = rows.filter(
+      (x) => !s.course.hidePhysics || !x[1].includes("PHYS 110"),
+    );
+    return (
+      h.head(
+        "Your calendar",
+        "Personal schedule · all sample times in America/New_York",
+        h.go("Find a room", "S26"),
+      ) +
+      h.tabs(
+        [
+          ["list", "Agenda"],
+          ["week", "Week overview"],
+        ],
+        "course.calendarView",
+        s.course.calendarView || "list",
+      ) +
+      `<label class="check-row"><input id="S12-hide-physics" type="checkbox" data-bind="course.hidePhysics"${s.course.hidePhysics ? " checked" : ""}> Hide PHYS 110 meetings</label>` +
+      (s.course.calendarView === "week"
+        ? h.table(
+            "Weekly academic rhythm",
+            ["When", "Work / meeting", "Place / state"],
+            filtered.map((row) => row.map(e)),
+          )
+        : `<div class="calendar-list">${filtered.map((row) => `<div class="calendar-entry"><time>${e(row[0])}</time><div><strong>${e(row[1])}</strong><p>${e(row[2])}</p></div></div>`).join("")}</div>`) +
+      h.notice(
+        "Personal events follow participation",
+        "Confirmed RSVPs appear here. Discovery still lists other published campus events; waitlisted events do not reserve a place.",
+      ) +
+      h.go("Find campus events", "S28")
+    );
+  });
+  W.reg(
+    "S13",
+    "Updates & preferences",
+    "Student",
+    (s) =>
+      h.head(
+        "Updates that lead somewhere",
+        "Coursework, feedback and campus changes, with a clear destination.",
+      ) +
+      h.card(
+        "Current updates",
+        h.row(
+          s.assignment.title,
+          status(s) + " · due " + W.deadline(dates(s).due),
+          h.go("Open work", "S05"),
+        ) +
+          (s.assessment.released.includes("aisha")
+            ? h.row(
+                "Feedback released",
+                "PHYS 110 · review before your next problem set",
+                h.go("Read feedback", "S09"),
+              )
+            : "") +
+          (s.campus?.rsvp === "confirmed"
+            ? h.row(
+                s.campus.event.title,
+                "Your place is confirmed",
+                h.go("View event", "S28"),
+              )
+            : "") +
+          h.row(
+            "Read state",
+            s.course.updatesRead
+              ? "All current updates marked read"
+              : "Unread updates",
+            h.btn("Mark current updates read", "student-updates-read"),
+          ),
+      ) +
+      h.card(
+        "Delivery preferences",
+        h.select("Frequency", "course.prefs", s.course.prefs, [
+          "Daily digest",
+          "Each update",
+          "Weekly summary",
+        ]) +
+          h.select(
+            "Preferred channel",
+            "course.channel",
+            s.course.channel || "In app",
+            ["In app", "Email digest"],
+          ) +
+          `<label class="check-row"><input id="S13-quiet" type="checkbox" data-bind="course.quiet"${s.course.quiet ? " checked" : ""}> Quiet period: 10 pm–7 am</label>` +
+          h.notice(
+            "Preference preview only",
+            "This page does not send email or push notifications. Important policy exceptions would be defined with the institution.",
+          ),
+      ),
+  );
+  const act = W.actions;
+  act["student-day-state"] = (s, p) => {
+    s.course.dayState = p.value;
+  };
+  act["student-course-summary"] = (s, p) => {
+    s.course.summary = p.value;
+  };
+  act["student-syllabus"] = (s) => {
+    s.course.material = "syllabus";
+    return { go: "S04" };
+  };
+  act["student-module"] = (s, p) => {
+    const m = s.teaching?.modules.find((x) => x.id === p.id);
+    if (!m || !moduleReady(s, m))
+      return { message: "This module is not available." };
+    s.course.activeModule = m.id;
+    s.course.material = "reading";
+    return { go: "S04" };
+  };
+  act["student-read"] = (s) => {
+    s.course.read = !s.course.read;
+    const id = s.course.activeModule || "m3",
+      done = new Set(s.course.completedModules || ["m1", "m2"]);
+    if (s.course.read) done.add(id);
+    else done.delete(id);
+    s.course.completedModules = [...done];
+    return {
+      message: s.course.read
+        ? "Module reading completed; the prerequisite record is updated."
+        : "Module reading marked incomplete.",
+    };
+  };
+  act["student-new-attempt"] = (s) => {
+    if (s.submission.status === "received") W.beginDraft(s);
+    else s.submission.attempt++;
+    s.submission.status = "draft";
+    s.submission.pages = [];
+    s.submission.error = "";
+    return {
+      go: "S06",
+      message: "New sample attempt ready. Earlier receipt history is separate.",
+    };
+  };
+  act["student-load-pages"] = (s) => {
+    W.beginDraft(s);
+    s.submission.pages = W.clone(W.defaults.submission.pages);
+    s.submission.error = "";
+    return { message: "Four sample pages added. Review their tags." };
+  };
+  act["student-capture"] = (s) => {
+    W.beginDraft(s);
+    s.submission.pages.push({
+      id: Math.max(0, ...s.submission.pages.map((p) => p.id)) + 1,
+      tag: "",
+      rotation: 0,
+      owner: "aisha",
+    });
+    return { message: "Page added. Tag the question before submitting." };
+  };
+  act["student-pdf"] = (s) => {
+    W.beginDraft(s);
+    s.submission.pages = W.clone(W.defaults.submission.pages);
+    s.submission.method = "PDF";
+    s.submission.error = "";
+    return {
+      go: "S07",
+      message: "Sample PDF ready. No personal file was opened.",
+    };
+  };
+  act["student-no-camera"] = (s) => {
+    s.course.noCamera = !s.course.noCamera;
+  };
+  act["student-rotate"] = (s, p) => {
+    W.beginDraft(s);
+    const page = s.submission.pages.find((x) => x.id === Number(p.id));
+    if (page) page.rotation = (page.rotation + 90) % 360;
+  };
+  act["student-move"] = (s, p) => {
+    const i = s.submission.pages.findIndex((x) => x.id === Number(p.id));
+    if (i <= 0) return { message: "This page is already first." };
+    W.beginDraft(s);
+    [s.submission.pages[i - 1], s.submission.pages[i]] = [
+      s.submission.pages[i],
+      s.submission.pages[i - 1],
+    ];
+  };
+  act["student-remove"] = (s, p) => {
+    W.beginDraft(s);
+    s.submission.pages = s.submission.pages.filter(
+      (x) => x.id !== Number(p.id),
+    );
+  };
+  act["student-interrupt"] = (s) => {
+    if (s.submission.status === "received") W.beginDraft(s);
+    s.submission.status = "interrupted";
+    return {
+      go: "S08",
+      message: "Interrupted: no receipt issued; pages and tags preserved.",
+    };
+  };
+  act["student-submit"] = (s) => {
+    if (!available(s))
+      return { go: "S05", message: "This assignment is not published." };
+    if (W.localNow(s) > dates(s).close) {
+      s.submission.error =
+        "This attempt is closed. Contact your instructor about an allowance.";
+      return { go: "S08", message: s.submission.error };
+    }
+    const invalid = [...tagged(s)].some(
+      (q) => !s.assignment.questions.some((x) => x.id === q),
+    );
+    if (!s.submission.pages.length || missing(s).length || invalid) {
+      s.submission.error = !s.submission.pages.length
+        ? "Add at least one page."
+        : invalid
+          ? "Use listed question identifiers only."
+          : "Tag all required questions: " + missing(s).join(", ");
+      return {
+        go: "S07",
+        message: s.submission.error,
+        errorPath: s.submission.pages.length ? "submission.pages.0.tag" : null,
+      };
+    }
+    s.submission.status = "received";
+    s.submission.error = "";
+    s.submission.receipt =
+      "AH-PHYS110-" + String(s.submission.attempt).padStart(3, "0");
+    s.submission.receivedAt = W.deadline(W.localNow(s));
+    return {
+      go: "S08",
+      message: "Sample work received. These pages and tags match this receipt.",
+    };
+  };
+  act["student-quiz-flag"] = (s) => {
+    s.course.quizFlag = !s.course.quizFlag;
+  };
+  act["student-quiz-review"] = (s) => {
+    s.course.quizReview = true;
+    return { message: "Review your answers before confirming submission." };
+  };
+  act["student-quiz-edit"] = (s) => {
+    s.course.quizReview = false;
+  };
+  act["student-quiz-submit"] = (s) => {
+    if (s.course.quizSubmitted)
+      return { message: "This attempt is already submitted." };
+    if (!s.course.quizPublished || s.teaching?.coursePublished === false)
+      return { go: "S10", message: "Quiz is not published." };
+    if (!s.course.quizReview) return { message: "Review your answers first." };
+    if (
+      quizItems(s).some(
+        (q) =>
+          !String(s.course.quizAnswers?.[q.id] || "").trim() ||
+          (q.type === "Numeric response" &&
+            !Number.isFinite(Number(s.course.quizAnswers?.[q.id]))),
+      )
+    )
+      return { message: "Answer every authored question before submitting." };
+    const limit = s.teaching?.quizAttempts || "2";
+    if (
+      limit !== "Unlimited" &&
+      (s.course.quizAttemptCount || 0) >= Number(limit)
+    )
+      return { message: "All allowed attempts have been used." };
+    s.course.quizAttemptCount = (s.course.quizAttemptCount || 0) + 1;
+    s.course.quizSubmitted = true;
+    return {
+      message:
+        "Attempt submitted. Result visibility follows the course policy.",
+    };
+  };
+  act["student-quiz-reset"] = (s) => {
+    const limit = s.teaching?.quizAttempts || "2";
+    if (
+      limit !== "Unlimited" &&
+      (s.course.quizAttemptCount || 0) >= Number(limit)
+    )
+      return { message: "All allowed attempts have been used." };
+    s.course.quizSubmitted = false;
+    s.course.quizResultReleased = false;
+    s.course.quizReview = false;
+    s.course.quizAnswers = {};
+    s.course.quizFlag = false;
+  };
+  act["student-reply"] = (s) => {
+    if (!s.course.reply.trim())
+      return { message: "Write a reply before posting." };
+    s.course.replies.push(s.course.reply.trim());
+    s.course.reply = "";
+    return { message: "Reply posted in the sample course." };
+  };
+  act["student-updates-read"] = (s) => {
+    s.course.updatesRead = true;
+    return { message: "Current updates marked read." };
+  };
 })();
