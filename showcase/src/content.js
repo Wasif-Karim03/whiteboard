@@ -15,7 +15,7 @@ WB.sections=[
 WB.journeys={
  J1:{title:'Submit a problem set',steps:[['S01','Find your next task'],['S03','Open the course'],['S05','Read the assignment'],['S06','Capture sample pages'],['S07','Organize and review'],['S08','Inspect the receipt'],['S09','See released feedback after grading']]},
  J2:{title:'Teach, grade and release',steps:[['S14','Prepare the course'],['S15','Set up the assignment'],['S17','Review and grade'],['S18','Preview a rubric change'],['S19','Explain the calculation'],['S20','Choose what to release'],['S09','Switch to the student view']]},
- J3:{title:'Resolve a scheduling change',steps:[['S24','Read the timetable'],['S25','Propose and inspect a change'],['S27','Follow confirmation'],['S12','See the calendar']]},
+ J3:{title:'Resolve a scheduling change',steps:[['S24','Read the timetable'],['S25','Propose and inspect a change'],['S25','Follow source confirmation'],['S12','See the calendar']]},
  J4:{title:'Bring an event together',steps:[['S29','Meet the organization'],['S30','Create a shared draft'],['S26','Find a room'],['S27','Request the space'],['S31','Resolve approvals'],['S28','Publish and RSVP'],['S32','Check in and reconcile']]},
  J5:{title:'Connect a student to help',steps:[['S34','Find the right service'],['S35','Create a contextual referral'],['S36','Accept and follow through'],['S34','Return to the student view']]},
  J6:{title:'Move a course with care',steps:[['S39','Inspect migration exceptions'],['S22','Preview a course copy'],['S38','Reconcile connected records'],['S37','Review institutional control']]}

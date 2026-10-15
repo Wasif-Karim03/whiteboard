@@ -12,7 +12,7 @@ Approved: 2026-10-15. Branch: `showcase/v2`. Source: `Claude outputs/Pellwin-Sho
 | B5 Events and organizations | Complete | Draft/published versions, room/funding review, RSVP, check-in and officer transitions. |
 | B6 Institution and support | Complete | Support ownership/sharing, access, audit export, migration validation, grade reconciliation and AI controls. |
 | B7 P1 coverage | Complete | All 40 workspaces and six guided journeys available; rollover, people, notifications, offline check-in and transitions exposed. |
-| B8 QA and delivery | Pending | Static/controller/browser checks as permitted; copy and handoff. |
+| B8 QA and delivery | Complete with limitation | Node/static/Astra checks passed; browser visual/runtime QA remains blocked and explicitly unverified below. |
 
 ## Constraints
 
@@ -35,3 +35,49 @@ B5: Events and organizations share room and approval state. Regression checks co
 B6: Added four institution/IT workspaces and connected the referral queue. AI and assurance are explicitly planned or unverified; audit export is a real local JSON download containing fictional records.
 
 B7: Enabled all planned P1 workspaces. Final artifact contains 40 real HTML/CSS workspaces, inline styles, inline SVG and inline scripts without runtime network dependencies.
+
+## Gap coverage and deliberate boundaries
+
+| Gap IDs | Result / where to inspect |
+| --- | --- |
+| L01–L04, L06–L07 | S05–S09, S17–S21: page tags, grading, release snapshots, recovery and course roles. |
+| L05, L09–L16 | Full LMS story; S01–S04, S10–S16, S21–S23: course work, content, authoring, quizzes, grades, people, copy and observations. |
+| L08 | Responsive CSS and readable mobile reflow implemented; browser/device verification remains outstanding. |
+| L17–L19 | Production capture, durable storage, native app availability and measured superiority claims removed. Samples are explicit. |
+| R01–R06 | S12 and S24–S27: canonical meetings, constraints, source approval, room requests, recurrence and scheduled-use provenance. |
+| R07 | Universal optimization and measured occupancy claims excluded. |
+| E01–E08 | S28–S33 and shared calendar: discovery, membership, organization-owned drafts, dependencies, RSVP/waitlist, offline check-in and transition. |
+| E09 | Settlement, secure elections and official transcript issuance excluded. |
+| X01–X08 | Semantic controls/statuses, branding, scoped roles, local audit, retention policy, source directions, exception resolution and migration preview. S37–S39. Evidence documents are not represented as ready. |
+| X09–X14 | S40 and S17: explicit readiness requirements, optional authored AI draft, disabled path, learner policy, unselected provider terms; unsupported customer/partnership/certification claims removed. |
+| A01–A05 | S34–S36: service directory, sharing choice, selected service, owner/queue/capacity, correction and authoritative degree-audit reference. |
+| A06–A07 | No predictive risk score, diagnosis or clinical workflow. Support is a later roadmap direction. |
+| W01–W06 | Campus map, specialist-system boundaries, sourced problem statements, fair category comparison, staged direction and honest local conversation brief. |
+| W07 | Deferred: presentation mode, logo variants and design-system explorer. V1 retained in archive. |
+
+P2 extras deferred as approved: marigold editorial surface, separate presentation/design-system modes, alternate logo studies, additional native-app and specialist-system mockups. They do not advance the central shared-workflow story. Integration services, real camera/PDF processing, persistent uploads, authentication, AI inference and production assurance remain product implementation work, not capabilities of this single-file showcase.
+
+## Verification and remaining manual review
+
+Run from the repository root:
+
+```
+node showcase/tools/check_student.cjs
+node showcase/tools/check_teaching.cjs
+node showcase/tools/check_campus.cjs
+node showcase/tools/check_integrated.cjs
+node showcase/build.mjs --stage B8
+node --check showcase/src/controller.js
+python3 showcase/tools/check_html.py
+git diff --check
+```
+
+Passed: 40 pure screen renderers, six valid journey routes, registered action targets, unique screen-control IDs, actual HTML label/anchor targets, no required external assets, script syntax, fictional export contents, source authority/release guards and archive SHA-256 preservation. Browser runtime console cleanliness has not been established by these Node/static checks.
+
+Browser limitation: the previously recorded local-file URL-policy restriction was respected. No localhost, alternate URL scheme or browser workaround was used. Desktop/phone light/dark rendering, actual keyboard/focus behavior, clipping/overflow, zoom, screen-reader behavior and runtime browser console remain **unverified**. Smallest remaining QA: open the final HTML locally in Chrome; inspect all chapters at approximately 1440px and 390px in Light and Dark, traverse the six examples, and check the console. No real mobile device test was run.
+
+## Final handoff
+
+Edit `showcase/src/` modules and run the build command; do not hand-edit the generated HTML. `showcase/build.mjs` produces the complete offline file at `Claude outputs/Pellwin-Showcase.html` (legacy filename; visible brand is Whiteboard). The artifact has 40 workspaces and six guided examples, with fictional data held only in memory. Reload restores initial state; theme preference may persist locally. Copy/Download brief prepares local text and never contacts anyone. The original is in `showcase/archive/showcase_v1_2026-10-15.html`. Research files and unrelated project files remain separate. Branch `showcase/v2`; implementation groups committed individually. Final review corrections are recorded in the QA commit.
+
+Final QA corrections: fixed cross-domain route targets, stale grade-export status, unpublished course/assignment/quiz gates, canonical submission preservation, event-revision room authority, scoped reset behavior and the scheduling journey’s authority record. The quiz workspace is explicitly a first-question preview, not a complete exam engine. Final single-file size: approximately 254 KB. Astra performed bounded source/state integration review; no Astra/browser visual approval is implied.

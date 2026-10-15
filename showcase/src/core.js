@@ -9,7 +9,7 @@ const defaults={
  assignment:{title:'Problem Set 4: Kinematics',due:'2026-10-16T23:59',close:'2026-10-18T23:59',published:true,policy:'Limited: use AI to clarify concepts; show your own working and disclose assistance.',questions:[{id:'1a',max:6},{id:'1b',max:4},{id:'2',max:6},{id:'3',max:8},{id:'4',max:6}]},
  submission:{status:'received',attempt:1,pages:[{id:1,tag:'1a, 1b',rotation:0},{id:2,tag:'2',rotation:0},{id:3,tag:'3',rotation:0},{id:4,tag:'4',rotation:0}],method:'scan',interrupted:false,error:'',receipt:'AH-PHYS110-001'},
  assessment:{student:'aisha',question:'3',role:'instructor',marks:{aisha:[6,4,5,7,5],ben:[5,4,4,6,5],carmen:[6,4,6,8,6]},graded:people.filter(x=>x.reviewed).map(x=>x.id),released:[],comment:'Your setup is clear. Check the sign of the vertical acceleration in the final substitution.',releaseScope:'selected',rubricAdjusted:false,conflict:false,aiDraft:false,sortAsc:true},
- course:{moduleOpen:true,material:'reading',reply:'',replies:[],quizAnswer:'',quizSubmitted:false,quizFlag:false,quizPublished:false,read:false,prefs:'Daily digest',quiet:true},
+ course:{moduleOpen:true,material:'reading',reply:'',replies:[],quizAnswer:'',quizSubmitted:false,quizFlag:false,quizPublished:true,read:false,prefs:'Daily digest',quiet:true},
  institution:{aiEnabled:false,taActive:true,rosterResolved:false,gradeSynced:false,migrationMapped:false,migrationAccepted:false,retention:'End of term + 90 days',supportAccess:false,exported:false,logs:[]}
 };
 const WB=window.WB={defaults,state:clone(defaults),renderers:{},actions:{},ui:{},e,clone};
