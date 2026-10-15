@@ -267,6 +267,15 @@
     if (!target) return;
     const stage = target.closest("[data-stage]");
     if (target.dataset.openScreen) {
+      if (
+        event.defaultPrevented ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey ||
+        event.altKey ||
+        (event.button !== undefined && event.button !== 0)
+      )
+        return;
       event.preventDefault();
       openScreen(target.dataset.openScreen);
       return;

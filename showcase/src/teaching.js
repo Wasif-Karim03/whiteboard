@@ -309,7 +309,10 @@
     assignmentGroups: "Individual work",
     assignmentSaved: true,
     assignmentSaveRevision: 0,
+    quizId: "phys-quiz3",
     quizTitle: "Motion check: projectile reasoning",
+    quizDue: "2026-10-16T23:59",
+    quizAllowances: {},
     quizAttempts: "2",
     quizMinutes: "25",
     quizFeedback: "After the due date",
@@ -460,6 +463,8 @@
     };
   };
   WB.actions["teach-quiz-publish"] = (s) => {
+    const dateError = WB.validate("teaching.quizDue", s.teaching.quizDue, s);
+    if (dateError) return { message: dateError };
     if (
       !Number.isFinite(Number(s.teaching.quizMinutes)) ||
       Number(s.teaching.quizMinutes) <= 0 ||
@@ -477,17 +482,27 @@
     };
   };
   WB.actions["teach-quiz-release"] = (s) => {
-    if (!s.course.quizSubmitted || !s.course.quizAttemptCount)
+    if (
+      !s.course.quizSubmitted ||
+      !s.course.quizAttemptCount ||
+      !s.course.quizSubmission
+    )
       return {
         message:
           "A submitted quiz attempt is required before releasing its reference feedback.",
       };
-    if (s.teaching.quizFeedback !== "Instructor release")
+    if (s.course.quizSubmission.feedback !== "Instructor release")
       return {
         message:
           "This quiz already follows its selected automatic feedback rule.",
       };
     s.course.quizResultReleased = true;
+    s.course.quizReleasedAttempts = [
+      ...new Set([
+        ...(s.course.quizReleasedAttempts || []),
+        s.course.quizSubmission.attempt,
+      ]),
+    ];
     WB.audit(
       s,
       `Released quiz reference feedback for Aisha, attempt ${s.course.quizAttemptCount}`,
@@ -909,6 +924,10 @@
       extraHours: 24,
       extraMinutes: 6,
     });
+    s.teaching.quizAllowances[p.id] = {
+      quizId: s.teaching.quizId,
+      extraMinutes: 6,
+    };
     WB.audit(
       s,
       `Recorded a 24-hour assignment allowance and 6-minute quiz allowance for ${target.name}`,
@@ -922,7 +941,11 @@
     if (!isInstructor(s))
       return { message: "Only the instructor can remove an allowance." };
     s.teaching.allowances = s.teaching.allowances.filter((a) => a.id !== p.id);
-    return { message: "Allowance removed; base dates and quiz time apply." };
+    delete s.teaching.quizAllowances[p.id];
+    return {
+      message:
+        "Allowance removed; base dates and quiz time apply to future attempts.",
+    };
   };
   const copySource = (s) => ({
     id: "phys110-next",
@@ -954,6 +977,8 @@
     quizzes: s.teaching.copyInclude.includes("quizzes")
       ? [
           {
+            id: s.teaching.quizId,
+            due: copyDate(s.teaching.quizDue, s.teaching.copyShiftDays),
             title: s.teaching.quizTitle,
             published: false,
             items: clone(s.teaching.quizItems),
@@ -1409,7 +1434,7 @@
         s.teaching.quizTitle,
         `${h.btn("Add selected", "teach-bank-add", {}, "secondary")} ${h.btn(s.course.quizPublished ? "Unpublish quiz" : "Publish quiz", "teach-quiz-publish", {}, s.course.quizPublished ? "secondary" : "primary")}`,
       ) +
-      `<div class="columns"><div class="stack">${h.card("Quiz questions", s.teaching.quizItems.map((q, i) => h.row(`${i + 1}. ${q.prompt}`, q.type, `${q.points} points`)).join(""))}${h.card("Question bank", bankRows)}</div><div class="stack">${h.card("Attempt settings", `<div class="form-grid">${h.select("Attempts", "teaching.quizAttempts", s.teaching.quizAttempts, ["1", "2", "3", "Unlimited"])}${h.field("Time limit (minutes)", "teaching.quizMinutes", s.teaching.quizMinutes, "number")}${h.select("Release feedback", "teaching.quizFeedback", s.teaching.quizFeedback, ["After each attempt", "After the due date", "Instructor release"])}</div>`)}${s.teaching.quizFeedback === "Instructor release" ? h.card("Release reference feedback", `<p>Applies to Aisha’s submitted attempt ${h.e(s.course.quizAttemptCount || "—")}. Written responses still need instructor review.</p>${s.course.quizResultReleased ? h.pill("Reference feedback released", "success") : h.btn("Release submitted attempt feedback", "teach-quiz-release", {}, "primary")}`) : ""}${h.card("Accommodations", "<p>Approved extra time is applied per student when an attempt starts. The general limit stays visible here; private documentation is not included.</p>")}${h.card("Quiz AI-use policy", `<p>Prohibited during this assessment. Show your own reasoning.</p>`)}</div></div>`
+      `<div class="columns"><div class="stack">${h.card("Quiz questions", s.teaching.quizItems.map((q, i) => h.row(`${i + 1}. ${q.prompt}`, q.type, `${q.points} points`)).join(""))}${h.card("Question bank", bankRows)}</div><div class="stack">${h.card("Attempt settings", `<div class="form-grid">${h.select("Attempts", "teaching.quizAttempts", s.teaching.quizAttempts, ["1", "2", "3", "Unlimited"])}${h.field("Time limit (minutes)", "teaching.quizMinutes", s.teaching.quizMinutes, "number")}${h.field("Quiz due date", "teaching.quizDue", s.teaching.quizDue, "datetime-local")}${h.select("Release feedback", "teaching.quizFeedback", s.teaching.quizFeedback, ["After each attempt", "After the due date", "Instructor release"])}</div>`)}${s.course.quizSubmission?.feedback === "Instructor release" ? h.card("Release reference feedback", `<p>Applies to Aisha’s submitted attempt ${h.e(s.course.quizAttemptCount || "—")}. Written responses still need instructor review.</p>${s.course.quizResultReleased ? h.pill("Reference feedback released", "success") : h.btn("Release submitted attempt feedback", "teach-quiz-release", {}, "primary")}`) : ""}${h.card("Accommodations", "<p>Approved extra time is applied per student when an attempt starts. The general limit stays visible here; private documentation is not included.</p>")}${h.card("Quiz AI-use policy", `<p>Prohibited during this assessment. Show your own reasoning.</p>`)}</div></div>`
     );
   });
 
@@ -1881,7 +1906,12 @@
             ? "TAs cannot release grades."
             : "Only the instructor can change this course record.",
         };
-      if (s.assignment.locked && !["teach-course-preview"].includes(name))
+      if (
+        s.assignment.locked &&
+        !["teach-course-preview"].includes(name) &&
+        !name.startsWith("teach-quiz-") &&
+        !name.startsWith("teach-bank-")
+      )
         return {
           message:
             "This assignment is locked. Reopen its draft before editing.",

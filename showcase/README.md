@@ -2,6 +2,7 @@
 
 Shareable artifact: `../Claude outputs/Pellwin-Showcase.html` (legacy filename; the visible product is Whiteboard). One offline HTML file; no runtime dependencies or build step for recipients. All records and effects are fictional. No production service, authentication, upload, AI inference or integration is connected.
 
+- [Latest readiness recheck](07_readiness_recheck.md)
 - [Current update tracker](05_update_tracker.md) / [CSV](05_update_tracker.csv)
 - [Revision plan](06_revision_plan.md)
 - [Progress and handoff](03_progress.md)
@@ -16,6 +17,7 @@ From the repository root:
 node showcase/build.mjs --stage B8
 node showcase/tools/check_student.cjs
 node showcase/tools/check_revision_student.cjs
+node showcase/tools/check_readiness_regressions.cjs
 node showcase/tools/check_teaching.cjs
 node showcase/tools/check_revision_teaching.cjs
 node showcase/tools/check_campus.cjs
@@ -37,4 +39,4 @@ npm exec --ignore-scripts --cache ./showcase/.tool-cache --yes --package=prettie
 
 `archive/showcase_v1_2026-10-15.html` preserves the original product review. `archive/showcase_v2_2026-10-15.html` preserves the pre-revision showcase. Static checks enforce both hashes. Historical defect probes read the v2 archive; current regression tests exercise revised sources.
 
-Browser visual/keyboard/phone acceptance remains unverified because of the recorded local-file URL-policy restriction. Do not bypass it with another route or mark browser work passed from Node checks. The tracker separates verified state work from implemented/unverified UI work and blocked visual gates. Public source-link checks are recorded separately; two EDUCAUSE endpoints returned HTTP 403 and remain unverified by that check.
+Browser visual/keyboard/phone acceptance remains unverified because of the recorded local-file URL-policy restriction. Do not bypass it with another route or mark browser work passed from Node checks. The tracker separates verified state work from implemented/unverified UI work and blocked visual gates. Public source-link checks are recorded separately. Two EDUCAUSE endpoints returned HTTP 403 to HEAD requests; their primary page content was subsequently retrieved successfully with the public web reader.

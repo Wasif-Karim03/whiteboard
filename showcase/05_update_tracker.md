@@ -2,7 +2,7 @@
 
 Updated **15 October 2026**. Reviewed baseline: `eca61e1`; revised artifact: `../Claude outputs/Pellwin-Showcase.html`.
 
-**38 items: 27 Done (source/state), 8 Implemented/unverified, 3 blocked browser-acceptance gates.** All planned source modifications have been implemented. This is not a claim that browser acceptance passed.
+**38 items: 27 Done (source/state), 8 Implemented/unverified, 3 blocked browser-acceptance gates.** All four follow-up defects are fixed and covered by regression checks. Browser acceptance has not passed.
 
 Priorities remain 9 P0 / 25 P1 / 4 P2. P0 means required before calling the external demo ready; P1 completes important workflows/usability; P2 is polish/maintainability.
 
@@ -82,9 +82,11 @@ Done (source/state) means the local model, renderer or source acceptance check p
 
 ## What remains
 
-Browser acceptance for REV-01/18/30 and the eight implemented/unverified UI items. Inspect all chapters and forty workspace variants at desktop/phone widths in both themes; traverse all six journeys, check keyboard/focus/error recovery/history/dialogs and the console. Do not bypass the recorded URL-policy restriction. Two EDUCAUSE links also need a permitted browser/public-source check after HTTP 403 responses.
+Browser acceptance for REV-01/18/30 and the eight implemented/unverified UI items. All four confirmed readiness defects are corrected: submitted quiz snapshots, quiz-owned feedback deadline, module-specific reading state and modified-link behavior. The new regression suite exercises these and related release/allowance/publication edges.
 
-The remaining work is verification and any fixes it exposes. No backend, private data, paid service or deployment is required.
+Inspect all chapters and forty workspace variants at desktop/phone widths in both themes; traverse all six journeys, check keyboard/focus/error recovery/history/dialogs/downloads and the console. Do not bypass the recorded URL-policy restriction. All five selected public source targets have now been checked; the earlier EDUCAUSE HEAD 403 results are retained as transport history alongside successful primary-page reads.
+
+The remaining work is browser/usability verification and any fixes it reveals. No backend, private data, paid service or deployment is required.
 
 ## Updating this tracker
 

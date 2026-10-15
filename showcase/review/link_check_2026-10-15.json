@@ -2,12 +2,16 @@
   {
     "url": "https://www.educause.edu/content/2026/the-integrated-institution-a-guide-to-interoperability-for-student-success",
     "status": "unverified",
-    "reason": "HTTP Error 403: Forbidden"
+    "reason": "HTTP Error 403: Forbidden",
+    "public_read_verified": true,
+    "public_read_method": "Primary page content retrieved using the public web reader on 2026-10-15; earlier HEAD 403 retained as transport evidence."
   },
   {
     "url": "https://www.educause.edu/higher-education-community-vendor-assessment-toolkit",
     "status": "unverified",
-    "reason": "HTTP Error 403: Forbidden"
+    "reason": "HTTP Error 403: Forbidden",
+    "public_read_verified": true,
+    "public_read_method": "Primary page content retrieved using the public web reader on 2026-10-15; earlier HEAD 403 retained as transport evidence."
   },
   {
     "url": "https://www.itic.org/policy/accessibility/vpat",

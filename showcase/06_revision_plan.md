@@ -1,6 +1,6 @@
 # Whiteboard showcase: step-by-step revision plan
 
-Prepared 15 October 2026. Source implementation is complete. **27 items are source/state verified; 8 UI items await acceptance and 3 browser gates remain blocked.** The steps below preserve the approved execution plan; current per-item status is in the tracker. See [audit](04_revision_audit.md) and [tracker](05_update_tracker.md).
+Prepared 15 October 2026. The first revision and readiness corrections are implemented. **27 items are source/state verified, 8 UI items await acceptance and 3 browser gates remain blocked.** All four defects from the [readiness recheck](07_readiness_recheck.md) are fixed; modified-link behavior has unit evidence while real browser acceptance remains pending. The steps below preserve the approved execution plan; current per-item status is in the tracker. See [audit](04_revision_audit.md) and [tracker](05_update_tracker.md).
 
 ## Outcome and constraints
 

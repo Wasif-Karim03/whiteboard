@@ -226,7 +226,7 @@
             )
           : h.card(
               m.title,
-              `<div class="reading"><p>${m.id === "m3" ? "Horizontal velocity is constant without air resistance. Vertical acceleration is downward. Connect the two directions through the same time variable." : m.id === "m1" ? "Resolve vectors into components and state the units of every quantity." : "Use position, velocity and acceleration to describe motion along one axis."}</p><p><strong>Horizontal:</strong> x(t) = v₀ cos(θ) × t</p><p><strong>Vertical:</strong> y(t) = h + v₀ sin(θ) × t − ½gt²</p>${s.course.material === "alternative" ? "<p>Diagram description: a projectile leaves a raised platform. Its path curves downward. The x-axis points right, the y-axis points up, and gravity acts downward at all times.</p>" : ""}</div><div class="actions">${h.btn(s.course.read ? "Mark reading incomplete" : "Mark reading complete", "student-read")}${h.go("Try the quiz", "S10")}</div>`,
+              `<div class="reading"><p>${m.id === "m3" ? "Horizontal velocity is constant without air resistance. Vertical acceleration is downward. Connect the two directions through the same time variable." : m.id === "m1" ? "Resolve vectors into components and state the units of every quantity." : "Use position, velocity and acceleration to describe motion along one axis."}</p><p><strong>Horizontal:</strong> x(t) = v₀ cos(θ) × t</p><p><strong>Vertical:</strong> y(t) = h + v₀ sin(θ) × t − ½gt²</p>${s.course.material === "alternative" ? "<p>Diagram description: a projectile leaves a raised platform. Its path curves downward. The x-axis points right, the y-axis points up, and gravity acts downward at all times.</p>" : ""}</div><div class="actions">${h.btn((s.course.completedModules || ["m1", "m2"]).includes(m.id) ? "Mark reading incomplete" : "Mark reading complete", "student-read")}${h.go("Try the quiz", "S10")}</div>`,
             ))
     );
   });
@@ -358,30 +358,50 @@
       ]
     );
   }
-  function resultsAvailable(s) {
+  function resultsAvailable(s, record = s.course.quizSubmission) {
+    if (!record) return false;
     return (
-      s.course.quizResultReleased ||
-      s.teaching?.quizFeedback === "After each attempt" ||
-      (s.teaching?.quizFeedback === "After the due date" &&
-        W.localNow(s) > dates(s).due)
+      s.course.quizReleasedAttempts?.includes(record.attempt) ||
+      (record === s.course.quizSubmission && s.course.quizResultReleased) ||
+      record.feedback === "After each attempt" ||
+      (record.feedback === "After the due date" && W.localNow(s) > record.due)
     );
   }
+  function quizHistory(s) {
+    return (s.course.quizHistory || []).length
+      ? h.card(
+          "Earlier quiz attempts",
+          s.course.quizHistory
+            .map(
+              (record) =>
+                `<details><summary>Attempt ${e(record.attempt)} · ${e(record.title)}</summary>${record.items.map((q) => h.row(q.prompt, record.answers[q.id] || "No answer")).join("")}<p>${resultsAvailable(s, record) ? "Reference feedback is available under this attempt’s release rule." : "Reference feedback is held under this attempt’s release rule."}</p><p>Submitted ${e(W.deadline(record.submittedAt))} · ${record.items.length} questions · ${e(record.minutes)} + ${e(record.extraMinutes)} minutes</p></details>`,
+            )
+            .join(""),
+        )
+      : "";
+  }
   W.reg("S10", "Quiz attempt", "Student", (s) => {
-    if (!s.course.quizPublished || s.teaching?.coursePublished === false)
+    if (
+      (!s.course.quizPublished && !s.course.quizSubmitted) ||
+      s.teaching?.coursePublished === false
+    )
       return unavailable("Quiz");
-    const items = quizItems(s),
+    const record = s.course.quizSubmitted ? s.course.quizSubmission : null;
+    const items = record?.items || quizItems(s),
       count = s.course.quizAttemptCount || 0,
       limit = s.teaching?.quizAttempts || "2",
       done = s.course.quizSubmitted;
     return (
       h.head(
-        s.teaching?.quizTitle || "Motion check: projectile reasoning",
+        record?.title ||
+          s.teaching?.quizTitle ||
+          "Motion check: projectile reasoning",
         "Attempt " +
           (done ? count : count + 1) +
           " · " +
-          (s.teaching?.quizMinutes || 25) +
+          (record?.minutes || s.teaching?.quizMinutes || 25) +
           " minutes + " +
-          dates(s).extraMinutes +
+          (record?.extraMinutes ?? W.quizExtraMinutes(s)) +
           " approved extra minutes",
         h.go("Course home", "S03"),
       ) +
@@ -391,8 +411,15 @@
       ) +
       h.stats([
         [items.length, "Authored questions"],
-        [limit, "Allowed attempts"],
-        [s.teaching?.quizFeedback || "Instructor release", "Result policy"],
+        [record?.attemptLimit || limit, "Allowed attempts at submission"],
+        [
+          record?.feedback || s.teaching?.quizFeedback || "Instructor release",
+          "Result policy",
+        ],
+        [
+          W.deadline(record?.due || s.teaching?.quizDue || "2026-10-16T23:59"),
+          "Quiz due date",
+        ],
       ]) +
       (done
         ? h.card(
@@ -401,7 +428,7 @@
               .map((q) =>
                 h.row(
                   q.prompt,
-                  (s.course.quizAnswers?.[q.id] || "No answer") +
+                  (record?.answers[q.id] || "No answer") +
                     (resultsAvailable(s) && q.answer
                       ? " · Instructor reference: " + q.answer
                       : ""),
@@ -417,7 +444,8 @@
                   : "Release follows the policy shown above.",
                 resultsAvailable(s) ? "success" : "info",
               ) +
-              (limit === "Unlimited" || count < Number(limit)
+              (s.course.quizPublished &&
+              (limit === "Unlimited" || count < Number(limit))
                 ? h.btn("Start another allowed attempt", "student-quiz-reset")
                 : "<p>You have used all allowed attempts.</p>"),
           )
@@ -433,7 +461,8 @@
               })
               .join("") +
               `<div class="actions">${h.btn(s.course.quizFlag ? "Remove review flag" : "Flag for review", "student-quiz-flag")}${s.course.quizReview ? h.btn("Return to answers", "student-quiz-edit") + h.btn("Confirm and submit attempt", "student-quiz-submit", {}, "primary") : h.btn("Review answers", "student-quiz-review", {}, "primary")}</div><p class="status-line">Answers stay in this page while you navigate. Reload resets the sample.</p>`,
-          ))
+          )) +
+      quizHistory(s)
     );
   });
   W.reg(
@@ -606,9 +635,9 @@
     return { go: "S04" };
   };
   act["student-read"] = (s) => {
-    s.course.read = !s.course.read;
     const id = s.course.activeModule || "m3",
       done = new Set(s.course.completedModules || ["m1", "m2"]);
+    s.course.read = !done.has(id);
     if (s.course.read) done.add(id);
     else done.delete(id);
     s.course.completedModules = [...done];
@@ -751,6 +780,19 @@
     )
       return { message: "All allowed attempts have been used." };
     s.course.quizAttemptCount = (s.course.quizAttemptCount || 0) + 1;
+    s.course.quizSubmission = W.clone({
+      quizId: s.teaching?.quizId || "phys-quiz3",
+      attempt: s.course.quizAttemptCount,
+      title: s.teaching?.quizTitle || "Motion check: projectile reasoning",
+      items: quizItems(s),
+      answers: s.course.quizAnswers,
+      minutes: s.teaching?.quizMinutes || 25,
+      extraMinutes: W.quizExtraMinutes(s),
+      feedback: s.teaching?.quizFeedback || "Instructor release",
+      due: s.teaching?.quizDue || "2026-10-16T23:59",
+      attemptLimit: limit,
+      submittedAt: W.localNow(s),
+    });
     s.course.quizSubmitted = true;
     return {
       message:
@@ -758,12 +800,23 @@
     };
   };
   act["student-quiz-reset"] = (s) => {
+    if (!s.course.quizPublished || s.teaching?.coursePublished === false)
+      return {
+        message: "The quiz must be published before starting another attempt.",
+      };
     const limit = s.teaching?.quizAttempts || "2";
     if (
       limit !== "Unlimited" &&
       (s.course.quizAttemptCount || 0) >= Number(limit)
     )
       return { message: "All allowed attempts have been used." };
+    if (s.course.quizSubmitted && s.course.quizSubmission) {
+      s.course.quizHistory = [
+        ...(s.course.quizHistory || []),
+        W.clone(s.course.quizSubmission),
+      ];
+    }
+    s.course.quizSubmission = null;
     s.course.quizSubmitted = false;
     s.course.quizResultReleased = false;
     s.course.quizReview = false;

@@ -200,6 +200,9 @@
   defaults.course.quizAttemptCount = 0;
   defaults.course.quizReview = false;
   defaults.course.quizResultReleased = false;
+  defaults.course.quizSubmission = null;
+  defaults.course.quizHistory = [];
+  defaults.course.quizReleasedAttempts = [];
   defaults.assignment.attachments = [
     {
       id: "kinematics-guide",
@@ -245,6 +248,12 @@
       extraMinutes: Number(a?.extraMinutes || 0),
     };
   };
+  WB.quizExtraMinutes = (s, id = "aisha") => {
+    const allowance = s.teaching?.quizAllowances?.[id];
+    return allowance && allowance.quizId === (s.teaching.quizId || "phys-quiz3")
+      ? Number(allowance.extraMinutes) || 0
+      : 0;
+  };
   WB.academicPolicy = (s) =>
     s.teaching?.courseAiPolicy === "Prohibited"
       ? "Prohibited: complete this work without AI assistance."
@@ -269,7 +278,7 @@
     )
       return "Use 2,000 characters or fewer.";
     if (/(?:title)$/.test(path) && !text.trim()) return "Enter a title.";
-    if (/assignment\.(due|close)$/.test(path)) {
+    if (/assignment\.(due|close)$/.test(path) || path === "teaching.quizDue") {
       if (
         !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(text) ||
         !Number.isFinite(new Date(text + "Z").getTime()) ||

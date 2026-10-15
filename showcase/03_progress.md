@@ -106,3 +106,15 @@ Astra implemented/reviewed the bounded assessment changes and reviewed integrati
 **Remaining:** no desktop/phone Light/Dark rendering, actual keyboard/screen-reader/focus/history/download review, browser console or fresh-reviewer usability test has run. The recorded local-file URL-policy restriction was respected; no workaround was attempted. Three source endpoints returned HTTP 200; two EDUCAUSE HEAD requests returned HTTP 403 and remain unverified. See the tracker and `review/link_check_2026-10-15.json`.
 
 Current deliverable: `Claude outputs/Pellwin-Showcase.html`, 424,345 bytes, 40 workspaces, six guided journeys; SHA-256 `3078221148b561a04e13d1552bf4dc558aac2253459da20f0fb65a6ecb61f12c`. Build using `node showcase/build.mjs --stage B8`. Full commands and the pinned free formatter are in `showcase/README.md`. Historical defect probes now explicitly read the preserved v2 archive; current regressions test the revised sources. Research files and unrelated project assets remain unchanged.
+
+## Latest readiness recheck — 15 October 2026
+
+Review-only follow-up at commit `1585b39`: all eight Node suites and static HTML checks still pass, but fresh independent/lead probes reproduced four edge defects: live authoring changes submitted quiz content; another assignment's due date changes quiz feedback visibility; module reading status leaks across modules; modified workspace clicks are intercepted. REV-08/09/29 are reopened. Current counts: 25 Done (source/state), 3 Reopened, 7 Implemented/unverified, 3 blocked browser gates. See `07_readiness_recheck.md` for reproductions and acceptance criteria. Source/HTML were not changed; no new fix or browser result is claimed. Review documents/tracker updated without a commit.
+
+## Readiness corrections completed — 15 October 2026
+
+Fixed all four follow-up defects: deep-copied quiz submission snapshots/history; independent quiz deadline and time allowances; active-module reading membership; and modified/nonprimary link-click preservation. Instructor release follows the submitted policy, survives changes to future authoring, and stays isolated between attempts. Quiz receipts remain visible after quiz unpublishing; new attempts require publication. Unrelated locked assignments no longer block quiz actions. Rollover copies the quiz's own shifted deadline.
+
+Added `check_readiness_regressions.cjs`; nine Node suites plus syntax/build/static/whitespace checks pass (20 commands total). Independent Astra source/state acceptance found no blocking defect in this bounded correction pass. Current tracker: 27 Done (source/state), 8 Implemented/unverified, 3 browser gates blocked. Public source checks are now complete: three HTTP 200 endpoints and two successful EDUCAUSE primary-page reads following earlier HEAD 403 responses.
+
+The remaining gate is actual browser/usability acceptance under the recorded URL-policy restriction. No browser work or conformance result is claimed. Current offline HTML: 428,330 bytes; SHA-256 `49f6209ad6ef2d87f0e00cce4eef9b60c2e002ef498c052b6675f9152a23876d`. Preserve both original archives and unrelated working-tree files.

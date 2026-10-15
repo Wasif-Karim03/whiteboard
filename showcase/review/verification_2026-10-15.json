@@ -13,6 +13,11 @@
       "output": "Student revision checks passed: authored quiz/attempt/release, module visibility and progression, effective allowance, shared records, personal event calendar, coherent resets, validation and sample role boundaries.\nDeadline timezone and long-title validation checks passed."
     },
     {
+      "command": "node showcase/tools/check_readiness_regressions.cjs",
+      "exit_code": 0,
+      "output": "Readiness regressions passed: immutable submitted quiz/version/settings, independent deadline/release/accommodation, module-specific completion, and native modified-link clicks. Controller checks use event doubles, not a browser."
+    },
+    {
       "command": "node showcase/tools/check_teaching.cjs",
       "exit_code": 0,
       "output": "Teaching checks passed: 11 pure screens, canonical grading/release flow, role guards, and authoring controls."
@@ -85,12 +90,12 @@
     {
       "command": "node showcase/build.mjs --stage B8",
       "exit_code": 0,
-      "output": "{\"stage\":\"B8\",\"output\":\"/Users/wasifkarim/Claude/Projects/Whiteboard/Claude outputs/Pellwin-Showcase.html\",\"bytes\":424345,\"screens\":40}"
+      "output": "{\"stage\":\"B8\",\"output\":\"/Users/wasifkarim/Claude/Projects/Whiteboard/Claude outputs/Pellwin-Showcase.html\",\"bytes\":428330,\"screens\":40}"
     },
     {
       "command": "python3 showcase/tools/check_html.py",
       "exit_code": 0,
-      "output": "Static HTML checks passed; 424,345 bytes; IDs/labels/ARIA/anchors/assets checked; archives unchanged."
+      "output": "Static HTML checks passed; 428,330 bytes; IDs/labels/ARIA/anchors/assets checked; archives unchanged."
     },
     {
       "command": "git diff --check",
@@ -100,8 +105,8 @@
   ],
   "artifact": {
     "path": "Claude outputs/Pellwin-Showcase.html",
-    "bytes": 424345,
-    "sha256": "3078221148b561a04e13d1552bf4dc558aac2253459da20f0fb65a6ecb61f12c",
+    "bytes": 428330,
+    "sha256": "49f6209ad6ef2d87f0e00cce4eef9b60c2e002ef498c052b6675f9152a23876d",
     "workspaces": 40,
     "journeys": 6
   },
@@ -116,5 +121,6 @@
       "fresh-reviewer usability"
     ]
   },
-  "sources": "See link_check_2026-10-15.json: three HTTP 200; two EDUCAUSE HEAD requests returned 403."
+  "sources": "All five public source targets checked: three HTTP 200; two EDUCAUSE primary pages retrieved with public web reader after HEAD 403. See link_check_2026-10-15.json.",
+  "correction_pass": "All four readiness defects fixed; independent bounded Astra source/Node acceptance found no blocker. Browser acceptance remains unverified."
 }

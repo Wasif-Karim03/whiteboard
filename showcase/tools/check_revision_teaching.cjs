@@ -222,6 +222,7 @@ WB.state.teaching.quizFeedback = "Instructor release";
 assert.match(act("quiz-release").message, /submitted quiz attempt/);
 WB.state.course.quizSubmitted = true;
 WB.state.course.quizAttemptCount = 1;
+WB.state.course.quizSubmission = { attempt: 1, feedback: "Instructor release" };
 act("quiz-release");
 assert.equal(WB.state.course.quizResultReleased, true);
 WB.ui.actor = "student";
