@@ -10,7 +10,7 @@ Last updated: 2026-10-15. Phase: domain research. Approval: **received 2026-10-1
 | 01 LMS | Complete: desk research | 2026-10-15 | 18 competitors; 207 feature cells; 15 pains; 51 sources. Live task benchmarking and interviews remain open. | `cc12eba`. |
 | 02 Scheduling and rooms | Complete: desk research | 2026-10-15 | 17 competitors; 85 feature cells; 14 pains; 65 sources. Exact connector and institution workflow validation remain. | Domain checkpoint in git log. |
 | 03 Events and clubs | Complete: desk research | 2026-10-15 | 10 competitors; 115 feature cells; 12 pains; 66 sources. Suite quotes and live module validation remain. | Domain checkpoint in git log. |
-| 04 Cross-cutting | In progress | 2026-10-15 | Current standards, applicability/deadlines, procurement prices and AI availability. | — |
+| 04 Cross-cutting | Complete: desk research | 2026-10-15 | 8 ecosystem products; 16 requirements; 53 sources. Institution-specific applicability and contracts remain to validate. | Domain checkpoint in git log. |
 | 05 Missing landscape | Not started | 2026-10-15 | Rank adjacencies and system-of-record boundaries. | — |
 | Promoted domains | Not selected | 2026-10-15 | Require evidence-based promotion decision. | — |
 | Synthesis and report | Not started | 2026-10-15 | Await all domain evidence and validation. | — |
