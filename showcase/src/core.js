@@ -22,6 +22,7 @@ WB.reset=()=>{WB.state=clone(WB.defaults);};
 WB.beginDraft=s=>{if(s.submission.status==='received')s.submission.attempt++;s.submission.status='draft';s.assessment.graded=s.assessment.graded.filter(id=>id!=='aisha');s.assessment.released=s.assessment.released.filter(id=>id!=='aisha');if(s.assessment.releaseSnapshots)delete s.assessment.releaseSnapshots.aisha;};
 WB.set=(path,value)=>{const keys=path.split('.');if(keys.some(x=>['__proto__','constructor','prototype'].includes(x)))throw Error('Invalid field');if(path.startsWith('submission.pages.'))WB.beginDraft(WB.state);let o=WB.state;for(const k of keys.slice(0,-1)){if(!o[k]||typeof o[k]!=='object')o[k]={};o=o[k];}o[keys.at(-1)]=value;};
 WB.score=(s,id='aisha')=>(s.assessment.marks[id]||[]).reduce((a,b)=>a+Number(b),0);
+WB.deadline=value=>{const d=new Date(value+'Z');return Number.isNaN(d.getTime())?'Date not set':d.toLocaleString('en-US',{timeZone:'UTC',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})+' ET';};
 WB.received=s=>s.people.filter(p=>p.active&&(p.id==='aisha'?s.submission.status==='received':p.submitted)).length;
 WB.audit=(s,action)=>s.institution.logs.unshift({action,time:'15 Oct, 10:42 am',actor:'Authorized sample user'});
 WB.dispatch=(name,p={})=>{if(!WB.actions[name])throw Error('Unknown action: '+name);return WB.actions[name](WB.state,p)||{};};
