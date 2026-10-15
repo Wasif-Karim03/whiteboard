@@ -17,7 +17,7 @@ Research scope: US higher education; full LMS core plus campus operations. Prepa
 | --- | --- | --- |
 | Baseline and plan | `00_baseline/` | Complete; approved |
 | LMS core | [01_lms](01_lms/notes.md) | Complete: desk research |
-| Scheduling and rooms | `02_scheduling_rooms/` | In review |
+| Scheduling and rooms | [02_scheduling_rooms](02_scheduling_rooms/notes.md) | Complete: desk research |
 | Events and clubs | `03_events_clubs/` | In progress |
 | Integration, compliance, buying and AI | `04_cross_cutting/` | In progress |
 | Missing campus landscape | `05_landscape_missing/` | Not started |

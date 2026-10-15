@@ -7,8 +7,8 @@ Last updated: 2026-10-15. Phase: domain research. Approval: **received 2026-10-1
 | Domain | Status | Updated | Open questions or next checkpoint | Git checkpoint |
 | --- | --- | --- | --- | --- |
 | 00 Baseline and plan | Complete; approved | 2026-10-15 | Plan approved; research begins. | `19218a1` (baseline/plan). |
-| 01 LMS | Complete: desk research | 2026-10-15 | 18 competitors; 207 feature cells; 15 pains; 51 sources. Live task benchmarking and interviews remain open. | Domain commit follows this update. |
-| 02 Scheduling and rooms | In review | 2026-10-15 | Separate timetable optimization from operational booking. | — |
+| 01 LMS | Complete: desk research | 2026-10-15 | 18 competitors; 207 feature cells; 15 pains; 51 sources. Live task benchmarking and interviews remain open. | `cc12eba`. |
+| 02 Scheduling and rooms | Complete: desk research | 2026-10-15 | 17 competitors; 85 feature cells; 14 pains; 65 sources. Exact connector and institution workflow validation remain. | Domain checkpoint in git log. |
 | 03 Events and clubs | In progress | 2026-10-15 | Verify current ownership; map event/space/finance handoffs. | — |
 | 04 Cross-cutting | In progress | 2026-10-15 | Current standards, applicability/deadlines, procurement prices and AI availability. | — |
 | 05 Missing landscape | Not started | 2026-10-15 | Rank adjacencies and system-of-record boundaries. | — |
