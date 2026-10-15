@@ -1,0 +1,23 @@
+# Whiteboard showcase v2 progress
+
+Approved: 2026-10-15. Branch: `showcase/v2`. Source: `Claude outputs/Pellwin-Showcase.html`. Archive: `showcase/archive/showcase_v1_2026-10-15.html`. The research report and hosted research Site are separate and unchanged.
+
+| Step | Status | Evidence / next checkpoint |
+| --- | --- | --- |
+| B0 Preserve and prepare | Complete | Original and archive byte/hash match. |
+| B1 Story and shell | In progress | Build offline responsive narrative, theme and shared fixture model. |
+| B2 Student learning | Pending | Connected assignment/pages/receipt and course/quiz flow. |
+| B3 Faculty and assessment | Pending | Correct rubric, grades, release scope and role visibility. |
+| B4 Spaces | Pending | Request, approval and authoritative confirmation distinct. |
+| B5 Events and organizations | Pending | Shared draft, dependencies, RSVP. |
+| B6 Institution and support | Pending | Referrals, migration, reconciliation, honest trust status. |
+| B7 P1 coverage | Pending | All 40 screens and six journeys. |
+| B8 QA and delivery | Pending | Static/controller/browser checks as permitted; copy and handoff. |
+
+## Constraints
+
+Only fictional local data. No service connections, messages, publishing, paid calls or backend are authorized. Inline deliverable; source fragments are development-only and compiled into the single HTML. Keep the original archive immutable. Do not claim live availability, institutional adoption, certifications or measured savings.
+
+## Handoff
+
+B0 completed; root owns shared model, shell, styles, integration and commits. Bounded workers may own disjoint screen modules after the rendering/action contract is saved. Previous browser URL-policy limit must be respected; record actual checks, not promised checks.
