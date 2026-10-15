@@ -1,24 +1,394 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import vm from 'node:vm';
-import {fileURLToPath} from 'node:url';
-const base=path.dirname(fileURLToPath(import.meta.url)),src=path.join(base,'src');
-const stage=process.argv.includes('--stage')?process.argv[process.argv.indexOf('--stage')+1]:'B7';
-const n=Number(stage.slice(1));if(!/^B[1-8]$/.test(stage))throw Error('Use B1–B8');
-const sources=['core.js','content.js',...(n>=2?['student.js']:[]),...(n>=3?['teaching.js']:[]),...(n>=4?['campus.js']:[]),...(n>=6?['institution.js']:[])].filter(f=>fs.existsSync(path.join(src,f)));
-const scripts=sources.map(f=>fs.readFileSync(path.join(src,f),'utf8'));
-const sandbox={window:{}};vm.createContext(sandbox);scripts.forEach(s=>vm.runInContext(s,sandbox));
-const WB=sandbox.window.WB;
-const minStage=id=>{const i=Number(id.slice(1));if([2,13,21,23,32,33].includes(i))return 7;if(i<=13)return i===9?3:2;if(i<=23)return 3;if(i<=27)return 4;if(i<=33)return 5;return 6;};
-const available=Object.keys(WB.renderers).filter(id=>minStage(id)<=n);WB.available=available;
-const e=WB.e,h=WB.h;
-const brand=`<span class="brand-mark" aria-hidden="true">w</span><span>Whiteboard</span>`;
-const nav=`<a href="#student">Product</a><a href="#faculty">Teaching</a><a href="#spaces">Campus</a><a href="#institution">Institutions</a><a href="#direction">Direction</a>`;
-function frame(id,screen){const entry=WB.renderers[screen];const body=entry&&available.includes(screen)?WB.render(screen):h.head('Campus work, brought together','A single place for coursework, conversations and the next thing to do.')+h.row('PHYS 110 · Introductory Mechanics','Problem Set 4: Kinematics · due Friday',h.pill('Received','success'))+h.row('Physics Society','An evening of experiments · Hollis Hall 104',h.pill('Room requested','warning'));return `<div class="app-layout"><aside class="app-rail" aria-label="Product context"><div class="brand">${brand}</div><span>Alder Hill College</span><a href="#student">${h.icon('grid')}Today</a><a href="#courses">${h.icon('book')}Courses</a><a href="#spaces">${h.icon('calendar')}Time & space</a><a href="#life">${h.icon('people')}Campus life</a><a href="#support">${h.icon('pin')}Get support</a></aside><div class="app-panel" data-panel="${id}" aria-label="${e(entry?.title||'Product preview')}">${body}</div></div>`;}
-function section(s){const tabs=s.screens.filter(id=>available.includes(id));const screen=tabs.includes(s.default)?s.default:tabs[0]||s.default;return `<section class="chapter" id="${s.id}" aria-labelledby="heading-${s.id}"><div class="section-head"><div><p class="context">${e(s.context)}</p><h2 id="heading-${s.id}">${e(s.title)}</h2></div><p>${e(s.copy)}</p></div><div class="stage" data-stage="${s.id}" data-screen="${screen}"><div class="stage-tabs" role="group" aria-label="${e(s.context)} workspaces">${tabs.map(id=>`<button type="button" data-screen="${id}" aria-pressed="${screen===id}">${e(WB.renderers[id].title)}</button>`).join('')}<span class="stage-role">${e(WB.renderers[screen]?.role||'Illustrative campus')}</span></div>${frame(s.id,screen)}<div class="stage-foot"><span>Interactive concept · fictional data · changes stay in this page</span><span class="stage-feedback" role="status" aria-live="polite"></span></div></div><div class="scene-note"><p>${e(s.note)}</p>${s.journey?`<button type="button" class="button quiet" data-start-journey="${s.journey}">Walk through the example ${h.icon('arrow')}</button>`:''}</div></section>`;}
-const hero=`<div class="product-window"><div class="window-bar"><span class="brand">${brand}</span><span>Alder Hill College · sample campus</span></div><div class="hero-home"><p class="demo-date">Thursday, October 15</p><h3>Good morning, Aisha.</h3><div class="hero-next"><span class="course-tag">PHYS 110</span><p><strong>Your work has a home.</strong></p><p>Problem Set 4 is received. Your pages, questions and feedback stay connected.</p></div><section class="card" style="margin-top:18px"><h5>Coming up</h5>${h.row('Linear Algebra','10:30 am · Keene Center 212',h.pill('Class','info'))}${h.row('Problem Set 4: Kinematics','Due Friday · 30 points',h.go('Open assignment','S05','quiet'))}${h.row('Physics Society: Open Lab','Wednesday, Oct 21 · 5:30 pm',h.go('Explore event','S28','quiet'))}</section><div class="split-line small"><span class="muted">A question about your course?</span><a href="#support">Find support</a></div></div></div>`;
-const sourcesHTML=`<details class="sources" id="sources"><summary>Selected research and context</summary><p>Research checked 15 October 2026. Institutional examples establish local needs, not national prevalence or measured Whiteboard outcomes.</p><ol><li id="source-1"><a href="https://www.educause.edu/content/2026/the-integrated-institution-a-guide-to-interoperability-for-student-success" target="_blank" rel="noopener noreferrer">EDUCAUSE: The Integrated Institution (September 2026)</a> — meaningful data exchange, shared definitions and student-support handoffs.</li><li><a href="https://www.villanova.edu/university/technology-services/initiatives/academic-scheduling.html" target="_blank" rel="noopener noreferrer">Villanova: academic scheduling initiative</a> — institution-specific coordination across departments.</li><li><a href="https://www.montana.edu/ecat/migrate/pre-migration-checklist/" target="_blank" rel="noopener noreferrer">Montana State: migration checklist</a> — course/record migration needs deliberate review.</li><li><a href="https://www.educause.edu/higher-education-community-vendor-assessment-toolkit" target="_blank" rel="noopener noreferrer">EDUCAUSE: HECVAT</a> and <a href="https://www.itic.org/policy/accessibility/vpat" target="_blank" rel="noopener noreferrer">ITI: VPAT/ACR</a> — risk and conformance evidence, not product certifications.</li></ol><p>Whiteboard is a product being designed. The people, records, numbers, AI drafts and service effects in this showcase are illustrative. No institution is represented as a customer or partner.</p></details>`;
-const comparison=`<section class="chapter" id="approach"><div class="section-head"><div><p class="context">One experience, clear boundaries</p><h2>Bring the work together.<br>Keep the right expertise.</h2></div><p>An integrated product should make a task easier to complete. Specialist depth, migration and institutional choice still matter.</p></div><div class="table-scroll compare"><table><caption>Different approaches serve different institutional priorities. Whiteboard describes our planned approach.</caption><thead><tr><th scope="col">Approach</th><th scope="col">What it offers</th><th scope="col">What still needs care</th></tr></thead><tbody><tr><th scope="row">Specialist stack</th><td>Established tools and depth in individual domains.</td><td>Cross-system context, contracts and handoffs.</td></tr><tr><th scope="row">Connected campus portal</th><td>A common front door over existing systems.</td><td>The underlying workflows and records remain distributed.</td></tr><tr><th scope="row">Whiteboard’s planned approach</th><td>An integrated learning core, with shared campus tasks and selected connected services.</td><td>Earning trust, preserving specialist authority and proving a careful migration.</td></tr></tbody></table></div><div class="services">${[['Library','Reading resources and discovery connect to the library system. Collections and circulation stay there.'],['Career services','Approved opportunities and appointment routes connect to the career platform.'],['Housing & accounts','Status and service routes can be surfaced with permission. Allocation, aid and ledgers remain authoritative elsewhere.'],['Institutional records','The SIS/registrar owns official enrollment and transcript results. Whiteboard must reconcile its teaching records.']].map(([a,b])=>`<details><summary>${a}</summary><p>${b}</p></details>`).join('')}</div></section>`;
-const direction=`<section class="chapter" id="direction"><div class="section-head"><div><p class="context">The vision and the path</p><h2>Build the foundation.<br>Then bring more together.</h2></div><p>The screens describe the intended product. This sequence is our direction, without promised launch dates or claims of live availability.</p></div><div class="roadmap">${[['Core learning','A complete, dependable course cycle: content, assignments, quizzes, submissions, grading and feedback.'],['Institutional depth','Course migration, term rollover, integrations, accessible workflows, support and operational evidence.'],['Campus coordination','Room requests, scheduling changes, events and organizations with shared context and clear ownership.'],['Connected support','Transparent referrals, helpful service discovery and selected campus adjacencies, with authority kept explicit.']].map(([a,b])=>`<div><h3>${a}</h3><p>${b}</p></div>`).join('')}</div><div class="conversation"><div><h3>What would make this work for your campus?</h3><p>We want to understand a real teaching workflow, the systems around it and what a careful first pilot would need.</p></div><button type="button" class="button primary big" data-open-conversation>Discuss a pilot</button></div><details class="screen-index"><summary>Explore every product workspace</summary><div class="index-grid">${available.sort().map(id=>`<button type="button" class="button quiet" data-open-screen="${id}">${e(WB.renderers[id].title)}</button>`).join('')}</div></details>${sourcesHTML}</section>`;
-const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Whiteboard — Your university, working together</title><meta name="description" content="Explore the Whiteboard product vision: a complete learning core, connected campus work and a clearer experience for students, faculty and institutions."><style>${fs.readFileSync(path.join(src,'styles.css'),'utf8')}</style></head><body><a class="skip-link" href="#main">Skip to product story</a><header class="topnav"><div class="shell nav-inner"><a class="brand" href="#main" aria-label="Whiteboard home">${brand}</a><nav class="nav-links" aria-label="Main navigation">${nav}</nav><div class="nav-tools"><button type="button" class="button quiet" data-theme-toggle aria-label="Theme preference: system">${h.icon('sun')}<span data-theme-label>Auto</span></button><a class="button primary" href="#student">Explore the product</a><details class="mobile-menu"><summary aria-label="Open navigation">${h.icon('menu')}</summary><nav aria-label="Mobile navigation">${nav}</nav></details></div></div></header><main class="shell" id="main"><header class="hero"><div class="hero-copy"><div class="concept-label">Product vision · interactive concept</div><h1>Your university, working together.</h1><p>An LMS at the center. Courses, campus spaces, events and support, designed to work as one.</p><div class="actions"><a href="#student" class="button primary big">Explore the product ${h.icon('arrow')}</a><a href="#direction" class="button quiet big">See the direction</a></div><p class="hero-note">A look at the product we’re building. Fictional data throughout; these are planned experiences, not live services.</p></div><div class="hero-stage">${hero}</div></header><nav class="role-entry" aria-label="Explore by role"><span>See your part of the day</span><a href="#student">Students</a><a href="#faculty">Faculty & TAs</a><a href="#spaces">Campus teams</a><a href="#institution">Administrators & IT</a></nav><noscript><p class="noscript-note">You can read the product story and the initial workspace in each chapter. Enable JavaScript to switch workspaces and try the local walkthroughs.</p></noscript><section class="problem" id="connected"><h2>Campus work crosses systems.<br>The experience should connect.</h2><div class="problem-grid"><div><h3>Find the right work.</h3><p>A consistent place for the next assignment, the class update and the event you joined.</p></div><div><h3>Know it went through.</h3><p>See the pages you submitted, the feedback released and the room actually confirmed.</p></div><div><h3>Know who acts next.</h3><p>Keep a name, a status and a next step with the request as it moves between people.<sup><a href="#sources" aria-label="Research context">1</a></sup></p></div></div><div class="platform-map"><div><a href="#courses"><b>Learning at the core</b><span>Courses · assessment · feedback</span></a></div><div><a href="#spaces"><b>Campus, coordinated</b><span>Time · spaces · organizations</span></a></div><div><a href="#support"><b>People, connected</b><span>Support · tasks · next steps</span></a></div></div></section><aside class="journey-panel" id="walkthrough" aria-label="Guided product walkthrough"><h3>Follow a piece of work through the campus.</h3><div class="journey-controls"><label for="journey-select" class="small">Choose an example</label><select id="journey-select" class="journey-select">${Object.entries(WB.journeys).map(([id,j])=>`<option value="${id}">${e(j.title)}</option>`).join('')}</select><button type="button" class="button primary" data-journey-start>Start example</button><button type="button" class="button" data-journey-back>Back</button><button type="button" class="button" data-journey-next>Next</button><button type="button" class="button quiet" data-reset>Reset example</button><p class="journey-step" role="status" aria-live="polite">Choose a task, then explore at your own pace.</p></div></aside>${WB.sections.filter(x=>x.id!=='trust').map(section).join('')}${comparison}${section(WB.sections.find(x=>x.id==='trust'))}${direction}</main><footer class="shell footer"><div class="brand">${brand}</div><p>A product vision for US higher education.<br>Fictional campus. No customer, performance or compliance claims.</p><p>Whiteboard product showcase<br>October 2026</p></footer><dialog id="conversation-dialog" aria-labelledby="conversation-title"><h2 id="conversation-title">A useful first conversation.</h2><p class="muted small">Prepare a brief and share it with the person who sent you this showcase. This preview sends nothing.</p><label class="field" for="brief-institution"><span>Institution or program</span><input id="brief-institution" placeholder="Your college or program"></label><label class="field" for="brief-workflow"><span>The workflow you would like to improve</span><textarea id="brief-workflow" placeholder="Tell us about one task and the people involved."></textarea></label><div class="actions"><button type="button" class="button primary" data-copy-brief>Copy brief</button><button type="button" class="button" data-download-brief>Download brief</button><button type="button" class="button quiet" data-close-conversation>Close</button></div><p id="brief-status" class="status-line" role="status"></p></dialog><div id="global-status" class="sr-only" role="status" aria-live="polite"></div><script>${scripts.join('\n').replace(/<\/script/gi,'<\\/script')}\nwindow.WB.available=${JSON.stringify(available)};\n${fs.readFileSync(path.join(src,'controller.js'),'utf8')}</script></body></html>`;
-const output=path.join(base,'../Claude outputs/Pellwin-Showcase.html');fs.writeFileSync(output,html);console.log(JSON.stringify({stage,output,bytes:Buffer.byteLength(html),screens:available.length}));
+import fs from "node:fs";
+import path from "node:path";
+import vm from "node:vm";
+import { fileURLToPath } from "node:url";
+const base = path.dirname(fileURLToPath(import.meta.url)),
+  src = path.join(base, "src");
+const stage = process.argv.includes("--stage")
+  ? process.argv[process.argv.indexOf("--stage") + 1]
+  : "B7";
+const n = Number(stage.slice(1));
+if (!/^B[1-8]$/.test(stage)) throw Error("Use B1–B8");
+const sources = [
+  "core.js",
+  "content.js",
+  ...(n >= 2 ? ["student.js"] : []),
+  ...(n >= 3 ? ["teaching.js"] : []),
+  ...(n >= 4 ? ["campus.js"] : []),
+  ...(n >= 6 ? ["institution.js"] : []),
+].filter((f) => fs.existsSync(path.join(src, f)));
+const scripts = sources.map((f) => fs.readFileSync(path.join(src, f), "utf8"));
+const sandbox = { window: {} };
+vm.createContext(sandbox);
+scripts.forEach((s) => vm.runInContext(s, sandbox));
+const WB = sandbox.window.WB;
+const minStage = (id) => {
+  const i = Number(id.slice(1));
+  if ([2, 13, 21, 23, 32, 33].includes(i)) return 7;
+  if (i <= 13) return i === 9 ? 3 : 2;
+  if (i <= 23) return 3;
+  if (i <= 27) return 4;
+  if (i <= 33) return 5;
+  return 6;
+};
+const available = Object.keys(WB.renderers).filter((id) => minStage(id) <= n);
+WB.available = available;
+const e = WB.e,
+  h = WB.h;
+const brand = `<span class="brand-mark" aria-hidden="true">w</span>
+<span>Whiteboard</span>`;
+const nav = `<a href="#student">Product</a>
+<a href="#faculty">Teaching</a>
+<a href="#spaces">Campus</a>
+<a href="#institution">Institutions</a>
+<a href="#direction">Direction</a>`;
+function frame(id, screen) {
+  const entry = WB.renderers[screen];
+  const body =
+    entry && available.includes(screen)
+      ? WB.render(screen)
+      : h.head(
+          "Campus work, brought together",
+          "A single place for coursework, conversations and the next thing to do.",
+        ) +
+        h.row(
+          "PHYS 110 · Introductory Mechanics",
+          "Problem Set 4: Kinematics · due Friday",
+          h.pill("Received", "success"),
+        ) +
+        h.row(
+          "Physics Society",
+          "An evening of experiments · Hollis Hall 104",
+          h.pill("Room requested", "warning"),
+        );
+  return `<div class="app-layout">
+<aside class="app-rail" aria-label="Product context">
+<div class="brand">${brand}</div>
+<span>Alder Hill College</span>
+<a href="#student">${h.icon("grid")}Today</a>
+<a href="#courses">${h.icon("book")}Courses</a>
+<a href="#spaces">${h.icon("calendar")}Time & space</a>
+<a href="#life">${h.icon("people")}Campus life</a>
+<a href="#support">${h.icon("pin")}Get support</a>
+</aside>
+<div class="app-panel" data-panel="${id}" aria-label="${e(entry?.title || "Product preview")}">${body}</div>
+</div>`;
+}
+function section(s) {
+  const tabs = s.screens.filter((id) => available.includes(id));
+  const screen = tabs.includes(s.default) ? s.default : tabs[0] || s.default;
+  return `<section class="chapter" id="${s.id}" aria-labelledby="heading-${s.id}">
+<div class="section-head">
+<div>
+<p class="context">${e(s.context)}</p>
+<h2 id="heading-${s.id}">${e(s.title)}</h2>
+</div>
+<p>${e(s.copy)}</p>
+</div>
+${tabs.map((id) => `<span class="route-anchor" id="${id}" aria-hidden="true"></span>`).join("")}<div class="stage" data-stage="${s.id}" data-screen="${screen}">
+<div class="stage-tabs" role="group" aria-label="${e(s.context)} workspaces">${tabs.map((id) => `<button type="button" data-screen="${id}" aria-pressed="${screen === id}">${e(WB.renderers[id].title)}</button>`).join("")}<span class="stage-role">Sample role: ${e(WB.renderers[screen]?.role || "Illustrative campus")}</span>
+</div>${frame(s.id, screen)}<div class="stage-foot">
+<span>Interactive concept · fictional data · changes stay in this page</span>
+<span class="stage-feedback" role="status" aria-live="polite">
+</span>
+</div>
+</div>
+<div class="scene-note">
+<p>${e(s.note)}</p>${s.journey ? `<button type="button" class="button quiet" data-start-journey="${s.journey}">Walk through the example ${h.icon("arrow")}</button>` : ""}</div>
+</section>`;
+}
+const hero = `<div class="product-window">
+<div class="window-bar">
+<span class="brand">${brand}</span>
+<span>Alder Hill College</span>
+</div>
+<div data-hero-records>${WB.heroHTML(WB.state)}</div>
+</div>`;
+const sourcesHTML = `<details class="sources" id="sources">
+<summary>Selected research and context</summary>
+<p>Research checked 15 October 2026. Institutional examples establish local needs, not national prevalence or measured Whiteboard outcomes.</p>
+<ol>
+<li id="source-1">
+<a href="https://www.educause.edu/content/2026/the-integrated-institution-a-guide-to-interoperability-for-student-success" target="_blank" rel="noopener noreferrer">EDUCAUSE: The Integrated Institution (September 2026)</a> — meaningful data exchange, shared definitions and student-support handoffs.</li>
+<li>
+<a href="https://www.villanova.edu/university/technology-services/initiatives/academic-scheduling.html" target="_blank" rel="noopener noreferrer">Villanova: academic scheduling initiative</a> — institution-specific coordination across departments.</li>
+<li>
+<a href="https://www.montana.edu/ecat/migrate/pre-migration-checklist/" target="_blank" rel="noopener noreferrer">Montana State: migration checklist</a> — course/record migration needs deliberate review.</li>
+<li>
+<a href="https://www.educause.edu/higher-education-community-vendor-assessment-toolkit" target="_blank" rel="noopener noreferrer">EDUCAUSE: HECVAT</a> and <a href="https://www.itic.org/policy/accessibility/vpat" target="_blank" rel="noopener noreferrer">ITI: VPAT/ACR</a> — risk and conformance evidence, not product certifications.</li>
+</ol>
+<p>Whiteboard is a product being designed. The people, records, numbers, AI drafts and service effects in this showcase are illustrative. No institution is represented as a customer or partner.</p>
+</details>`;
+const comparison = `<section class="chapter" id="approach">
+<div class="section-head">
+<div>
+<p class="context">One experience, clear boundaries</p>
+<h2>Bring the work together.<br>Keep the right expertise.</h2>
+</div>
+<p>An integrated product should make a task easier to complete. Specialist depth, migration and institutional choice still matter.</p>
+</div>
+<div class="table-scroll compare">
+<table>
+<caption>Different approaches serve different institutional priorities. Whiteboard describes our planned approach.</caption>
+<thead>
+<tr>
+<th scope="col">Approach</th>
+<th scope="col">What it offers</th>
+<th scope="col">What still needs care</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Specialist stack</th>
+<td>Established tools and depth in individual domains.</td>
+<td>Cross-system context, contracts and handoffs.</td>
+</tr>
+<tr>
+<th scope="row">Connected campus portal</th>
+<td>A common front door over existing systems.</td>
+<td>The underlying workflows and records remain distributed.</td>
+</tr>
+<tr>
+<th scope="row">Whiteboard’s planned approach</th>
+<td>An integrated learning core, with shared campus tasks and selected connected services.</td>
+<td>Earning trust, preserving specialist authority and proving a careful migration.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="services">${[
+  [
+    "Library",
+    "Reading resources and discovery connect to the library system. Collections and circulation stay there.",
+  ],
+  [
+    "Career services",
+    "Approved opportunities and appointment routes connect to the career platform.",
+  ],
+  [
+    "Housing & accounts",
+    "Status and service routes can be surfaced with permission. Allocation, aid and ledgers remain authoritative elsewhere.",
+  ],
+  [
+    "Institutional records",
+    "The SIS/registrar owns official enrollment and transcript results. Whiteboard must reconcile its teaching records.",
+  ],
+]
+  .map(
+    ([a, b]) => `<details>
+<summary>${a}</summary>
+<p>${b}</p>
+</details>`,
+  )
+  .join("")}</div>
+</section>`;
+const direction = `<section class="chapter" id="direction">
+<div class="section-head">
+<div>
+<p class="context">The vision and the path</p>
+<h2>Build the foundation.<br>Then bring more together.</h2>
+</div>
+<p>The screens describe the intended product. This sequence is our direction, without promised launch dates or claims of live availability.</p>
+</div>
+<div class="roadmap">${[
+  [
+    "Core learning",
+    "A complete, dependable course cycle: content, assignments, quizzes, submissions, grading and feedback.",
+  ],
+  [
+    "Institutional depth",
+    "Course migration, term rollover, integrations, accessible workflows, support and operational evidence.",
+  ],
+  [
+    "Campus coordination",
+    "Room requests, scheduling changes, events and organizations with shared context and clear ownership.",
+  ],
+  [
+    "Connected support",
+    "Transparent referrals, helpful service discovery and selected campus adjacencies, with authority kept explicit.",
+  ],
+]
+  .map(
+    ([a, b]) => `<div>
+<h3>${a}</h3>
+<p>${b}</p>
+</div>`,
+  )
+  .join("")}</div>
+<div class="conversation">
+<div>
+<h3>What would make this work for your campus?</h3>
+<p>We want to understand a real teaching workflow, the systems around it and what a careful first pilot would need.</p>
+</div>
+<button type="button" class="button primary big" data-open-conversation>Discuss a pilot</button>
+</div>
+<details class="screen-index">
+<summary>Explore every product workspace</summary>
+<div class="index-grid">${available
+  .sort()
+  .map(
+    (id) =>
+      `<button type="button" class="button quiet" data-open-screen="${id}">${e(WB.renderers[id].title)}</button>`,
+  )
+  .join("")}</div>
+</details>${sourcesHTML}</section>`;
+const html = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Whiteboard — Your university, working together</title>
+<meta name="description" content="Explore the Whiteboard product vision: a complete learning core, connected campus work and a clearer experience for students, faculty and institutions.">
+<style>${fs.readFileSync(path.join(src, "styles.css"), "utf8")}</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to product story</a>
+<header class="topnav">
+<div class="shell nav-inner">
+<a class="brand" href="#main" aria-label="Whiteboard home">${brand}</a>
+<nav class="nav-links" aria-label="Main navigation">${nav}</nav>
+<div class="nav-tools">
+<button type="button" class="button quiet" data-theme-toggle aria-label="Theme preference: system">${h.icon("sun")}<span data-theme-label>Auto</span>
+</button>
+<a class="button primary" href="#student">Explore the product</a>
+<details class="mobile-menu">
+<summary aria-label="Open navigation">${h.icon("menu")}</summary>
+<nav aria-label="Mobile navigation">${nav}</nav>
+</details>
+</div>
+</div>
+</header>
+<main class="shell" id="main">
+<header class="hero">
+<div class="hero-copy">
+<div class="concept-label">Product vision · interactive concept</div>
+<h1>Your university, working together.</h1>
+<p>An LMS at the center. Courses, campus spaces, events and support, designed to work as one.</p>
+<div class="actions">
+<a href="#student" class="button primary big">Explore the product ${h.icon("arrow")}</a>
+<a href="#direction" class="button quiet big">See the direction</a>
+</div>
+<p class="hero-note">A look at the product we’re building. Fictional data throughout; these are planned experiences, not live services.</p>
+</div>
+<div class="hero-stage">${hero}</div>
+</header>
+<nav class="role-entry" aria-label="Explore by role">
+<span>See your part of the day</span>
+<a href="#student">Students</a>
+<a href="#faculty">Faculty & TAs</a>
+<a href="#spaces">Campus teams</a>
+<a href="#institution">Administrators & IT</a>
+</nav>
+<section class="first-look" aria-labelledby="first-look-title">
+<div>
+<h2 id="first-look-title">Start with one piece of work.</h2>
+<p>Follow it through the people who make a campus run. The full product is below whenever you want to explore.</p>
+</div>
+<div class="first-look-paths">
+<button class="button primary" data-start-journey="J1">Student: submit and follow feedback</button>
+<button class="button" data-start-journey="J2">Faculty: review and release</button>
+<button class="button" data-start-journey="J6">IT: bring a course across</button>
+</div>
+</section>
+<noscript>
+<p class="noscript-note">You can read the product story and the initial workspace in each chapter. Enable JavaScript to switch workspaces and try the local walkthroughs.</p>
+</noscript>
+<section class="problem" id="connected">
+<h2>Campus work crosses systems.<br>The experience should connect.</h2>
+<div class="problem-grid">
+<div>
+<h3>Find the right work.</h3>
+<p>A consistent place for the next assignment, the class update and the event you joined.</p>
+</div>
+<div>
+<h3>Know it went through.</h3>
+<p>See the pages you submitted, the feedback released and the room actually confirmed.</p>
+</div>
+<div>
+<h3>Know who acts next.</h3>
+<p>Keep a name, a status and a next step with the request as it moves between people.<sup>
+<a href="#sources" aria-label="Research context">1</a>
+</sup>
+</p>
+</div>
+</div>
+<div class="platform-map">
+<div>
+<a href="#courses">
+<b>Learning at the core</b>
+<span>Courses · assessment · feedback</span>
+</a>
+</div>
+<div>
+<a href="#spaces">
+<b>Campus, coordinated</b>
+<span>Time · spaces · organizations</span>
+</a>
+</div>
+<div>
+<a href="#support">
+<b>People, connected</b>
+<span>Support · tasks · next steps</span>
+</a>
+</div>
+</div>
+</section>
+<aside class="journey-panel" id="walkthrough" aria-label="Guided product walkthrough">
+<h3>Follow a piece of work through the campus.</h3>
+<div class="journey-controls">
+<label for="journey-select" class="small">Choose an example</label>
+<select id="journey-select" class="journey-select">${Object.entries(WB.journeys)
+  .map(([id, j]) => `<option value="${id}">${e(j.title)}</option>`)
+  .join("")}</select>
+<button type="button" class="button primary" data-journey-start>Start example</button>
+<button type="button" class="button" data-journey-back>Back</button>
+<button type="button" class="button" data-journey-next>Next</button>
+<button type="button" class="button quiet" data-reset>Reset example</button>
+<p class="journey-step" role="status" aria-live="polite">Choose a task, then explore at your own pace.</p>
+</div>
+</aside>${WB.sections
+  .filter((x) => x.id !== "trust")
+  .map(section)
+  .join(
+    "",
+  )}${comparison}${section(WB.sections.find((x) => x.id === "trust"))}${direction}</main>
+<footer class="shell footer">
+<div class="brand">${brand}</div>
+<p>A product vision for US higher education.<br>Fictional campus. No customer, performance or compliance claims.</p>
+<p>Whiteboard product showcase<br>October 2026</p>
+</footer>
+<dialog id="conversation-dialog" aria-labelledby="conversation-title">
+<h2 id="conversation-title">A useful first conversation.</h2>
+<p class="muted small">Prepare a brief and share it with the person who sent you this showcase. This preview sends nothing.</p>
+<label class="field" for="brief-institution">
+<span>Institution or program</span>
+<input name="institution" autocomplete="organization" id="brief-institution" placeholder="Your college or program">
+</label>
+<label class="field" for="brief-workflow">
+<span>The workflow you would like to improve</span>
+<textarea name="workflow" autocomplete="off" id="brief-workflow" placeholder="Tell us about one task and the people involved.">
+</textarea>
+</label>
+<div class="actions">
+<button type="button" class="button primary" data-copy-brief>Copy brief</button>
+<button type="button" class="button" data-download-brief>Download brief</button>
+<button type="button" class="button quiet" data-close-conversation>Close</button>
+</div>
+<p id="brief-status" class="status-line" role="status">
+</p>
+</dialog>
+<div id="global-status" class="sr-only" role="status" aria-live="polite">
+</div>
+<script>${scripts.join("\n").replace(/<\/script/gi, "<\\/script")}\nwindow.WB.available=${JSON.stringify(available)};\n${fs.readFileSync(path.join(src, "controller.js"), "utf8")}</script>
+</body>
+</html>`;
+const output = path.join(base, "../Claude outputs/Pellwin-Showcase.html");
+fs.writeFileSync(output, html);
+console.log(
+  JSON.stringify({
+    stage,
+    output,
+    bytes: Buffer.byteLength(html),
+    screens: available.length,
+  }),
+);

@@ -1,23 +1,175 @@
-(function(){
-const WB=window.WB;
-WB.sections=[
- {id:'student',context:'For students',title:'A day with a clear next step.',copy:'Courses, deadlines, class times and campus updates belong together. Find what matters, then go straight to the work.',screens:['S01','S02','S12','S13'],default:'S01',note:'One task, one status, wherever you find it.',journey:'J1'},
- {id:'courses',context:'The LMS at the center',title:'A proper home for every course.',copy:'The syllabus, weekly materials, assignments and conversations share a familiar structure. Room for different ways of teaching, without a different way of finding everything.',screens:['S03','S04','S10','S11'],default:'S03',note:'Explore a module, try a short quiz, or join the course discussion.'},
- {id:'submission',context:'From the student’s desk',title:'Handwritten work. Nothing left in doubt.',copy:'Capture the pages, connect them to the questions and review the exact submission. A clear receipt closes the loop.',screens:['S05','S06','S07','S08'],default:'S05',note:'Try an interruption. The example keeps your pages and makes the next step clear.',journey:'J1'},
- {id:'faculty',context:'For professors and TAs',title:'More teaching. Less finding the setting.',copy:'Build the course, publish accessible work and prepare the next term. Important settings live with the task they change.',screens:['S14','S15','S16','S21','S22','S23'],default:'S14',note:'Publication, accommodations and role boundaries are part of the course workflow.',journey:'J2'},
- {id:'grading',context:'Assessment, thoughtfully connected',title:'See the work. Explain the grade.',copy:'Work question by question, with a rubric beside the page. Understand the impact of a change before it reaches students.',screens:['S17','S18','S19','S20','S09'],default:'S17',note:'Saved, reviewed, released and acknowledged by another system are different states.',journey:'J2'},
- {id:'spaces',context:'For registrars and campus teams',title:'The right time. The right room.',copy:'See the constraints behind the timetable. Propose a change, resolve conflicts and follow a room request through to confirmation.',screens:['S24','S25','S26','S27'],default:'S24',note:'A request becomes a reservation only when the responsible system confirms it.',journey:'J3'},
- {id:'life',context:'For the campus community',title:'Make something happen on campus.',copy:'Find a club that is active. Plan an event together. Keep rooms, approvals and participation connected as people and responsibilities change.',screens:['S28','S29','S30','S31','S32','S33'],default:'S29',note:'The organization owns its work, even when officers move on.',journey:'J4'},
- {id:'support',context:'Connected student support',title:'Help should have a next step, too.',copy:'Find the right service, understand what will be shared and see who is taking the next step. Course context becomes a warm handoff to a person.',screens:['S34','S35','S36'],default:'S34',note:'A later connected experience. Official degree decisions and sensitive records stay with their responsible offices.',journey:'J5'},
- {id:'institution',context:'For administrators and IT',title:'Clarity behind the scenes.',copy:'Know who has access, where a record came from and what needs attention. Bring courses over with exceptions you can actually inspect.',screens:['S37','S38','S39'],default:'S38',note:'Connection targets are planned. No production systems are connected to this preview.',journey:'J6'},
- {id:'trust',context:'Institutional trust and choice',title:'Designed to be accountable.',copy:'Accessibility, privacy and institutional control belong in the product. The intended controls are visible here; independent assurance and operational evidence still have to be earned.',screens:['S40'],default:'S40',note:'Illustrative controls, not a certification or a legal compliance determination.'}
-];
-WB.journeys={
- J1:{title:'Submit a problem set',steps:[['S01','Find your next task'],['S03','Open the course'],['S05','Read the assignment'],['S06','Capture sample pages'],['S07','Organize and review'],['S08','Inspect the receipt'],['S09','See released feedback after grading']]},
- J2:{title:'Teach, grade and release',steps:[['S14','Prepare the course'],['S15','Set up the assignment'],['S17','Review and grade'],['S18','Preview a rubric change'],['S19','Explain the calculation'],['S20','Choose what to release'],['S09','Switch to the student view']]},
- J3:{title:'Resolve a scheduling change',steps:[['S24','Read the timetable'],['S25','Propose and inspect a change'],['S25','Follow source confirmation'],['S12','See the calendar']]},
- J4:{title:'Bring an event together',steps:[['S29','Meet the organization'],['S30','Create a shared draft'],['S26','Find a room'],['S27','Request the space'],['S31','Resolve approvals'],['S28','Publish and RSVP'],['S32','Check in and reconcile']]},
- J5:{title:'Connect a student to help',steps:[['S34','Find the right service'],['S35','Create a contextual referral'],['S36','Accept and follow through'],['S34','Return to the student view']]},
- J6:{title:'Move a course with care',steps:[['S39','Inspect migration exceptions'],['S22','Preview a course copy'],['S38','Reconcile connected records'],['S37','Review institutional control']]}
-};
+(function () {
+  const WB = window.WB;
+  WB.sections = [
+    {
+      id: "student",
+      context: "For students",
+      title: "A day with a clear next step.",
+      copy: "Courses, deadlines, class times and campus updates belong together. Find what matters, then go straight to the work.",
+      screens: ["S01", "S02", "S12", "S13"],
+      default: "S01",
+      note: "One task, one status, wherever you find it.",
+      journey: "J1",
+    },
+    {
+      id: "courses",
+      context: "The LMS at the center",
+      title: "A proper home for every course.",
+      copy: "The syllabus, weekly materials, assignments and conversations share a familiar structure. Room for different ways of teaching, without a different way of finding everything.",
+      screens: ["S03", "S04", "S10", "S11"],
+      default: "S03",
+      note: "Explore a module, try a short quiz, or join the course discussion.",
+    },
+    {
+      id: "submission",
+      context: "From the student’s desk",
+      title: "Handwritten work. Nothing left in doubt.",
+      copy: "Capture the pages, connect them to the questions and review the exact submission. A clear receipt closes the loop.",
+      screens: ["S05", "S06", "S07", "S08"],
+      default: "S05",
+      note: "Try an interruption. The example keeps your pages and makes the next step clear.",
+      journey: "J1",
+    },
+    {
+      id: "faculty",
+      context: "For professors and TAs",
+      title: "More teaching. Less finding the setting.",
+      copy: "Build the course, publish accessible work and prepare the next term. Important settings live with the task they change.",
+      screens: ["S14", "S15", "S16", "S21", "S22", "S23"],
+      default: "S14",
+      note: "Publication, accommodations and role boundaries are part of the course workflow.",
+      journey: "J2",
+    },
+    {
+      id: "grading",
+      context: "Assessment, thoughtfully connected",
+      title: "See the work. Explain the grade.",
+      copy: "Work question by question, with a rubric beside the page. Understand the impact of a change before it reaches students.",
+      screens: ["S17", "S18", "S19", "S20", "S09"],
+      default: "S17",
+      note: "Saved, reviewed, released and acknowledged by another system are different states.",
+      journey: "J2",
+    },
+    {
+      id: "spaces",
+      context: "For registrars and campus teams",
+      title: "The right time. The right room.",
+      copy: "See the constraints behind the timetable. Propose a change, resolve conflicts and follow a room request through to confirmation.",
+      screens: ["S24", "S25", "S26", "S27"],
+      default: "S24",
+      note: "A request becomes a reservation only when the responsible system confirms it.",
+      journey: "J3",
+    },
+    {
+      id: "life",
+      context: "For the campus community",
+      title: "Make something happen on campus.",
+      copy: "Find a club that is active. Plan an event together. Keep rooms, approvals and participation connected as people and responsibilities change.",
+      screens: ["S28", "S29", "S30", "S31", "S32", "S33"],
+      default: "S29",
+      note: "The organization owns its work, even when officers move on.",
+      journey: "J4",
+    },
+    {
+      id: "support",
+      context: "Connected student support",
+      title: "Help should have a next step, too.",
+      copy: "Find the right service, understand what will be shared and see who is taking the next step. Course context becomes a warm handoff to a person.",
+      screens: ["S34", "S35", "S36"],
+      default: "S34",
+      note: "A later connected experience. Official degree decisions and sensitive records stay with their responsible offices.",
+      journey: "J5",
+    },
+    {
+      id: "institution",
+      context: "For administrators and IT",
+      title: "Clarity behind the scenes.",
+      copy: "Know who has access, where a record came from and what needs attention. Bring courses over with exceptions you can actually inspect.",
+      screens: ["S37", "S38", "S39"],
+      default: "S38",
+      note: "Connection targets are planned. No production systems are connected to this preview.",
+      journey: "J6",
+    },
+    {
+      id: "trust",
+      context: "Institutional trust and choice",
+      title: "Designed to be accountable.",
+      copy: "Accessibility, privacy and institutional control belong in the product. The intended controls are visible here; independent assurance and operational evidence still have to be earned.",
+      screens: ["S40"],
+      default: "S40",
+      note: "Illustrative controls, not a certification or a legal compliance determination.",
+    },
+  ];
+  WB.journeys = {
+    J1: {
+      title: "Submit a problem set",
+      steps: [
+        ["S01", "Find your next task"],
+        ["S03", "Open the course"],
+        ["S05", "Read the assignment"],
+        ["S06", "Capture sample pages"],
+        ["S07", "Organize and review"],
+        ["S08", "Inspect the receipt"],
+        ["S09", "See released feedback after grading"],
+      ],
+    },
+    J2: {
+      title: "Teach, grade and release",
+      steps: [
+        ["S14", "Prepare the course"],
+        ["S15", "Set up the assignment"],
+        ["S17", "Review and grade"],
+        ["S18", "Preview a rubric change"],
+        ["S19", "Explain the calculation"],
+        ["S20", "Choose what to release"],
+        ["S09", "Switch to the student view"],
+      ],
+    },
+    J3: {
+      title: "Resolve a scheduling change",
+      steps: [
+        ["S24", "Read the timetable"],
+        ["S25", "Propose and inspect a change"],
+        ["S25", "Follow source confirmation"],
+        ["S12", "See the calendar"],
+      ],
+    },
+    J4: {
+      title: "Bring an event together",
+      steps: [
+        ["S29", "Meet the organization"],
+        ["S30", "Create a shared draft"],
+        ["S26", "Find a room"],
+        ["S27", "Request the space"],
+        ["S31", "Resolve approvals"],
+        ["S28", "Publish and RSVP"],
+        ["S32", "Check in and reconcile"],
+      ],
+    },
+    J5: {
+      title: "Connect a student to help",
+      steps: [
+        ["S34", "Find the right service"],
+        ["S35", "Create a contextual referral"],
+        ["S36", "Accept and follow through"],
+        ["S34", "Return to the student view"],
+      ],
+    },
+    J6: {
+      title: "Move a course with care",
+      steps: [
+        ["S39", "Inspect migration exceptions"],
+        ["S22", "Preview a course copy"],
+        ["S38", "Reconcile connected records"],
+        ["S37", "Review institutional control"],
+      ],
+    },
+  };
+  WB.heroHTML = (s) => {
+    const h = WB.h,
+      e = WB.e,
+      d = WB.effectiveDates(s),
+      event = s.campus?.event;
+    return `<div class="hero-home"><p class="demo-date">Thursday, October 15 · sample campus</p><h2>Good morning, Aisha.</h2><div class="hero-next"><span class="course-tag">PHYS 110</span><p><strong>${e(s.assignment.title)}</strong></p><p>${s.submission.status === "received" ? "Received · receipt " + e(s.submission.receipt) : "Draft · review your pages before submitting"}</p><p>Due ${e(WB.deadline(d.due))}</p>${h.go("Open assignment", "S05", "quiet")}</div><section class="hero-agenda"><h3>Coming up</h3>${h.row("Linear Algebra", "10:30 am · Keene Center 212", h.pill("Class", "info"))}${event && s.campus.eventPublished ? h.row(event.title, event.date + " · " + event.time, h.go("Explore event", "S28", "quiet")) : h.row("Campus life", "Your next event begins with a plan", h.go("Explore organizations", "S29"))}</section><a href="#support">Find student support</a></div>`;
+  };
 })();

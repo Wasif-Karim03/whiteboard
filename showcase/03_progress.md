@@ -81,3 +81,28 @@ Browser limitation: the previously recorded local-file URL-policy restriction wa
 Edit `showcase/src/` modules and run the build command; do not hand-edit the generated HTML. `showcase/build.mjs` produces the complete offline file at `Claude outputs/Pellwin-Showcase.html` (legacy filename; visible brand is Whiteboard). The artifact has 40 workspaces and six guided examples, with fictional data held only in memory. Reload restores initial state; theme preference may persist locally. Copy/Download brief prepares local text and never contacts anyone. The original is in `showcase/archive/showcase_v1_2026-10-15.html`. Research files and unrelated project files remain separate. Branch `showcase/v2`; implementation groups committed individually. Final review corrections are recorded in the QA commit.
 
 Final QA corrections: fixed cross-domain route targets, stale grade-export status, unpublished course/assignment/quiz gates, canonical submission preservation, event-revision room authority, scoped reset behavior and the scheduling journey’s authority record. The quiz workspace is explicitly a first-question preview, not a complete exam engine. Final single-file size: approximately 254 KB. Astra performed bounded source/state integration review; no Astra/browser visual approval is implied.
+
+## Revision audit — 15 October 2026
+
+The follow-up review found that several earlier coverage claims described partial demonstrations. The existing automated suites still pass, but additional Node probes reproduce incorrect release-preview content, borrowed learner pages, excused numeric release, disconnected module settings, whole-submission feedback mislabeled per-question, contradictory AI policy, unchanged RSVP calendar and overwritten referral corrections.
+
+Use `04_revision_audit.md` for section-by-section findings, `05_update_tracker.md` / `.csv` for the 38-item backlog, and `06_revision_plan.md` for execution order. Current counts: 9 P0, 25 P1, 4 P2. Revision implementation has not started. Browser acceptance remains blocked/unverified. The showcase HTML and source modules were unchanged by the review.
+
+Review baseline: commit `eca61e1`; artifact SHA-256 `1c4770e42135d7f879f3948724b084ce1389aaa6f46570de17a578855079c7aa`. Reproduction evidence and the read-only probe script are in `showcase/review/`. New audit documents have not been committed or published in this review turn.
+
+## Current revision handoff — 15 October 2026
+
+The authorized source modifications are implemented. The current tracker has **27 Done (source/state), 8 Implemented/unverified, and 3 blocked browser-acceptance gates**. This supersedes the earlier blanket coverage/completion statements. There are still no production services or conformance claims.
+
+1. **Shared correctness:** per-learner submissions; answer-specific feedback/review; exact previewed releases; excused exclusion; consistent policy; structured booking/commitment validation; coherent repeatable resets; guarded invalid/locked edits.
+2. **Navigation and accessibility implementation:** unchanged panels retained, stable control identity, field-associated validation, local task guidance, real workspace links/history, full work transcriptions/enlargement and readable narrow-layout controls. Browser acceptance remains pending.
+3. **LMS depth:** actual quiz item/attempt/result policy, effective learner allowances, module prerequisites/release dates/completion, empty assignment/course creation, sample attachments and a separate inspectable rollover destination.
+4. **Campus handoffs:** ordered waitlist/pass/guest handling; participation-based calendar; roster/contact/task transfer; entered referral corrections and student-safe status/history.
+5. **Institution readiness:** inspectable source rows, rejection/retry/idempotency, migration severity/decisions/report, fictional access expiry/named audit, operational responsibilities and portable record export.
+6. **Source/QA/handoff:** formatted modules, updated source contract and README, preserved v1 and v2 archives. All 19 commands in `review/verification_2026-10-15.json` passed, including eight Node suites, syntax, build, static HTML and whitespace checks. Static HTML checks cover all rendered label/ARIA targets, anchors/assets and both archive hashes. Deadline comparisons now use the institution's America/New_York wall clock rather than a UTC date string; timezone boundary regression passes.
+
+Astra implemented/reviewed the bounded assessment changes and reviewed integration. Final read-only action/API probes found no blocking state discrepancies; 549 enabled-button probes across default/J4/J5 scenarios had no exceptions or campus actor-denial mismatch. These are local source/API checks, not browser interaction tests.
+
+**Remaining:** no desktop/phone Light/Dark rendering, actual keyboard/screen-reader/focus/history/download review, browser console or fresh-reviewer usability test has run. The recorded local-file URL-policy restriction was respected; no workaround was attempted. Three source endpoints returned HTTP 200; two EDUCAUSE HEAD requests returned HTTP 403 and remain unverified. See the tracker and `review/link_check_2026-10-15.json`.
+
+Current deliverable: `Claude outputs/Pellwin-Showcase.html`, 424,345 bytes, 40 workspaces, six guided journeys; SHA-256 `3078221148b561a04e13d1552bf4dc558aac2253459da20f0fb65a6ecb61f12c`. Build using `node showcase/build.mjs --stage B8`. Full commands and the pinned free formatter are in `showcase/README.md`. Historical defect probes now explicitly read the preserved v2 archive; current regressions test the revised sources. Research files and unrelated project assets remain unchanged.

@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-15",
+  "method": "Node VM, no browser, synthetic local records; findings reproduce existing defects",
+  "results": [
+    {
+      "id": "REV-03",
+      "previewScore": 27,
+      "releasedScore": 20,
+      "releasedComment": "Edited after preview"
+    },
+    {
+      "id": "REV-08",
+      "modulePublished": false,
+      "studentViewUnchanged": true
+    },
+    {
+      "id": "REV-04",
+      "excused": true,
+      "released": true,
+      "snapshot": {
+        "marks": [
+          6,
+          4,
+          3,
+          5,
+          6
+        ],
+        "comment": "Review your units and show the intermediate steps.",
+        "attempt": 1,
+        "rubricVersion": 1
+      }
+    },
+    {
+      "id": "REV-02",
+      "selectedLearner": "ben",
+      "usesAishasRotatedPage": true
+    },
+    {
+      "id": "REV-35",
+      "question": "1a",
+      "otherQuestionShowsSameFeedback": true
+    },
+    {
+      "id": "REV-36",
+      "canonicalPolicy": "Limited: use AI to clarify concepts; show your own working and disclose assistance.",
+      "instructorDisplaysProhibited": true
+    },
+    {
+      "id": "REV-38",
+      "rsvp": "confirmed",
+      "calendarUnchanged": true
+    },
+    {
+      "id": "REV-21",
+      "entered": "Correct the date to October 13",
+      "stored": "Aisha requested practice with vector components after the 12 Oct diagnostic quiz."
+    }
+  ]
+}

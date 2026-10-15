@@ -1,0 +1,27 @@
+[
+  {
+    "url": "https://www.educause.edu/content/2026/the-integrated-institution-a-guide-to-interoperability-for-student-success",
+    "status": "unverified",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.educause.edu/higher-education-community-vendor-assessment-toolkit",
+    "status": "unverified",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://www.itic.org/policy/accessibility/vpat",
+    "status": 200,
+    "final_url": "https://www.itic.org/policy/accessibility/vpat"
+  },
+  {
+    "url": "https://www.montana.edu/ecat/migrate/pre-migration-checklist/",
+    "status": 200,
+    "final_url": "https://www.montana.edu/ecat/migrate/pre-migration-checklist/"
+  },
+  {
+    "url": "https://www.villanova.edu/university/technology-services/initiatives/academic-scheduling.html",
+    "status": 200,
+    "final_url": "https://www.villanova.edu/university/technology-services/initiatives/academic-scheduling.html"
+  }
+]
