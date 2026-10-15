@@ -6,8 +6,8 @@ Approved: 2026-10-15. Branch: `showcase/v2`. Source: `Claude outputs/Pellwin-Sho
 | --- | --- | --- |
 | B0 Preserve and prepare | Complete | Original and archive byte/hash match. |
 | B1 Story and shell | Complete | Offline narrative, 14 sections, responsive tokens/nav/theme, shared pure render contract and local conversation brief. |
-| B2 Student learning | In progress | Connected assignment/pages/receipt and course/quiz flow. |
-| B3 Faculty and assessment | Pending | Correct rubric, grades, release scope and role visibility. |
+| B2 Student learning | Complete | Ten P0 workspaces; shared page/tag/receipt state, interruption/retry, course materials, quiz and conversation. |
+| B3 Faculty and assessment | In progress | Correct rubric, grades, release scope and role visibility. |
 | B4 Spaces | Pending | Request, approval and authoritative confirmation distinct. |
 | B5 Events and organizations | Pending | Shared draft, dependencies, RSVP. |
 | B6 Institution and support | Pending | Referrals, migration, reconciliation, honest trust status. |
@@ -23,3 +23,5 @@ Only fictional local data. No service connections, messages, publishing, paid ca
 B0 completed; root owns shared model, shell, styles, integration and commits. Bounded workers may own disjoint screen modules after the rendering/action contract is saved. Previous browser URL-policy limit must be respected; record actual checks, not promised checks.
 
 B1: Replaced the internal review shell with the planned product narrative. Built static readable scenes, role anchors, theme controls, source footer and honest local CTA. Syntax/build checks passed; browser execution is not yet claimed.
+
+B2: Added the student day, course/materials, scanning/PDF samples, page organizer, receipt, quiz and discussion. Node checks passed for pure rendering, tag validation, preserved retry state, new-attempt grade invalidation, quiz submission and escaped replies. P1 course/update views are implemented but stage-gated until B7.
