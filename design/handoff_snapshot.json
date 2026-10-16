@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-15",
+  "purpose": "Claude design-phase handoff; not production or browser acceptance",
+  "git": {
+    "branch": "showcase/v2",
+    "head": "779defc0465996eb889afb04f6be56821dae18f3",
+    "uncommitted_deliverables": true,
+    "commit_or_push_performed": false
+  },
+  "counts": {
+    "showcase_screens": 40,
+    "proposed_additions": 10,
+    "map_destinations": 50,
+    "platform_design_targets": 100,
+    "transitions": 147,
+    "journeys": 15,
+    "ios_web_recommended": 12
+  },
+  "files": {
+    "Claude outputs/Pellwin-Showcase.html": {
+      "bytes": 428330,
+      "sha256": "49f6209ad6ef2d87f0e00cce4eef9b60c2e002ef498c052b6675f9152a23876d"
+    },
+    "showcase/app_map/index.html": {
+      "bytes": 456280,
+      "sha256": "097a05edba9fd784addf94d4cd6203a07860765d1018b8224176713cbcc25904"
+    },
+    "showcase/app_map/screens.json": {
+      "bytes": 74756,
+      "sha256": "24b6f40d517ad9c990e02b4508816e18d2eec40f9ea27b9a170af312893d7855"
+    },
+    "showcase/app_map/routes.json": {
+      "bytes": 35487,
+      "sha256": "70f603f9a35e1daea2e5ddb5475589774e4e3705fd2615395d6c3b36c45d6674"
+    },
+    "design/screen_tracker.csv": {
+      "bytes": 23392,
+      "sha256": "226ea6d87de2bba3fbb776e66337b832986ccabbac760f533f19766b5c95345b"
+    }
+  },
+  "checks": [
+    {
+      "command": "node showcase/tools/check_student.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_revision_student.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_readiness_regressions.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_teaching.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_revision_teaching.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_campus.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_institution.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_integrated.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/tools/check_controller_logic.cjs",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 showcase/tools/check_html.py",
+      "status": "passed",
+      "exit_code": 0
+    },
+    {
+      "command": "node showcase/app_map/validate.mjs",
+      "status": "passed",
+      "exit_code": 0
+    }
+  ],
+  "tracker_check": "100 unique IDs/platform pairs; map IDs match; all not started;12 iOS web-recommended",
+  "original_showcase_preserved": true,
+  "browser_acceptance": "Unverified; recorded URL-policy restriction not bypassed",
+  "native_ios": "Planned only; no simulator/device tests",
+  "remaining": "Design all targets and applicable states; browser/device/owner review separately"
+}

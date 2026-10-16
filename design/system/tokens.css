@@ -1,0 +1,105 @@
+/* Whiteboard shared design tokens — batch 01 proposal (15 Oct 2026).
+   Status: proposed for owner review; not accepted. Used by design previews only.
+   Contrast pairs are checked by design/tools/check_batch01.mjs (static math, not a browser test). */
+
+:root {
+  color-scheme: light;
+  /* Neutrals */
+  --wb-bg: #f3f4f5;            /* page / grouped background */
+  --wb-surface: #ffffff;       /* cards, lists, sheets */
+  --wb-surface-2: #f7f8f8;     /* inset areas, table stripes */
+  --wb-fill: #e9ebec;          /* control fills, segmented track */
+  --wb-separator: #dfe2e4;     /* hairlines (decorative, not a control boundary) */
+  --wb-border: #868c91;        /* input/control boundaries: >= 3:1 on surface */
+  --wb-text: #16191b;
+  --wb-text-2: #575e63;        /* secondary text: >= 4.5:1 on surface and bg */
+  /* Identity: Whiteboard teal, retained from the showcase */
+  --wb-accent: #007176;        /* fills and links */
+  --wb-accent-text: #006a6f;
+  --wb-on-accent: #ffffff;
+  --wb-accent-tint: #e2f2f2;
+  /* Semantic status — always paired with an icon and words, never colour alone */
+  --wb-success: #17703a;  --wb-success-bg: #e5f3e9;
+  --wb-warning: #855000;  --wb-warning-bg: #fcefdb;
+  --wb-error: #b0251c;    --wb-error-bg: #fcebe9;
+  --wb-info: #0c5f9e;     --wb-info-bg: #e4eff9;
+  --wb-neutral: #4a5157;  --wb-neutral-bg: #eceef0;  /* held, queued, not released */
+  --wb-focus: #0a66d8;
+  --wb-scrim: rgb(0 0 0 / 0.32);
+  --wb-shadow-1: 0 1px 2px rgb(16 24 28 / 0.06), 0 1px 1px rgb(16 24 28 / 0.04);
+  --wb-shadow-2: 0 8px 28px rgb(16 24 28 / 0.12), 0 1px 3px rgb(16 24 28 / 0.08);
+
+  /* Type — system font so iOS gets SF Pro and Dynamic Type metrics */
+  --wb-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --wb-font-round: ui-rounded, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --wb-scale: 1;               /* text-size multiplier; 1.24 previews larger Dynamic Type */
+
+  /* Spacing: 4-pt grid */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px; --s6: 24px; --s8: 32px; --s10: 40px; --s14: 56px;
+
+  /* Radii */
+  --r-control: 8px; --r-card: 12px; --r-inset: 10px; --r-sheet: 16px; --r-pill: 999px;
+
+  /* Motion: short, purposeful; disabled under reduced motion */
+  --m-fast: 120ms; --m-base: 200ms; --m-slow: 320ms;
+  --m-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Hit targets */
+  --hit-ios: 44px; --hit-web: 32px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --wb-bg: #0f1112;
+  --wb-surface: #1b1e20;
+  --wb-surface-2: #222628;
+  --wb-fill: #2d3235;
+  --wb-separator: #33393c;
+  --wb-border: #7d868b;
+  --wb-text: #eef1f2;
+  --wb-text-2: #a9b1b6;
+  --wb-accent: #5cc8c8;
+  --wb-accent-text: #6fd3d3;
+  --wb-on-accent: #002a2b;
+  --wb-accent-tint: #123435;
+  --wb-success: #72d58f;  --wb-success-bg: #163020;
+  --wb-warning: #f2b252;  --wb-warning-bg: #36260b;
+  --wb-error: #ff9d92;    --wb-error-bg: #3f1d1a;
+  --wb-info: #86c3f5;     --wb-info-bg: #13283a;
+  --wb-neutral: #c3cacf;  --wb-neutral-bg: #2a2f32;
+  --wb-focus: #7fb4ff;
+  --wb-scrim: rgb(0 0 0 / 0.55);
+  --wb-shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --wb-shadow-2: 0 10px 32px rgb(0 0 0 / 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --wb-bg: #0f1112;
+    --wb-surface: #1b1e20;
+    --wb-surface-2: #222628;
+    --wb-fill: #2d3235;
+    --wb-separator: #33393c;
+    --wb-border: #7d868b;
+    --wb-text: #eef1f2;
+    --wb-text-2: #a9b1b6;
+    --wb-accent: #5cc8c8;
+    --wb-accent-text: #6fd3d3;
+    --wb-on-accent: #002a2b;
+    --wb-accent-tint: #123435;
+    --wb-success: #72d58f;  --wb-success-bg: #163020;
+    --wb-warning: #f2b252;  --wb-warning-bg: #36260b;
+    --wb-error: #ff9d92;    --wb-error-bg: #3f1d1a;
+    --wb-info: #86c3f5;     --wb-info-bg: #13283a;
+    --wb-neutral: #c3cacf;  --wb-neutral-bg: #2a2f32;
+    --wb-focus: #7fb4ff;
+    --wb-scrim: rgb(0 0 0 / 0.55);
+    --wb-shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
+    --wb-shadow-2: 0 10px 32px rgb(0 0 0 / 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --m-fast: 0ms; --m-base: 0ms; --m-slow: 0ms; }
+}

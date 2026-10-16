@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-16T08:06:42.984Z",
+  "batch": "batch06",
+  "scope": "Static source/structure checks only. No browser, keyboard, screen-reader, rendered-contrast or device test was run.",
+  "screens": 10,
+  "design_states": 51,
+  "renders": 102,
+  "map_states_covered": 50,
+  "routes_with_controls": 25,
+  "routes_to_later_batches_referenced": 0,
+  "contrast_pairs": 70,
+  "contrast_min_text": 5.05,
+  "failures": []
+}

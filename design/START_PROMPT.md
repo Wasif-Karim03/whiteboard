@@ -1,0 +1,9 @@
+Open this Whiteboard project folder and read `CLAUDE.md`, `HANDOFF.md` and `design/README.md` first. Then inspect the research synthesis, current showcase source contract and app-map JSON described there. Do not rely on old completion statements in historical logs.
+
+Continue the next phase: design each page for desktop web and iPhone/iOS with a clean, restrained, accessible, Apple-quality experience. We have 40 existing concept destinations plus 10 proposed additions: 50 logical destinations, 100 platform design targets. Native iOS is planned, not built. Preserve the product's workflows, scope/authority boundaries and honest concept/proposed labels.
+
+First give me a short current-state summary and your proposed first design batch. Start with the shared design system and a coherent student course → assignment → scan/upload → review → receipt → feedback journey (S01–S09), using the actual map's content, roles, states and transitions. Show web and iPhone treatments and recovery paths; do not jump to designing 100 unrelated mockups at once. Save the editable work inside the project and tell me where to review it. Keep other existing artifacts intact unless a specific change is needed and recorded.
+
+Use `design/screen_tracker.csv` to track each platform target, state coverage, source/preview paths and real verification separately. Update `design/decisions.md` and `design/SESSION_NOTES.md` after every batch. Read `design/state_checklist.md` so edge states and expanded flows are not lost. Do not mark owner acceptance, browser/device testing or production capabilities as passed without evidence. Respect the recorded browser restriction; do not evade it with an alternate route.
+
+Do not restart research, add a framework/backend, publish, spend money, commit/push or claim native functionality as an incidental part of visual design. Ask only about decisions that materially change scope or direction; otherwise use the existing plan and continue.
