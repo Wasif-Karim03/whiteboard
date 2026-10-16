@@ -62,6 +62,10 @@ What this does **not** cover: a visual review of the 100 screen targets (the tra
 | Q06.5 | Who makes the canonical-record choice? | As drawn in S38: the administrator chooses, with the official student-records source recommended, and the local record is flagged for the Registrar. Official data does not change (D57). |
 | Q06.6 | Faculty sign-off for migration acceptance? | No: the implementation administrator’s acceptance alone, as drawn. |
 
+### 16 Oct 2026 — visual review (owner, in chat)
+
+After opening the previews in their own browser, the owner said: “everything looks great”. All 100 design targets move to **Accepted** in the tracker. This is the owner’s visual approval, not a structured test: browser, keyboard and screen-reader acceptance stays *Not run*, and native device acceptance waits for a build that isn’t authorized.
+
 ## Decision log
 
 Append date, decision, reason, affected screen IDs/platforms, owner/review evidence and any remaining question. The “proposed by Claude, not owner-reviewed” status lines below are kept as history: on 16 Oct 2026 the owner accepted D1–D58 (see Owner review). The screen visuals themselves are not yet owner-reviewed.
