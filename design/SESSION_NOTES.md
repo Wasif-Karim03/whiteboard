@@ -113,3 +113,10 @@ Replace or append a concise checkpoint with: date; batch and screen IDs/platform
 
 - The owner reviewed the previews in their own browser: “everything looks great”. All 100 tracker rows are now design_status **Accepted**, with the quote in notes. Recorded in decisions.md › Owner review.
 - Unchanged: browser_status *Not run* (no structured keyboard/screen-reader/reflow test), native_device_status *Not run* (no native build), states_status *Specified*.
+
+## 16 Oct 2026 — Click-through prototype
+
+- Built `design/prototype/` (roles.mjs, proto.js, proto.css) and `design/tools/build_prototype.mjs` → `design/prototype/Whiteboard-Prototype.html` (~750 KB, offline, one file). The owner asked for four steps (shell + student, then instructor/TA, campus roles, support/IT + guide). Because every screen already existed, all four were built in one pass.
+- 8 roles, 24 tours, 159 steps. 95 of 135 transitions are reachable by clicking a real control; 40 are situation changes or role switches covered by Next (`node design/tools/build_prototype.mjs --gaps`).
+- Verified (not in a browser): combined-page renders identical to the batch previews (508/508); build-time tour validation; a Node stub-DOM smoke test of every role, every tour step, every state on both platforms, plus the menus, with no runtime errors. Layout, scaling and real clicking are **not** browser-verified; owner inspection is needed (D64).
+- D65 recorded. All six batch checks still pass.

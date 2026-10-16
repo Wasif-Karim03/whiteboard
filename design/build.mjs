@@ -145,3 +145,5 @@ for (const b of BATCHES) if (!only || b.key === only) build(b);
 
 // The owner review packet (preview/index.html) summarises every batch; rebuild it with a full build.
 if (!only) await import("./tools/build_review.mjs");
+// The click-through prototype (prototype/Whiteboard-Prototype.html) reuses every batch; rebuild it too.
+if (!only) await import("./tools/build_prototype.mjs");
