@@ -98,3 +98,13 @@ Replace or append a concise checkpoint with: date; batch and screen IDs/platform
 - Not covered: owner visual review of the screens (the tracker stays *Ready for review*), browser/keyboard/screen-reader/device acceptance (*Not run*), and the non-proposal project questions. Communication scope (area 8) is still open, so S05 “Message instructor” stays a placeholder.
 - Tracker: a note was appended to all 100 rows (CRLF kept). The packet now shows “Accepted” and “Resolved by owner” labels, parsed from the Owner review section. No design sources changed.
 - Next: owner visual pass over the six previews, starting with the layout-risk screens, and browser acceptance in an authorized environment.
+
+## 16 Oct 2026 — Committed
+
+- `design/` committed on `showcase/v2` as `8eba7f2` (not pushed). The build still depends on the uncommitted `showcase/app_map/` files. NOTES.md, CLAUDE.md and HANDOFF.md now point new sessions at the current state.
+
+## 16 Oct 2026 — Delegated decisions D59–D64
+
+- The owner delegated the remaining decisions to Claude (“choose the best ones”). Recorded in decisions.md as **chosen by Claude under owner delegation**, kept separate from owner-accepted D1–D58.
+- D59: no direct messaging. S05’s closed state (web and iOS) now offers “Request more time…”, a request rather than an extension, decided by staff and shown via S21. D60: iPhone capability rule for the 12 desktop-recommended destinations; it matches what is already drawn. D61: no splits or merges. D62: no new standalone routes. D63: first school, records system and sign-in stay working assumptions that need partner discovery. D64: acceptance by user-assisted inspection.
+- Rebuilt; all six static checks pass. The packet shows D59–D64 as “Chosen by Claude · delegated”. Tracker S05 rows have a note.

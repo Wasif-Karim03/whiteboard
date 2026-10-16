@@ -24,6 +24,7 @@ const log = read("decisions.md").split("\n");
 const openTable = [];
 const resolved = {}; // Qid -> accepted resolution, from the "## Owner review" table
 let ownerAccepted = null; // e.g. "16 Oct 2026" when the owner accepted the D-entries
+let acceptedUpTo = 0; // highest D number the owner accepted
 let inOwner = false;
 const sections = [];
 let cur = null, inOpen = false;
@@ -32,7 +33,8 @@ for (let i = 0; i < log.length; i++) {
   if (line.startsWith("## ")) { inOpen = /Open decisions/.test(line); inOwner = /Owner review/.test(line); }
   if (inOwner) {
     const h = line.match(/^### (\d+ \w+ \d{4})/);
-    if (h && /accept D1–D\d+/.test(log.slice(i, i + 4).join(" "))) ownerAccepted = h[1];
+    const acc = h && log.slice(i, i + 4).join(" ").match(/accept D1–D(\d+)/);
+    if (acc) { ownerAccepted = h[1]; acceptedUpTo = +acc[1]; }
     const r = line.match(/^\| (Q[\d./ Q]+?) \| [^|]+ \| (.+) \|$/);
     if (r) for (const id of r[1].split(" / ")) resolved[id.trim()] = r[2];
     continue;
@@ -43,7 +45,7 @@ for (let i = 0; i < log.length; i++) {
   }
   if (line.startsWith("### ")) {
     const m = line.match(/Batch (\d+)/);
-    cur = { heading: line.slice(4), batch: m ? `Batch ${m[1]}` : null, decisions: [], questions: [] };
+    cur = { heading: line.slice(4), batch: m ? `Batch ${m[1]}` : "Delegated (project-level)", decisions: [], questions: [] };
     sections.push(cur);
     continue;
   }
@@ -97,7 +99,7 @@ const batchCards = BATCHES.map((b) => {
 
 const verdicts = ["Accept", "Adjust", "Reject"];
 const decisionRows = sections.filter((s) => s.decisions.length).map((s) => `<section class="dgroup"><h3>${esc(s.batch)}</h3>
-${s.decisions.map((d) => `<div class="item" data-id="${d.id}"><details><summary><b>${d.id}</b> ${esc(d.title)}${ownerAccepted ? ` <span class="chip ok">Accepted ${ownerAccepted}</span>` : ""}</summary><p>${md(d.body)}</p></details>
+${s.decisions.map((d) => `<div class="item" data-id="${d.id}"><details><summary><b>${d.id}</b> ${esc(d.title)}${ownerAccepted && +d.id.slice(1) <= acceptedUpTo ? ` <span class="chip ok">Accepted ${ownerAccepted}</span>` : s.batch.startsWith("Delegated") ? ` <span class="chip">Chosen by Claude · delegated</span>` : ""}</summary><p>${md(d.body)}</p></details>
 <div class="verdict" role="radiogroup" aria-label="${d.id} verdict">${verdicts.map((v) => `<label><input type="radio" name="v-${d.id}" value="${v}" data-k="d:${d.id}">${v}</label>`).join("")}</div>
 <input class="line" type="text" data-k="dn:${d.id}" aria-label="${d.id} note" placeholder="Note (optional)"></div>`).join("")}</section>`).join("\n");
 
@@ -136,7 +138,7 @@ table{width:100%;border-collapse:collapse;background:var(--wb-surface);border-ra
 </style></head><body><main>
 <h1>Whiteboard design review</h1>
 <p class="meta">Generated ${built} from design/batches.mjs, design/decisions.md and design/screen_tracker.csv by design/tools/build_review.mjs.</p>
-<div class="notice"><b>What this is.</b> Fifty destinations (S01–S40 and proposed P41–P50), each drawn for web and as a planned iPhone illustration: 100 design targets. These are local design drafts with fictional data. They are not implemented features, and nothing is accepted. ${ownerAccepted ? `Every decision below was proposed by Claude. On ${ownerAccepted} the owner accepted D1–${allD.at(-1).id} and resolved the open questions to what is drawn (design/decisions.md, Owner review). The screen visuals are not yet owner-reviewed. You can still mark Adjust or Reject below to reopen an item.` : "Every decision below was proposed by Claude, and none has been reviewed by the owner."} Only static source checks have run. No browser, keyboard, screen-reader or device test has been done.</div>
+<div class="notice"><b>What this is.</b> Fifty destinations (S01–S40 and proposed P41–P50), each drawn for web and as a planned iPhone illustration: 100 design targets. These are local design drafts with fictional data. They are not implemented features, and nothing is accepted. ${ownerAccepted ? `Every decision below was proposed by Claude. On ${ownerAccepted} the owner accepted D1–D${acceptedUpTo} and resolved the open questions to what is drawn (design/decisions.md, Owner review). Later decisions marked “Chosen by Claude · delegated” were made under the owner’s delegation and not reviewed individually. The screen visuals are not yet owner-reviewed. You can still mark Adjust or Reject below to reopen an item.` : "Every decision below was proposed by Claude, and none has been reviewed by the owner."} Only static source checks have run. No browser, keyboard, screen-reader or device test has been done.</div>
 
 <h2>How to review</h2>
 <ol><li>Open each batch preview and switch states with the controls above each pair of frames. Screens tagged <span class="chip">layout risk</span> have dense tables or narrow columns, so check them at narrow web width and with larger text.</li>
@@ -178,4 +180,4 @@ prog();
 
 const outPath = path.join(base, "preview", "index.html");
 fs.writeFileSync(outPath, html);
-console.log(`Built design/preview/index.html · ${BATCHES.length} batches · ${allD.length} decisions${ownerAccepted ? ` (owner-accepted ${ownerAccepted})` : ""} · ${qs.length} questions, ${qs.filter((x) => resolved[x.id]).length} resolved · ${openTable.length} project-level decisions`);
+console.log(`Built design/preview/index.html · ${BATCHES.length} batches · ${allD.length} decisions${ownerAccepted ? ` (D1–D${acceptedUpTo} owner-accepted ${ownerAccepted})` : ""} · ${qs.length} questions, ${qs.filter((x) => resolved[x.id]).length} resolved · ${openTable.length} project-level decisions`);
