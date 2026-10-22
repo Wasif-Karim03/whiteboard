@@ -40,3 +40,11 @@ npm exec --ignore-scripts --cache ./showcase/.tool-cache --yes --package=prettie
 `archive/showcase_v1_2026-10-15.html` preserves the original product review. `archive/showcase_v2_2026-10-15.html` preserves the pre-revision showcase. Static checks enforce both hashes. Historical defect probes read the v2 archive; current regression tests exercise revised sources.
 
 Browser visual/keyboard/phone acceptance remains unverified because of the recorded local-file URL-policy restriction. Do not bypass it with another route or mark browser work passed from Node checks. The tracker separates verified state work from implemented/unverified UI work and blocked visual gates. Public source-link checks are recorded separately. Two EDUCAUSE endpoints returned HTTP 403 to HEAD requests; their primary page content was subsequently retrieved successfully with the public web reader.
+
+## Whole-product navigation atlas
+
+[Web and iPhone app map](app_map/index.html) is a separate, self-contained sharing artifact with 50 logical destinations, 100 platform descriptions, 147 labeled transitions and 15 guided journeys. The original product showcase is unchanged. [Map source, rebuild instructions and limits](app_map/README.md) explain maintenance and verification. All iOS presentation is planned; ten destinations are proposed additions.
+
+## Continue design in Claude
+
+Start with [the current project handoff](../HANDOFF.md), [Claude project instructions](../CLAUDE.md) and [the design-phase tracker](../design/README.md). Historical audit/research snapshots should not override the current correction evidence.

@@ -120,3 +120,13 @@ Replace or append a concise checkpoint with: date; batch and screen IDs/platform
 - 8 roles, 24 tours, 159 steps. 95 of 135 transitions are reachable by clicking a real control; 40 are situation changes or role switches covered by Next (`node design/tools/build_prototype.mjs --gaps`).
 - Verified (not in a browser): combined-page renders identical to the batch previews (508/508); build-time tour validation; a Node stub-DOM smoke test of every role, every tour step, every state on both platforms, plus the menus, with no runtime errors. Layout, scaling and real clicking are **not** browser-verified; owner inspection is needed (D64).
 - D65 recorded. All six batch checks still pass.
+
+## 16 Oct 2026 — Tour link review
+
+- Reviewed all 40 Next-only tour transitions against the controls on each screen. One was a real click: “Capture page 3” (web) and the shutter (iPhone) on S06 *ready* now link to S06 *selected* (attribute only; the rendered design is unchanged). Now 96 of 135 transitions are reachable by a click.
+- The other 39 are left as Next on purpose (chosen by Claude under owner delegation). They are another person deciding, a source system refreshing, time passing, going offline, typing a query, or a role switch. A button for them would suggest an authority or effect that the design deliberately doesn’t have.
+- All six batch checks pass. Still not opened in a browser.
+
+## 16 Oct 2026 — Paused
+
+- The owner opened the prototype locally and then put the project on hold before sending feedback. Browser review is still unconfirmed. When work resumes, file changes go through `/team` (owner's instruction).

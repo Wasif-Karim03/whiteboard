@@ -1,0 +1,1401 @@
+{
+  "edges": [
+    {
+      "source": "P42",
+      "target": "P41",
+      "label": "Accept invitation",
+      "condition": "Invitation valid; use the correct institution",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P41",
+      "target": "P43",
+      "label": "Complete first sign-in",
+      "condition": "Identity verified; first visit",
+      "handoff": false,
+      "authority": "Institution identity provider"
+    },
+    {
+      "source": "P41",
+      "target": "S01",
+      "label": "Return to Today",
+      "condition": "Student with active course access",
+      "handoff": false,
+      "authority": "Institution identity provider"
+    },
+    {
+      "source": "P41",
+      "target": "S14",
+      "label": "Open teaching workspace",
+      "condition": "Instructor role; select the assigned course",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P41",
+      "target": "S24",
+      "label": "Open academic scheduling",
+      "condition": "Registrar or department permission",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P41",
+      "target": "S37",
+      "label": "Open institution administration",
+      "condition": "Authorized administrator",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P41",
+      "target": "P50",
+      "label": "Set up the institution",
+      "condition": "Authorized initial administrator; institution not configured",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P43",
+      "target": "P44",
+      "label": "Review your profile",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P43",
+      "target": "S01",
+      "label": "Start your student day",
+      "condition": "Student role",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P43",
+      "target": "S14",
+      "label": "Start teaching",
+      "condition": "Instructor role",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P43",
+      "target": "S37",
+      "label": "Start institution administration",
+      "condition": "Administrator role",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P44",
+      "target": "S13",
+      "label": "Adjust notification preferences",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P44",
+      "target": "S01",
+      "label": "Return to Today",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "S02",
+      "label": "Browse courses",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "S12",
+      "label": "Open your calendar",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "S13",
+      "label": "Read updates",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "P44",
+      "label": "Open account and profile",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "P45",
+      "label": "Search across the campus",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "P46",
+      "label": "Get technical help",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "S28",
+      "label": "Explore events",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S01",
+      "target": "S34",
+      "label": "Find student support",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S02",
+      "target": "S03",
+      "label": "Open a course",
+      "condition": "Enrolled or authorized course member",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S03",
+      "target": "S04",
+      "label": "Continue course materials",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S03",
+      "target": "S05",
+      "label": "Open the assignment",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S03",
+      "target": "S10",
+      "label": "Open the quiz",
+      "condition": "Assessment published and available",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S03",
+      "target": "S11",
+      "label": "Join the course conversation",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S03",
+      "target": "S09",
+      "label": "View your feedback",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S03",
+      "target": "S02",
+      "label": "Return to courses",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S04",
+      "target": "S03",
+      "label": "Return to course home",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S04",
+      "target": "S05",
+      "label": "Begin the problem set",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S04",
+      "target": "S10",
+      "label": "Try the course quiz",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S05",
+      "target": "S06",
+      "label": "Capture handwritten pages",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S05",
+      "target": "S07",
+      "label": "Use an existing PDF",
+      "condition": "File accepted for this assignment",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S05",
+      "target": "S08",
+      "label": "Inspect the current receipt",
+      "condition": "A received attempt exists",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S05",
+      "target": "S09",
+      "label": "Read released feedback",
+      "condition": "Feedback belongs to your attempt",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S06",
+      "target": "S07",
+      "label": "Organize captured pages",
+      "condition": "Camera permission granted or sample/file fallback selected",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S06",
+      "target": "S07",
+      "label": "Continue without a camera",
+      "condition": "Use an existing file; permission denial is recoverable",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S07",
+      "target": "S06",
+      "label": "Retake or add a page",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S07",
+      "target": "S07",
+      "label": "Correct missing tags or pages",
+      "condition": "Validation failed; draft stays available",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S07",
+      "target": "S08",
+      "label": "Submit the reviewed attempt",
+      "condition": "Required pages/tags present; within effective close date",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S08",
+      "target": "S07",
+      "label": "Inspect pages or prepare a new draft",
+      "condition": "Editing received work creates a new attempt",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S08",
+      "target": "S07",
+      "label": "Recover an interrupted submission",
+      "condition": "No receipt until the attempt is accepted",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S08",
+      "target": "S17",
+      "label": "Hand off received work for grading",
+      "condition": "Instructor/TA accesses this learner\u2019s received attempt",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S08",
+      "target": "S09",
+      "label": "Follow feedback status",
+      "condition": "Held until an authorized release",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S09",
+      "target": "S05",
+      "label": "Return to the assignment",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S09",
+      "target": "S34",
+      "label": "Ask for learning support",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S10",
+      "target": "S10",
+      "label": "Review, submit and inspect the result",
+      "condition": "Use the authored attempt policy; receipt snapshots questions/answers",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S10",
+      "target": "S16",
+      "label": "Instructor reviews quiz results",
+      "condition": "Instructor role; learner view does not expose staff controls",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S10",
+      "target": "S03",
+      "label": "Return to the course",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S11",
+      "target": "S03",
+      "label": "Return to course home",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S12",
+      "target": "S05",
+      "label": "Open a coursework deadline",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S12",
+      "target": "S27",
+      "label": "Inspect reservation status",
+      "condition": "Requester or authorized space staff",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S12",
+      "target": "S28",
+      "label": "View your joined event",
+      "condition": "Confirmed RSVP or clearly labeled cancellation",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S13",
+      "target": "S05",
+      "label": "Open an assignment update",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S13",
+      "target": "S09",
+      "label": "Open released feedback",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S13",
+      "target": "S28",
+      "label": "Read an event change",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S13",
+      "target": "S36",
+      "label": "Follow your support request",
+      "condition": "Student-safe status only",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S13",
+      "target": "S01",
+      "label": "Return to Today",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "P47",
+      "label": "Create or edit a lesson",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "P48",
+      "label": "Manage course resources",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "S15",
+      "label": "Create or edit an assignment",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "S16",
+      "label": "Build a quiz",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "P49",
+      "label": "Manage reusable rubrics",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "S21",
+      "label": "Manage course people",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "S22",
+      "label": "Prepare the next term",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "S23",
+      "label": "Review course observations",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "S03",
+      "label": "Preview the learner course",
+      "condition": "Preview mode; publication and prerequisites still apply",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S14",
+      "target": "S37",
+      "label": "Hand off implementation acceptance",
+      "condition": "Faculty review complete; administrator checks institutional readiness",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "P47",
+      "target": "P48",
+      "label": "Choose a course asset",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P48",
+      "target": "P47",
+      "label": "Insert an approved resource",
+      "condition": "Accessible alternative available or issue flagged",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P47",
+      "target": "S14",
+      "label": "Save the content draft",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P47",
+      "target": "S04",
+      "label": "Preview published learner material",
+      "condition": "Instructor preview or published student access",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P48",
+      "target": "S15",
+      "label": "Attach assignment instructions",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P48",
+      "target": "S14",
+      "label": "Return to the course builder",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P49",
+      "target": "S15",
+      "label": "Attach a rubric to coursework",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P49",
+      "target": "S17",
+      "label": "Use a published rubric for grading",
+      "condition": "Correct version and grading permission",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S15",
+      "target": "P49",
+      "label": "Select or author a rubric",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S15",
+      "target": "P48",
+      "label": "Select course files",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S15",
+      "target": "S05",
+      "label": "Preview the assignment",
+      "condition": "Instructor preview; student access requires publication",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S15",
+      "target": "S14",
+      "label": "Return to course builder",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S16",
+      "target": "S10",
+      "label": "Publish quiz for learner attempt",
+      "condition": "Instructor publishes; enrolled learner has access within the availability window",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S16",
+      "target": "S14",
+      "label": "Return to course builder",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S17",
+      "target": "S18",
+      "label": "Preview a rubric rule change",
+      "condition": "Instructor only; overrides and affected records visible",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S18",
+      "target": "S17",
+      "label": "Apply or cancel the reviewed change",
+      "condition": "Recalculate only the approved affected records",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S17",
+      "target": "S19",
+      "label": "Inspect the gradebook",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S17",
+      "target": "S20",
+      "label": "Prepare feedback release",
+      "condition": "Every required answer reviewed; explicit submission completion",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S19",
+      "target": "S17",
+      "label": "Open a learner\u2019s own work",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S19",
+      "target": "S20",
+      "label": "Prepare an exact release scope",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S20",
+      "target": "S09",
+      "label": "Make feedback visible to the learner",
+      "condition": "Exact preview still current; exclude ungraded/excused work",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S20",
+      "target": "S38",
+      "label": "Reconcile the grade handoff",
+      "condition": "Released snapshot matches current attempt",
+      "handoff": true,
+      "authority": "SIS owns official transcript results"
+    },
+    {
+      "source": "S21",
+      "target": "S15",
+      "label": "Apply an approved operational allowance",
+      "condition": "Authorized instructor; private documentation excluded",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S21",
+      "target": "S37",
+      "label": "Review institution access policy",
+      "condition": "Administrator role",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S21",
+      "target": "S14",
+      "label": "Return to course builder",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S22",
+      "target": "S14",
+      "label": "Inspect the copied destination",
+      "condition": "Separate course context; source retained; no learner data copied",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S23",
+      "target": "S35",
+      "label": "Create a contextual support referral",
+      "condition": "Faculty/adviser role; observable context and appropriate sharing",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S23",
+      "target": "S14",
+      "label": "Return to course builder",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S24",
+      "target": "S25",
+      "label": "Propose a schedule change",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S24",
+      "target": "S26",
+      "label": "Inspect room options",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S24",
+      "target": "S12",
+      "label": "Share the applied meeting with the calendar",
+      "condition": "Authoritative source applied the change",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S25",
+      "target": "S24",
+      "label": "Return to the authoritative timetable",
+      "condition": "Approval alone is not a source-applied change",
+      "handoff": false,
+      "authority": "Institution scheduling authority"
+    },
+    {
+      "source": "S25",
+      "target": "S12",
+      "label": "Notify affected learners",
+      "condition": "Only source-confirmed meetings become the current timetable",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S26",
+      "target": "S27",
+      "label": "Request the chosen room",
+      "condition": "Date, full interval, recurrence, capacity and access needs valid",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S27",
+      "target": "S27",
+      "label": "Review, approve and await source confirmation",
+      "condition": "Room authority must confirm; request is not a booking",
+      "handoff": true,
+      "authority": "Institution room-booking authority"
+    },
+    {
+      "source": "S27",
+      "target": "S12",
+      "label": "Inspect the calendar entry",
+      "condition": "Show requested/confirmed/cancelled accurately",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S27",
+      "target": "S30",
+      "label": "Return the booking context to the draft",
+      "condition": "Organization officer context",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S27",
+      "target": "S31",
+      "label": "Satisfy the room dependency",
+      "condition": "Matching interval, capacity and source confirmation",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S28",
+      "target": "S29",
+      "label": "Meet the organizing club",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S28",
+      "target": "S12",
+      "label": "Add confirmed participation to your calendar",
+      "condition": "RSVP confirmed; waitlist does not reserve a place",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S28",
+      "target": "S32",
+      "label": "Open your event pass",
+      "condition": "Student pass; operator controls remain role-scoped",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S29",
+      "target": "S28",
+      "label": "Browse organization events",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S29",
+      "target": "S30",
+      "label": "Create an organization-owned event",
+      "condition": "Active authorized officer",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S29",
+      "target": "S33",
+      "label": "Transfer officer responsibilities",
+      "condition": "Current/incoming officer or authorized staff",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S30",
+      "target": "S26",
+      "label": "Find a room for the draft",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S30",
+      "target": "S31",
+      "label": "Submit the plan and funding request",
+      "condition": "Configured required fields complete; authorized student-affairs reviewer receives the request",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S31",
+      "target": "S30",
+      "label": "Return the plan for revision",
+      "condition": "Specific reason and responsible person visible",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S31",
+      "target": "S28",
+      "label": "Publish the approved event",
+      "condition": "All matching dependencies confirmed; commitments fit capacity",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S32",
+      "target": "S28",
+      "label": "Return to the event",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S32",
+      "target": "S31",
+      "label": "Reconcile event attendance",
+      "condition": "Authorized operator/staff; offline duplicates excluded",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S33",
+      "target": "S29",
+      "label": "Inspect the new roster and contact",
+      "condition": "Role becomes effective; outgoing access ends appropriately",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S33",
+      "target": "S30",
+      "label": "Continue the transferred draft",
+      "condition": "Organization retains ownership",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S34",
+      "target": "S35",
+      "label": "Request a contextual faculty/adviser handoff",
+      "condition": "Staff begins the referral with appropriate student-visible context",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S34",
+      "target": "S36",
+      "label": "Follow your service request",
+      "condition": "Student-safe service, owner, status and next step",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S34",
+      "target": "P46",
+      "label": "Get technical product help",
+      "condition": "Technical support is different from academic advising",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S35",
+      "target": "S36",
+      "label": "Send to the receiving service",
+      "condition": "Permitted minimal context; coordinator must accept",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S36",
+      "target": "S35",
+      "label": "Correct the referral context",
+      "condition": "Authorized faculty/adviser; history preserves entered correction",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S36",
+      "target": "S34",
+      "label": "Update the student-safe service view",
+      "condition": "Accepted, redirected, waiting or resolved; private staff notes excluded",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "P45",
+      "target": "S03",
+      "label": "Open an accessible course result",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P45",
+      "target": "S05",
+      "label": "Open a coursework result",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P45",
+      "target": "S28",
+      "label": "Open an event result",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P45",
+      "target": "S29",
+      "label": "Open an organization result",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P45",
+      "target": "S34",
+      "label": "Open a service result",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P46",
+      "target": "P46",
+      "label": "Search help or track an issue",
+      "condition": "Technical support case; disclose only permitted context",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P46",
+      "target": "P41",
+      "label": "Recover an institution sign-in problem",
+      "condition": "Identity recovery belongs to the institution provider",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P46",
+      "target": "S01",
+      "label": "Return to your student day",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P50",
+      "target": "S38",
+      "label": "Configure and inspect the first connection",
+      "condition": "Source ownership, identity and mapping agreed",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "P50",
+      "target": "S37",
+      "label": "Finish initial setup",
+      "condition": "Authorized administrator accepts readiness checklist",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S37",
+      "target": "P50",
+      "label": "Review initial setup decisions",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S37",
+      "target": "S38",
+      "label": "Inspect connections",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S37",
+      "target": "S39",
+      "label": "Rehearse course migration",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S37",
+      "target": "S40",
+      "label": "Review trust and AI controls",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S38",
+      "target": "S39",
+      "label": "Review import exceptions",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S38",
+      "target": "S37",
+      "label": "Review affected access records",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S39",
+      "target": "S22",
+      "label": "Ask faculty to inspect a course copy",
+      "condition": "Mapping/required exceptions resolved; explicit acceptance",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S39",
+      "target": "S37",
+      "label": "Record institution acceptance",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S40",
+      "target": "S38",
+      "label": "Inspect standards and connection status",
+      "condition": "",
+      "handoff": false,
+      "authority": ""
+    },
+    {
+      "source": "S40",
+      "target": "S17",
+      "label": "Offer optional draft assistance to an instructor",
+      "condition": "Institution enabled it; instructor reviews; no automatic scoring/release",
+      "handoff": true,
+      "authority": ""
+    },
+    {
+      "source": "S16",
+      "target": "S10",
+      "label": "Release results to learner",
+      "condition": "Authorized instructor releases results under the captured feedback rule; learner sees only their own attempt",
+      "handoff": true,
+      "authority": ""
+    }
+  ],
+  "journeys": [
+    {
+      "id": "arrival",
+      "title": "First visit and access",
+      "domain": "Access",
+      "steps": [
+        "P42",
+        "P41",
+        "P43",
+        "P44",
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "summary": "An invitation establishes intended access; the institution verifies identity. The first task comes after role and course context are known."
+    },
+    {
+      "id": "submission",
+      "title": "Learn, submit and receive feedback",
+      "domain": "Learning",
+      "steps": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S17",
+        "S20",
+        "S09"
+      ],
+      "summary": "The receipt ends the student submission. Grading and release are separate staff actions; a dashed handoff never grants the student staff access."
+    },
+    {
+      "id": "content",
+      "title": "Build an accessible lesson",
+      "domain": "Teaching",
+      "steps": [
+        "S14",
+        "P47",
+        "P48",
+        "P47",
+        "S14",
+        "S03",
+        "S04"
+      ],
+      "summary": "Author content, select an accessible resource, save in the module and preview the learner view before publication."
+    },
+    {
+      "id": "assessment",
+      "title": "Create coursework and a rubric",
+      "domain": "Teaching",
+      "steps": [
+        "S14",
+        "S15",
+        "P49",
+        "S15",
+        "S05"
+      ],
+      "summary": "The reusable rubric and assignment instructions become learner-visible only through the publication workflow."
+    },
+    {
+      "id": "quiz",
+      "title": "Author a quiz, attempt it and release results",
+      "domain": "Teaching",
+      "steps": [
+        "S14",
+        "S16",
+        "S10",
+        "S16",
+        "S10"
+      ],
+      "summary": "A submitted attempt keeps its question, answer and timing snapshot. Later authoring changes affect future attempts. Reference-feedback release follows the captured rule.",
+      "edgeLabels": [
+        null,
+        "Publish quiz for learner attempt",
+        null,
+        "Release results to learner"
+      ]
+    },
+    {
+      "id": "grading",
+      "title": "Grade, change a rubric and reconcile records",
+      "domain": "Teaching",
+      "steps": [
+        "S17",
+        "S18",
+        "S17",
+        "S19",
+        "S20",
+        "S38"
+      ],
+      "summary": "Review each answer, preserve overrides, approve the exact release, then reconcile the separate official-record handoff."
+    },
+    {
+      "id": "allowance",
+      "title": "Apply an approved learner allowance",
+      "domain": "Teaching",
+      "steps": [
+        "S21",
+        "S15",
+        "S05",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "summary": "Operational adjustments change the learner\u2019s effective dates. Private documentation stays outside the course workflow."
+    },
+    {
+      "id": "schedule",
+      "title": "Resolve a class meeting change",
+      "domain": "Scheduling",
+      "steps": [
+        "S24",
+        "S25",
+        "S24",
+        "S12"
+      ],
+      "summary": "A proposal moves through constraint review and approval; only the authoritative applied change updates the student calendar."
+    },
+    {
+      "id": "booking",
+      "title": "Find and reserve a room",
+      "domain": "Scheduling",
+      "steps": [
+        "S26",
+        "S27",
+        "S12"
+      ],
+      "summary": "Search, request and confirmation are different steps. Recurrence exceptions stay tied to the right occurrence."
+    },
+    {
+      "id": "event",
+      "title": "Plan an event and welcome students",
+      "domain": "Campus life",
+      "steps": [
+        "S29",
+        "S30",
+        "S26",
+        "S27",
+        "S31",
+        "S28",
+        "S32"
+      ],
+      "summary": "Officer, room staff, event approver and participant each have their own step. RSVP, waitlist and offline check-in retain distinct states."
+    },
+    {
+      "id": "officer",
+      "title": "Transfer an organization without losing work",
+      "domain": "Campus life",
+      "steps": [
+        "S29",
+        "S33",
+        "S29",
+        "S30"
+      ],
+      "summary": "The incoming role updates the roster, contact and open tasks; the organization keeps its drafts and records."
+    },
+    {
+      "id": "support",
+      "title": "Connect a student to a human service",
+      "domain": "Support",
+      "steps": [
+        "S34",
+        "S35",
+        "S36",
+        "S34"
+      ],
+      "summary": "A faculty/adviser handoff enters a coordinator queue. The student sees service, owner and next step, not private staff notes."
+    },
+    {
+      "id": "implementation",
+      "title": "Set up, migrate and accept a course",
+      "domain": "Institution",
+      "steps": [
+        "P50",
+        "S38",
+        "S39",
+        "S22",
+        "S14",
+        "S37"
+      ],
+      "summary": "IT maps and reconciles sources; faculty reviews a separate destination course; the institution accepts the scoped implementation."
+    },
+    {
+      "id": "search-help",
+      "title": "Find the right service or technical help",
+      "domain": "Access",
+      "steps": [
+        "S01",
+        "P45",
+        "S34",
+        "P46",
+        "S01"
+      ],
+      "summary": "Search respects access. Academic support and technical product issues route to different responsible teams."
+    },
+    {
+      "id": "preferences",
+      "title": "Manage your profile and updates",
+      "domain": "Access",
+      "steps": [
+        "S01",
+        "P44",
+        "S13",
+        "S01"
+      ],
+      "summary": "Account context and notification choices are connected without creating a second task inbox."
+    }
+  ],
+  "sharedNavigation": {
+    "destinations": [
+      "P44",
+      "P45",
+      "P46",
+      "S13"
+    ],
+    "rule": "From every signed-in workspace: account and profile, global search, technical help, and update preferences remain available. Search results and deep links are permission-scoped. Closing a shared tool returns to the originating workspace and role context; Today is only the student default. Signing out or an expired session returns through institution sign-in and restores the allowed destination."
+  }
+}

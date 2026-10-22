@@ -1,5 +1,8 @@
 # Whiteboard showcase v2 progress
 
+> Current cross-project continuation: see [../HANDOFF.md](../HANDOFF.md) and [../design/README.md](../design/README.md). This file is a chronological history; older counts, hashes and open defects are superseded by later correction entries. New final-page design progress belongs in `design/screen_tracker.csv`.
+
+
 Approved: 2026-10-15. Branch: `showcase/v2`. Source: `Claude outputs/Pellwin-Showcase.html`. Archive: `showcase/archive/showcase_v1_2026-10-15.html`. The research report and hosted research Site are separate and unchanged.
 
 | Step | Status | Evidence / next checkpoint |
@@ -118,3 +121,14 @@ Fixed all four follow-up defects: deep-copied quiz submission snapshots/history;
 Added `check_readiness_regressions.cjs`; nine Node suites plus syntax/build/static/whitespace checks pass (20 commands total). Independent Astra source/state acceptance found no blocking defect in this bounded correction pass. Current tracker: 27 Done (source/state), 8 Implemented/unverified, 3 browser gates blocked. Public source checks are now complete: three HTTP 200 endpoints and two successful EDUCAUSE primary-page reads following earlier HEAD 403 responses.
 
 The remaining gate is actual browser/usability acceptance under the recorded URL-policy restriction. No browser work or conformance result is claimed. Current offline HTML: 428,330 bytes; SHA-256 `49f6209ad6ef2d87f0e00cce4eef9b60c2e002ef498c052b6675f9152a23876d`. Preserve both original archives and unrelated working-tree files.
+
+## Web / iPhone navigation atlas — 2026-10-15
+
+- [x] Built separate offline deliverable: `showcase/app_map/index.html`; existing showcase untouched.
+- [x] Mapped all 50 logical destinations (40 concept +10 proposed) separately for web and planned iOS, with 147 labeled transitions, 15 journeys, content/actions/state variants, incoming/outgoing paths and authority/role handoffs.
+- [x] Added search/area/scope filters, cross-platform links, stable screen deep links, expandable directory, light/dark/system theme and full-map printing. All 100 descriptions are present without JavaScript.
+- [x] Corrected independent review findings: explicit quiz publication versus release, responsibility labels, shared-tool role-aware returns, and native printing after filtering.
+- [x] Verified schema, reachability, journey edges, unique IDs, fragment/accessible references, embedded scripts/JSON, render purity and controller behavior using local Node/DOM doubles. See `app_map/verification.json` and `app_map/README.md`.
+- [ ] Browser visual/keyboard/responsive acceptance remains unverified under the recorded URL-policy restriction. Native iOS is a design interpretation, not a build or tested app.
+
+Handoff: edit the map's JSON/source files, run `node showcase/app_map/build.mjs` then `node showcase/app_map/validate.mjs`. Do not edit its generated HTML directly. This artifact documents final-product intent; arrows do not prove implementation of product actions. No deployment, backend, external services or public URL was created.

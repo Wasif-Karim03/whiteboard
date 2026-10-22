@@ -1,0 +1,5 @@
+.DS_Store
+# Local hosting copy with its own nested git repo (duplicate of research/ + docs/)
+.sites/
+# Per-machine agent session state
+.claude/

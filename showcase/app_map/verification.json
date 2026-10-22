@@ -1,0 +1,25 @@
+{
+  "checked_date": "2026-10-15",
+  "destinations": 50,
+  "concept_screens": 40,
+  "proposed_screens": 10,
+  "rendered_presentations": 100,
+  "transitions": 147,
+  "guided_journeys": 15,
+  "checks": [
+    "Schema and unique IDs",
+    "All nodes reachable; incoming and outgoing edges",
+    "Every guided journey has valid transitions",
+    "All 100 descriptions server-rendered",
+    "HTML fragment and accessible reference integrity",
+    "Inline JavaScript syntax; embedded JSON",
+    "Pure rendering functions",
+    "Actual controller filtering, role/scope search, deep links, modified clicks, journey changes",
+    "Native print expansion and restoration after filtering",
+    "Distinct quiz publication/release and responsibility handoffs",
+    "Shared tools with role-aware return convention",
+    "No external runtime assets"
+  ],
+  "browser_acceptance": "Unverified: earlier recorded local-file URL-policy restriction; no alternate route attempted",
+  "native_ios": "Planned only; no simulator or device checks"
+}
