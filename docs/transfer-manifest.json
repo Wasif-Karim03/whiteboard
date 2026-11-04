@@ -280,6 +280,11 @@
     "sha256": "245c2e71651bd81f059ea87eb73fbb6bf6569116dac374093472089fa503273f"
   },
   {
+    "path": "design/reviews/whiteboard-review-feedback-2026-11-04.md",
+    "bytes": 151,
+    "sha256": "68a465500cd9783f7da419899e8d5043aea3077ff966d9cae6928242dade620f"
+  },
+  {
     "path": "design/screen_tracker.csv",
     "bytes": 123959,
     "sha256": "ba0d0b47f859e916a500d3ef6d13c29e9c3350a9edd24a101e0b6dbff008a5e0"
@@ -341,8 +346,8 @@
   },
   {
     "path": "docs/TRANSFER.md",
-    "bytes": 7490,
-    "sha256": "59fc4bae83909e7de50c47b735b1dbf66701beb05ff79654c694a3f02159f95e"
+    "bytes": 8125,
+    "sha256": "c49f9ba6b3f369241004c90c247f8f9fd67226edd0f5f27e5bb3dcb812e49476"
   },
   {
     "path": "research/.gitignore",

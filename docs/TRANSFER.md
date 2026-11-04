@@ -40,6 +40,8 @@ These stay on the old device and are not required to rebuild or continue the pro
 
 **Before leaving the old browser:** if you entered review feedback in `design/preview/index.html`, use **Copy as Markdown** or **Download** and transfer that export separately. Unexported feedback lives only in that browser's local storage (`wb-review-v1`) and cannot be recovered by cloning Git. Theme/prototype preferences are also browser-local. Fictional interactive session changes are not a production data store.
 
+**Export recovered on 4 November 2026:** [saved Chrome review feedback](../design/reviews/whiteboard-review-feedback-2026-11-04.md). The original review page in the active Chrome profile showed two marked decisions; its Download export contains D1 Identity and colour: Accept and D19 Student preview: Accept, with no batch notes or written answers. The exported Markdown is included in Git. Browser storage was left intact. This checks that Chrome profile only; feedback entered later or in other profiles/devices needs a separate export. The Markdown is a readable record; the review page does not currently offer an import control.
+
 No environment/credential files or credential-pattern matches were found in the file audit; this was a heuristic check. The tracked workbook contains a labeled example and blank interview input rows, not completed customer interviews. Keep future real interview records and secrets out of this public repository.
 
 ## Rebuild and verify
