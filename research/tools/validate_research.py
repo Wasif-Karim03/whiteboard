@@ -81,7 +81,8 @@ if not errors:
     with (ROOT/'data/vendor_coverage.csv').open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=['vendor_id','domain_count','domain_ids','products']);writer.writeheader()
         for vendor,details in sorted(vendors.items()):writer.writerow(dict(vendor_id=vendor,domain_count=len(details['domains']),domain_ids=' | '.join(sorted(details['domains'])),products=' | '.join(sorted(details['products']))))
-    original=ROOT.parent/'Claude outputs/Pellwin-Showcase.html'
+    # The live showcase has been revised since this research baseline.
+    original=ROOT.parent/'showcase/archive/showcase_v1_2026-10-15.html'
     check(hashlib.sha256(original.read_bytes()).hexdigest()=='090136bffdcdbdc4b7d0a8b1a650cb9e1a6a3750eabb35cd28b1ec13ba29d2dd','Original HTML changed')
 result=dict(checked_date=DATE,status='pass' if not errors else 'fail',domains=summaries,totals={k:len(v) for k,v in merged.items()},errors=errors,limits=['Checks validate structure and traceability, not independent truth of every external claim.','No product execution or representative customer interviews.','Local browser preview previously blocked by URL policy; no bypass attempted.'])
 (ROOT/'data/validation.json').write_text(json.dumps(result,indent=2)+'\n')

@@ -23,8 +23,12 @@ The owner visually reviewed and accepted all 100 designs (16 Oct 2026), and has 
 
 All records/effects are fictional and local. There is no production authentication, authorization, backend, storage, upload service, AI inference or live integration. Preserve authority boundaries, immutable receipts/release snapshots, course/role permissions and truthful pending states. Never invent customers, results, certifications or deployment claims.
 
-Edit sources and rebuild generated HTML. Preserve archives and unrelated files. Do not reset/discard the dirty worktree, stage unrelated files, commit/push, deploy or start paid services without authorization. Since 22 Oct 2026 everything (map, inventories, handoff docs) is committed and pushed to the private repo https://github.com/Wasif-Karim03/whiteboard (`main`); NOTES.md holds the full project review.
+Edit sources and rebuild generated HTML. Preserve archives and unrelated files. Do not reset/discard the dirty worktree, stage unrelated files, commit/push, deploy or start paid services without authorization. Since 22 Oct 2026 everything (map, inventories, handoff docs) is committed and pushed to the repo https://github.com/Wasif-Karim03/whiteboard (`main`); NOTES.md holds the full project review.
 
 Browser visual/keyboard/accessibility acceptance remains unverified under a previously recorded local-file URL-policy restriction. Do not bypass a restriction through localhost or alternate routes. Use an authorized environment or request user-assisted inspection; report what actually ran. Source tests are not browser or device acceptance.
 
 Use free/local tools and existing dependencies. New framework/backend/native implementation is not authorized merely by the design handoff. Track UI design, source checks, browser review and owner review separately. Update the tracker and session notes after each batch. See HANDOFF.md for verified commands and the exact next steps.
+
+## Cross-device transfer
+
+Read [docs/TRANSFER.md](docs/TRANSFER.md) for clone, file-integrity and verification instructions. GitHub visibility was verified as public on 4 November 2026; older descriptions calling it private are stale. NOTES.md and the design tracker supersede historical draft-status labels in preview pages and older handoffs. Browser-local feedback must be exported separately before moving devices.

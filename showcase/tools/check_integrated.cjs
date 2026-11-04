@@ -63,7 +63,7 @@ const out = W.dispatch("it-export");
 assert(JSON.parse(out.download.text).fictional);
 assert(out.download.name.endsWith(".json"));
 fs.writeFileSync(
-  "/tmp/whiteboard-rendered-screens.json",
+  path.join(require("node:os").tmpdir(), "whiteboard-rendered-screens.json"),
   JSON.stringify(screens),
 );
 console.log(

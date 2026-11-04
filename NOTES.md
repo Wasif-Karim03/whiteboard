@@ -1,8 +1,8 @@
 # Whiteboard — project review and handoff (22 Oct 2026)
 
-Read this first in any new Claude session. It is the full A-to-Z picture: what Whiteboard is, everything done so far, where things stand, and what to do next. Deeper detail lives in the files linked below. Don't re-derive or redo finished work.
+For cross-device setup, see [docs/TRANSFER.md](docs/TRANSFER.md). Read this first in any new Claude session. It is the full A-to-Z picture: what Whiteboard is, everything done so far, where things stand, and what to do next. Deeper detail lives in the files linked below. Don't re-derive or redo finished work.
 
-GitHub (private): https://github.com/Wasif-Karim03/whiteboard. `main` holds everything as of 22 Oct 2026. `showcase/v2` is the working branch (same content); `research/market` is the older research-only branch.
+GitHub (public, checked 4 Nov 2026): https://github.com/Wasif-Karim03/whiteboard. `main` holds everything as of 22 Oct 2026. `showcase/v2` is the working branch (same content); `research/market` is the older research-only branch.
 
 ## 1. Status in one paragraph
 
@@ -82,5 +82,5 @@ Passing (local, Node 24, no dependencies):
 - Owner's standing rule: run file-changing tasks through `/team` (run `/clear` first).
 - Edit sources, then rebuild generated HTML; never hand-edit generated files (`Pellwin-Showcase.html`, `app_map/index.html`, previews, prototype).
 - Track UI design, source checks, browser review and owner review as separate statuses. Update `design/screen_tracker.csv` and `design/SESSION_NOTES.md` after each batch.
-- Keep `showcase/archive/` and historical audits intact. Use free/local tools only. Commit/push only when asked; the remote is private.
+- Keep `showcase/archive/` and historical audits intact. Use free/local tools only. Commit/push only when asked; the remote was verified public on 4 Nov 2026.
 - Read big files in slices; `SESSION_NOTES.md` has the per-step history if you need the "why" behind something.

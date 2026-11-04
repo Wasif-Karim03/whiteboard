@@ -1,0 +1,4 @@
+# Preserve source/artifact bytes across devices, including the tracker's CRLF.
+# This also keeps transfer-manifest hashes stable with core.autocrlf enabled.
+* -text
+*.xlsx binary

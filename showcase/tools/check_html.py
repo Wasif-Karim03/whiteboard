@@ -3,6 +3,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 import hashlib
 import json
+import tempfile
 root = Path(__file__).resolve().parents[2]
 class Check(HTMLParser):
     def __init__(self):
@@ -24,7 +25,7 @@ p=root/'Claude outputs/Pellwin-Showcase.html'
 parsed=Check(); parsed.feed(p.read_text()); parsed.validate()
 assert all(x[1:] in parsed.ids for x in parsed.refs if x.startswith('#')), 'Broken local anchor'
 assert not parsed.assets, 'Unexpected runtime network asset'
-screens=Path('/tmp/whiteboard-rendered-screens.json')
+screens=Path(tempfile.gettempdir())/'whiteboard-rendered-screens.json'
 if screens.exists():
     for screen in json.loads(screens.read_text()):
         q=Check();q.feed(screen['html']);q.validate()
