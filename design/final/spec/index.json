@@ -1,0 +1,912 @@
+[
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W01 · Specification · Institution sign-in",
+    "note": "Everything the ZIP says about W01: purpose, entry points, layout, all 2 fields, 3 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W01",
+    "file": "pages/W01.html",
+    "bytes": 7539,
+    "sha256": "d1b7fc528e06e76c6ca77ae6b8a702b413d01bc25d63b508ed553c91e49c5cfb"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W02 · Specification · Auth return/recovery",
+    "note": "Everything the ZIP says about W02: purpose, entry points, layout, all 2 fields, 4 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W02",
+    "file": "pages/W02.html",
+    "bytes": 7525,
+    "sha256": "c61382288035a19d4ab0e03e67ec7b8f7f180478546495a9cf298dbdec0fce51"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W03 · Specification · Invitation",
+    "note": "Everything the ZIP says about W03: purpose, entry points, layout, all 3 fields, 4 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W03",
+    "file": "pages/W03.html",
+    "bytes": 7621,
+    "sha256": "ce6b4b83dc87dd35f21565e56b033ebf39e73a34ac2a35eabc8a5be5665036b0"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W04 · Specification · Onboarding",
+    "note": "Everything the ZIP says about W04: purpose, entry points, layout, all 4 fields, 4 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W04",
+    "file": "pages/W04.html",
+    "bytes": 7905,
+    "sha256": "5408034c9941ae9ce10e449d2b1e4d9392a953ee9989fd6d7cbe5d8340b79f44"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W05 · Specification · Role-aware Home",
+    "note": "Everything the ZIP says about W05: purpose, entry points, layout, all 2 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W05",
+    "file": "pages/W05.html",
+    "bytes": 7883,
+    "sha256": "0c8504063f9bc0eb738d77608418ec0560bb4b7a0bdb191535235df40c2b747a"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W06 · Specification · Courses and term archive",
+    "note": "Everything the ZIP says about W06: purpose, entry points, layout, all 3 fields, 4 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W06",
+    "file": "pages/W06.html",
+    "bytes": 7674,
+    "sha256": "a7b01668e93881fa7258d343c68df93699ffcc027ba8a2e351273731100bcef9"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W07 · Specification · Personal/global academic calendar",
+    "note": "Everything the ZIP says about W07: purpose, entry points, layout, all 4 fields, 5 actions, 5 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W07",
+    "file": "pages/W07.html",
+    "bytes": 8828,
+    "sha256": "b51843476f84cbc741544f0043078ee737a1c8044da120faf0a3a3121dcfd332"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W08 · Specification · Activity and notification settings",
+    "note": "Everything the ZIP says about W08: purpose, entry points, layout, all 3 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W08",
+    "file": "pages/W08.html",
+    "bytes": 8022,
+    "sha256": "3c92419b8c372b29de5643948c3404c85b596caff19758c005e34a04456d898d"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W09 · Specification · Global academic search",
+    "note": "Everything the ZIP says about W09: purpose, entry points, layout, all 3 fields, 4 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W09",
+    "file": "pages/W09.html",
+    "bytes": 7604,
+    "sha256": "2f7b80c5bcfe6324c7ad61984241e53bbcc5843bc1bc54eab85a936e98c63748"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W10 · Specification · Profile/account/preferences",
+    "note": "Everything the ZIP says about W10: purpose, entry points, layout, all 4 fields, 5 actions, 5 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W10",
+    "file": "pages/W10.html",
+    "bytes": 8538,
+    "sha256": "ccd3d89821d9aeaf7fbe1a21d10e086921f269bdf4da9eff681f739d272793cd"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W11 · Specification · Academic software/tools directory",
+    "note": "Everything the ZIP says about W11: purpose, entry points, layout, all 3 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W11",
+    "file": "pages/W11.html",
+    "bytes": 8549,
+    "sha256": "a89eb482e6125bf25f32fda59048bd854429d4836282c34609f22654eece4655"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W12 · Specification · Help/technical request",
+    "note": "Everything the ZIP says about W12: purpose, entry points, layout, all 4 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W12",
+    "file": "pages/W12.html",
+    "bytes": 8637,
+    "sha256": "539ecc042decc38ecd030ee3c3d21f5019d415d85bb5aa533ab2f21dec25bb04"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W13 · Specification · System states",
+    "note": "Everything the ZIP says about W13: purpose, entry points, layout, all 3 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W13",
+    "file": "pages/W13.html",
+    "bytes": 8161,
+    "sha256": "7520edd31ea84dde0f85747c8f5832f2416b8a9854be4a5aeb1aac457ed92d45"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W14 · Specification · Course home",
+    "note": "Everything the ZIP says about W14: purpose, entry points, layout, all 2 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W14",
+    "file": "pages/W14.html",
+    "bytes": 7684,
+    "sha256": "3ab12918e2b5e9fd8975978e3b7496fb5e75274ec0d28b7769cc4fb75cf95ed3"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W15 · Specification · Syllabus/grading summary",
+    "note": "Everything the ZIP says about W15: purpose, entry points, layout, all 2 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W15",
+    "file": "pages/W15.html",
+    "bytes": 7924,
+    "sha256": "200140951bcaab239e900864a7a306fd3b104fbf4f3e55e7744ec7ad1054a70f"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W16 · Specification · Modules",
+    "note": "Everything the ZIP says about W16: purpose, entry points, layout, all 2 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W16",
+    "file": "pages/W16.html",
+    "bytes": 7907,
+    "sha256": "05b5ae3e3d0c83ee24d19e193d5e9ecd8ec454c686cda3325b16eb37d612719f"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W17 · Specification · Lesson/material",
+    "note": "Everything the ZIP says about W17: purpose, entry points, layout, all 3 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W17",
+    "file": "pages/W17.html",
+    "bytes": 8015,
+    "sha256": "6c6c6a7c3a4313ea15234b2b88117f39d4fc1f93d962e81181fe00b4ea58fa25"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W18 · Specification · Coursework list",
+    "note": "Everything the ZIP says about W18: purpose, entry points, layout, all 3 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W18",
+    "file": "pages/W18.html",
+    "bytes": 7603,
+    "sha256": "9da364e91883e57add490b183d7efa47a5e9c56a2959ad132d6a22a100d9cf27"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W19 · Specification · Assignment detail",
+    "note": "Everything the ZIP says about W19: purpose, entry points, layout, all 3 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W19",
+    "file": "pages/W19.html",
+    "bytes": 8294,
+    "sha256": "ac1a51e469b862c3ca917e022b10d9795f35d78b62102488fa470cfecad269c9"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W20 · Specification · Add work",
+    "note": "Everything the ZIP says about W20: purpose, entry points, layout, all 4 fields, 5 actions, 5 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W20",
+    "file": "pages/W20.html",
+    "bytes": 8814,
+    "sha256": "7f9571c21ec9303ed0c36c550804147ba7c74e9055aa3120a24ab0b8fea74717"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W21 · Specification · Review and submit",
+    "note": "Everything the ZIP says about W21: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W21",
+    "file": "pages/W21.html",
+    "bytes": 9175,
+    "sha256": "9b4ab1413a3693369ae849d7e9c0fdf88ba55660a3af250ead51a8a08ef4a1e3"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W22 · Specification · Receipt/attempt history",
+    "note": "Everything the ZIP says about W22: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W22",
+    "file": "pages/W22.html",
+    "bytes": 8648,
+    "sha256": "7b06593f316732362071e6e9b2d1f0dbc03049257c4fb93122ffd5ad91d94dcd"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W23 · Specification · Released feedback",
+    "note": "Everything the ZIP says about W23: purpose, entry points, layout, all 4 fields, 6 actions, 7 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W23",
+    "file": "pages/W23.html",
+    "bytes": 11335,
+    "sha256": "d2d48e72e9e3f0d8de245275ae3c1fa97aaf00613a1e7aed0463a4573345dda9"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W24 · Specification · Student course grades",
+    "note": "Everything the ZIP says about W24: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W24",
+    "file": "pages/W24.html",
+    "bytes": 9762,
+    "sha256": "38d3c717d6c3846370ac45f448a1c1d452f3dffea14283c82ffe3db27467f85d"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W25 · Specification · Quiz rules/start",
+    "note": "Everything the ZIP says about W25: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W25",
+    "file": "pages/W25.html",
+    "bytes": 9361,
+    "sha256": "ae3bbf715836bbf3fa3a82650209f4ea2816c2504d19d677876433c61412faf7"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W26 · Specification · Quiz attempt",
+    "note": "Everything the ZIP says about W26: purpose, entry points, layout, all 4 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W26",
+    "file": "pages/W26.html",
+    "bytes": 10081,
+    "sha256": "8f838bff255dbe567a947d33b7a7004e41cf4575d620a7c2c597b3265833e959"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W27 · Specification · Quiz receipt/review",
+    "note": "Everything the ZIP says about W27: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W27",
+    "file": "pages/W27.html",
+    "bytes": 8877,
+    "sha256": "dd57ff057fb65bf388ca19ed7eb9b0dfb29f9c1af55e5dcec34a0ed2804e4757"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W28 · Specification · Announcement list",
+    "note": "Everything the ZIP says about W28: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W28",
+    "file": "pages/W28.html",
+    "bytes": 8472,
+    "sha256": "ef2fe7384f9b5b10ef6c164607372c3ae7f704637f88485f2ae59a85379456d8"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W29 · Specification · Announcement detail",
+    "note": "Everything the ZIP says about W29: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W29",
+    "file": "pages/W29.html",
+    "bytes": 8434,
+    "sha256": "0f4d373b6c7e9ec8df713fa126390bf9251ec1b922518388ac4fde1d98042119"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W30 · Specification · Discussion list",
+    "note": "Everything the ZIP says about W30: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W30",
+    "file": "pages/W30.html",
+    "bytes": 8496,
+    "sha256": "1b93c2ab1ad6cc0b6be0da57a8209ea09b07d6e75b2403a35a8a15e1df528f1c"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W31 · Specification · Discussion thread",
+    "note": "Everything the ZIP says about W31: purpose, entry points, layout, all 4 fields, 5 actions, 6 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W31",
+    "file": "pages/W31.html",
+    "bytes": 9336,
+    "sha256": "419a755f2426680f5d13194826e43d040123342f7d90cf19ad6e364791af1ff0"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W32 · Specification · Course calendar",
+    "note": "Everything the ZIP says about W32: purpose, entry points, layout, all 4 fields, 5 actions, 6 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W32",
+    "file": "pages/W32.html",
+    "bytes": 9773,
+    "sha256": "d15f556a61da65c6534d3f7f810a6bfcd7596d228bb399fd964d322e7a803264"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W33 · Specification · My course groups",
+    "note": "Everything the ZIP says about W33: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W33",
+    "file": "pages/W33.html",
+    "bytes": 8970,
+    "sha256": "3d47f03f2aadfba1ce253f05504c82e5922bd20ea3a32c14d0c8f605349f4fd2"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W34 · Specification · Group workspace/group submission status",
+    "note": "Everything the ZIP says about W34: purpose, entry points, layout, all 3 fields, 5 actions, 6 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W34",
+    "file": "pages/W34.html",
+    "bytes": 9120,
+    "sha256": "daf9d97e23dafde6d670be1031a398b37fdf5ece7e822663de4b2716b3fa2645"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W35 · Specification · Course builder",
+    "note": "Everything the ZIP says about W35: purpose, entry points, layout, all 4 fields, 6 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W35",
+    "file": "pages/W35.html",
+    "bytes": 8304,
+    "sha256": "1f4e807a6965dc2ad1afe6b10ad69b2829d5dfe7c6f4758e2fab8d9b78643793"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W36 · Specification · Course settings, syllabus and publication",
+    "note": "Everything the ZIP says about W36: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W36",
+    "file": "pages/W36.html",
+    "bytes": 6881,
+    "sha256": "d9305a9efddae424278768baaabb5d68432cbfee0f39578bb11e680277c41dd1"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W37 · Specification · Module editor",
+    "note": "Everything the ZIP says about W37: purpose, entry points, layout, all 5 fields, 6 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W37",
+    "file": "pages/W37.html",
+    "bytes": 7993,
+    "sha256": "8e589b4498f150fbf1914a59320c77267238fbb3f262d567819d43d59d548ec6"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W38 · Specification · Learning-content editor",
+    "note": "Everything the ZIP says about W38: purpose, entry points, layout, all 5 fields, 6 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W38",
+    "file": "pages/W38.html",
+    "bytes": 8234,
+    "sha256": "89b5ffb998efb6f32b0035efa9790aa108ca83aa6d4d6dd2d0ed7a9c365de410"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W39 · Specification · Files and resources",
+    "note": "Everything the ZIP says about W39: purpose, entry points, layout, all 4 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W39",
+    "file": "pages/W39.html",
+    "bytes": 6911,
+    "sha256": "fcbb2dfc79549197b1e0bc2c6c5839a201a0e4e8490483b0a8f0d473fae79aeb"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W40 · Specification · Assignment editor",
+    "note": "Everything the ZIP says about W40: purpose, entry points, layout, all 10 fields, 6 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W40",
+    "file": "pages/W40.html",
+    "bytes": 9916,
+    "sha256": "2be7fe9ba74572a167181bee73e8e0979fac3734a53689c43ae821d570ec8674"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W41 · Specification · Quiz editor",
+    "note": "Everything the ZIP says about W41: purpose, entry points, layout, all 6 fields, 6 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W41",
+    "file": "pages/W41.html",
+    "bytes": 9133,
+    "sha256": "b555c196165fbe44cfae9801e5a0d58f0ec3156b39611af938352c6c50fef36d"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W42 · Specification · Question bank",
+    "note": "Everything the ZIP says about W42: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W42",
+    "file": "pages/W42.html",
+    "bytes": 7138,
+    "sha256": "934572338b453f4ec1d20707b51ed306a5e25c5962af55df37133b9b68dacf82"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W43 · Specification · Rubric library",
+    "note": "Everything the ZIP says about W43: purpose, entry points, layout, all 4 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W43",
+    "file": "pages/W43.html",
+    "bytes": 6791,
+    "sha256": "2afcdca2213e7d6d84ba951a20e0edb437c4445725a953056a69f84fcc745461"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W44 · Specification · Rubric editor",
+    "note": "Everything the ZIP says about W44: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W44",
+    "file": "pages/W44.html",
+    "bytes": 6887,
+    "sha256": "74783d800004157e36dc2b5aa3d7740cf94523eedf4f2c85cb53a33413d88750"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W45 · Specification · Course people and staff permission",
+    "note": "Everything the ZIP says about W45: purpose, entry points, layout, all 4 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W45",
+    "file": "pages/W45.html",
+    "bytes": 6913,
+    "sha256": "23f45afd369320ad1badb2fcea73023812048a2c144f811f4409b9ab5807bb38"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W46 · Specification · Learner allowances",
+    "note": "Everything the ZIP says about W46: purpose, entry points, layout, all 7 fields, 6 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W46",
+    "file": "pages/W46.html",
+    "bytes": 9695,
+    "sha256": "9efee64c49fef6f5315866b649df449bd4d7faffa89a88520be958d703b8d4f2"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W47 · Specification · Group sets and membership builder",
+    "note": "Everything the ZIP says about W47: purpose, entry points, layout, all 5 fields, 6 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W47",
+    "file": "pages/W47.html",
+    "bytes": 8783,
+    "sha256": "1ff83a0e58a105cee1796cbf044fd3c2a80c06964d06f2f58070761992f00193"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W48 · Specification · Grading queue",
+    "note": "Everything the ZIP says about W48: purpose, entry points, layout, all 4 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W48",
+    "file": "pages/W48.html",
+    "bytes": 6799,
+    "sha256": "bd60036b96c72be1ccd9a2e9a17154e7a6dc31afe34610c894b655616969d28d"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W49 · Specification · Grader",
+    "note": "Everything the ZIP says about W49: purpose, entry points, layout, all 5 fields, 4 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W49",
+    "file": "pages/W49.html",
+    "bytes": 7979,
+    "sha256": "1804f7117c626808cc94e9f39879a826356a454d23ebd1f300be5c9e3f966908"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W50 · Specification · Rubric-change impact preview",
+    "note": "Everything the ZIP says about W50: purpose, entry points, layout, all 4 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W50",
+    "file": "pages/W50.html",
+    "bytes": 6913,
+    "sha256": "1a2d930f55737a93bbdf567778768214b880b988ae119cc092beaa19bd919c9b"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W51 · Specification · Staff gradebook",
+    "note": "Everything the ZIP says about W51: purpose, entry points, layout, all 4 fields, 5 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W51",
+    "file": "pages/W51.html",
+    "bytes": 7373,
+    "sha256": "632030317e305432985814a1943fc6378720bbeed21db8defce6b37995a4259c"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W52 · Specification · Syllabus-based grading policy setup",
+    "note": "Everything the ZIP says about W52: purpose, entry points, layout, all 8 fields, 5 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W52",
+    "file": "pages/W52.html",
+    "bytes": 9928,
+    "sha256": "aaf6802124eeca7a7b394f06032648acba0e7ad1f20264adaf6c9e6a61cee598"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W53 · Specification · Exact feedback release",
+    "note": "Everything the ZIP says about W53: purpose, entry points, layout, all 6 fields, 5 actions, 5 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W53",
+    "file": "pages/W53.html",
+    "bytes": 10613,
+    "sha256": "54124a4bd48b3221d3c7e3b16d4954e6adda1f46b4def6ea270641d8158692af"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W54 · Specification · Grade correction and regrade review",
+    "note": "Everything the ZIP says about W54: purpose, entry points, layout, all 5 fields, 6 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W54",
+    "file": "pages/W54.html",
+    "bytes": 7542,
+    "sha256": "ba5491d37d384981ffe41f6d03f506820b50d4417296651aa24947e900b5bf6e"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W55 · Specification · Announcement editor",
+    "note": "Everything the ZIP says about W55: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W55",
+    "file": "pages/W55.html",
+    "bytes": 7168,
+    "sha256": "00e8b82d5c83ef416f7b04eb8b37974cf9ffc437e93e15a78f8c843bce992b03"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W56 · Specification · Discussion setup and moderation",
+    "note": "Everything the ZIP says about W56: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W56",
+    "file": "pages/W56.html",
+    "bytes": 7019,
+    "sha256": "94c42ebdf277e7c323b9ecc110bef5508b0aaef60a8e84b6433145a259fbfb82"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W57 · Specification · Grading allocation and deadline planner",
+    "note": "Everything the ZIP says about W57: purpose, entry points, layout, all 6 fields, 6 actions, 4 states, 2 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W57",
+    "file": "pages/W57.html",
+    "bytes": 8917,
+    "sha256": "e91f28ce51790ffebe66d202c83a45b07dbe4b15782a2e64ce968931c9735d90"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W58 · Specification · Course insights and attendance",
+    "note": "Everything the ZIP says about W58: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W58",
+    "file": "pages/W58.html",
+    "bytes": 6973,
+    "sha256": "67e7f3bf294651a349ec29c10662e9c1f40d818af954acc8e14d41241cb5ede6"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W59 · Specification · Course copy and rollover",
+    "note": "Everything the ZIP says about W59: purpose, entry points, layout, all 6 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W59",
+    "file": "pages/W59.html",
+    "bytes": 7318,
+    "sha256": "099d94cdbb2455d44cb9dff4fcf458159526d6af7fa52ea89f17215bc261cfae"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "W60 · Specification · Content import/export preview",
+    "note": "Everything the ZIP says about W60: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "W60",
+    "file": "pages/W60.html",
+    "bytes": 7525,
+    "sha256": "7a58cd1edcc95c3e938c3bb2406b273825fac5d94b95107a0ff926f7e346a1c2"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "O01 · Specification · Optional student achievements",
+    "note": "Everything the ZIP says about O01: purpose, entry points, layout, all 3 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "O01",
+    "file": "pages/O01.html",
+    "bytes": 6589,
+    "sha256": "3ea7c96727d0722cf61851989859474c9c5c327bb9bc8a3ba3f419f8d71a63a4"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "O02 · Specification · Optional staff achievement authoring",
+    "note": "Everything the ZIP says about O02: purpose, entry points, layout, all 6 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "O02",
+    "file": "pages/O02.html",
+    "bytes": 7239,
+    "sha256": "707c8cc106a3dad098a41b07169d584e105317f821023eeb1348abcb216b4fbb"
+  },
+  {
+    "kind": "spec",
+    "sec": "N",
+    "name": "O03 · Specification · Optional course FAQ assistant",
+    "note": "Everything the ZIP says about O03: purpose, entry points, layout, all 5 fields, 4 actions, 4 states, 1 dialogs, permissions, responsive and accessibility rules, data and acceptance checks. Source: data/pages.json.",
+    "page_id": "O03",
+    "file": "pages/O03.html",
+    "bytes": 7836,
+    "sha256": "6563744bc88fe2daff35b29865b6927277bca3372d0c5cb31ba77edf8eb37110"
+  },
+  {
+    "kind": "document",
+    "sec": "M",
+    "name": "C01–C16 · Component contracts",
+    "note": "All 16 reusable components from data/component-inventory.csv, each drawn with a sample and its contract text. C01 is a divider in the source inventory.",
+    "page_id": null,
+    "file": "docs/01-c01-c16-component-contracts.html",
+    "bytes": 6725,
+    "sha256": "42b713473beb0b9d19a313eba6618245cdbc7c5d815c68b8073a400bd926d6ca"
+  },
+  {
+    "kind": "document",
+    "sec": "M",
+    "name": "Design tokens from the ZIP",
+    "note": "resources/design-system/tokens.css. The board uses these neutrals, status colours and teal identity as its Teal theme; other themes keep the same status colours.",
+    "page_id": null,
+    "file": "docs/02-design-tokens-from-the-zip.html",
+    "bytes": 8609,
+    "sha256": "d2d52779da74f23557590ba0293268d6c06dddae6b98327d033c039a8570c90b"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Spec 01 · Product and scope",
+    "note": "From spec/01_PRODUCT_AND_SCOPE.md",
+    "page_id": null,
+    "file": "docs/03-spec-01-product-and-scope.html",
+    "bytes": 6049,
+    "sha256": "410adce5c6e7238e7775eff8281f51319fdb2b965aca6fb2a07594d6583f16a9"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Spec 02 · Navigation and permissions",
+    "note": "From spec/02_NAVIGATION_AND_PERMISSIONS.md",
+    "page_id": null,
+    "file": "docs/04-spec-02-navigation-and-permissions.html",
+    "bytes": 8103,
+    "sha256": "19cd000ae7a367ce95bfa51f3c4249f7b5b2a650e4eee0414e52e5c14760de90"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Spec 03 · Shared UI and states",
+    "note": "From spec/03_SHARED_UI_AND_STATES.md",
+    "page_id": null,
+    "file": "docs/05-spec-03-shared-ui-and-states.html",
+    "bytes": 12401,
+    "sha256": "eb61f6cf35e22e67e97c502f408e361b297c963bdc99d17c9f6c7378559e683a"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Spec 04 · Workflows and records",
+    "note": "From spec/04_WORKFLOWS_AND_RECORDS.md",
+    "page_id": null,
+    "file": "docs/06-spec-04-workflows-and-records.html",
+    "bytes": 13096,
+    "sha256": "4e03b7cee35eecacf4f9322f98645fb0c6ecd094bd4df5c41b8afe46bae85fe1"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Spec 05 · Build and acceptance",
+    "note": "From spec/05_BUILD_AND_ACCEPTANCE.md",
+    "page_id": null,
+    "file": "docs/07-spec-05-build-and-acceptance.html",
+    "bytes": 8836,
+    "sha256": "c5758e76df3c12480bc34bbbd75c8875e2063fb848025f20cb8a2c336a25871f"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Spec 06 · Decisions and traceability",
+    "note": "From spec/06_DECISIONS_AND_TRACEABILITY.md",
+    "page_id": null,
+    "file": "docs/08-spec-06-decisions-and-traceability.html",
+    "bytes": 9982,
+    "sha256": "c15158d3899b1905899c471181445b8981243ab845aa9a35320386e3e1d206e6"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Core evidence",
+    "note": "From research/core-evidence.md",
+    "page_id": null,
+    "file": "docs/09-core-evidence.html",
+    "bytes": 5424,
+    "sha256": "9ba5f4cc3a318f5ae6ab49e3fc1eef84b1876c13d244284a7ec74c44db319fbd"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Shared evidence",
+    "note": "From research/shared-evidence.md",
+    "page_id": null,
+    "file": "docs/10-shared-evidence.html",
+    "bytes": 6888,
+    "sha256": "cf3a6a2dc18c76d493887bf0688108ab3dc91650d787eca0524f4b69ecf3822d"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Staff evidence",
+    "note": "From research/staff-evidence.md",
+    "page_id": null,
+    "file": "docs/11-staff-evidence.html",
+    "bytes": 8849,
+    "sha256": "6b32d333c6f57db824dc1ad47348594fc17d31cc35d3013b42c0afaf60108398"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Contract (history)",
+    "note": "From resources/history/CONTRACT.md",
+    "page_id": null,
+    "file": "docs/12-contract-history.html",
+    "bytes": 8142,
+    "sha256": "4fcea7ccce9d5e7f0fc4d0514416aad259a45d30afd085ede8a8414cd70d4fbf"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Decisions (history)",
+    "note": "From resources/history/decisions.md",
+    "page_id": null,
+    "file": "docs/13-decisions-history.html",
+    "bytes": 44878,
+    "sha256": "ad24c284041eafc34acea1c2ce69b8b73b634aa6a3ba60d14947c6c81bc51a93"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "State checklist (history)",
+    "note": "From resources/history/state_checklist.md",
+    "page_id": null,
+    "file": "docs/14-state-checklist-history.html",
+    "bytes": 4281,
+    "sha256": "9c7026a3ee2fda24c75078ba48da8b79c8a773e625f894540e4caed921ef0fca"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Original academic scope review",
+    "note": "From resources/original-review/academic-scope-review.md",
+    "page_id": null,
+    "file": "docs/15-original-academic-scope-review.html",
+    "bytes": 25548,
+    "sha256": "b3a03b1ceeb57ec2f4980f074d7b866bcf5ce3b24c38bf5c76fb1cf4ed87806f"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Verification report",
+    "note": "From VERIFICATION.md",
+    "page_id": null,
+    "file": "docs/16-verification-report.html",
+    "bytes": 3472,
+    "sha256": "cafe10abb78d33456d09c568f7aa573985d6ad704b031d615c9d2331edc4f570"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "README",
+    "note": "From README.md",
+    "page_id": null,
+    "file": "docs/17-readme.html",
+    "bytes": 5960,
+    "sha256": "38e9c8ce08ee23bbc2a89f08bc0c0e5e376cbee1ec247b8f8cf78302cc7a86a3"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Resources guide",
+    "note": "From resources/README.md",
+    "page_id": null,
+    "file": "docs/18-resources-guide.html",
+    "bytes": 3968,
+    "sha256": "d995116e5ab166595b365ecd6529e81c5adfdefcc44741982d3f05252170fb43"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Navigation map (navigation.json)",
+    "note": "Global, top bar, student course, staff course and staff tools, with the TA mode for each staff entry.",
+    "page_id": null,
+    "file": "docs/19-navigation-map-navigation-json.html",
+    "bytes": 3735,
+    "sha256": "a63f197ba79d8eb884d5fecbf483cd646fa04439b8dcc1b062d5c6623f12c2f3"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Route manifest (63 routes)",
+    "note": "data/route-manifest.json: route, roles, scope and legacy IDs for every page.",
+    "page_id": null,
+    "file": "docs/20-route-manifest-63-routes.html",
+    "bytes": 11482,
+    "sha256": "2ea323d6c97885e603d69a97008f5b84ba0c155becf8f16c81043490b35caefd"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Legacy crosswalk",
+    "note": "data/legacy-crosswalk.json: which new pages replace which legacy screens.",
+    "page_id": null,
+    "file": "docs/21-legacy-crosswalk.html",
+    "bytes": 1478,
+    "sha256": "1c79c3f9279f982006a9d2f5ac75a0af15a4d4a02d107add29d76074de86c71a"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Fixtures overview",
+    "note": "data/fixtures.json: every dataset behind the screens. All names and numbers on the board come from here.",
+    "page_id": null,
+    "file": "docs/22-fixtures-overview.html",
+    "bytes": 3821,
+    "sha256": "1707047f50637e225b3ee46d53dfdb70ec659a42542f7c07b929bc7ce46e66ba"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Failure scenarios (fixtures)",
+    "note": "fixtures.json failure_scenarios in full.",
+    "page_id": null,
+    "file": "docs/23-failure-scenarios-fixtures.html",
+    "bytes": 514,
+    "sha256": "6668a09ff494340d9d71f33bd27e38034310daedf41a7bcd772233e069a82ed5"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Mock service contracts",
+    "note": "data/mock-service-contracts.json: the proposed frontend and service boundary, mock shapes only.",
+    "page_id": null,
+    "file": "docs/24-mock-service-contracts.html",
+    "bytes": 2893,
+    "sha256": "a467c2caed8a456a280fa2331b48b590099b08ccf1130f400ddc4736f4c4120a"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Frontend checklist (63 pages)",
+    "note": "FRONTEND_CHECKLIST.csv. The board adds one column: where each page is drawn.",
+    "page_id": null,
+    "file": "docs/25-frontend-checklist-63-pages.html",
+    "bytes": 10652,
+    "sha256": "299f1b54601a4ab3a650aeb8958566c9b8ed544853b78a463f2da9c715e42c7e"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Coverage summary and manifest",
+    "note": "data/coverage-summary.json and manifest.json.",
+    "page_id": null,
+    "file": "docs/26-coverage-summary-and-manifest.html",
+    "bytes": 9554,
+    "sha256": "f212a9a7b71b9d97f0e084a0ab0e40b66511dd4630ac58187c00ddd9703e3b15"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Sample assets",
+    "note": "resources/sample-assets. Fictional files used by the PS4 and lab-project screens.",
+    "page_id": null,
+    "file": "docs/27-sample-assets.html",
+    "bytes": 831,
+    "sha256": "dac11b4e05a9500605d224df0abc4d2d961f222681585a597bde444437e4dd7b"
+  },
+  {
+    "kind": "document",
+    "sec": "Q",
+    "name": "Working rules (CLAUDE.md, START_HERE)",
+    "note": "The handoff rules file and the start-here guide.",
+    "page_id": null,
+    "file": "docs/28-working-rules-claude-md-start-here.html",
+    "bytes": 6228,
+    "sha256": "eba4c60e20af5cd3e462c7b78669a4b41bfa2d93df31c9a1c49275b2d27df2fd"
+  }
+]

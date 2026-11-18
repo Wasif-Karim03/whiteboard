@@ -1,0 +1,81 @@
+/* Whiteboard final system: signature components (receipt slip, work trail, context line, save status,
+   honest figure, timer, course banner and card, logo). */
+
+/* ---------- Receipt slip: plain, selectable facts ---------- */
+.wb-receipt { display: grid; gap: var(--wb-space-3); padding: var(--wb-space-4); background: var(--wb-surface); border: 1px solid var(--wb-separator); border-left: 4px solid var(--wb-success); border-radius: var(--wb-radius-card); user-select: text; }
+.wb-receipt__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--wb-space-2); color: var(--wb-success); font-weight: 700; }
+.wb-receipt__title { font-size: calc(16px * var(--wb-scale)); }
+.wb-receipt__ref { font-family: ui-monospace, Menlo, monospace; letter-spacing: 0.02em; }
+.wb-receipt__tz { color: var(--wb-text-2); }
+.wb-receipt__files { display: grid; gap: 2px; }
+.wb-receipt__fields { font-size: calc(14px * var(--wb-scale)); }
+
+/* ---------- Work trail ---------- */
+.wb-trail { display: grid; gap: var(--wb-space-2); counter-reset: wb-trail; }
+.wb-trail__step { display: grid; grid-template-columns: auto 1fr; column-gap: var(--wb-space-2); align-items: center; color: var(--wb-text-2); }
+.wb-trail__step--done { color: var(--wb-success); }
+.wb-trail__step--current { color: var(--wb-accent-text); font-weight: 650; }
+.wb-trail__step--todo { color: var(--wb-text-2); }
+.wb-trail__label { color: var(--wb-text); }
+.wb-trail__meta { grid-column: 2; font-size: calc(13px * var(--wb-scale)); color: var(--wb-text-2); }
+
+/* ---------- Context line and breadcrumbs ---------- */
+.wb-context { display: grid; gap: var(--wb-space-1); }
+.wb-context__line { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--wb-space-1); color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); }
+.wb-context__part { color: var(--wb-text); }
+.wb-context__sep { color: var(--wb-text-2); }
+.wb-context__role { display: inline-flex; align-items: center; gap: var(--wb-space-1); margin-left: var(--wb-space-3); }
+.wb-crumbs ol { display: flex; flex-wrap: wrap; gap: var(--wb-space-1); font-size: calc(13px * var(--wb-scale)); color: var(--wb-text-2); }
+.wb-crumbs li + li::before { content: "/"; margin-right: var(--wb-space-1); color: var(--wb-text-2); }
+.wb-crumbs .wb-link { min-height: var(--wb-hit); }
+
+/* ---------- Save status (C12) ---------- */
+.wb-save { display: inline-flex; align-items: center; gap: var(--wb-space-1); font-size: calc(13px * var(--wb-scale)); font-weight: 600; }
+.wb-save--neutral { color: var(--wb-text-2); }
+.wb-save--success { color: var(--wb-success); }
+.wb-save--warning { color: var(--wb-warning); }
+.wb-save--error { color: var(--wb-error); }
+.wb-save__label { white-space: nowrap; }
+
+/* ---------- Honest figure and timer ---------- */
+.wb-figure { display: grid; gap: 2px; }
+.wb-figure__label { color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); }
+.wb-figure__value { font-size: calc(24px * var(--wb-scale)); font-weight: 700; font-variant-numeric: tabular-nums; }
+.wb-figure__basis { color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); }
+.wb-timer { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--wb-space-2); }
+.wb-timer__label { color: var(--wb-text-2); }
+.wb-timer__value { font-weight: 700; font-variant-numeric: tabular-nums; }
+.wb-timer__ends { color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); }
+
+/* ---------- Course colours, banner and card ---------- */
+.wb-course--phys { --wb-course: var(--wb-course-phys); }
+.wb-course--math { --wb-course: var(--wb-course-math); }
+.wb-course--chem { --wb-course: var(--wb-course-chem); }
+.wb-course--cs { --wb-course: var(--wb-course-cs); }
+.wb-course-banner, .wb-course-card__art { position: relative; overflow: hidden; background: var(--wb-course); color: var(--wb-on-course); }
+.wb-course-banner { display: flex; align-items: flex-end; min-height: 140px; padding: var(--wb-space-4); border-radius: var(--wb-radius-card); }
+.wb-course-banner--regular { min-height: 160px; }
+.wb-course-banner--compact { min-height: 112px; }
+.wb-course-banner .wb-art, .wb-course-card__art .wb-art { position: absolute; inset: 0; width: 100%; height: 100%; }
+.wb-art__node { fill: var(--wb-course); }
+.wb-course-banner__text { position: relative; display: grid; gap: 2px; }
+.wb-course-banner__code { font-size: calc(13px * var(--wb-scale)); font-weight: 700; letter-spacing: 0.04em; }
+.wb-course-banner__title { font-size: calc(22px * var(--wb-scale)); font-weight: 750; line-height: 1.2; }
+.wb-course-banner__meta { font-size: calc(13px * var(--wb-scale)); }
+.wb-course-card { display: grid; background: var(--wb-surface); border-radius: var(--wb-radius-card); overflow: hidden; box-shadow: var(--wb-shadow-1); }
+.wb-course-card__art { height: 88px; padding: var(--wb-space-3); display: flex; align-items: flex-end; }
+.wb-course-card__code { position: relative; font-weight: 700; font-size: calc(13px * var(--wb-scale)); }
+.wb-course-card__title { padding: var(--wb-space-3) var(--wb-space-4) 0; font-size: calc(16px * var(--wb-scale)); }
+.wb-course-card__meta { padding: 0 var(--wb-space-4) var(--wb-space-3); color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); }
+
+/* ---------- Logo (Board mark only, BD7) ---------- */
+.wb-logo { display: inline-flex; align-items: center; gap: var(--wb-space-2); color: var(--wb-text); }
+.wb-logo__mark { display: inline-grid; place-items: center; border-radius: 28%; background: var(--wb-accent); color: var(--wb-on-accent); }
+.wb-logo__mark svg { width: 62%; height: 62%; }
+.wb-logo__word { font-weight: 800; letter-spacing: -0.055em; }
+.wb-logo--sm .wb-logo__mark { width: 28px; height: 28px; }
+.wb-logo--sm .wb-logo__word { font-size: 21px; }
+.wb-logo--md .wb-logo__mark { width: 36px; height: 36px; }
+.wb-logo--md .wb-logo__word { font-size: 27px; }
+.wb-logo--lg .wb-logo__mark { width: 52px; height: 52px; }
+.wb-logo--lg .wb-logo__word { font-size: 38px; }

@@ -3,3 +3,6 @@
 .sites/
 # Per-machine agent session state
 .claude/
+
+# Local verification tools and npm cache
+.tool-cache/

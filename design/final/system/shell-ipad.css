@@ -1,0 +1,27 @@
+/* Whiteboard final system: iPad shell (planned native iPadOS presentation, no Safari chrome).
+   1194×834 landscape and 834×1194 portrait via [data-orientation]. 44 pt targets. */
+
+.wb-frame--ipad {
+  --wb-hit: var(--wb-hit-ios);
+  width: 1194px;
+  height: 834px;
+  border: 12px solid var(--wb-device-frame);
+  border-radius: 36px;
+  background: var(--wb-device-screen);
+  font-family: var(--wb-font);
+}
+.wb-frame--ipad[data-orientation="portrait"] { width: 834px; height: 1194px; }
+
+.wb-ipad { display: flex; height: 100%; }
+.wb-sidebar--ipad { width: 300px; flex: none; padding-top: var(--wb-space-6); overflow: auto; }
+.wb-ipad__content { display: flex; flex-direction: column; flex: 1; min-width: 0; overflow: auto; }
+.wb-header--ipad { padding: var(--wb-space-4) var(--wb-space-6) var(--wb-space-3); }
+.wb-header--ipad .wb-header__title { font-size: calc(28px * var(--wb-scale)); }
+.wb-ipad__content > .wb-tabs { padding: 0 var(--wb-space-6); background: var(--wb-surface); }
+.wb-frame--ipad[data-orientation="portrait"] .wb-sidebar--ipad { position: absolute; inset: 0 auto 0 0; z-index: 25; box-shadow: var(--wb-shadow-2); }
+.wb-sidebar__close { display: flex; justify-content: flex-end; padding: 0 var(--wb-space-3); }
+
+/* Tools popover anchored to its summary */
+.wb-popover { position: relative; }
+.wb-popover__summary { display: inline-flex; align-items: center; gap: var(--wb-space-2); min-height: var(--wb-hit); padding: 0 var(--wb-space-3); border-radius: var(--wb-radius-control); color: var(--wb-accent-text); font-weight: 600; cursor: pointer; list-style: none; }
+.wb-popover__panel { position: absolute; right: 0; top: calc(100% + var(--wb-space-2)); z-index: 20; width: 280px; padding: var(--wb-space-2); background: var(--wb-surface); border: 1px solid var(--wb-separator); border-radius: var(--wb-radius-card); box-shadow: var(--wb-shadow-2); }

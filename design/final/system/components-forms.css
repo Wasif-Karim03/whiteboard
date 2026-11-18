@@ -1,0 +1,46 @@
+/* Whiteboard final system: form controls. Every control has a visible label; help, reason and error
+   text sit under it and are tied in with aria-describedby by the kit. */
+
+.wb-field { display: grid; gap: var(--wb-space-1); }
+.wb-field__label { font-weight: 600; font-size: calc(14px * var(--wb-scale)); }
+.wb-field__req { font-weight: 400; color: var(--wb-text-2); }
+.wb-field__help { display: flex; align-items: center; gap: var(--wb-space-1); color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); }
+.wb-field__error { display: flex; align-items: center; gap: var(--wb-space-1); color: var(--wb-error); font-size: calc(13px * var(--wb-scale)); font-weight: 600; }
+
+.wb-input, .wb-select {
+  width: 100%;
+  min-height: var(--wb-hit);
+  height: max(var(--wb-hit), var(--wb-control-web));
+  padding: 0 var(--wb-space-3);
+  border: 1px solid var(--wb-border);
+  border-radius: var(--wb-radius-control);
+  background: var(--wb-surface);
+  color: var(--wb-text);
+}
+.wb-textarea { height: auto; min-height: calc(var(--wb-hit) * 2); padding: var(--wb-space-2) var(--wb-space-3); resize: vertical; }
+.wb-select { appearance: auto; }
+.wb-input[aria-invalid="true"], .wb-select[aria-invalid="true"] { border-color: var(--wb-error); border-width: 2px; }
+.wb-input:disabled, .wb-select:disabled { background: var(--wb-fill); color: var(--wb-text-2); cursor: not-allowed; }
+
+/* Checkbox, radio and toggle */
+.wb-field--check { grid-template-columns: auto 1fr; align-items: center; column-gap: var(--wb-space-2); }
+.wb-field--check > .wb-field__help, .wb-field--check > .wb-field__error { grid-column: 2; }
+.wb-check {
+  min-height: var(--wb-hit);
+  min-width: var(--wb-hit);
+  width: calc(20px * var(--wb-scale));
+  height: calc(20px * var(--wb-scale));
+  margin: 0;
+  accent-color: var(--wb-accent);
+}
+/* The toggle input is the hit target (at least var(--wb-hit)); the 44 x 26 track and knob are drawn inside it. */
+.wb-toggle { appearance: none; width: 44px; height: max(26px, var(--wb-hit)); background: transparent; border: 0; position: relative; cursor: pointer; }
+.wb-toggle::before { content: ""; position: absolute; top: 50%; left: 0; width: 44px; height: 26px; box-sizing: border-box; transform: translateY(-50%); border-radius: var(--wb-radius-pill); background: var(--wb-fill); border: 1px solid var(--wb-border); }
+.wb-toggle::after { content: ""; position: absolute; top: calc(50% - 10px); left: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--wb-surface); box-shadow: var(--wb-shadow-1); transition: transform var(--wb-motion-fast) var(--wb-motion-ease); }
+.wb-toggle:checked::before { background: var(--wb-accent); border-color: var(--wb-accent); }
+.wb-toggle:checked::after { transform: translateX(18px); }
+.wb-choicegroup { display: grid; gap: var(--wb-space-1); }
+.wb-choicegroup > legend { margin-bottom: var(--wb-space-1); }
+.wb-choice { display: flex; align-items: center; gap: var(--wb-space-2); }
+.wb-choice__label { flex: 1; padding: var(--wb-space-1) 0; }
+.wb-sort { max-width: 320px; margin-bottom: var(--wb-space-3); }

@@ -1,0 +1,157 @@
+/* Whiteboard final design tokens (Phase 2a, 15 Nov 2026).
+   Ported from design/system/tokens.css (legacy, left untouched). Every token is --wb-*.
+   Teal accent only, light and dark; no other themes or palettes (BD7).
+   Contrast pairs are checked by design/final/tools/check_tokens.mjs (static colour math, not a browser test).
+   Where a legacy or board colour failed a checked pair it was shifted by the smallest lightness step in the
+   same hue that passes, and the original is kept in a comment for owner review. */
+
+:root {
+  color-scheme: light;
+  /* Neutrals */
+  --wb-bg: #f3f4f5;            /* page / grouped background */
+  --wb-surface: #ffffff;       /* cards, lists, sheets */
+  --wb-surface-2: #f7f8f8;     /* inset areas, table stripes */
+  --wb-fill: #e9ebec;          /* control fills, segmented track */
+  --wb-separator: #dfe2e4;     /* hairlines (decorative, not a control boundary) */
+  --wb-border: #81888d;        /* legacy: #868c91 (2.84:1 on --wb-fill); input/control boundaries >= 3:1 */
+  --wb-text: #16191b;
+  --wb-text-2: #575e63;        /* secondary text: >= 4.5:1 on surface and bg */
+  /* Identity: Whiteboard teal */
+  --wb-accent: #007176;        /* fills and links */
+  --wb-accent-text: #006a6f;
+  --wb-on-accent: #ffffff;
+  --wb-accent-tint: #e2f2f2;
+  /* Semantic status: always paired with an icon and words, never colour alone */
+  --wb-success: #17703a;  --wb-success-bg: #e5f3e9;
+  --wb-warning: #855000;  --wb-warning-bg: #fcefdb;
+  --wb-error: #b0251c;    --wb-error-bg: #fcebe9;
+  --wb-info: #0c5f9e;     --wb-info-bg: #e4eff9;
+  --wb-neutral: #4a5157;  --wb-neutral-bg: #eceef0;  /* held, queued, not released */
+  --wb-focus: #0a66d8;
+  --wb-scrim: rgb(0 0 0 / 0.32);
+  --wb-shadow-1: 0 1px 2px rgb(16 24 28 / 0.06), 0 1px 1px rgb(16 24 28 / 0.04);
+  --wb-shadow-2: 0 8px 28px rgb(16 24 28 / 0.12), 0 1px 3px rgb(16 24 28 / 0.08);
+  /* Course colours (banner and card fills; art and text use --wb-on-course) */
+  --wb-course-phys: #2f6fde;   /* board: #2F6FDE */
+  --wb-course-math: #7a4fd6;   /* board: #7A4FD6 */
+  --wb-course-chem: #0c8577;   /* board: #0E9F8E (3.3:1 with white text) */
+  --wb-course-cs: #16191b;     /* board: #16191B */
+  --wb-on-course: #ffffff;
+  /* Calendar event kinds (marks and edges, >= 3:1 on surface; always with a label) */
+  --wb-kind-exam: #c0362c;     /* board: #C0362C */
+  --wb-kind-quiz: #d87f27;     /* board: #D9822B (2.93:1 on surface) */
+  --wb-kind-asg: #2f6fde;      /* board: #2F6FDE */
+  --wb-kind-cls: #6b7280;      /* board: #6B7280 */
+  --wb-kind-off: #0e9f8e;      /* board: #0E9F8E */
+  --wb-kind-priv: #7a4fd6;     /* board: #7A4FD6 */
+  /* Device frames drawn around native presentations (decorative) */
+  --wb-device-frame: #1d2124;
+  --wb-device-screen: #f3f4f5;
+
+  /* Type: system font so iOS gets SF Pro and Dynamic Type metrics */
+  --wb-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --wb-font-round: ui-rounded, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --wb-scale: 1;               /* text-size multiplier; data-text="larger" previews larger Dynamic Type */
+
+  /* Spacing: 4-pt grid */
+  --wb-space-1: 4px; --wb-space-2: 8px; --wb-space-3: 12px; --wb-space-4: 16px; --wb-space-5: 20px;
+  --wb-space-6: 24px; --wb-space-8: 32px; --wb-space-10: 40px; --wb-space-14: 56px;
+
+  /* Radii */
+  --wb-radius-control: 8px; --wb-radius-card: 12px; --wb-radius-inset: 10px; --wb-radius-sheet: 16px; --wb-radius-pill: 999px;
+
+  /* Motion: short, purposeful; zero under reduced motion */
+  --wb-motion-fast: 120ms; --wb-motion-base: 200ms; --wb-motion-slow: 320ms;
+  --wb-motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Hit targets: WCAG 2.2 target size on web, 44 pt on iOS. --wb-hit is set per shell. */
+  --wb-hit-web: 24px; --wb-hit-ios: 44px; --wb-control-web: 36px;
+  --wb-hit: var(--wb-hit-web);
+
+  /* Safe areas (set by the iPhone shell) */
+  --wb-safe-top: 0px; --wb-safe-bottom: 0px;
+}
+
+:root[data-text="larger"] { --wb-scale: 1.24 }
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --wb-bg: #0f1112;
+  --wb-surface: #1b1e20;
+  --wb-surface-2: #222628;
+  --wb-fill: #2d3235;
+  --wb-separator: #33393c;
+  --wb-border: #7d868b;
+  --wb-text: #eef1f2;
+  --wb-text-2: #a9b1b6;
+  --wb-accent: #5cc8c8;
+  --wb-accent-text: #6fd3d3;
+  --wb-on-accent: #002a2b;
+  --wb-accent-tint: #123435;
+  --wb-success: #72d58f;  --wb-success-bg: #163020;
+  --wb-warning: #f2b252;  --wb-warning-bg: #36260b;
+  --wb-error: #ff9d92;    --wb-error-bg: #3f1d1a;
+  --wb-info: #86c3f5;     --wb-info-bg: #13283a;
+  --wb-neutral: #c3cacf;  --wb-neutral-bg: #2a2f32;
+  --wb-focus: #7fb4ff;
+  --wb-scrim: rgb(0 0 0 / 0.55);
+  --wb-shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --wb-shadow-2: 0 10px 32px rgb(0 0 0 / 0.5);
+  --wb-course-phys: #3d79e0;   /* board: #2F6FDE, lightened for dark text */
+  --wb-course-math: #8b66db;   /* board: #7A4FD6, lightened for dark text */
+  --wb-course-chem: #0e9f8e;   /* board: #0E9F8E */
+  --wb-course-cs: #6f7e88;     /* board: #16191B, lightened to show on dark surface */
+  --wb-on-course: #0f1112;
+  --wb-kind-exam: #c0362c;
+  --wb-kind-quiz: #d9822b;
+  --wb-kind-asg: #2f6fde;
+  --wb-kind-cls: #6b7280;
+  --wb-kind-off: #0e9f8e;
+  --wb-kind-priv: #7a4fd6;
+  --wb-device-frame: #2c3135;
+  --wb-device-screen: #0f1112;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --wb-bg: #0f1112;
+    --wb-surface: #1b1e20;
+    --wb-surface-2: #222628;
+    --wb-fill: #2d3235;
+    --wb-separator: #33393c;
+    --wb-border: #7d868b;
+    --wb-text: #eef1f2;
+    --wb-text-2: #a9b1b6;
+    --wb-accent: #5cc8c8;
+    --wb-accent-text: #6fd3d3;
+    --wb-on-accent: #002a2b;
+    --wb-accent-tint: #123435;
+    --wb-success: #72d58f;  --wb-success-bg: #163020;
+    --wb-warning: #f2b252;  --wb-warning-bg: #36260b;
+    --wb-error: #ff9d92;    --wb-error-bg: #3f1d1a;
+    --wb-info: #86c3f5;     --wb-info-bg: #13283a;
+    --wb-neutral: #c3cacf;  --wb-neutral-bg: #2a2f32;
+    --wb-focus: #7fb4ff;
+    --wb-scrim: rgb(0 0 0 / 0.55);
+    --wb-shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
+    --wb-shadow-2: 0 10px 32px rgb(0 0 0 / 0.5);
+    --wb-course-phys: #3d79e0;
+    --wb-course-math: #8b66db;
+    --wb-course-chem: #0e9f8e;
+    --wb-course-cs: #6f7e88;
+    --wb-on-course: #0f1112;
+    --wb-kind-exam: #c0362c;
+    --wb-kind-quiz: #d9822b;
+    --wb-kind-asg: #2f6fde;
+    --wb-kind-cls: #6b7280;
+    --wb-kind-off: #0e9f8e;
+    --wb-kind-priv: #7a4fd6;
+    --wb-device-frame: #2c3135;
+    --wb-device-screen: #0f1112;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --wb-motion-fast: 0ms; --wb-motion-base: 0ms; --wb-motion-slow: 0ms; }
+}

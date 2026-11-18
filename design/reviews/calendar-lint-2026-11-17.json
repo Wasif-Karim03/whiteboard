@@ -1,0 +1,44 @@
+[
+  {
+    "antipattern": "repeating-stripes-gradient",
+    "name": "Repeating-gradient stripes",
+    "description": "Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a deliberate texture or leave the surface plain.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/wasifkarim/Claude/Projects/Whiteboard/design/final/dist/Whiteboard-Final-Board.html",
+    "line": 0,
+    "snippet": "repeating-gradient decorative stripes",
+    "advisory": true
+  },
+  {
+    "antipattern": "monotonous-spacing",
+    "name": "Monotonous spacing",
+    "description": "The same spacing value used everywhere — no rhythm, no variation. Use tight groupings for related items and generous separations between sections.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/wasifkarim/Claude/Projects/Whiteboard/design/final/dist/Whiteboard-Final-Spec.html",
+    "line": 0,
+    "snippet": "~4px used 12/12 times (100%)"
+  },
+  {
+    "antipattern": "aphoristic-cadence",
+    "name": "Aphoristic-cadence copy",
+    "description": "Three or more sections landing on a short rebuttal sentence (\"X. No Y.\" / \"X. Just Y.\") or a manufactured-contrast aphorism (\"Not a feature. A platform.\") reads as AI cadence, not voice. Once is fine; the pattern is the tell.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/wasifkarim/Claude/Projects/Whiteboard/design/final/dist/Whiteboard-Final-Spec.html",
+    "line": 0,
+    "snippet": "23 aphoristic constructions: \"Group target and membership must be revalidated before W21. No automatic cloud-d\""
+  },
+  {
+    "antipattern": "repeating-stripes-gradient",
+    "name": "Repeating-gradient stripes",
+    "description": "Repeating-gradient stripes used as surface decoration are a recurring generated-UI signature. Reach for a deliberate texture or leave the surface plain.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/wasifkarim/Claude/Projects/Whiteboard/design/final/dist/Whiteboard-Final.html",
+    "line": 0,
+    "snippet": "repeating-gradient decorative stripes",
+    "advisory": true
+  }
+]

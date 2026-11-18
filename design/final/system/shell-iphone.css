@@ -1,0 +1,42 @@
+/* Whiteboard final system: iPhone shell (planned native iOS presentation, 393×852, no Safari chrome).
+   Safe areas as --wb-safe-top and --wb-safe-bottom; status bar, nav bar, dock, tab bar, home indicator.
+   44 pt targets. */
+
+.wb-frame--iphone {
+  --wb-hit: var(--wb-hit-ios);
+  --wb-safe-top: 54px;
+  --wb-safe-bottom: 34px;
+  display: flex;
+  flex-direction: column;
+  width: 393px;
+  height: 852px;
+  border: 10px solid var(--wb-device-frame);
+  border-radius: 54px;
+  background: var(--wb-device-screen);
+  font-family: var(--wb-font);
+}
+
+.wb-statusbar { display: flex; align-items: flex-end; justify-content: space-between; flex: none; height: var(--wb-safe-top); padding: 0 var(--wb-space-8) var(--wb-space-2); font-weight: 600; font-size: 16px; }
+.wb-statusbar__time { font-variant-numeric: tabular-nums; }
+.wb-statusbar__icons { width: 64px; height: 12px; border-radius: 4px; background: var(--wb-text); opacity: 0.85; }
+.wb-iphone { display: flex; flex-direction: column; flex: 1; min-height: 0; position: relative; }
+
+/* ---------- Nav bar ---------- */
+.wb-navbar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--wb-space-2); padding: var(--wb-space-1) var(--wb-space-3); background: var(--wb-bg); }
+.wb-navbar__lead { justify-self: start; }
+.wb-navbar__trail { justify-self: end; display: flex; align-items: center; gap: var(--wb-space-1); position: relative; }
+.wb-navbar__title { font-size: calc(17px * var(--wb-scale)); font-weight: 650; text-align: center; }
+.wb-navbar__back { display: inline-flex; align-items: center; gap: 2px; min-height: var(--wb-hit); color: var(--wb-accent-text); font-size: calc(17px * var(--wb-scale)); text-decoration: none; }
+.wb-titlebtn { display: inline-flex; align-items: center; gap: var(--wb-space-1); min-height: var(--wb-hit); padding: 0 var(--wb-space-2); border: 0; background: transparent; color: var(--wb-text); font-weight: 650; }
+.wb-iconlink { display: inline-grid; place-items: center; min-height: var(--wb-hit); min-width: var(--wb-hit); color: var(--wb-accent-text); }
+.wb-sectionmenu, .wb-accountmenu { position: absolute; top: calc(100% + var(--wb-space-1)); z-index: 20; min-width: 240px; padding: var(--wb-space-2); background: var(--wb-surface); border-radius: var(--wb-radius-card); box-shadow: var(--wb-shadow-2); }
+/* The section menu is placed in .wb-iphone (below the nav bar) so its height is bounded by the frame and it scrolls. */
+.wb-sectionmenu { left: 50%; transform: translateX(-50%); top: calc(var(--wb-hit) + 3 * var(--wb-space-1)); max-height: calc(100% - var(--wb-hit) - 4 * var(--wb-space-1) - var(--wb-safe-bottom)); overflow-y: auto; overscroll-behavior: contain; }
+.wb-accountmenu { right: 0; display: grid; gap: var(--wb-space-2); }
+
+/* ---------- Content, dock, tab bar, home indicator ---------- */
+.wb-main--iphone { flex: 1; overflow: auto; padding: var(--wb-space-4); }
+.wb-frame--iphone .wb-dock { flex: none; }
+.wb-tabbar { flex: none; background: var(--wb-surface); border-top: 1px solid var(--wb-separator); padding-bottom: var(--wb-safe-bottom); }
+.wb-homeindicator { position: absolute; left: 50%; bottom: 8px; width: 134px; height: 5px; border-radius: var(--wb-radius-pill); background: var(--wb-text); transform: translateX(-50%); z-index: 45; }
+.wb-frame--iphone[data-mode="access"] .wb-iphone { padding-bottom: var(--wb-safe-bottom); }

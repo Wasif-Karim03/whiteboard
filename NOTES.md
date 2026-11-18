@@ -1,8 +1,47 @@
-# Whiteboard — project review and handoff (22 Oct 2026)
+# Whiteboard: handoff (18 Nov 2026, written for Codex or a fresh Claude session)
 
-For cross-device setup, see [docs/TRANSFER.md](docs/TRANSFER.md). Read this first in any new Claude session. It is the full A-to-Z picture: what Whiteboard is, everything done so far, where things stand, and what to do next. Deeper detail lives in the files linked below. Don't re-derive or redo finished work.
+For cross-device setup, see [docs/TRANSFER.md](docs/TRANSFER.md). Sections 1–9 below give the long-term project picture. Section 0 is the live state; read it first. **Codex: follow `AGENTS.md`** (the work queue and the rules). Copies of the run's plan and fix lists are in `docs/codex-handoff/`.
 
-GitHub (public, checked 4 Nov 2026): https://github.com/Wasif-Karim03/whiteboard. `main` holds everything as of 22 Oct 2026. `showcase/v2` is the working branch (same content); `research/market` is the older research-only branch.
+## 0. Live state: source audit verified; GitHub publication authorized; owner acceptance unrun
+
+**Current owner brief (18 Nov).** The owner explicitly requested committing and pushing all Whiteboard updates to `https://github.com/Wasif-Karim03/whiteboard.git`. This authorizes this Git publication to the existing `main` and `showcase/v2` transfer branches, with normal fast-forward pushes only. It supersedes the standing no-commit/no-push rule for this publication. No deployment, paid service or backend/native implementation is included. Decisions below are chosen by Codex under owner delegation.
+
+**Publication preparation:** update the root/current README and transfer guide; include source, generated app/board/spec, fictional research, trackers and audits; exclude ignored per-machine caches/session state; run source proof and refresh `docs/transfer-manifest.json` from the staged tracked set. The pre-publication scan found no credential/config filenames, private-key or token-pattern matches in the candidate files (heuristic, not a security certification). Use Git history and remote branch heads to identify the delivered revision; no self-referential commit hash is stored in this locked note.
+
+**Whole-prototype audit:** `design/reviews/whole-prototype-audit-2026-11-18.md`. Additional student course/result/receipt links, snapshot-bound files, exact quiz attempts, nonnumeric outcomes, unpublished own receipts, legacy record compatibility, stale cross-page selections, captured group identity and staffing-example course scope are fixed. Optional practice has an honest no-hand-in state. New whole-context/student suites supplement the existing gates; independent Astra source review verified closure of all six findings it reported. The audit is source-only, not owner acceptance.
+
+**Delivered in the prototype**
+- W45 roster entries open course-scoped student records with coursework, accepted attempts, held/released grades and feedback; previous/next keeps the instructor's identity. W51 student names and every configured cell open the selected record; compact views have a student picker.
+- Both teaching courses have their own content/assessment/people/gradebook paths. Every represented assessment opens its exact editor/queue/release-history view. W05 also summarizes the other teaching course's review/release work. Grading intent says included, ungraded practice or setup needed.
+- Optional `tc/ta/tl/tr` record selection extends existing page links; it never changes the viewer's role/person. Composer/selector checks deny empty/foreign/mismatched records, cross-course references and invalid TA learner-question intersections. Reload/back preserves the selected record, global entry clears it, and calendar controls use/reset the same course context. No new page IDs or canonical nav identities.
+- Independent course policies/totals replace PHYS-only fallback. New fictional MATH examples include two accepted attempts, an ungraded practice item, a manual held grade and an exact release scenario. Earlier attempts cannot inherit later marks/review/release badges or feedback. Quiz graders show acknowledged answers from the matching submitted attempt.
+- Real enrollment/tasks drive no-TA and unassigned-TA screens; phantom revoke/follow-up controls are removed. W57 shows actual question scopes and uncovered learner-question pairs. Fictional staffing examples demonstrate instructor takeover while retaining prior reviewer attribution and transfer history. Real allocation/revocation is still preview-only.
+- Graded remains distinct from Released. TA release and preview stay prohibited. Receipts/release snapshots remain immutable. PHYS golden values/fingerprint are unchanged; MATH's release and learner total stay in MATH. W52 shows actual configured weights/rules.
+- Existing restrained styling and Month/Week/Schedule calendars remain. Root integrated; bounded workers implemented grading projections and W45/W57. Astra reviewed actual source and verified the final old-attempt correction on web/iPhone source renders. No browser acceptance is implied.
+
+**Evidence and checks**
+- Implementation contract: `docs/plans/instructor-implementation-2026-11-18.md`.
+- Current completion/remaining limits and final integration output: `design/reviews/whole-prototype-audit-2026-11-18.md` (the instructor completion review is the previous milestone); `design/final/dist/verification.json` is the generated source proof.
+- Full standalone suite before final integration: **558 tests, 558 pass, zero fail/skipped**; new teaching-data/staffing/navigation suites are included in tools/index.js. Final integration reruns the suite and all source gates.
+- Legacy disposable-copy proof passes; both legacy commands exit zero. Strict build caps pass: app **855,552 / 921,600 B**, board **837,229 / 921,600 B**, spec **1,011,283 / 1,012,975 B**. Spec unchanged; 1,692 B headroom. No cap increased.
+- Earlier structural coverage remains 189 page×platform targets; current detailed counts belong to the completion review, not the historical readiness review. Free cached Impeccable static detect was rerun: four unchanged baseline findings, exit 2 for findings; no new findings, no hosted/paid analysis. Nothing was claimed visually resolved.
+
+**Important limits.** These are fictional source/mock/static flows. Saves, manual-grade editing, invitations and allocation/revocation are explicitly previews; there is no durable backend, real PDF viewer or SIS integration. Optional moderation, production concurrency/autosave, notifications and institutional handoff remain separately scoped engineering. The broader research plan is not wholly implemented merely because these six prototype gaps are closed.
+
+**Owner acceptance:** rendering/reflow, keyboard, VoiceOver and device/usability checks remain unverified. The prior isolated Playwright session returned `Access to "file:" protocol is blocked`. No localhost, alternate hosting/data URL or restriction bypass was used. All `design/final/acceptance/checklist.md` rows remain Not run.
+
+**Research/history:** the 15-source research register, 28-capability CSV and instructor plan are in `research/instructor-workflows/` and `docs/plans/`. The earlier readiness review describes pre-implementation gaps; the completion review supersedes those named gaps. Phases 0–5 source work and all existing journeys remain; old sections 1–9 are history.
+
+**Next:** owner opens the rebuilt `design/final/dist/Whiteboard-Final.html`, compares Student/Instructor in Preview settings and both courses. Inspect People → student, Gradebook → cell, compact learner picker, MATH attempt history/release and Grading plan → Staffing examples. Formal Phase 6 remains owner-run; never mark unobserved browser results passed. Further actual backend engineering is not inferred from this prototype pass.
+
+**Commands / rules**
+```
+node --test design/final/tools/*.test.mjs
+node design/final/tools/check_all.mjs
+bash design/final/tools/legacy_check.sh
+node design/final/build.mjs && node design/final/tools/check_size.mjs
+```
+Never run old design/build.mjs or design/tools/check_batch.mjs in this worktree. Preserve unrelated work; no reset/stash/discard or force-push. Only the explicit Git publication above is authorized; future commits/pushes still require task authorization. After every NOTES edit refresh its bytes/sha256 in design/final/tracker/inputs.lock.json, then rerun check_all. Keep spec growth near zero.
 
 ## 1. Status in one paragraph
 

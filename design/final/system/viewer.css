@@ -1,0 +1,68 @@
+/* Whiteboard final system: viewer chrome for the Phase 2c outputs (prototype bar, tour panel, stage, board
+   gallery and spec page). Tokens only; the bar wraps with flex-wrap, so there are no width media queries.
+   The stage never scales its frame, so browser zoom testing stays honest. */
+
+.wb-viewer { margin: 0; background: var(--wb-bg); color: var(--wb-text); }
+.wb-vbar, .wb-tour, .wb-board, .wb-spec { --wb-hit: var(--wb-hit-web); }
+
+/* Skip control: visually hidden until it takes keyboard focus. */
+.wb-vskip { position: absolute; left: var(--wb-space-2); top: var(--wb-space-2); z-index: 10; min-height: var(--wb-hit-web); padding: var(--wb-space-1) var(--wb-space-3); border: 1px solid var(--wb-border); border-radius: var(--wb-radius-control); background: var(--wb-surface); color: var(--wb-text); transform: translateY(-200%); }
+.wb-vskip:focus { transform: none; }
+
+/* Prototype bar */
+.wb-vbar { display: flex; flex-direction: column; gap: var(--wb-space-2); padding: var(--wb-space-3) var(--wb-space-4); background: var(--wb-surface); border-bottom: 1px solid var(--wb-separator); }
+.wb-vbar__title { font-size: calc(15px * var(--wb-scale)); font-weight: 650; }
+.wb-vbar__row { display: flex; flex-wrap: wrap; gap: var(--wb-space-3) var(--wb-space-5); align-items: flex-end; }
+.wb-vbar__field { display: flex; flex-direction: column; gap: var(--wb-space-1); min-width: 0; }
+.wb-vbar__field label, .wb-vbar__group legend { font-size: calc(13px * var(--wb-scale)); font-weight: 600; color: var(--wb-text-2); }
+.wb-vbar__field--inline { flex-direction: row; align-items: center; gap: var(--wb-space-2); min-height: var(--wb-hit-web); }
+.wb-vbar__field--tour { flex-direction: row; align-items: flex-end; gap: var(--wb-space-2); }
+.wb-vbar__group { display: flex; flex-wrap: wrap; gap: var(--wb-space-1) var(--wb-space-3); align-items: center; }
+.wb-vbar__group legend { width: 100%; margin-bottom: var(--wb-space-1); }
+.wb-vbar__choice { display: inline-flex; align-items: center; gap: var(--wb-space-1); min-height: var(--wb-hit-web); }
+.wb-vbar__select { min-height: var(--wb-hit-web); max-width: 100%; padding: 0 var(--wb-space-2); border: 1px solid var(--wb-border); border-radius: var(--wb-radius-control); background: var(--wb-surface); color: var(--wb-text); }
+.wb-vbar__note { font-size: calc(13px * var(--wb-scale)); color: var(--wb-text-2); }
+.wb-vbar input[type="radio"], .wb-vbar input[type="checkbox"] { width: 18px; height: 18px; margin: 0; accent-color: var(--wb-accent); }
+
+/* Status line, tour panel and stage */
+.wb-vstatus { margin: 0; padding: var(--wb-space-2) var(--wb-space-4); font-size: calc(13px * var(--wb-scale)); color: var(--wb-text-2); border-bottom: 1px solid var(--wb-separator); }
+.wb-tourwrap { padding: var(--wb-space-3) var(--wb-space-4) 0; }
+.wb-tour { display: flex; flex-direction: column; gap: var(--wb-space-2); padding: var(--wb-space-3) var(--wb-space-4); border: 1px solid var(--wb-accent); border-radius: var(--wb-radius-card); background: var(--wb-accent-tint); }
+.wb-tour__title { font-size: calc(16px * var(--wb-scale)); }
+.wb-tour__note { color: var(--wb-text-2); }
+.wb-tour__actions { display: flex; flex-wrap: wrap; gap: var(--wb-space-2); align-items: flex-start; }
+.wb-viewer-stage { overflow: auto; padding: var(--wb-space-4); }
+
+/* Board gallery: frames are scaled pictures; the links under them open the prototype. */
+.wb-board { --wb-board-scale: 0.32; display: flex; flex-direction: column; gap: var(--wb-space-6); padding: var(--wb-space-4); }
+.wb-board__index ul { display: flex; flex-wrap: wrap; gap: var(--wb-space-1) var(--wb-space-4); }
+.wb-board__index > ul { flex-direction: column; gap: var(--wb-space-3); }
+.wb-board__group h3 { margin-bottom: var(--wb-space-1); }
+.wb-board__section { display: flex; flex-direction: column; gap: var(--wb-space-3); padding-top: var(--wb-space-4); border-top: 1px solid var(--wb-separator); content-visibility: auto; contain-intrinsic-size: auto 640px; }
+.wb-board__meta { display: flex; flex-direction: column; gap: var(--wb-space-2); max-width: 72ch; }
+.wb-board__na { display: flex; flex-direction: column; gap: var(--wb-space-1); }
+.wb-board__controls { display: flex; flex-wrap: wrap; gap: var(--wb-space-3); }
+.wb-board__figs { display: flex; flex-wrap: wrap; gap: var(--wb-space-4); align-items: flex-start; }
+.wb-board__fig { display: flex; flex-direction: column; gap: var(--wb-space-2); }
+.wb-board__viewport { overflow: hidden; border: 1px solid var(--wb-separator); border-radius: var(--wb-radius-inset); background: var(--wb-surface-2); }
+.wb-board__viewport[data-platform="web"] { width: calc(1280px * var(--wb-board-scale)); height: calc(800px * var(--wb-board-scale)); }
+.wb-board__viewport[data-platform="ipad"] { width: calc(1194px * var(--wb-board-scale)); height: calc(834px * var(--wb-board-scale)); }
+.wb-board__viewport[data-platform="iphone"] { width: calc(393px * var(--wb-board-scale)); height: calc(852px * var(--wb-board-scale)); }
+.wb-board__frame { width: max-content; transform: scale(var(--wb-board-scale)); transform-origin: top left; pointer-events: none; }
+.wb-board__caption, .wb-board__links { font-size: calc(13px * var(--wb-scale)); color: var(--wb-text-2); }
+
+/* Spec page: generic styling for the inlined spec fragments. */
+.wb-spec { max-width: 1120px; margin: 0 auto; padding: var(--wb-space-6) var(--wb-space-4); display: flex; flex-direction: column; gap: var(--wb-space-6); }
+.wb-spec h1 { font-size: calc(22px * var(--wb-scale)); }
+.wb-spec h2, .wb-spec h3, .wb-spec h4 { margin: var(--wb-space-3) 0 var(--wb-space-2); }
+.wb-spec p, .wb-spec ul, .wb-spec ol { margin: 0 0 var(--wb-space-2); }
+.wb-spec ul, .wb-spec ol { padding-left: var(--wb-space-5); list-style: disc; }
+.wb-spec ol { list-style: decimal; }
+.wb-spec table { width: 100%; margin: 0 0 var(--wb-space-3); font-size: calc(13px * var(--wb-scale)); }
+.wb-spec th, .wb-spec td { padding: var(--wb-space-1) var(--wb-space-2); border: 1px solid var(--wb-separator); text-align: left; vertical-align: top; }
+.wb-spec th { background: var(--wb-surface-2); }
+.wb-spec pre { overflow: auto; padding: var(--wb-space-2); background: var(--wb-surface-2); border-radius: var(--wb-radius-inset); }
+.wb-spec code { font-size: 0.92em; }
+.wb-spec__toc ul { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: var(--wb-space-1) var(--wb-space-3); }
+.wb-spec__section { padding-top: var(--wb-space-4); border-top: 1px solid var(--wb-separator); }
+.wb-spec__fragment { overflow-x: auto; }

@@ -1,0 +1,190 @@
+page_id,page_name,segment,stage,roles,platform,tier,tier_rule,tier_note,specified,html_implemented,source_checked,browser_checked,accessibility_reviewed,owner_accepted
+W01,Institution sign-in,1,0,g,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W01,Institution sign-in,1,0,g,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W01,Institution sign-in,1,0,g,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W02,Auth return/recovery,1,0,gsia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W02,Auth return/recovery,1,0,gsia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W02,Auth return/recovery,1,0,gsia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W03,Invitation,1,0,gsia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W03,Invitation,1,0,gsia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W03,Invitation,1,0,gsia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W04,Onboarding,1,0,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W04,Onboarding,1,0,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W04,Onboarding,1,0,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W05,Role-aware Home,2,0,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W05,Role-aware Home,2,0,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W05,Role-aware Home,2,0,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W06,Courses and term archive,2,0,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W06,Courses and term archive,2,0,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W06,Courses and term archive,2,0,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W07,Personal/global academic calendar,2,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W07,Personal/global academic calendar,2,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W07,Personal/global academic calendar,2,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W08,Activity and notification settings,1,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W08,Activity and notification settings,1,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W08,Activity and notification settings,1,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W09,Global academic search,1,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W09,Global academic search,1,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W09,Global academic search,1,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W10,Profile/account/preferences,1,0,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W10,Profile/account/preferences,1,0,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W10,Profile/account/preferences,1,0,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W11,Academic software/tools directory,1,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W11,Academic software/tools directory,1,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W11,Academic software/tools directory,1,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W12,Help/technical request,1,3,gsia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W12,Help/technical request,1,3,gsia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W12,Help/technical request,1,3,gsia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W13,System states,1,0,gsia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W13,System states,1,0,gsia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W13,System states,1,0,gsia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W14,Course home,2,1,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W14,Course home,2,1,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W14,Course home,2,1,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W15,Syllabus/grading summary,2,1,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W15,Syllabus/grading summary,2,1,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W15,Syllabus/grading summary,2,1,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W16,Modules,2,1,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W16,Modules,2,1,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W16,Modules,2,1,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W17,Lesson/material,2,1,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W17,Lesson/material,2,1,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W17,Lesson/material,2,1,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W18,Coursework list,2,1,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W18,Coursework list,2,1,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W18,Coursework list,2,1,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W19,Assignment detail,3,1,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W19,Assignment detail,3,1,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W19,Assignment detail,3,1,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W20,Add work,3,1,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W20,Add work,3,1,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W20,Add work,3,1,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W21,Review and submit,3,1,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W21,Review and submit,3,1,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W21,Review and submit,3,1,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W22,Receipt/attempt history,3,1,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W22,Receipt/attempt history,3,1,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W22,Receipt/attempt history,3,1,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W23,Released feedback,3,1,si,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W23,Released feedback,3,1,si,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W23,Released feedback,3,1,si,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W24,Student course grades,3,1,si,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W24,Student course grades,3,1,si,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W24,Student course grades,3,1,si,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W25,Quiz rules/start,3,2,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W25,Quiz rules/start,3,2,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W25,Quiz rules/start,3,2,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W26,Quiz attempt,3,2,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W26,Quiz attempt,3,2,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W26,Quiz attempt,3,2,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W27,Quiz receipt/review,3,2,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W27,Quiz receipt/review,3,2,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W27,Quiz receipt/review,3,2,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W28,Announcement list,4,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W28,Announcement list,4,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W28,Announcement list,4,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W29,Announcement detail,4,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W29,Announcement detail,4,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W29,Announcement detail,4,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W30,Discussion list,4,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W30,Discussion list,4,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W30,Discussion list,4,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W31,Discussion thread,4,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W31,Discussion thread,4,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W31,Discussion thread,4,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W32,Course calendar,2,3,sia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W32,Course calendar,2,3,sia,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W32,Course calendar,2,3,sia,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W33,My course groups,4,3,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W33,My course groups,4,3,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W33,My course groups,4,3,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W34,Group workspace/group submission status,4,3,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W34,Group workspace/group submission status,4,3,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W34,Group workspace/group submission status,4,3,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W35,Course builder,5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W35,Course builder,5,1,ia,ipad,review,T5,"iPad: full outline with inspector as drawer. Narrow: outline status, check counts, ""Hide from learners"", learner preview, publish review (read plus confirm).",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W35,Course builder,5,1,ia,iphone,review,T5,"iPad: full outline with inspector as drawer. Narrow: outline status, check counts, ""Hide from learners"", learner preview, publish review (read plus confirm).",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W36,"Course settings, syllabus and publication",5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W36,"Course settings, syllabus and publication",5,1,ia,ipad,review,T5,"iPad: edit and publish. Narrow: published text, history, ceiling, access dates; edit and publish only on iPad or desktop.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W36,"Course settings, syllabus and publication",5,1,ia,iphone,review,T5,"iPad: edit and publish. Narrow: published text, history, ceiling, access dates; edit and publish only on iPad or desktop.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W37,Module editor,5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W37,Module editor,5,1,ia,ipad,review,T5,"iPad: move up/down buttons, rule fields. Narrow: rules, cycle and availability check.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W37,Module editor,5,1,ia,iphone,review,T5,"iPad: move up/down buttons, rule fields. Narrow: rules, cycle and availability check.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W38,Learning-content editor,5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W38,Learning-content editor,5,1,ia,ipad,review,T5,"iPad: block list, canvas, checks in a drawer. Narrow: accessibility check list with per-issue Fix for alternatives (short text edits).",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W38,Learning-content editor,5,1,ia,iphone,review,T5,"iPad: block list, canvas, checks in a drawer. Narrow: accessibility check list with per-issue Fix for alternatives (short text edits).",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W39,Files and resources,5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W39,Files and resources,5,1,ia,ipad,review,T5,"Library list with status, replace and download; narrow: status, usage, failed and processing retry.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W39,Files and resources,5,1,ia,iphone,review,T5,"Library list with status, replace and download; narrow: status, usage, failed and processing retry.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W40,Assignment editor,5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W40,Assignment editor,5,1,ia,ipad,review,T5,"iPad: edit. Narrow: dates, receipts-by-version panel, publish review, ""Hide"".",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W40,Assignment editor,5,1,ia,iphone,review,T5,"iPad: edit. Narrow: dates, receipts-by-version panel, publish review, ""Hide"".",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W41,Quiz editor,5,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W41,Quiz editor,5,2,ia,ipad,review,T5,"iPad: edit with key masked. Narrow: settings, active-attempt state, held-results state.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W41,Quiz editor,5,2,ia,iphone,review,T5,"iPad: edit with key masked. Narrow: settings, active-attempt state, held-results state.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W42,Question bank,5,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W42,Question bank,5,2,ia,ipad,handoff,T3,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W42,Question bank,5,2,ia,iphone,handoff,T3,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W43,Rubric library,5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W43,Rubric library,5,1,ia,ipad,review,T5,"List with status, usage; retire; open impact.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W43,Rubric library,5,1,ia,iphone,review,T5,"List with status, usage; retire; open impact.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W44,Rubric editor,5,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W44,Rubric editor,5,1,ia,ipad,review,T5,"Level matrix needs width. Narrow: read the rubric, in-use banner and ""Preview impact"".",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W44,Rubric editor,5,1,ia,iphone,review,T5,"Level matrix needs width. Narrow: read the rubric, in-use banner and ""Preview impact"".",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W45,Course people and staff permission,5,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W45,Course people and staff permission,5,2,ia,ipad,review,T5,"Protective: revoke, change end date, pending invites; narrow is the key one (quick revoke from a phone).",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W45,Course people and staff permission,5,2,ia,iphone,review,T5,"Protective: revoke, change end date, pending invites; narrow is the key one (quick revoke from a phone).",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W46,Learner allowances,5,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W46,Learner allowances,5,2,ia,ipad,review,T5,"iPad: record and end allowance. Narrow: active allowance, decide a pending request, end allowance.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W46,Learner allowances,5,2,ia,iphone,review,T5,"iPad: record and end allowance. Narrow: active allowance, decide a pending request, end allowance.",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W47,Group sets and membership builder,4,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W47,Group sets and membership builder,4,2,ia,ipad,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W47,Group sets and membership builder,4,2,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W48,Grading queue,6,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W48,Grading queue,6,1,ia,ipad,full,T4,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W48,Grading queue,6,1,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W49,Grader,6,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W49,Grader,6,1,ia,ipad,full,T4,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W49,Grader,6,1,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W50,Rubric-change impact preview,6,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W50,Rubric-change impact preview,6,2,ia,ipad,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W50,Rubric-change impact preview,6,2,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W51,Staff gradebook,6,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W51,Staff gradebook,6,1,ia,ipad,full,T4,single-learner view,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W51,Staff gradebook,6,1,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W52,Syllabus-based grading policy setup,6,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W52,Syllabus-based grading policy setup,6,1,ia,ipad,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W52,Syllabus-based grading policy setup,6,1,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W53,Exact feedback release,6,1,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W53,Exact feedback release,6,1,ia,ipad,full,T4,review only,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W53,Exact feedback release,6,1,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W54,Grade correction and regrade review,6,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W54,Grade correction and regrade review,6,2,ia,ipad,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W54,Grade correction and regrade review,6,2,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W55,Announcement editor,4,3,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W55,Announcement editor,4,3,ia,ipad,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W55,Announcement editor,4,3,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W56,Discussion setup and moderation,4,3,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W56,Discussion setup and moderation,4,3,ia,ipad,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W56,Discussion setup and moderation,4,3,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W57,Grading allocation and deadline planner,6,2,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W57,Grading allocation and deadline planner,6,2,ia,ipad,full,T4,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W57,Grading allocation and deadline planner,6,2,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W58,Course insights and attendance,6,4,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W58,Course insights and attendance,6,4,ia,ipad,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W58,Course insights and attendance,6,4,ia,iphone,review,T5,"Read record, status, protective actions; Open on a larger screen",Yes,Yes,Pass,Not run,Source reviewed,Not run
+W59,Course copy and rollover,5,4,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W59,Course copy and rollover,5,4,ia,ipad,review,T5,Preview and exceptions on iPad. Narrow: status of a copy in progress or result only.,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W59,Course copy and rollover,5,4,ia,iphone,review,T5,Preview and exceptions on iPad. Narrow: status of a copy in progress or result only.,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W60,Content import/export preview,5,4,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W60,Content import/export preview,5,4,ia,ipad,handoff,T3,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+W60,Content import/export preview,5,4,ia,iphone,handoff,T3,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O01,Optional student achievements,6,opt,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O01,Optional student achievements,6,opt,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O01,Optional student achievements,6,opt,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O02,Optional staff achievement authoring,6,opt,ia,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O02,Optional staff achievement authoring,6,opt,ia,ipad,handoff,T3,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O02,Optional staff achievement authoring,6,opt,ia,iphone,handoff,T3,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O03,Optional course FAQ assistant,6,opt,s,web,full,T1,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O03,Optional course FAQ assistant,6,opt,s,ipad,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run
+O03,Optional course FAQ assistant,6,opt,s,iphone,full,T2,,Yes,Yes,Pass,Not run,Source reviewed,Not run

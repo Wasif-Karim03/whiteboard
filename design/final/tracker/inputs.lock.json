@@ -1,0 +1,52 @@
+[
+  {
+    "path": "design/reviews/board-deep-dive-2026-11-15.md",
+    "bytes": 290441,
+    "sha256": "dde859322d5fbc472f5e5a4000b979ea5f68ac48d08e5e1c9842586439ae2307"
+  },
+  {
+    "path": "design/reviews/board-decisions-2026-11-15.md",
+    "bytes": 3134,
+    "sha256": "dc32f4fdfefbe9161714f7e55fb363ce9ebbe5d5ac18e36f48975a167e310f2c"
+  },
+  {
+    "path": "design/reviews/final-design-plan-2026-11-15.md",
+    "bytes": 13711,
+    "sha256": "08d0ecd36cea7e23c7e9a3a17d86fb484dc7db654d7509fe38293c0ee27f021b"
+  },
+  {
+    "path": "research/ux/00_synthesis.md",
+    "bytes": 11719,
+    "sha256": "18446cc2fdfc48769df3325277a367408d68b430ec1dd89041f687b39258f41f"
+  },
+  {
+    "path": "research/ux/01_students.md",
+    "bytes": 38027,
+    "sha256": "b0630e2c30d5f76dd173ba0d1414eb6a1c1c23b7f358658a7061eb0dd50ce2d6"
+  },
+  {
+    "path": "research/ux/02_instructors.md",
+    "bytes": 44448,
+    "sha256": "48cb84a1bb7c1a1beaf36f6622e13c3bfadd781d17af3a42276842a5e520f607"
+  },
+  {
+    "path": "research/ux/03_tas_grading.md",
+    "bytes": 45669,
+    "sha256": "d5c22b317ccdf3dda8569f3107bf3b15c39d0b80c67a1730f0becd2895d7bebd"
+  },
+  {
+    "path": "research/ux/04_assessment_psychology.md",
+    "bytes": 45248,
+    "sha256": "91d3955deedaf085d8388231445469999f077823b6123bc8020d0e0644e414b2"
+  },
+  {
+    "path": "research/ux/05_accessibility_inclusion.md",
+    "bytes": 42657,
+    "sha256": "f5d323c72b256b1584bfef1406e061212d9e1aaa9423bf5a292544895e1d52f8"
+  },
+  {
+    "path": "NOTES.md",
+    "bytes": 17329,
+    "sha256": "52027ad1d1ea2114166ff01408f20a5152d3a78af606c711bca60ac26bfa3a3a"
+  }
+]

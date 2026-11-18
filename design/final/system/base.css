@@ -1,0 +1,70 @@
+/* Whiteboard final system: reset, type scale, focus, visually hidden text, icons and reduced motion.
+   Media queries are used only for prefers-color-scheme (tokens.css) and prefers-reduced-motion. */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--wb-bg);
+  color: var(--wb-text);
+  font-family: var(--wb-font);
+  font-size: calc(15px * var(--wb-scale));
+  line-height: 1.45;
+}
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, fieldset { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+fieldset { border: 0; padding: 0; min-width: 0; }
+legend { padding: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+img, svg { display: block; max-width: 100%; }
+a { color: var(--wb-accent-text); text-underline-offset: 2px; }
+table { border-collapse: collapse; }
+[hidden] { display: none !important; }
+
+/* Type scale: every size follows --wb-scale (larger Dynamic Type preview). */
+h1, .wb-h1 { font-size: calc(26px * var(--wb-scale)); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; }
+h2, .wb-h2 { font-size: calc(19px * var(--wb-scale)); line-height: 1.25; font-weight: 650; }
+h3, .wb-h3 { font-size: calc(16px * var(--wb-scale)); line-height: 1.3; font-weight: 650; }
+h4 { font-size: calc(15px * var(--wb-scale)); font-weight: 650; }
+small, .wb-small { font-size: calc(13px * var(--wb-scale)); }
+
+/* Focus is always visible on keyboard focus; never removed. */
+:focus-visible { outline: 2px solid var(--wb-focus); outline-offset: 2px; }
+
+/* Visually hidden but read by assistive technology. */
+.wb-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wb-skip { position: absolute; left: var(--wb-space-2); top: var(--wb-space-2); z-index: 50; padding: var(--wb-space-2) var(--wb-space-3); background: var(--wb-surface); border-radius: var(--wb-radius-control); transform: translateY(-200%); }
+.wb-skip:focus-visible { transform: none; }
+
+/* Icons: 24-unit line symbols drawn in the current text colour. */
+.wb-icon {
+  width: calc(18px * var(--wb-scale));
+  height: calc(18px * var(--wb-scale));
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.wb-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

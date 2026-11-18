@@ -1,0 +1,519 @@
+/* Whiteboard workspace refresh. Product hierarchy and live-preview reflow; the reference spec keeps its
+   original stylesheet. Existing contrast-tested semantic tokens, no remote fonts or assets. */
+
+/* A quiet preview utility, separate from product navigation. */
+.wb-previewbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 24px; background: var(--wb-surface); border-bottom: 1px solid var(--wb-separator); }
+.wb-previewbar__identity { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.wb-previewbar__identity h2 { font-size: calc(13px * var(--wb-scale)); font-weight: 500; color: var(--wb-text-2); }
+.wb-previewbar__identity .wb-logo__word { font-size: 18px; letter-spacing: -0.04em; }
+.wb-previewbar__identity .wb-logo__mark { width: 24px; height: 24px; }
+.wb-previewbar__settings { margin-left: auto; }
+.wb-previewbar__settings > summary { display: flex; align-items: center; gap: 8px; min-height: var(--wb-control-web); padding: 0 14px; color: var(--wb-text); background: var(--wb-surface-2); border: 1px solid var(--wb-border); border-radius: var(--wb-radius-control); cursor: pointer; font-size: calc(13px * var(--wb-scale)); font-weight: 600; list-style: none; }
+.wb-previewbar__settings > summary::-webkit-details-marker { display: none; }
+.wb-previewbar__settings > summary .wb-icon { width: 16px; height: 16px; }
+.wb-previewbar__settings[open] { width: 100%; }
+.wb-previewbar__settings[open] > summary { width: fit-content; margin-left: auto; }
+.wb-previewbar__settings[open] > summary::after { content: "Close"; padding-left: 12px; color: var(--wb-text-2); font-weight: 400; }
+.wb-previewbar__panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: end; gap: 20px 24px; padding: 24px 0 12px; }
+.wb-previewbar__panel > * { min-width: 0; }
+.wb-previewbar__panel .wb-vbar__field--tour { grid-column: 1 / -1; justify-content: flex-end; }
+.wb-previewbar__panel .wb-vbar__field--tour select { min-width: 180px; }
+.wb-previewbar__panel .wb-vbar__select { min-height: 36px; font-size: calc(13px * var(--wb-scale)); }
+.wb-previewbar__panel .wb-vbar__choice { font-size: calc(13px * var(--wb-scale)); }
+.wb-previewbar__panel .wb-vbar__field--inline { align-self: center; }
+.wb-vstatus { padding: 6px 24px; font-size: calc(11px * var(--wb-scale)); background: var(--wb-surface); }
+.wb-viewer-stage { padding: 0; container: wb-stage / inline-size; }
+.wb-viewer-stage > .wb-frame--web[data-width="regular"] { width: 100%; min-height: calc(100dvh - 88px); border: 0; border-radius: 0; }
+.wb-viewer-stage > .wb-frame--web[data-width="narrow"], .wb-viewer-stage > .wb-frame--ipad, .wb-viewer-stage > .wb-frame--iphone { margin: 24px auto; }
+.wb-frame--web { container: wb-screen / inline-size; }
+
+/* Application shell: stable navigation, then the workspace. */
+.wb-web { grid-template-columns: 224px minmax(0, 1fr); }
+.wb-web--narrow { grid-template-columns: minmax(0, 1fr); }
+.wb-web__content { grid-template-rows: auto auto 1fr; }
+.wb-sidebar { padding: 28px 16px 20px; gap: 32px; background: var(--wb-surface); }
+.wb-sidebar > .wb-logo { padding: 0 12px; }
+.wb-sidebar .wb-logo__word { font-size: 21px; letter-spacing: -0.045em; font-weight: 750; }
+.wb-sidebar .wb-logo__mark { width: 29px; height: 29px; border-radius: 9px; }
+.wb-nav__list, .wb-nav ul { gap: 6px; }
+.wb-navitem { min-height: max(var(--wb-hit), 42px); padding: 10px 12px; font-size: calc(14px * var(--wb-scale)); font-weight: 500; color: var(--wb-text-2); border-radius: 9px; }
+.wb-navitem .wb-icon { width: 19px; height: 19px; }
+.wb-navitem[aria-current="page"] { color: var(--wb-on-accent); background: var(--wb-accent); font-weight: 650; }
+.wb-nav--tools::before, .wb-nav--course::before { padding: 0 12px 8px; text-transform: none; letter-spacing: 0; font-size: calc(12px * var(--wb-scale)); font-weight: 500; }
+.wb-sidebar__foot { border-top: 1px solid var(--wb-separator); padding: 18px 12px 0; }
+.wb-roletag { border-radius: 6px; padding: 5px 10px; font-weight: 550; width: fit-content; }
+.wb-header { gap: 10px; padding: 18px 28px 16px; }
+.wb-header__row { gap: 16px; }
+.wb-header__title { font-size: calc(25px * var(--wb-scale)); font-weight: 700; letter-spacing: -0.035em; line-height: 1.2; }
+.wb-utility--header .wb-navitem { min-height: max(var(--wb-hit), 36px); padding: 8px; font-size: calc(13px * var(--wb-scale)); }
+.wb-utility--header .wb-navitem .wb-icon { width: 17px; height: 17px; }
+.wb-utility--header .wb-navitem:not([aria-current="page"]):hover { color: var(--wb-accent-text); }
+.wb-main { padding: 24px 28px 48px; gap: 28px; line-height: 1.55; width: 100%; max-width: 1160px; margin-inline: auto; }
+.wb-main > .wb-stack--md { gap: 28px; }
+.wb-header + .wb-tabs, .wb-web__content > .wb-tabs { padding-inline: 36px; }
+.wb-tabs__list { gap: 12px; }
+.wb-tab { padding: 12px 4px; margin-right: 12px; font-size: calc(14px * var(--wb-scale)); }
+.wb-tab[aria-current="page"] { font-weight: 700; }
+.wb-context__line { font-size: calc(12px * var(--wb-scale)); }
+.wb-context__role { margin-left: auto; }
+.wb-crumbs ol { font-size: calc(12px * var(--wb-scale)); }
+.wb-backlink { font-size: calc(13px * var(--wb-scale)); }
+
+/* Task-first hierarchy. Context is quiet; the next action earns the emphasis. */
+.wb-page-intro { color: var(--wb-text-2); font-size: calc(15px * var(--wb-scale)); max-width: 68ch; }
+.wb-overview { display: grid; align-content: start; gap: 24px; min-width: 0; }
+.wb-priority { padding: 24px; border: 1px solid var(--wb-separator); border-radius: 14px; background: var(--wb-surface); }
+.wb-priority .wb-section__title { color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); font-weight: 650; }
+.wb-priority .wb-section > .wb-stack, .wb-priority .wb-section__body { gap: 12px; }
+.wb-priority .wb-section > p:first-of-type { font-size: calc(22px * var(--wb-scale)); font-weight: 650; letter-spacing: -0.02em; }
+.wb-priority .wb-section > p:first-of-type .wb-link, .wb-priority .wb-section > p:first-of-type a { color: var(--wb-text); text-decoration: none; }
+.wb-priority .wb-section > p:first-of-type a:hover { color: var(--wb-accent-text); text-decoration: underline; }
+.wb-priority .wb-status { width: fit-content; }
+.wb-workspace-section { padding: 22px 24px; border: 1px solid var(--wb-separator); border-radius: 14px; background: var(--wb-surface); display: grid; gap: 20px; }
+.wb-workspace-section .wb-progress { padding-top: 4px; }
+.wb-workspace-section .wb-progress__track { height: 6px; border: 0; }
+.wb-workspace-section .wb-stat { padding: 0; border: 0; background: transparent; }
+.wb-stat { gap: 6px; padding: 18px 20px; border: 1px solid var(--wb-separator); border-radius: 12px; background: var(--wb-surface); }
+.wb-stat__label { font-size: calc(12px * var(--wb-scale)); font-weight: 500; }
+.wb-stat__value { font-size: calc(27px * var(--wb-scale)); font-weight: 650; letter-spacing: -0.03em; line-height: 1.15; }
+.wb-stat__note { font-size: calc(12px * var(--wb-scale)); }
+.wb-section { gap: 16px; }
+.wb-section__title { font-size: calc(17px * var(--wb-scale)); letter-spacing: -0.015em; font-weight: 650; }
+.wb-rail { gap: 28px; }
+.wb-rail--side { grid-template-columns: minmax(0, 1fr) minmax(240px, 300px); }
+.wb-rail__main { gap: 24px; }
+.wb-rail__aside { gap: 24px; }
+.wb-rail__aside > .wb-stack { gap: 26px; }
+.wb-rail__aside .wb-section__title { font-size: calc(14px * var(--wb-scale)); }
+.wb-rail__aside .wb-list { box-shadow: none; background: transparent; border: 0; border-radius: 0; }
+.wb-rail__aside .wb-row, .wb-rail__aside .wb-rowlink { padding-inline: 0; }
+.wb-rail__aside .wb-row__title { font-size: calc(13px * var(--wb-scale)); font-weight: 550; }
+.wb-rail__aside .wb-row__meta { font-size: calc(12px * var(--wb-scale)); }
+.wb-tasklist .wb-list { border: 1px solid var(--wb-separator); }
+.wb-tasklist .wb-rowlink { padding-block: 18px; }
+.wb-tasklist .wb-row__meta { margin-top: 4px; }
+.wb-tasklist .wb-row__trailing { align-self: flex-start; }
+.wb-course-filters { display: grid; gap: 20px; }
+.wb-course-filters .wb-grid { max-width: 720px; align-items: start; }
+
+/* Surfaces and data: readable alignment, quieter boundaries, useful hover states. */
+.wb-card, .wb-list, .wb-table-wrap, .wb-rowcard { border: 1px solid var(--wb-separator); box-shadow: none; border-radius: 12px; }
+.wb-card { padding: 22px; gap: 16px; }
+.wb-row, .wb-rowlink { padding: 16px 20px; gap: 14px; }
+.wb-row__title { font-weight: 550; }
+.wb-row__meta { line-height: 1.5; }
+.wb-table { font-size: calc(13px * var(--wb-scale)); }
+.wb-table caption { padding: 18px 20px; font-size: calc(15px * var(--wb-scale)); }
+.wb-table th, .wb-table td { padding: 16px 20px; }
+.wb-table thead th { font-size: calc(12px * var(--wb-scale)); font-weight: 500; padding-block: 12px; }
+.wb-table tbody tr:nth-child(even) { background: transparent; }
+.wb-table tbody tr:hover { background: var(--wb-surface-2); }
+.wb-table tbody th { font-weight: 550; }
+.wb-table tbody tr.is-selected { background: var(--wb-accent-tint); }
+.wb-table__num { font-variant-numeric: tabular-nums; }
+.wb-status, .wb-flag, .wb-badge { padding: 5px 9px; font-size: calc(11px * var(--wb-scale)); line-height: 1.4; font-weight: 550; }
+.wb-status__label { white-space: normal; }
+.wb-status__late { flex-wrap: wrap; }
+.wb-row__trailing .wb-status { max-width: 190px; }
+.wb-btn { border-radius: 8px; font-size: calc(13px * var(--wb-scale)); padding-inline: 16px; }
+.wb-btn__label { white-space: normal; text-align: center; }
+.wb-btn--primary { box-shadow: var(--wb-shadow-1); }
+.wb-btn--secondary { background: var(--wb-surface); }
+.wb-btn--secondary:hover { background: var(--wb-surface-2); }
+.wb-btn[aria-disabled="true"] { background: var(--wb-fill); box-shadow: none; }
+.wb-btn__reason { max-width: 45ch; font-size: calc(12px * var(--wb-scale)); }
+.wb-input, .wb-select { font-size: calc(14px * var(--wb-scale)); padding-inline: 12px; }
+.wb-field { gap: 7px; }
+.wb-field__label { font-size: calc(13px * var(--wb-scale)); font-weight: 550; }
+.wb-field__help { font-size: calc(12px * var(--wb-scale)); }
+.wb-notice { padding: 16px 20px; border-radius: 10px; font-size: calc(13px * var(--wb-scale)); }
+.wb-empty { padding: 40px 24px; border: 1px dashed var(--wb-border); border-radius: 12px; background: var(--wb-surface); }
+.wb-kv { gap: 12px; font-size: calc(13px * var(--wb-scale)); }
+.wb-kv__row { grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr); }
+.wb-kv__row dd { overflow-wrap: anywhere; }
+.wb-figure { padding: 20px; gap: 7px; border: 1px solid var(--wb-separator); border-radius: 12px; background: var(--wb-surface); }
+.wb-figure__value { letter-spacing: -0.03em; font-weight: 650; font-size: calc(30px * var(--wb-scale)); }
+.wb-figure__basis { line-height: 1.5; }
+.wb-receipt { padding: 24px; gap: 20px; }
+.wb-trail { gap: 14px; }
+
+/* Course identity stays academic; the content gets room to breathe. */
+.wb-course-card { border: 1px solid var(--wb-separator); border-radius: 14px; box-shadow: none; height: 100%; align-content: start; }
+.wb-course-card__art { height: 112px; padding: 20px; }
+.wb-course-card__title { padding: 20px 22px 0; font-size: calc(18px * var(--wb-scale)); line-height: 1.35; letter-spacing: -0.02em; }
+.wb-course-card__meta { padding: 0 22px 22px; line-height: 1.6; }
+.wb-course-card__code { font-size: calc(12px * var(--wb-scale)); }
+.wb-course-card:has(a):hover { border-color: var(--wb-accent); }
+.wb-course-banner { min-height: 128px; padding: 24px; border-radius: 14px; }
+.wb-course-banner--compact { min-height: 112px; }
+.wb-course-banner__title { font-size: calc(26px * var(--wb-scale)); letter-spacing: -0.03em; }
+.wb-course-banner__code { letter-spacing: 0; margin-bottom: 4px; }
+.wb-course-banner__meta { margin-top: 8px; }
+.wb-access__main { padding: 32px; border: 1px solid var(--wb-separator); box-shadow: var(--wb-shadow-2); }
+.wb-access__title { font-size: calc(28px * var(--wb-scale)); letter-spacing: -0.03em; }
+
+/* Fixed device presentations use the same hierarchy, with touch-friendly spacing. */
+.wb-frame--ipad .wb-header__title { font-size: calc(28px * var(--wb-scale)); }
+.wb-frame--ipad .wb-main { padding: 24px; }
+.wb-frame--iphone .wb-main { padding: 20px 16px; gap: 22px; }
+.wb-frame--iphone .wb-priority, .wb-frame--iphone .wb-workspace-section { padding: 18px; }
+.wb-frame--iphone .wb-stat { padding: 14px; }
+.wb-frame--iphone .wb-row, .wb-frame--iphone .wb-rowlink { padding: 14px; align-items: flex-start; }
+.wb-frame--iphone .wb-row__trailing { max-width: 120px; }
+.wb-frame--iphone .wb-tasklist .wb-row, .wb-frame--iphone .wb-tasklist .wb-rowlink { flex-wrap: wrap; }
+.wb-frame--iphone .wb-tasklist .wb-row__trailing { max-width: 100%; }
+.wb-frame--iphone .wb-course-banner__title { font-size: calc(22px * var(--wb-scale)); }
+.wb-frame--iphone .wb-table-wrap { max-width: 100%; }
+.wb-frame--iphone .wb-kv__row { grid-template-columns: minmax(90px, 1fr) minmax(0, 1.6fr); }
+.wb-frame--iphone .wb-context__role { margin-left: 0; }
+.wb-frame--iphone .wb-course-card__art { height: 100px; }
+.wb-frame--iphone .wb-page-intro { font-size: calc(14px * var(--wb-scale)); }
+.wb-tourwrap { padding: 12px 24px; background: var(--wb-surface); }
+.wb-tour { border-radius: 10px; }
+
+/* Reflow is local to the live frame. Gallery frame dimensions and scaling remain intentional. */
+@container wb-screen (max-width: 1050px) {
+  .wb-web .wb-rail--side { grid-template-columns: minmax(0, 1fr); }
+  .wb-web .wb-grid--c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wb-web .wb-grid--c3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wb-web .wb-header, .wb-web .wb-main { padding-inline: 24px; }
+  .wb-web .wb-rail__aside { border-top: 1px solid var(--wb-separator); padding-top: 24px; }
+  .wb-web .wb-split--columns { grid-template-columns: minmax(0, 1fr); }
+}
+@container wb-screen (max-width: 650px) {
+  .wb-web { grid-template-columns: minmax(0, 1fr); }
+  .wb-web > .wb-sidebar { padding: 16px; gap: 16px; border-right: 0; border-bottom: 1px solid var(--wb-separator); }
+  .wb-web > .wb-sidebar .wb-nav__list, .wb-web > .wb-sidebar .wb-nav--tools ul { display: flex; overflow: auto; gap: 4px; }
+  .wb-web > .wb-sidebar .wb-navitem { white-space: nowrap; }
+  .wb-web > .wb-sidebar .wb-sidebar__foot { display: none; }
+  .wb-web .wb-header { padding: 22px 16px; }
+  .wb-web .wb-header__title { font-size: calc(26px * var(--wb-scale)); }
+  .wb-web .wb-main { padding: 22px 16px 36px; }
+  .wb-web .wb-grid--c3 { grid-template-columns: minmax(0, 1fr); }
+  .wb-web .wb-course-filters .wb-grid { grid-template-columns: minmax(0, 1fr); }
+  .wb-web .wb-priority, .wb-web .wb-workspace-section { padding: 18px; }
+  .wb-web .wb-context__role { margin-left: 0; }
+  .wb-web .wb-header + .wb-tabs, .wb-web__content > .wb-tabs { padding-inline: 16px; }
+  .wb-web .wb-split--splitview { grid-template-columns: minmax(0, 1fr); }
+  .wb-web .wb-table th, .wb-web .wb-table td { padding: 12px; }
+  .wb-web .wb-table .wb-status { min-width: 100px; }
+  .wb-web .wb-tasklist .wb-row, .wb-web .wb-tasklist .wb-rowlink { flex-wrap: wrap; }
+}
+@container wb-stage (max-width: 650px) {
+  .wb-frame--web[data-width="narrow"] { max-width: 100%; }
+}
+
+/* Filter controls describe the rows below, rather than looking like another course navigation bar. */
+.wb-tabs[aria-label="Filter coursework"] { border-bottom: 0; }
+.wb-tabs[aria-label="Filter coursework"] .wb-tabs__list { gap: 8px; flex-wrap: wrap; }
+.wb-tabs[aria-label="Filter coursework"] .wb-tab { padding: 9px 14px; margin: 0; border: 1px solid var(--wb-separator); border-radius: var(--wb-radius-pill); background: var(--wb-surface); font-size: calc(12px * var(--wb-scale)); }
+.wb-tabs[aria-label="Filter coursework"] .wb-tab[aria-current="page"] { border-color: var(--wb-accent); background: var(--wb-accent); color: var(--wb-on-accent); }
+.wb-main .wb-grid:has(.wb-course-card) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.wb-workspace-section > p { font-size: calc(12px * var(--wb-scale)); color: var(--wb-text-2); }
+.wb-priority .wb-section__head { align-items: flex-start; }
+.wb-priority .wb-section__actions .wb-btn { white-space: normal; }
+.wb-frame--iphone .wb-row:has(> .wb-rowlink) { padding: 0; }
+
+/* Common destinations stay visible; secondary sections retain their own names and current context. */
+.wb-previewbar__label { color: var(--wb-text-2); font-size: calc(12px * var(--wb-scale)); }
+.wb-previewbar__identity .wb-sr, .wb-vstatus--quiet { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.wb-course-navigation { display: flex; align-items: stretch; flex-wrap: wrap; gap: 8px; padding-inline: 28px; border-bottom: 1px solid var(--wb-separator); background: var(--wb-surface); }
+.wb-course-navigation > .wb-tabs { border: 0; min-width: 0; }
+.wb-course-navigation .wb-tabs__list { flex-wrap: wrap; }
+.wb-course-more { position: relative; margin-left: auto; align-self: center; }
+.wb-course-more > summary { display: flex; align-items: center; gap: 8px; min-height: var(--wb-hit); padding: 10px 12px; border-radius: var(--wb-radius-control); cursor: pointer; list-style: none; font-size: calc(14px * var(--wb-scale)); color: var(--wb-text-2); }
+.wb-course-more > summary::-webkit-details-marker { display: none; }
+.wb-course-more > summary:hover, .wb-course-more[open] > summary { background: var(--wb-surface-2); color: var(--wb-text); }
+.wb-course-more > summary.is-current { color: var(--wb-accent-text); font-weight: 650; }
+.wb-course-more__list { position: absolute; z-index: 10; right: 0; top: 100%; width: min(260px, 70cqi); padding: 8px; background: var(--wb-surface); border: 1px solid var(--wb-border); border-radius: var(--wb-radius-control); box-shadow: var(--wb-shadow-2); }
+.wb-course-more__list ul { display: grid; list-style: none; margin: 0; padding: 0; }
+.wb-tool-disclosure { min-width: 0; }
+.wb-tool-disclosure .wb-disclosure { border: 0; background: transparent; }
+.wb-tool-disclosure .wb-disclosure__summary { color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); }
+.wb-tool-disclosure .wb-disclosure__body { padding-inline: 0; }
+.wb-tool-disclosure .wb-nav--tools::before { content: none; }
+@container wb-screen (max-width: 650px) {
+  .wb-course-navigation { padding-inline: 16px; }
+}
+
+/* Calendar workspace: dates and event timing are the structure, with details available on demand. */
+.wb-main:has(.wb-calendar) { max-width: none; }
+.wb-calendar { container: wb-calendar / inline-size; min-width: 0; background: var(--wb-surface); border: 1px solid var(--wb-separator); border-radius: 12px; }
+.wb-cal-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 24px; padding: 18px 20px; border-bottom: 1px solid var(--wb-separator); }
+.wb-cal-navigation, .wb-cal-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; }
+.wb-cal-navigation h2 { margin-left: 12px; font-size: calc(20px * var(--wb-scale)); letter-spacing: -0.025em; }
+.wb-cal-controls { justify-content: space-between; width: 100%; }
+.wb-cal-controls [role="group"] { display: flex; flex-wrap: wrap; gap: 4px; }
+.wb-cal-button { min-height: var(--wb-hit); font-size: calc(13px * var(--wb-scale)); padding: 8px 12px; }
+.wb-cal-button[aria-pressed="true"] { background: var(--wb-accent); border-color: var(--wb-accent); color: var(--wb-on-accent); }
+.wb-cal-scope { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; color: var(--wb-text-2); font-size: calc(13px * var(--wb-scale)); min-width: 0; }
+.wb-cal-scope select { max-width: 100%; min-width: 0; min-height: var(--wb-hit); padding: 8px 10px; background: var(--wb-surface); color: var(--wb-text); border: 1px solid var(--wb-border); border-radius: var(--wb-radius-control); font: inherit; }
+.wb-cal-zone { color: var(--wb-text-2); font-size: calc(12px * var(--wb-scale)); }
+.wb-cal-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.wb-cal-tools .wb-links { margin: 0; }
+.wb-cal-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); overflow-x: auto; }
+.wb-cal-day { min-width: 0; border-right: 1px solid var(--wb-separator); border-bottom: 1px solid var(--wb-separator); padding: 10px; }
+.wb-cal-month .wb-cal-day { min-height: 140px; }
+.wb-cal-day h3, .wb-cal-weekday h3 { font-size: calc(12px * var(--wb-scale)); font-weight: 550; color: var(--wb-text-2); }
+.wb-cal-day[aria-current="date"] h3, .wb-cal-weekday[aria-current="date"] h3 { color: var(--wb-accent-text); font-weight: 750; }
+.wb-cal-day[aria-current="date"] { background: var(--wb-accent-tint); }
+.wb-cal-outside { background: var(--wb-surface-2); }
+.wb-cal-day ul, .wb-cal-deadlines ul { display: grid; gap: 6px; list-style: none; padding: 0; margin: 10px 0 0; }
+.wb-cal-event { position: relative; border-left: 3px solid var(--wb-accent); border-radius: 5px; background: var(--wb-accent-tint); min-width: 0; height: 100%; }
+.wb-cal-event-link { display: flex; flex-direction: column; gap: 3px; width: 100%; min-height: var(--wb-hit); padding: 7px 8px; color: var(--wb-text); text-align: left; text-decoration: none; font: inherit; border: 0; background: transparent; cursor: pointer; }
+.wb-cal-event-link:hover { background: var(--wb-fill); }
+.wb-cal-event-name { font-size: calc(12px * var(--wb-scale)); font-weight: 650; line-height: 1.3; overflow-wrap: anywhere; }
+.wb-cal-event-time, .wb-cal-event-location, .wb-cal-event-course { font-size: calc(11px * var(--wb-scale)); line-height: 1.3; color: var(--wb-text-2); overflow-wrap: anywhere; }
+.wb-cal-event-info { position: absolute; right: 3px; top: 3px; min-height: var(--wb-hit); padding: 3px 5px; font-size: calc(10px * var(--wb-scale)); background: var(--wb-surface); }
+.wb-cal-event:has(.wb-cal-event-info) .wb-cal-event-name { padding-right: 42px; }
+.wb-cal-deadlines { padding: 12px 20px; border-bottom: 1px solid var(--wb-separator); }
+.wb-cal-deadlines h3 { font-size: calc(13px * var(--wb-scale)); color: var(--wb-text-2); }
+.wb-cal-deadlines ul { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.wb-cal-deadlines li { font-size: calc(12px * var(--wb-scale)); }
+.wb-cal-deadlines .wb-cal-event { height: auto; margin-top: 5px; }
+.wb-cal-week { display: grid; grid-template-columns: 52px repeat(7, minmax(125px, 1fr)); max-height: 660px; overflow: auto; overscroll-behavior: contain; border-radius: 0 0 12px 12px; }
+.wb-cal-hours { list-style: none; margin: 0; padding: 44px 0 0; position: sticky; left: 0; z-index: 3; background: var(--wb-surface); }
+.wb-cal-hours li { height: 80px; padding: 0 6px; text-align: right; color: var(--wb-text-2); font-size: calc(10px * var(--wb-scale)); }
+.wb-cal-weekday { min-width: 0; border-left: 1px solid var(--wb-separator); }
+.wb-cal-weekday > h3 { height: 44px; position: sticky; top: 0; z-index: 4; padding: 12px 8px; background: var(--wb-surface); border-bottom: 1px solid var(--wb-separator); }
+.wb-cal-weekday[aria-current="date"] > h3 { background: var(--wb-accent-tint); }
+.wb-cal-timeline { display: grid; grid-template-rows: repeat(96, 20px); gap: 0 2px; align-items: stretch; background: repeating-linear-gradient(to bottom, transparent 0, transparent 79px, var(--wb-separator) 79px, var(--wb-separator) 80px); }
+.wb-cal-block { min-width: 0; min-height: 0; padding: 1px 2px; z-index: 1; }
+.wb-cal-block .wb-cal-event { overflow: auto; }
+.wb-cal-block .wb-cal-event-name { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.wb-cal-block .wb-cal-event-info { position: static; margin: 0 5px 4px; }
+.wb-cal-block .wb-cal-event:has(.wb-cal-event-info) .wb-cal-event-name { padding-right: 0; }
+.wb-cal-detail { padding: 20px; border-top: 1px solid var(--wb-separator); background: var(--wb-surface-2); }
+.wb-cal-detail h2 { font-size: calc(20px * var(--wb-scale)); margin-bottom: 16px; }
+.wb-cal-detail .wb-kv { margin-bottom: 16px; }
+.wb-cal-agenda { padding: 8px 20px 20px; }
+.wb-cal-agenda .wb-cal-day { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-right: 0; }
+.wb-cal-agenda .wb-cal-day > ul { margin: 0; }
+.wb-calendar > p { padding: 12px 20px; color: var(--wb-text-2); }
+@container wb-calendar (max-width: 650px) {
+  .wb-cal-toolbar { padding: 14px; }
+  .wb-cal-navigation h2 { margin: 6px 0 0; width: 100%; }
+  .wb-cal-scope { width: 100%; }
+  .wb-cal-scope select { width: 100%; }
+  .wb-cal-month { grid-template-columns: repeat(7, minmax(95px, 1fr)); }
+  .wb-cal-agenda { padding-inline: 14px; }
+  .wb-cal-agenda .wb-cal-day { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+}
+
+/* Discrete calendar positions avoid inline styles and preserve the prototype CSP. */
+.wb-cal-slot-1 { grid-row-start: 1; }
+.wb-cal-span-1 { grid-row-end: span 1; }
+.wb-cal-slot-2 { grid-row-start: 2; }
+.wb-cal-span-2 { grid-row-end: span 2; }
+.wb-cal-slot-3 { grid-row-start: 3; }
+.wb-cal-span-3 { grid-row-end: span 3; }
+.wb-cal-slot-4 { grid-row-start: 4; }
+.wb-cal-span-4 { grid-row-end: span 4; }
+.wb-cal-slot-5 { grid-row-start: 5; }
+.wb-cal-span-5 { grid-row-end: span 5; }
+.wb-cal-slot-6 { grid-row-start: 6; }
+.wb-cal-span-6 { grid-row-end: span 6; }
+.wb-cal-slot-7 { grid-row-start: 7; }
+.wb-cal-span-7 { grid-row-end: span 7; }
+.wb-cal-slot-8 { grid-row-start: 8; }
+.wb-cal-span-8 { grid-row-end: span 8; }
+.wb-cal-slot-9 { grid-row-start: 9; }
+.wb-cal-span-9 { grid-row-end: span 9; }
+.wb-cal-slot-10 { grid-row-start: 10; }
+.wb-cal-span-10 { grid-row-end: span 10; }
+.wb-cal-slot-11 { grid-row-start: 11; }
+.wb-cal-span-11 { grid-row-end: span 11; }
+.wb-cal-slot-12 { grid-row-start: 12; }
+.wb-cal-span-12 { grid-row-end: span 12; }
+.wb-cal-slot-13 { grid-row-start: 13; }
+.wb-cal-span-13 { grid-row-end: span 13; }
+.wb-cal-slot-14 { grid-row-start: 14; }
+.wb-cal-span-14 { grid-row-end: span 14; }
+.wb-cal-slot-15 { grid-row-start: 15; }
+.wb-cal-span-15 { grid-row-end: span 15; }
+.wb-cal-slot-16 { grid-row-start: 16; }
+.wb-cal-span-16 { grid-row-end: span 16; }
+.wb-cal-slot-17 { grid-row-start: 17; }
+.wb-cal-span-17 { grid-row-end: span 17; }
+.wb-cal-slot-18 { grid-row-start: 18; }
+.wb-cal-span-18 { grid-row-end: span 18; }
+.wb-cal-slot-19 { grid-row-start: 19; }
+.wb-cal-span-19 { grid-row-end: span 19; }
+.wb-cal-slot-20 { grid-row-start: 20; }
+.wb-cal-span-20 { grid-row-end: span 20; }
+.wb-cal-slot-21 { grid-row-start: 21; }
+.wb-cal-span-21 { grid-row-end: span 21; }
+.wb-cal-slot-22 { grid-row-start: 22; }
+.wb-cal-span-22 { grid-row-end: span 22; }
+.wb-cal-slot-23 { grid-row-start: 23; }
+.wb-cal-span-23 { grid-row-end: span 23; }
+.wb-cal-slot-24 { grid-row-start: 24; }
+.wb-cal-span-24 { grid-row-end: span 24; }
+.wb-cal-slot-25 { grid-row-start: 25; }
+.wb-cal-span-25 { grid-row-end: span 25; }
+.wb-cal-slot-26 { grid-row-start: 26; }
+.wb-cal-span-26 { grid-row-end: span 26; }
+.wb-cal-slot-27 { grid-row-start: 27; }
+.wb-cal-span-27 { grid-row-end: span 27; }
+.wb-cal-slot-28 { grid-row-start: 28; }
+.wb-cal-span-28 { grid-row-end: span 28; }
+.wb-cal-slot-29 { grid-row-start: 29; }
+.wb-cal-span-29 { grid-row-end: span 29; }
+.wb-cal-slot-30 { grid-row-start: 30; }
+.wb-cal-span-30 { grid-row-end: span 30; }
+.wb-cal-slot-31 { grid-row-start: 31; }
+.wb-cal-span-31 { grid-row-end: span 31; }
+.wb-cal-slot-32 { grid-row-start: 32; }
+.wb-cal-span-32 { grid-row-end: span 32; }
+.wb-cal-slot-33 { grid-row-start: 33; }
+.wb-cal-span-33 { grid-row-end: span 33; }
+.wb-cal-slot-34 { grid-row-start: 34; }
+.wb-cal-span-34 { grid-row-end: span 34; }
+.wb-cal-slot-35 { grid-row-start: 35; }
+.wb-cal-span-35 { grid-row-end: span 35; }
+.wb-cal-slot-36 { grid-row-start: 36; }
+.wb-cal-span-36 { grid-row-end: span 36; }
+.wb-cal-slot-37 { grid-row-start: 37; }
+.wb-cal-span-37 { grid-row-end: span 37; }
+.wb-cal-slot-38 { grid-row-start: 38; }
+.wb-cal-span-38 { grid-row-end: span 38; }
+.wb-cal-slot-39 { grid-row-start: 39; }
+.wb-cal-span-39 { grid-row-end: span 39; }
+.wb-cal-slot-40 { grid-row-start: 40; }
+.wb-cal-span-40 { grid-row-end: span 40; }
+.wb-cal-slot-41 { grid-row-start: 41; }
+.wb-cal-span-41 { grid-row-end: span 41; }
+.wb-cal-slot-42 { grid-row-start: 42; }
+.wb-cal-span-42 { grid-row-end: span 42; }
+.wb-cal-slot-43 { grid-row-start: 43; }
+.wb-cal-span-43 { grid-row-end: span 43; }
+.wb-cal-slot-44 { grid-row-start: 44; }
+.wb-cal-span-44 { grid-row-end: span 44; }
+.wb-cal-slot-45 { grid-row-start: 45; }
+.wb-cal-span-45 { grid-row-end: span 45; }
+.wb-cal-slot-46 { grid-row-start: 46; }
+.wb-cal-span-46 { grid-row-end: span 46; }
+.wb-cal-slot-47 { grid-row-start: 47; }
+.wb-cal-span-47 { grid-row-end: span 47; }
+.wb-cal-slot-48 { grid-row-start: 48; }
+.wb-cal-span-48 { grid-row-end: span 48; }
+.wb-cal-slot-49 { grid-row-start: 49; }
+.wb-cal-span-49 { grid-row-end: span 49; }
+.wb-cal-slot-50 { grid-row-start: 50; }
+.wb-cal-span-50 { grid-row-end: span 50; }
+.wb-cal-slot-51 { grid-row-start: 51; }
+.wb-cal-span-51 { grid-row-end: span 51; }
+.wb-cal-slot-52 { grid-row-start: 52; }
+.wb-cal-span-52 { grid-row-end: span 52; }
+.wb-cal-slot-53 { grid-row-start: 53; }
+.wb-cal-span-53 { grid-row-end: span 53; }
+.wb-cal-slot-54 { grid-row-start: 54; }
+.wb-cal-span-54 { grid-row-end: span 54; }
+.wb-cal-slot-55 { grid-row-start: 55; }
+.wb-cal-span-55 { grid-row-end: span 55; }
+.wb-cal-slot-56 { grid-row-start: 56; }
+.wb-cal-span-56 { grid-row-end: span 56; }
+.wb-cal-slot-57 { grid-row-start: 57; }
+.wb-cal-span-57 { grid-row-end: span 57; }
+.wb-cal-slot-58 { grid-row-start: 58; }
+.wb-cal-span-58 { grid-row-end: span 58; }
+.wb-cal-slot-59 { grid-row-start: 59; }
+.wb-cal-span-59 { grid-row-end: span 59; }
+.wb-cal-slot-60 { grid-row-start: 60; }
+.wb-cal-span-60 { grid-row-end: span 60; }
+.wb-cal-slot-61 { grid-row-start: 61; }
+.wb-cal-span-61 { grid-row-end: span 61; }
+.wb-cal-slot-62 { grid-row-start: 62; }
+.wb-cal-span-62 { grid-row-end: span 62; }
+.wb-cal-slot-63 { grid-row-start: 63; }
+.wb-cal-span-63 { grid-row-end: span 63; }
+.wb-cal-slot-64 { grid-row-start: 64; }
+.wb-cal-span-64 { grid-row-end: span 64; }
+.wb-cal-slot-65 { grid-row-start: 65; }
+.wb-cal-span-65 { grid-row-end: span 65; }
+.wb-cal-slot-66 { grid-row-start: 66; }
+.wb-cal-span-66 { grid-row-end: span 66; }
+.wb-cal-slot-67 { grid-row-start: 67; }
+.wb-cal-span-67 { grid-row-end: span 67; }
+.wb-cal-slot-68 { grid-row-start: 68; }
+.wb-cal-span-68 { grid-row-end: span 68; }
+.wb-cal-slot-69 { grid-row-start: 69; }
+.wb-cal-span-69 { grid-row-end: span 69; }
+.wb-cal-slot-70 { grid-row-start: 70; }
+.wb-cal-span-70 { grid-row-end: span 70; }
+.wb-cal-slot-71 { grid-row-start: 71; }
+.wb-cal-span-71 { grid-row-end: span 71; }
+.wb-cal-slot-72 { grid-row-start: 72; }
+.wb-cal-span-72 { grid-row-end: span 72; }
+.wb-cal-slot-73 { grid-row-start: 73; }
+.wb-cal-span-73 { grid-row-end: span 73; }
+.wb-cal-slot-74 { grid-row-start: 74; }
+.wb-cal-span-74 { grid-row-end: span 74; }
+.wb-cal-slot-75 { grid-row-start: 75; }
+.wb-cal-span-75 { grid-row-end: span 75; }
+.wb-cal-slot-76 { grid-row-start: 76; }
+.wb-cal-span-76 { grid-row-end: span 76; }
+.wb-cal-slot-77 { grid-row-start: 77; }
+.wb-cal-span-77 { grid-row-end: span 77; }
+.wb-cal-slot-78 { grid-row-start: 78; }
+.wb-cal-span-78 { grid-row-end: span 78; }
+.wb-cal-slot-79 { grid-row-start: 79; }
+.wb-cal-span-79 { grid-row-end: span 79; }
+.wb-cal-slot-80 { grid-row-start: 80; }
+.wb-cal-span-80 { grid-row-end: span 80; }
+.wb-cal-slot-81 { grid-row-start: 81; }
+.wb-cal-span-81 { grid-row-end: span 81; }
+.wb-cal-slot-82 { grid-row-start: 82; }
+.wb-cal-span-82 { grid-row-end: span 82; }
+.wb-cal-slot-83 { grid-row-start: 83; }
+.wb-cal-span-83 { grid-row-end: span 83; }
+.wb-cal-slot-84 { grid-row-start: 84; }
+.wb-cal-span-84 { grid-row-end: span 84; }
+.wb-cal-slot-85 { grid-row-start: 85; }
+.wb-cal-span-85 { grid-row-end: span 85; }
+.wb-cal-slot-86 { grid-row-start: 86; }
+.wb-cal-span-86 { grid-row-end: span 86; }
+.wb-cal-slot-87 { grid-row-start: 87; }
+.wb-cal-span-87 { grid-row-end: span 87; }
+.wb-cal-slot-88 { grid-row-start: 88; }
+.wb-cal-span-88 { grid-row-end: span 88; }
+.wb-cal-slot-89 { grid-row-start: 89; }
+.wb-cal-span-89 { grid-row-end: span 89; }
+.wb-cal-slot-90 { grid-row-start: 90; }
+.wb-cal-span-90 { grid-row-end: span 90; }
+.wb-cal-slot-91 { grid-row-start: 91; }
+.wb-cal-span-91 { grid-row-end: span 91; }
+.wb-cal-slot-92 { grid-row-start: 92; }
+.wb-cal-span-92 { grid-row-end: span 92; }
+.wb-cal-slot-93 { grid-row-start: 93; }
+.wb-cal-span-93 { grid-row-end: span 93; }
+.wb-cal-slot-94 { grid-row-start: 94; }
+.wb-cal-span-94 { grid-row-end: span 94; }
+.wb-cal-slot-95 { grid-row-start: 95; }
+.wb-cal-span-95 { grid-row-end: span 95; }
+.wb-cal-slot-96 { grid-row-start: 96; }
+.wb-cal-span-96 { grid-row-end: span 96; }
+.wb-cal-lane-1 { grid-column-start: 1; }
+.wb-cal-lanes-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.wb-cal-lane-2 { grid-column-start: 2; }
+.wb-cal-lanes-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.wb-cal-lane-3 { grid-column-start: 3; }
+.wb-cal-lanes-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.wb-cal-lane-4 { grid-column-start: 4; }
+.wb-cal-lanes-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.wb-cal-lane-5 { grid-column-start: 5; }
+.wb-cal-lanes-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.wb-cal-lane-6 { grid-column-start: 6; }
+.wb-cal-lanes-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.wb-cal-lane-7 { grid-column-start: 7; }
+.wb-cal-lanes-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.wb-cal-lane-8 { grid-column-start: 8; }
+.wb-cal-lanes-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.wb-cal-event[data-course-key="phys"] { border-left-color: var(--wb-course-phys); }
+.wb-cal-event[data-course-key="math"] { border-left-color: var(--wb-course-math); }
+.wb-cal-event[data-course-key="chem"] { border-left-color: var(--wb-course-chem); }
+.wb-cal-event[data-course-key="cs"] { border-left-color: var(--wb-course-cs); }
+.wb-cal-event[data-cal-kind="personal"] { border-left-color: var(--wb-kind-priv); }
+.wb-cal-week-label { padding: 12px 10px; color: var(--wb-text-2); font-size: calc(12px * var(--wb-scale)); text-align: center; border-bottom: 1px solid var(--wb-separator); }
+.wb-cal-month .wb-cal-day h3 { display: inline-flex; min-width: 28px; height: 28px; align-items: center; justify-content: center; }
+.wb-cal-month .wb-cal-day[aria-current="date"] h3 { border-radius: 50%; color: var(--wb-on-accent); background: var(--wb-accent); }

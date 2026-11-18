@@ -1,0 +1,186 @@
+{
+  "label": "Source checks only. Not browser, device or accessibility acceptance.",
+  "generated_at": "2026-11-18T16:14:25.953Z",
+  "node": "v24.21.0",
+  "checks": [
+    {
+      "id": "build",
+      "status": "pass",
+      "errors": 0,
+      "summary": "3 files written",
+      "details": []
+    },
+    {
+      "id": "tests",
+      "status": "pass",
+      "errors": 0,
+      "summary": "ℹ tests 558, ℹ pass 558, ℹ fail 0",
+      "details": [
+        "✔ student feedback identifies snapshot-bound receipt and its files (8.685959ms)",
+        "✔ W23 renders supported nonnumeric released outcomes without a score figure (3.478125ms)",
+        "✔ own immutable receipt remains visible when assessment is unpublished, without its title or feedback (2.701417ms)",
+        "✔ quiz receipt shows only its own acknowledged attempt, not a newer attempt or release (1.654542ms)",
+        "✔ older submission receipt never offers feedback bound to a later attempt (1.263667ms)",
+        "✔ all 63 pages retain structurally valid explicit-course views across roles, tiers and states (2228.330542ms)",
+        "✔ student assignment → course overview → another assignment or quiz never carries the first item (1.145542ms)",
+        "✔ explicit record requests match compatible pages and receipts derive their actual learner (0.702458ms)",
+        "✔ presentation tokens retain their default assessment when only course selection is supplied (1.625167ms)",
+        "✔ immutable group receipt keeps its group identity after membership moves or deletion (6.521541ms)",
+        "✔ ungraded practice never offers a hand-in link to an unrelated draft (0.518458ms)",
+        "✔ staffing examples opened from a solo course select the course whose staffing changes (0.504042ms)",
+        "ℹ tests 558",
+        "ℹ suites 0",
+        "ℹ pass 558",
+        "ℹ fail 0",
+        "ℹ cancelled 0",
+        "ℹ skipped 0",
+        "ℹ todo 0",
+        "ℹ duration_ms 76665.1645"
+      ]
+    },
+    {
+      "id": "check_tokens",
+      "status": "pass",
+      "errors": 0,
+      "summary": "48 pairs × 2 themes, 0 failures",
+      "details": [
+        "48 pairs × 2 themes, 0 failures"
+      ]
+    },
+    {
+      "id": "check_fixtures",
+      "status": "pass",
+      "errors": 0,
+      "summary": "check_fixtures: 0 errors. Source checks only.",
+      "details": [
+        "check_fixtures: 0 errors. Source checks only."
+      ]
+    },
+    {
+      "id": "check_manifest",
+      "status": "pass",
+      "errors": 0,
+      "summary": "check_manifest: 0 errors. Source checks only.",
+      "details": [
+        "check_manifest: 0 errors. Source checks only."
+      ]
+    },
+    {
+      "id": "check_vocab",
+      "status": "pass",
+      "errors": 0,
+      "summary": "check_vocab: 0 errors. Source checks only.",
+      "details": [
+        "check_vocab: 0 errors. Source checks only."
+      ]
+    },
+    {
+      "id": "extract_board_verify",
+      "status": "pass",
+      "errors": 0,
+      "summary": "extract_board --verify passed: 211 = 120 + 63 + 28; ZIPS 91; 63 pages; 12 journeys; 93 spec files byte-identical; board 1097772 bytes, sha256 pinned.",
+      "details": [
+        "original not present; verified against pinned sha256",
+        "extract_board --verify passed: 211 = 120 + 63 + 28; ZIPS 91; 63 pages; 12 journeys; 93 spec files byte-identical; board 1097772 bytes, sha256 pinned."
+      ]
+    },
+    {
+      "id": "check_tracker_phase0",
+      "status": "pass",
+      "errors": 0,
+      "summary": "check_tracker --phase 0 passed: 661 fix rows (118 DD, 39 decision, 3 conflict, 361 JW, 140 UX), 189 page rows; statuses Open 554, Decided 101, Withdrawn 1, Duplicate-of 5. Source checks only.",
+      "details": [
+        "check_tracker --phase 0 passed: 661 fix rows (118 DD, 39 decision, 3 conflict, 361 JW, 140 UX), 189 page rows; statuses Open 554, Decided 101, Withdrawn 1, Duplicate-of 5. Source checks only."
+      ]
+    },
+    {
+      "id": "check_tracker_phase1",
+      "status": "pass",
+      "errors": 0,
+      "summary": "check_tracker --phase 1 passed: 661 fix rows (118 DD, 39 decision, 3 conflict, 361 JW, 140 UX), 189 page rows; statuses Open 554, Decided 101, Withdrawn 1, Duplicate-of 5. Source checks only.",
+      "details": [
+        "check_tracker --phase 1 passed: 661 fix rows (118 DD, 39 decision, 3 conflict, 361 JW, 140 UX), 189 page rows; statuses Open 554, Decided 101, Withdrawn 1, Duplicate-of 5. Source checks only."
+      ]
+    },
+    {
+      "id": "check_render",
+      "status": "pass",
+      "errors": 0,
+      "summary": "5323 renders, 189/189 page×platform targets",
+      "details": []
+    },
+    {
+      "id": "check_lines",
+      "status": "pass",
+      "errors": 0,
+      "summary": "199 files, 0 exemptions",
+      "details": []
+    },
+    {
+      "id": "check_size",
+      "status": "pass",
+      "errors": 0,
+      "summary": "3 files within budget",
+      "details": []
+    },
+    {
+      "id": "check_offline",
+      "status": "pass",
+      "errors": 0,
+      "summary": "3 files, 55 plain-text https citations in the spec",
+      "details": []
+    },
+    {
+      "id": "check_links",
+      "status": "pass",
+      "errors": 0,
+      "summary": "55560 rendered views, 1089509 links, 78 steps across 12 tours, 26/26 required page hops; source checks only",
+      "details": []
+    },
+    {
+      "id": "check_reach",
+      "status": "pass",
+      "errors": 0,
+      "summary": "189/189 page×platform targets through rendered board/index links and route/render round-trips; optional pages on; source checks only",
+      "details": []
+    },
+    {
+      "id": "check_leaks",
+      "status": "pass",
+      "errors": 0,
+      "summary": "18246 learner/preview renders; held-data noninterference and unpublished-list probes",
+      "details": []
+    },
+    {
+      "id": "check_authority",
+      "status": "pass",
+      "errors": 0,
+      "summary": "24588 authority renders; TA release, staff routes, immutable receipt/snapshot checks",
+      "details": []
+    },
+    {
+      "id": "check_fictional",
+      "status": "pass",
+      "errors": 0,
+      "summary": "926 renders, fictional provenance/example contacts and unsupported-claim lint (not identity verification)",
+      "details": []
+    }
+  ],
+  "dist": [
+    {
+      "name": "Whiteboard-Final.html",
+      "bytes": 855552,
+      "sha256": "c390dfdadd633d9ddc04017b17830d55cd7cfd3e389c9f4b54e359be3a0d6878"
+    },
+    {
+      "name": "Whiteboard-Final-Board.html",
+      "bytes": 837229,
+      "sha256": "42953d9fc418cc3ffd73f104c6c3ec5f93216f560ec01d371ff11247e568c650"
+    },
+    {
+      "name": "Whiteboard-Final-Spec.html",
+      "bytes": 1011283,
+      "sha256": "9b2275f6df86261f706145c2236648348958508dfcb2e3b2f8ec311b15c0bc9d"
+    }
+  ]
+}

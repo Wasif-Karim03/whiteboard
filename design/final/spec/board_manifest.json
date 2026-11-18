@@ -1,0 +1,2238 @@
+{
+  "source": {
+    "file": "Whiteboard-Design-Board-2026-11-04.html",
+    "bytes": 1097772,
+    "sha256": "1ffafbd540e26b001e9d93701625ec66e98a594917ab202de94a67b95fddb9ae"
+  },
+  "counts": {
+    "entries": 211,
+    "drawn": 120,
+    "spec": 63,
+    "document": 28,
+    "zips": 91,
+    "pages": 63,
+    "journeys": 12
+  },
+  "entries": [
+    {
+      "n": 1,
+      "sec": "0",
+      "name": "How this board works",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 2,
+      "sec": "S",
+      "name": "Design system",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 3,
+      "sec": "S",
+      "name": "Signature pieces",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 4,
+      "sec": "S",
+      "name": "Course identity",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 5,
+      "sec": "L",
+      "name": "Logo directions",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 6,
+      "sec": "L",
+      "name": "In a browser tab",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 7,
+      "sec": "A",
+      "name": "W01 · Sign in · PC",
+      "kind": "drawn",
+      "page_id": "W01",
+      "device": "PC"
+    },
+    {
+      "n": 8,
+      "sec": "A",
+      "name": "W01 · Sign in · iPhone",
+      "kind": "drawn",
+      "page_id": "W01",
+      "device": "iPhone"
+    },
+    {
+      "n": 9,
+      "sec": "A",
+      "name": "W04 · First run · PC",
+      "kind": "drawn",
+      "page_id": "W04",
+      "device": "PC"
+    },
+    {
+      "n": 10,
+      "sec": "B",
+      "name": "W05 · Home · PC",
+      "kind": "drawn",
+      "page_id": "W05",
+      "device": "PC"
+    },
+    {
+      "n": 11,
+      "sec": "B",
+      "name": "W05 · Home · iPad",
+      "kind": "drawn",
+      "page_id": "W05",
+      "device": "iPad"
+    },
+    {
+      "n": 12,
+      "sec": "B",
+      "name": "W05 · Home · iPhone",
+      "kind": "drawn",
+      "page_id": "W05",
+      "device": "iPhone"
+    },
+    {
+      "n": 13,
+      "sec": "B",
+      "name": "W18 · Coursework · PC",
+      "kind": "drawn",
+      "page_id": "W18",
+      "device": "PC"
+    },
+    {
+      "n": 14,
+      "sec": "B",
+      "name": "W18 · Coursework · iPad",
+      "kind": "drawn",
+      "page_id": "W18",
+      "device": "iPad"
+    },
+    {
+      "n": 15,
+      "sec": "B",
+      "name": "W18 · Coursework · iPhone",
+      "kind": "drawn",
+      "page_id": "W18",
+      "device": "iPhone"
+    },
+    {
+      "n": 16,
+      "sec": "B",
+      "name": "W14 · Course home · PC",
+      "kind": "drawn",
+      "page_id": "W14",
+      "device": "PC"
+    },
+    {
+      "n": 17,
+      "sec": "B",
+      "name": "W14 · Course home · iPhone",
+      "kind": "drawn",
+      "page_id": "W14",
+      "device": "iPhone"
+    },
+    {
+      "n": 18,
+      "sec": "B",
+      "name": "W14 · Course home · MATH 220 · PC",
+      "kind": "drawn",
+      "page_id": "W14",
+      "device": "PC"
+    },
+    {
+      "n": 19,
+      "sec": "B",
+      "name": "W14 · Course home · MATH 220 · iPhone",
+      "kind": "drawn",
+      "page_id": "W14",
+      "device": "iPhone"
+    },
+    {
+      "n": 20,
+      "sec": "B",
+      "name": "W32 · Course calendar · PC",
+      "kind": "drawn",
+      "page_id": "W32",
+      "device": "PC"
+    },
+    {
+      "n": 21,
+      "sec": "B",
+      "name": "W32 · Course calendar · iPad",
+      "kind": "drawn",
+      "page_id": "W32",
+      "device": "iPad"
+    },
+    {
+      "n": 22,
+      "sec": "B",
+      "name": "W32 · Course calendar · iPhone",
+      "kind": "drawn",
+      "page_id": "W32",
+      "device": "iPhone"
+    },
+    {
+      "n": 23,
+      "sec": "B",
+      "name": "W07 · Calendar (all courses) · PC",
+      "kind": "drawn",
+      "page_id": "W07",
+      "device": "PC"
+    },
+    {
+      "n": 24,
+      "sec": "B",
+      "name": "W07 · Calendar (all courses) · iPhone",
+      "kind": "drawn",
+      "page_id": "W07",
+      "device": "iPhone"
+    },
+    {
+      "n": 25,
+      "sec": "B",
+      "name": "W06 · Courses · PC",
+      "kind": "drawn",
+      "page_id": "W06",
+      "device": "PC"
+    },
+    {
+      "n": 26,
+      "sec": "B",
+      "name": "W06 · Past term, read-only archive · PC",
+      "kind": "drawn",
+      "page_id": "W06",
+      "device": "PC"
+    },
+    {
+      "n": 27,
+      "sec": "B",
+      "name": "W06 · Courses · iPhone",
+      "kind": "drawn",
+      "page_id": "W06",
+      "device": "iPhone"
+    },
+    {
+      "n": 28,
+      "sec": "B",
+      "name": "W15 · Syllabus and grading summary · PC",
+      "kind": "drawn",
+      "page_id": "W15",
+      "device": "PC"
+    },
+    {
+      "n": 29,
+      "sec": "B",
+      "name": "W15 · Syllabus and grading summary · iPhone",
+      "kind": "drawn",
+      "page_id": "W15",
+      "device": "iPhone"
+    },
+    {
+      "n": 30,
+      "sec": "B",
+      "name": "W16 · Modules · PC",
+      "kind": "drawn",
+      "page_id": "W16",
+      "device": "PC"
+    },
+    {
+      "n": 31,
+      "sec": "B",
+      "name": "W16 · Modules · iPhone",
+      "kind": "drawn",
+      "page_id": "W16",
+      "device": "iPhone"
+    },
+    {
+      "n": 32,
+      "sec": "C",
+      "name": "W19 · Assignment · PC",
+      "kind": "drawn",
+      "page_id": "W19",
+      "device": "PC"
+    },
+    {
+      "n": 33,
+      "sec": "C",
+      "name": "W19 · Assignment · iPhone",
+      "kind": "drawn",
+      "page_id": "W19",
+      "device": "iPhone"
+    },
+    {
+      "n": 34,
+      "sec": "C",
+      "name": "W20 · Add work · PC",
+      "kind": "drawn",
+      "page_id": "W20",
+      "device": "PC"
+    },
+    {
+      "n": 35,
+      "sec": "C",
+      "name": "W20 · Add work · iPhone",
+      "kind": "drawn",
+      "page_id": "W20",
+      "device": "iPhone"
+    },
+    {
+      "n": 36,
+      "sec": "C",
+      "name": "W21 · Review and submit · PC",
+      "kind": "drawn",
+      "page_id": "W21",
+      "device": "PC"
+    },
+    {
+      "n": 37,
+      "sec": "C",
+      "name": "W21 · Review and submit · iPhone",
+      "kind": "drawn",
+      "page_id": "W21",
+      "device": "iPhone"
+    },
+    {
+      "n": 38,
+      "sec": "C",
+      "name": "W22 · Receipt · PC",
+      "kind": "drawn",
+      "page_id": "W22",
+      "device": "PC"
+    },
+    {
+      "n": 39,
+      "sec": "C",
+      "name": "W22 · Receipt · iPad",
+      "kind": "drawn",
+      "page_id": "W22",
+      "device": "iPad"
+    },
+    {
+      "n": 40,
+      "sec": "C",
+      "name": "W22 · Receipt · iPhone",
+      "kind": "drawn",
+      "page_id": "W22",
+      "device": "iPhone"
+    },
+    {
+      "n": 41,
+      "sec": "D",
+      "name": "W24 · Grades · PC",
+      "kind": "drawn",
+      "page_id": "W24",
+      "device": "PC"
+    },
+    {
+      "n": 42,
+      "sec": "D",
+      "name": "W24 · Grades · iPad",
+      "kind": "drawn",
+      "page_id": "W24",
+      "device": "iPad"
+    },
+    {
+      "n": 43,
+      "sec": "D",
+      "name": "W24 · Grades · iPhone",
+      "kind": "drawn",
+      "page_id": "W24",
+      "device": "iPhone"
+    },
+    {
+      "n": 44,
+      "sec": "D",
+      "name": "W23 · Released feedback · PC",
+      "kind": "drawn",
+      "page_id": "W23",
+      "device": "PC"
+    },
+    {
+      "n": 45,
+      "sec": "D",
+      "name": "W23 · Released feedback · iPhone",
+      "kind": "drawn",
+      "page_id": "W23",
+      "device": "iPhone"
+    },
+    {
+      "n": 46,
+      "sec": "X",
+      "name": "Upload interrupted · PC",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 47,
+      "sec": "X",
+      "name": "Upload interrupted · iPhone",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "iPhone"
+    },
+    {
+      "n": 48,
+      "sec": "X",
+      "name": "Offline draft · iPad",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "iPad"
+    },
+    {
+      "n": 49,
+      "sec": "E",
+      "name": "W25 · Quiz rules and start · PC",
+      "kind": "drawn",
+      "page_id": "W25",
+      "device": "PC"
+    },
+    {
+      "n": 50,
+      "sec": "E",
+      "name": "W25 · Quiz rules and start · iPhone",
+      "kind": "drawn",
+      "page_id": "W25",
+      "device": "iPhone"
+    },
+    {
+      "n": 51,
+      "sec": "E",
+      "name": "W26 · Quiz attempt · PC",
+      "kind": "drawn",
+      "page_id": "W26",
+      "device": "PC"
+    },
+    {
+      "n": 52,
+      "sec": "E",
+      "name": "W26 · Quiz attempt · iPhone",
+      "kind": "drawn",
+      "page_id": "W26",
+      "device": "iPhone"
+    },
+    {
+      "n": 53,
+      "sec": "E",
+      "name": "W27 · Quiz receipt and review · PC",
+      "kind": "drawn",
+      "page_id": "W27",
+      "device": "PC"
+    },
+    {
+      "n": 54,
+      "sec": "F",
+      "name": "W28 · Announcements · PC",
+      "kind": "drawn",
+      "page_id": "W28",
+      "device": "PC"
+    },
+    {
+      "n": 55,
+      "sec": "F",
+      "name": "W28 · Announcements · iPhone",
+      "kind": "drawn",
+      "page_id": "W28",
+      "device": "iPhone"
+    },
+    {
+      "n": 56,
+      "sec": "F",
+      "name": "W29 · Announcement · PC",
+      "kind": "drawn",
+      "page_id": "W29",
+      "device": "PC"
+    },
+    {
+      "n": 57,
+      "sec": "F",
+      "name": "W30 · Discussions · PC",
+      "kind": "drawn",
+      "page_id": "W30",
+      "device": "PC"
+    },
+    {
+      "n": 58,
+      "sec": "F",
+      "name": "W31 · Discussion thread · PC",
+      "kind": "drawn",
+      "page_id": "W31",
+      "device": "PC"
+    },
+    {
+      "n": 59,
+      "sec": "F",
+      "name": "W31 · Discussion thread · iPhone",
+      "kind": "drawn",
+      "page_id": "W31",
+      "device": "iPhone"
+    },
+    {
+      "n": 60,
+      "sec": "F",
+      "name": "W33 · My groups · PC",
+      "kind": "drawn",
+      "page_id": "W33",
+      "device": "PC"
+    },
+    {
+      "n": 61,
+      "sec": "F",
+      "name": "W34 · Group workspace · PC",
+      "kind": "drawn",
+      "page_id": "W34",
+      "device": "PC"
+    },
+    {
+      "n": 62,
+      "sec": "G",
+      "name": "W02 · Sign-in return and recovery · PC",
+      "kind": "drawn",
+      "page_id": "W02",
+      "device": "PC"
+    },
+    {
+      "n": 63,
+      "sec": "G",
+      "name": "W03 · Invitation · PC",
+      "kind": "drawn",
+      "page_id": "W03",
+      "device": "PC"
+    },
+    {
+      "n": 64,
+      "sec": "G",
+      "name": "W08 · Activity and notification settings · PC",
+      "kind": "drawn",
+      "page_id": "W08",
+      "device": "PC"
+    },
+    {
+      "n": 65,
+      "sec": "G",
+      "name": "W08 · Activity · iPhone",
+      "kind": "drawn",
+      "page_id": "W08",
+      "device": "iPhone"
+    },
+    {
+      "n": 66,
+      "sec": "B",
+      "name": "W32 · Class cancelled · Student · PC",
+      "kind": "drawn",
+      "page_id": "W32",
+      "device": "PC"
+    },
+    {
+      "n": 67,
+      "sec": "G",
+      "name": "W08 · Activity · class cancelled · iPhone",
+      "kind": "drawn",
+      "page_id": "W08",
+      "device": "iPhone"
+    },
+    {
+      "n": 68,
+      "sec": "G",
+      "name": "W09 · Search · PC",
+      "kind": "drawn",
+      "page_id": "W09",
+      "device": "PC"
+    },
+    {
+      "n": 69,
+      "sec": "G",
+      "name": "W10 · Account and preferences · PC",
+      "kind": "drawn",
+      "page_id": "W10",
+      "device": "PC"
+    },
+    {
+      "n": 70,
+      "sec": "G",
+      "name": "W10 · Account · iPhone",
+      "kind": "drawn",
+      "page_id": "W10",
+      "device": "iPhone"
+    },
+    {
+      "n": 71,
+      "sec": "G",
+      "name": "W11 · Tools directory · PC",
+      "kind": "drawn",
+      "page_id": "W11",
+      "device": "PC"
+    },
+    {
+      "n": 72,
+      "sec": "G",
+      "name": "W12 · Help and technical request · PC",
+      "kind": "drawn",
+      "page_id": "W12",
+      "device": "PC"
+    },
+    {
+      "n": 73,
+      "sec": "T",
+      "name": "W05 · Home · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W05",
+      "device": "PC"
+    },
+    {
+      "n": 74,
+      "sec": "T",
+      "name": "W05 · Home · TA · PC",
+      "kind": "drawn",
+      "page_id": "W05",
+      "device": "PC"
+    },
+    {
+      "n": 75,
+      "sec": "T",
+      "name": "W06 · Courses · Instructor and TA · PC",
+      "kind": "drawn",
+      "page_id": "W06",
+      "device": "PC"
+    },
+    {
+      "n": 76,
+      "sec": "T",
+      "name": "W14 · Course home · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W14",
+      "device": "PC"
+    },
+    {
+      "n": 77,
+      "sec": "T",
+      "name": "W14 · Course home · TA · PC",
+      "kind": "drawn",
+      "page_id": "W14",
+      "device": "PC"
+    },
+    {
+      "n": 78,
+      "sec": "T",
+      "name": "W07 · Calendar · Instructor and TA · PC",
+      "kind": "drawn",
+      "page_id": "W07",
+      "device": "PC"
+    },
+    {
+      "n": 79,
+      "sec": "T",
+      "name": "W18 · Coursework · Instructor and TA · PC",
+      "kind": "drawn",
+      "page_id": "W18",
+      "device": "PC"
+    },
+    {
+      "n": 80,
+      "sec": "T",
+      "name": "W32 · Course calendar · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W32",
+      "device": "PC"
+    },
+    {
+      "n": 81,
+      "sec": "T",
+      "name": "W32 · Cancel a class · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W32",
+      "device": "PC"
+    },
+    {
+      "n": 82,
+      "sec": "T",
+      "name": "W32 · Class cancelled · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W32",
+      "device": "PC"
+    },
+    {
+      "n": 83,
+      "sec": "H",
+      "name": "W35 · Course builder · PC",
+      "kind": "drawn",
+      "page_id": "W35",
+      "device": "PC"
+    },
+    {
+      "n": 84,
+      "sec": "H",
+      "name": "W36 · Course settings, syllabus and publication · PC",
+      "kind": "drawn",
+      "page_id": "W36",
+      "device": "PC"
+    },
+    {
+      "n": 85,
+      "sec": "H",
+      "name": "W37 · Module editor · PC",
+      "kind": "drawn",
+      "page_id": "W37",
+      "device": "PC"
+    },
+    {
+      "n": 86,
+      "sec": "H",
+      "name": "W38 · Lesson editor · PC",
+      "kind": "drawn",
+      "page_id": "W38",
+      "device": "PC"
+    },
+    {
+      "n": 87,
+      "sec": "H",
+      "name": "W39 · Files and resources · PC",
+      "kind": "drawn",
+      "page_id": "W39",
+      "device": "PC"
+    },
+    {
+      "n": 88,
+      "sec": "H",
+      "name": "W40 · Assignment editor · PC",
+      "kind": "drawn",
+      "page_id": "W40",
+      "device": "PC"
+    },
+    {
+      "n": 89,
+      "sec": "H",
+      "name": "W41 · Quiz editor · PC",
+      "kind": "drawn",
+      "page_id": "W41",
+      "device": "PC"
+    },
+    {
+      "n": 90,
+      "sec": "H",
+      "name": "W42 · Question bank · PC",
+      "kind": "drawn",
+      "page_id": "W42",
+      "device": "PC"
+    },
+    {
+      "n": 91,
+      "sec": "H",
+      "name": "W43 · Rubric library · PC",
+      "kind": "drawn",
+      "page_id": "W43",
+      "device": "PC"
+    },
+    {
+      "n": 92,
+      "sec": "H",
+      "name": "W44 · Rubric editor · PC",
+      "kind": "drawn",
+      "page_id": "W44",
+      "device": "PC"
+    },
+    {
+      "n": 93,
+      "sec": "H",
+      "name": "W45 · People and staff permission · PC",
+      "kind": "drawn",
+      "page_id": "W45",
+      "device": "PC"
+    },
+    {
+      "n": 94,
+      "sec": "H",
+      "name": "W46 · Learner allowances · PC",
+      "kind": "drawn",
+      "page_id": "W46",
+      "device": "PC"
+    },
+    {
+      "n": 95,
+      "sec": "H",
+      "name": "W55 · Announcement editor · PC",
+      "kind": "drawn",
+      "page_id": "W55",
+      "device": "PC"
+    },
+    {
+      "n": 96,
+      "sec": "H",
+      "name": "W56 · Discussion setup and moderation · PC",
+      "kind": "drawn",
+      "page_id": "W56",
+      "device": "PC"
+    },
+    {
+      "n": 97,
+      "sec": "H",
+      "name": "W59 · Course copy and rollover · PC",
+      "kind": "drawn",
+      "page_id": "W59",
+      "device": "PC"
+    },
+    {
+      "n": 98,
+      "sec": "H",
+      "name": "W60 · Import and export preview · PC",
+      "kind": "drawn",
+      "page_id": "W60",
+      "device": "PC"
+    },
+    {
+      "n": 99,
+      "sec": "N",
+      "name": "W01 · Specification · Institution sign-in",
+      "kind": "spec",
+      "page_id": "W01",
+      "device": null
+    },
+    {
+      "n": 100,
+      "sec": "N",
+      "name": "W02 · Specification · Auth return/recovery",
+      "kind": "spec",
+      "page_id": "W02",
+      "device": null
+    },
+    {
+      "n": 101,
+      "sec": "N",
+      "name": "W03 · Specification · Invitation",
+      "kind": "spec",
+      "page_id": "W03",
+      "device": null
+    },
+    {
+      "n": 102,
+      "sec": "N",
+      "name": "W04 · Specification · Onboarding",
+      "kind": "spec",
+      "page_id": "W04",
+      "device": null
+    },
+    {
+      "n": 103,
+      "sec": "N",
+      "name": "W05 · Specification · Role-aware Home",
+      "kind": "spec",
+      "page_id": "W05",
+      "device": null
+    },
+    {
+      "n": 104,
+      "sec": "N",
+      "name": "W06 · Specification · Courses and term archive",
+      "kind": "spec",
+      "page_id": "W06",
+      "device": null
+    },
+    {
+      "n": 105,
+      "sec": "N",
+      "name": "W07 · Specification · Personal/global academic calendar",
+      "kind": "spec",
+      "page_id": "W07",
+      "device": null
+    },
+    {
+      "n": 106,
+      "sec": "N",
+      "name": "W08 · Specification · Activity and notification settings",
+      "kind": "spec",
+      "page_id": "W08",
+      "device": null
+    },
+    {
+      "n": 107,
+      "sec": "N",
+      "name": "W09 · Specification · Global academic search",
+      "kind": "spec",
+      "page_id": "W09",
+      "device": null
+    },
+    {
+      "n": 108,
+      "sec": "N",
+      "name": "W10 · Specification · Profile/account/preferences",
+      "kind": "spec",
+      "page_id": "W10",
+      "device": null
+    },
+    {
+      "n": 109,
+      "sec": "N",
+      "name": "W11 · Specification · Academic software/tools directory",
+      "kind": "spec",
+      "page_id": "W11",
+      "device": null
+    },
+    {
+      "n": 110,
+      "sec": "N",
+      "name": "W12 · Specification · Help/technical request",
+      "kind": "spec",
+      "page_id": "W12",
+      "device": null
+    },
+    {
+      "n": 111,
+      "sec": "N",
+      "name": "W13 · Specification · System states",
+      "kind": "spec",
+      "page_id": "W13",
+      "device": null
+    },
+    {
+      "n": 112,
+      "sec": "N",
+      "name": "W14 · Specification · Course home",
+      "kind": "spec",
+      "page_id": "W14",
+      "device": null
+    },
+    {
+      "n": 113,
+      "sec": "N",
+      "name": "W15 · Specification · Syllabus/grading summary",
+      "kind": "spec",
+      "page_id": "W15",
+      "device": null
+    },
+    {
+      "n": 114,
+      "sec": "N",
+      "name": "W16 · Specification · Modules",
+      "kind": "spec",
+      "page_id": "W16",
+      "device": null
+    },
+    {
+      "n": 115,
+      "sec": "N",
+      "name": "W17 · Specification · Lesson/material",
+      "kind": "spec",
+      "page_id": "W17",
+      "device": null
+    },
+    {
+      "n": 116,
+      "sec": "N",
+      "name": "W18 · Specification · Coursework list",
+      "kind": "spec",
+      "page_id": "W18",
+      "device": null
+    },
+    {
+      "n": 117,
+      "sec": "N",
+      "name": "W19 · Specification · Assignment detail",
+      "kind": "spec",
+      "page_id": "W19",
+      "device": null
+    },
+    {
+      "n": 118,
+      "sec": "N",
+      "name": "W20 · Specification · Add work",
+      "kind": "spec",
+      "page_id": "W20",
+      "device": null
+    },
+    {
+      "n": 119,
+      "sec": "N",
+      "name": "W21 · Specification · Review and submit",
+      "kind": "spec",
+      "page_id": "W21",
+      "device": null
+    },
+    {
+      "n": 120,
+      "sec": "N",
+      "name": "W22 · Specification · Receipt/attempt history",
+      "kind": "spec",
+      "page_id": "W22",
+      "device": null
+    },
+    {
+      "n": 121,
+      "sec": "N",
+      "name": "W23 · Specification · Released feedback",
+      "kind": "spec",
+      "page_id": "W23",
+      "device": null
+    },
+    {
+      "n": 122,
+      "sec": "N",
+      "name": "W24 · Specification · Student course grades",
+      "kind": "spec",
+      "page_id": "W24",
+      "device": null
+    },
+    {
+      "n": 123,
+      "sec": "N",
+      "name": "W25 · Specification · Quiz rules/start",
+      "kind": "spec",
+      "page_id": "W25",
+      "device": null
+    },
+    {
+      "n": 124,
+      "sec": "N",
+      "name": "W26 · Specification · Quiz attempt",
+      "kind": "spec",
+      "page_id": "W26",
+      "device": null
+    },
+    {
+      "n": 125,
+      "sec": "N",
+      "name": "W27 · Specification · Quiz receipt/review",
+      "kind": "spec",
+      "page_id": "W27",
+      "device": null
+    },
+    {
+      "n": 126,
+      "sec": "N",
+      "name": "W28 · Specification · Announcement list",
+      "kind": "spec",
+      "page_id": "W28",
+      "device": null
+    },
+    {
+      "n": 127,
+      "sec": "N",
+      "name": "W29 · Specification · Announcement detail",
+      "kind": "spec",
+      "page_id": "W29",
+      "device": null
+    },
+    {
+      "n": 128,
+      "sec": "N",
+      "name": "W30 · Specification · Discussion list",
+      "kind": "spec",
+      "page_id": "W30",
+      "device": null
+    },
+    {
+      "n": 129,
+      "sec": "N",
+      "name": "W31 · Specification · Discussion thread",
+      "kind": "spec",
+      "page_id": "W31",
+      "device": null
+    },
+    {
+      "n": 130,
+      "sec": "N",
+      "name": "W32 · Specification · Course calendar",
+      "kind": "spec",
+      "page_id": "W32",
+      "device": null
+    },
+    {
+      "n": 131,
+      "sec": "N",
+      "name": "W33 · Specification · My course groups",
+      "kind": "spec",
+      "page_id": "W33",
+      "device": null
+    },
+    {
+      "n": 132,
+      "sec": "N",
+      "name": "W34 · Specification · Group workspace/group submission status",
+      "kind": "spec",
+      "page_id": "W34",
+      "device": null
+    },
+    {
+      "n": 133,
+      "sec": "N",
+      "name": "W35 · Specification · Course builder",
+      "kind": "spec",
+      "page_id": "W35",
+      "device": null
+    },
+    {
+      "n": 134,
+      "sec": "N",
+      "name": "W36 · Specification · Course settings, syllabus and publication",
+      "kind": "spec",
+      "page_id": "W36",
+      "device": null
+    },
+    {
+      "n": 135,
+      "sec": "N",
+      "name": "W37 · Specification · Module editor",
+      "kind": "spec",
+      "page_id": "W37",
+      "device": null
+    },
+    {
+      "n": 136,
+      "sec": "N",
+      "name": "W38 · Specification · Learning-content editor",
+      "kind": "spec",
+      "page_id": "W38",
+      "device": null
+    },
+    {
+      "n": 137,
+      "sec": "N",
+      "name": "W39 · Specification · Files and resources",
+      "kind": "spec",
+      "page_id": "W39",
+      "device": null
+    },
+    {
+      "n": 138,
+      "sec": "N",
+      "name": "W40 · Specification · Assignment editor",
+      "kind": "spec",
+      "page_id": "W40",
+      "device": null
+    },
+    {
+      "n": 139,
+      "sec": "N",
+      "name": "W41 · Specification · Quiz editor",
+      "kind": "spec",
+      "page_id": "W41",
+      "device": null
+    },
+    {
+      "n": 140,
+      "sec": "N",
+      "name": "W42 · Specification · Question bank",
+      "kind": "spec",
+      "page_id": "W42",
+      "device": null
+    },
+    {
+      "n": 141,
+      "sec": "N",
+      "name": "W43 · Specification · Rubric library",
+      "kind": "spec",
+      "page_id": "W43",
+      "device": null
+    },
+    {
+      "n": 142,
+      "sec": "N",
+      "name": "W44 · Specification · Rubric editor",
+      "kind": "spec",
+      "page_id": "W44",
+      "device": null
+    },
+    {
+      "n": 143,
+      "sec": "N",
+      "name": "W45 · Specification · Course people and staff permission",
+      "kind": "spec",
+      "page_id": "W45",
+      "device": null
+    },
+    {
+      "n": 144,
+      "sec": "N",
+      "name": "W46 · Specification · Learner allowances",
+      "kind": "spec",
+      "page_id": "W46",
+      "device": null
+    },
+    {
+      "n": 145,
+      "sec": "N",
+      "name": "W47 · Specification · Group sets and membership builder",
+      "kind": "spec",
+      "page_id": "W47",
+      "device": null
+    },
+    {
+      "n": 146,
+      "sec": "N",
+      "name": "W48 · Specification · Grading queue",
+      "kind": "spec",
+      "page_id": "W48",
+      "device": null
+    },
+    {
+      "n": 147,
+      "sec": "N",
+      "name": "W49 · Specification · Grader",
+      "kind": "spec",
+      "page_id": "W49",
+      "device": null
+    },
+    {
+      "n": 148,
+      "sec": "N",
+      "name": "W50 · Specification · Rubric-change impact preview",
+      "kind": "spec",
+      "page_id": "W50",
+      "device": null
+    },
+    {
+      "n": 149,
+      "sec": "N",
+      "name": "W51 · Specification · Staff gradebook",
+      "kind": "spec",
+      "page_id": "W51",
+      "device": null
+    },
+    {
+      "n": 150,
+      "sec": "N",
+      "name": "W52 · Specification · Syllabus-based grading policy setup",
+      "kind": "spec",
+      "page_id": "W52",
+      "device": null
+    },
+    {
+      "n": 151,
+      "sec": "N",
+      "name": "W53 · Specification · Exact feedback release",
+      "kind": "spec",
+      "page_id": "W53",
+      "device": null
+    },
+    {
+      "n": 152,
+      "sec": "N",
+      "name": "W54 · Specification · Grade correction and regrade review",
+      "kind": "spec",
+      "page_id": "W54",
+      "device": null
+    },
+    {
+      "n": 153,
+      "sec": "N",
+      "name": "W55 · Specification · Announcement editor",
+      "kind": "spec",
+      "page_id": "W55",
+      "device": null
+    },
+    {
+      "n": 154,
+      "sec": "N",
+      "name": "W56 · Specification · Discussion setup and moderation",
+      "kind": "spec",
+      "page_id": "W56",
+      "device": null
+    },
+    {
+      "n": 155,
+      "sec": "N",
+      "name": "W57 · Specification · Grading allocation and deadline planner",
+      "kind": "spec",
+      "page_id": "W57",
+      "device": null
+    },
+    {
+      "n": 156,
+      "sec": "N",
+      "name": "W58 · Specification · Course insights and attendance",
+      "kind": "spec",
+      "page_id": "W58",
+      "device": null
+    },
+    {
+      "n": 157,
+      "sec": "N",
+      "name": "W59 · Specification · Course copy and rollover",
+      "kind": "spec",
+      "page_id": "W59",
+      "device": null
+    },
+    {
+      "n": 158,
+      "sec": "N",
+      "name": "W60 · Specification · Content import/export preview",
+      "kind": "spec",
+      "page_id": "W60",
+      "device": null
+    },
+    {
+      "n": 159,
+      "sec": "N",
+      "name": "O01 · Specification · Optional student achievements",
+      "kind": "spec",
+      "page_id": "O01",
+      "device": null
+    },
+    {
+      "n": 160,
+      "sec": "N",
+      "name": "O02 · Specification · Optional staff achievement authoring",
+      "kind": "spec",
+      "page_id": "O02",
+      "device": null
+    },
+    {
+      "n": 161,
+      "sec": "N",
+      "name": "O03 · Specification · Optional course FAQ assistant",
+      "kind": "spec",
+      "page_id": "O03",
+      "device": null
+    },
+    {
+      "n": 162,
+      "sec": "M",
+      "name": "C01–C16 · Component contracts",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 163,
+      "sec": "M",
+      "name": "Design tokens from the ZIP",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 164,
+      "sec": "Q",
+      "name": "Spec 01 · Product and scope",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 165,
+      "sec": "Q",
+      "name": "Spec 02 · Navigation and permissions",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 166,
+      "sec": "Q",
+      "name": "Spec 03 · Shared UI and states",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 167,
+      "sec": "Q",
+      "name": "Spec 04 · Workflows and records",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 168,
+      "sec": "Q",
+      "name": "Spec 05 · Build and acceptance",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 169,
+      "sec": "Q",
+      "name": "Spec 06 · Decisions and traceability",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 170,
+      "sec": "Q",
+      "name": "Core evidence",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 171,
+      "sec": "Q",
+      "name": "Shared evidence",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 172,
+      "sec": "Q",
+      "name": "Staff evidence",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 173,
+      "sec": "Q",
+      "name": "Contract (history)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 174,
+      "sec": "Q",
+      "name": "Decisions (history)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 175,
+      "sec": "Q",
+      "name": "State checklist (history)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 176,
+      "sec": "Q",
+      "name": "Original academic scope review",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 177,
+      "sec": "Q",
+      "name": "Verification report",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 178,
+      "sec": "Q",
+      "name": "README",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 179,
+      "sec": "Q",
+      "name": "Resources guide",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 180,
+      "sec": "Q",
+      "name": "Navigation map (navigation.json)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 181,
+      "sec": "Q",
+      "name": "Route manifest (63 routes)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 182,
+      "sec": "Q",
+      "name": "Legacy crosswalk",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 183,
+      "sec": "Q",
+      "name": "Fixtures overview",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 184,
+      "sec": "Q",
+      "name": "Failure scenarios (fixtures)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 185,
+      "sec": "Q",
+      "name": "Mock service contracts",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 186,
+      "sec": "Q",
+      "name": "Frontend checklist (63 pages)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 187,
+      "sec": "Q",
+      "name": "Coverage summary and manifest",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 188,
+      "sec": "Q",
+      "name": "Sample assets",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 189,
+      "sec": "Q",
+      "name": "Working rules (CLAUDE.md, START_HERE)",
+      "kind": "document",
+      "page_id": null,
+      "device": null
+    },
+    {
+      "n": 190,
+      "sec": "I",
+      "name": "W47 · Group sets and membership · PC",
+      "kind": "drawn",
+      "page_id": "W47",
+      "device": "PC"
+    },
+    {
+      "n": 191,
+      "sec": "I",
+      "name": "W48 · Grading queue · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W48",
+      "device": "PC"
+    },
+    {
+      "n": 192,
+      "sec": "I",
+      "name": "W48 · Grading queue · TA · PC",
+      "kind": "drawn",
+      "page_id": "W48",
+      "device": "PC"
+    },
+    {
+      "n": 193,
+      "sec": "I",
+      "name": "W49 · Grader · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W49",
+      "device": "PC"
+    },
+    {
+      "n": 194,
+      "sec": "I",
+      "name": "W49 · Grader · TA · PC",
+      "kind": "drawn",
+      "page_id": "W49",
+      "device": "PC"
+    },
+    {
+      "n": 195,
+      "sec": "I",
+      "name": "W50 · Rubric change impact · PC",
+      "kind": "drawn",
+      "page_id": "W50",
+      "device": "PC"
+    },
+    {
+      "n": 196,
+      "sec": "I",
+      "name": "W51 · Staff gradebook · Instructor · PC",
+      "kind": "drawn",
+      "page_id": "W51",
+      "device": "PC"
+    },
+    {
+      "n": 197,
+      "sec": "I",
+      "name": "W51 · Staff gradebook · TA · PC",
+      "kind": "drawn",
+      "page_id": "W51",
+      "device": "PC"
+    },
+    {
+      "n": 198,
+      "sec": "I",
+      "name": "W52 · Grading policy setup · PC",
+      "kind": "drawn",
+      "page_id": "W52",
+      "device": "PC"
+    },
+    {
+      "n": 199,
+      "sec": "I",
+      "name": "W53 · Exact feedback release · PC",
+      "kind": "drawn",
+      "page_id": "W53",
+      "device": "PC"
+    },
+    {
+      "n": 200,
+      "sec": "I",
+      "name": "W53 · Release · TA view · PC",
+      "kind": "drawn",
+      "page_id": "W53",
+      "device": "PC"
+    },
+    {
+      "n": 201,
+      "sec": "I",
+      "name": "W54 · Grade correction and regrade · PC",
+      "kind": "drawn",
+      "page_id": "W54",
+      "device": "PC"
+    },
+    {
+      "n": 202,
+      "sec": "I",
+      "name": "W57 · Grading allocation and deadlines · PC",
+      "kind": "drawn",
+      "page_id": "W57",
+      "device": "PC"
+    },
+    {
+      "n": 203,
+      "sec": "I",
+      "name": "W58 · Course insights and attendance · PC",
+      "kind": "drawn",
+      "page_id": "W58",
+      "device": "PC"
+    },
+    {
+      "n": 204,
+      "sec": "J",
+      "name": "O01 · Achievements · PC (optional)",
+      "kind": "drawn",
+      "page_id": "O01",
+      "device": "PC"
+    },
+    {
+      "n": 205,
+      "sec": "J",
+      "name": "O02 · Achievement authoring · PC (optional)",
+      "kind": "drawn",
+      "page_id": "O02",
+      "device": "PC"
+    },
+    {
+      "n": 206,
+      "sec": "J",
+      "name": "O03 · Course FAQ assistant · PC (optional)",
+      "kind": "drawn",
+      "page_id": "O03",
+      "device": "PC"
+    },
+    {
+      "n": 207,
+      "sec": "B",
+      "name": "W17 · Lesson and material · PC",
+      "kind": "drawn",
+      "page_id": "W17",
+      "device": "PC"
+    },
+    {
+      "n": 208,
+      "sec": "B",
+      "name": "W17 · Lesson and material · iPhone",
+      "kind": "drawn",
+      "page_id": "W17",
+      "device": "iPhone"
+    },
+    {
+      "n": 209,
+      "sec": "X",
+      "name": "W13 · System states · PC",
+      "kind": "drawn",
+      "page_id": "W13",
+      "device": "PC"
+    },
+    {
+      "n": 210,
+      "sec": "X",
+      "name": "All 17 failure scenarios",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    },
+    {
+      "n": 211,
+      "sec": "K",
+      "name": "Coverage and journeys",
+      "kind": "drawn",
+      "page_id": null,
+      "device": "PC"
+    }
+  ],
+  "pages": [
+    {
+      "id": "W01",
+      "name": "Institution sign-in",
+      "roles": "g",
+      "priority": "required"
+    },
+    {
+      "id": "W02",
+      "name": "Auth return/recovery",
+      "roles": "gsia",
+      "priority": "required"
+    },
+    {
+      "id": "W03",
+      "name": "Invitation",
+      "roles": "gsia",
+      "priority": "required"
+    },
+    {
+      "id": "W04",
+      "name": "Onboarding",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W05",
+      "name": "Role-aware Home",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W06",
+      "name": "Courses and term archive",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W07",
+      "name": "Personal/global academic calendar",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W08",
+      "name": "Activity and notification settings",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W09",
+      "name": "Global academic search",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W10",
+      "name": "Profile/account/preferences",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W11",
+      "name": "Academic software/tools directory",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W12",
+      "name": "Help/technical request",
+      "roles": "gsia",
+      "priority": "required"
+    },
+    {
+      "id": "W13",
+      "name": "System states",
+      "roles": "gsia",
+      "priority": "required"
+    },
+    {
+      "id": "W14",
+      "name": "Course home",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W15",
+      "name": "Syllabus/grading summary",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W16",
+      "name": "Modules",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W17",
+      "name": "Lesson/material",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W18",
+      "name": "Coursework list",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W19",
+      "name": "Assignment detail",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W20",
+      "name": "Add work",
+      "roles": "s",
+      "priority": "required"
+    },
+    {
+      "id": "W21",
+      "name": "Review and submit",
+      "roles": "s",
+      "priority": "required"
+    },
+    {
+      "id": "W22",
+      "name": "Receipt/attempt history",
+      "roles": "s",
+      "priority": "required"
+    },
+    {
+      "id": "W23",
+      "name": "Released feedback",
+      "roles": "si",
+      "priority": "required"
+    },
+    {
+      "id": "W24",
+      "name": "Student course grades",
+      "roles": "si",
+      "priority": "required"
+    },
+    {
+      "id": "W25",
+      "name": "Quiz rules/start",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W26",
+      "name": "Quiz attempt",
+      "roles": "s",
+      "priority": "required"
+    },
+    {
+      "id": "W27",
+      "name": "Quiz receipt/review",
+      "roles": "s",
+      "priority": "required"
+    },
+    {
+      "id": "W28",
+      "name": "Announcement list",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W29",
+      "name": "Announcement detail",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W30",
+      "name": "Discussion list",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W31",
+      "name": "Discussion thread",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W32",
+      "name": "Course calendar",
+      "roles": "sia",
+      "priority": "required"
+    },
+    {
+      "id": "W33",
+      "name": "My course groups",
+      "roles": "s",
+      "priority": "required"
+    },
+    {
+      "id": "W34",
+      "name": "Group workspace/group submission status",
+      "roles": "s",
+      "priority": "required"
+    },
+    {
+      "id": "W35",
+      "name": "Course builder",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W36",
+      "name": "Course settings, syllabus and publication",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W37",
+      "name": "Module editor",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W38",
+      "name": "Learning-content editor",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W39",
+      "name": "Files and resources",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W40",
+      "name": "Assignment editor",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W41",
+      "name": "Quiz editor",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W42",
+      "name": "Question bank",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W43",
+      "name": "Rubric library",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W44",
+      "name": "Rubric editor",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W45",
+      "name": "Course people and staff permission",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W46",
+      "name": "Learner allowances",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W47",
+      "name": "Group sets and membership builder",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W48",
+      "name": "Grading queue",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W49",
+      "name": "Grader",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W50",
+      "name": "Rubric-change impact preview",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W51",
+      "name": "Staff gradebook",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W52",
+      "name": "Syllabus-based grading policy setup",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W53",
+      "name": "Exact feedback release",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W54",
+      "name": "Grade correction and regrade review",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W55",
+      "name": "Announcement editor",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W56",
+      "name": "Discussion setup and moderation",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W57",
+      "name": "Grading allocation and deadline planner",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W58",
+      "name": "Course insights and attendance",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W59",
+      "name": "Course copy and rollover",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "W60",
+      "name": "Content import/export preview",
+      "roles": "ia",
+      "priority": "required"
+    },
+    {
+      "id": "O01",
+      "name": "Optional student achievements",
+      "roles": "s",
+      "priority": "optional"
+    },
+    {
+      "id": "O02",
+      "name": "Optional staff achievement authoring",
+      "roles": "ia",
+      "priority": "optional"
+    },
+    {
+      "id": "O03",
+      "name": "Optional course FAQ assistant",
+      "roles": "s",
+      "priority": "optional"
+    }
+  ],
+  "journeys": [
+    {
+      "id": "J01",
+      "name": "Arrival",
+      "pages": [
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W05"
+      ]
+    },
+    {
+      "id": "J02",
+      "name": "Individual submission",
+      "pages": [
+        "W06",
+        "W14",
+        "W16",
+        "W17",
+        "W18",
+        "W19",
+        "W20",
+        "W21",
+        "W22"
+      ]
+    },
+    {
+      "id": "J03",
+      "name": "Grade and release",
+      "pages": [
+        "W48",
+        "W49",
+        "W50",
+        "W51",
+        "W53",
+        "W23",
+        "W24"
+      ]
+    },
+    {
+      "id": "J04",
+      "name": "Course authoring",
+      "pages": [
+        "W35",
+        "W36",
+        "W37",
+        "W38",
+        "W39",
+        "W40",
+        "W43",
+        "W44",
+        "W14"
+      ]
+    },
+    {
+      "id": "J05",
+      "name": "Quiz lifecycle",
+      "pages": [
+        "W41",
+        "W42",
+        "W25",
+        "W26",
+        "W27",
+        "W53",
+        "W24"
+      ]
+    },
+    {
+      "id": "J06",
+      "name": "Grading policy and correction",
+      "pages": [
+        "W52",
+        "W51",
+        "W24",
+        "W54",
+        "W53",
+        "W23"
+      ]
+    },
+    {
+      "id": "J07",
+      "name": "Group assignment",
+      "pages": [
+        "W47",
+        "W40",
+        "W33",
+        "W34",
+        "W19",
+        "W20",
+        "W21",
+        "W22",
+        "W49"
+      ]
+    },
+    {
+      "id": "J08",
+      "name": "TA workload",
+      "pages": [
+        "W45",
+        "W57",
+        "W05",
+        "W07",
+        "W48",
+        "W49"
+      ]
+    },
+    {
+      "id": "J09",
+      "name": "Course communication",
+      "pages": [
+        "W55",
+        "W28",
+        "W29",
+        "W08",
+        "W30",
+        "W31",
+        "W56"
+      ]
+    },
+    {
+      "id": "J10",
+      "name": "Academic planning",
+      "pages": [
+        "W36",
+        "W32",
+        "W07",
+        "W08"
+      ]
+    },
+    {
+      "id": "J11",
+      "name": "Exceptions",
+      "pages": [
+        "W46",
+        "W19",
+        "W25",
+        "W58",
+        "W54"
+      ]
+    },
+    {
+      "id": "J12",
+      "name": "Term continuity",
+      "pages": [
+        "W06",
+        "W59",
+        "W60",
+        "W35"
+      ]
+    }
+  ]
+}

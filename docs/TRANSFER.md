@@ -1,6 +1,6 @@
 # Continue Whiteboard on another device
 
-Transfer reviewed 4 November 2026. Repository: https://github.com/Wasif-Karim03/whiteboard.
+Transfer procedure updated 18 November 2026; the original transfer audit below was reviewed 4 November 2026. Repository: https://github.com/Wasif-Karim03/whiteboard.
 GitHub reported **public** visibility on that date; earlier “private” descriptions were incorrect. No visibility setting was changed during this transfer.
 
 ## Clone and resume
@@ -18,6 +18,8 @@ On Windows, use `py -3` in place of `python3` if needed. Commands below run indi
 
 `main` and `showcase/v2` receive the same transfer commit. A normal clone starts on `main`; to continue on the existing working branch, run `git switch showcase/v2`. `research/market` is the older research branch, not the complete continuation point. A normal clone preserves reachable Git history and remote branches; GitHub's Download ZIP provides the files without history.
 
+The latest continuation point is now `design/final/`, with the generated app at `design/final/dist/Whiteboard-Final.html`. It contains 63 fictional page families and 189 platform targets, editable sources, role-scoped records, course calendars and instructor/student audit evidence. The older prototype/showcase remain preserved history.
+
 Read `NOTES.md`, then `CLAUDE.md`, `design/SESSION_NOTES.md` and the relevant workspace README before editing. `HANDOFF.md` is an explicitly historical handoff. All 100 design targets were owner-accepted; structured browser/accessibility and native device acceptance remain unverified. Product implementation remains a separate, unauthorized scope.
 
 ## What is included
@@ -28,7 +30,7 @@ Read `NOTES.md`, then `CLAUDE.md`, `design/SESSION_NOTES.md` and the relevant wo
 - Original archived HTML versions, historical audits, design tracker, decisions, handoffs and the interview-template workbook (`Claude outputs/Whiteboard-Interview-Tracker.xlsx`).
 - A SHA-256 manifest of every tracked project file except the manifest itself. Run the integrity check immediately after cloning, before builds/checks intentionally update generated files.
 
-The original project had 181 tracked files; none were missing from GitHub at audit time. No project file needs Git LFS, submodules or an external asset download. The largest tracked file was the 1.91 MB research report.
+The refreshed transfer manifest lists the complete current tracked set. The original project had 181 tracked files; none were missing from GitHub at audit time. No project file needs Git LFS, submodules or an external asset download. The largest tracked file was the 1.91 MB research report.
 
 ## Deliberate exclusions and browser data
 
@@ -45,6 +47,19 @@ These stay on the old device and are not required to rebuild or continue the pro
 No environment/credential files or credential-pattern matches were found in the file audit; this was a heuristic check. The tracked workbook contains a labeled example and blank interview input rows, not completed customer interviews. Keep future real interview records and secrets out of this public repository.
 
 ## Rebuild and verify
+
+For the current final prototype, use these commands from the repository root:
+
+```sh
+node --test design/final/tools/*.test.mjs
+node design/final/tools/check_all.mjs
+bash design/final/tools/legacy_check.sh
+node design/final/build.mjs && node design/final/tools/check_size.mjs
+```
+
+The legacy helper runs old builds in a disposable copy. **Do not run the old design/build.mjs or design/tools/check_batch.mjs in the working tree while maintaining design/final.** If the optional original Downloads reference is inaccessible, the board verification reports the permission issue; do not bypass it. Root NOTES section 0 records the current constraints. Browser/owner acceptance remains Not run.
+
+The commands below are the **historical 4 November transfer verification record**, not the current design/final workflow.
 
 Run the integrity check first. The builds and validators below can overwrite generated HTML and verification records; timestamp-only changes are expected. Edit sources before rebuilding and review `git diff` afterward.
 
